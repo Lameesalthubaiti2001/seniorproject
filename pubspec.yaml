@@ -1,0 +1,500 @@
+name: seniorproject
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^4.0.3
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/designs/images/rectangle-32.png
+    - assets/designs/images/ellipse-18-bg.png
+    - assets/slides/images/main-card-bg-bg.png
+    - assets/designs/images/image-6.png
+    - assets/slides/images/iconly-bold-time-square.png
+    - assets/slides/images/wifi.png
+    - assets/slides/images/ellipse-18-bg-pkT.png
+    - assets/slides/images/calendar.png
+    - assets/designs/images/fluent-home-28-filled.png
+    - assets/slides/images/rectangle-4199.png
+    - assets/designs/images/battery.png
+    - assets/designs/images/cellular-connection.png
+    - assets/slides/images/time-circle.png
+    - assets/slides/images/rectangle-4199-3Es.png
+    - assets/designs/images/battery-Tym.png
+    - assets/slides/images/rectangle-32-5wZ.png
+    - assets/designs/images/ellipse-2-bg.png
+    - assets/slides/images/battery-fjH.png
+    - assets/slides/images/battery-mGX.png
+    - assets/designs/images/vector.png
+    - assets/designs/images/group.png
+    - assets/designs/images/fluent-home-28-filled-LzP.png
+    - assets/slides/images/rectangle-4199-cH1.png
+    - assets/slides/images/vector-3DD.png
+    - assets/slides/images/calendar-9L7.png
+    - assets/slides/images/main-card-bg-bg-qTq.png
+    - assets/slides/images/line-1.png
+    - assets/slides/images/main-card-bg-bg-B95.png
+    - assets/slides/images/eva-arrow-ios-forward-outline.png
+    - assets/slides/images/iconly-bold-calendar.png
+    - assets/slides/images/battery-TkX.png
+    - assets/slides/images/main-card-bg-bg-opP.png
+    - assets/slides/images/group-7aB.png
+    - assets/designs/images/material-symbols-pending-actions-rounded.png
+    - assets/slides/images/group-oUP.png
+    - assets/slides/images/image-6-9HM.png
+    - assets/slides/images/main-card-bg-bg-Vs1.png
+    - assets/designs/images/calendar-iv7.png
+    - assets/designs/images/vector-dXH.png
+    - assets/designs/images/calendar-CPV.png
+    - assets/designs/images/time-circle-93q.png
+    - assets/slides/images/iconly-bold-calendar-6Us.png
+    - assets/designs/images/battery-QJP.png
+    - assets/slides/images/vector-akb.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-iro.png
+    - assets/slides/images/wifi-S27.png
+    - assets/slides/images/group-6.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-gTm.png
+    - assets/designs/images/battery-RRM.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-ANw.png
+    - assets/designs/images/battery-8Km.png
+    - assets/designs/images/time-circle-hMV.png
+    - assets/designs/images/calendar-wBZ.png
+    - assets/slides/images/time-circle-UBV.png
+    - assets/slides/images/time-circle-Mm5.png
+    - assets/designs/images/vector-9RM.png
+    - assets/slides/images/time-circle-sMM.png
+    - assets/slides/images/fluent-home-28-filled-1iT.png
+    - assets/slides/images/fluent-home-28-filled-kR9.png
+    - assets/designs/images/auto-group-zfgf.png
+    - assets/slides/images/cellular-connection-rDH.png
+    - assets/slides/images/vector-R1V.png
+    - assets/slides/images/ellipse-18-bg-KMm.png
+    - assets/slides/images/wifi-gTD.png
+    - assets/slides/images/cellular-connection-Ejd.png
+    - assets/designs/images/fluent-home-28-filled-o23.png
+    - assets/slides/images/main-card-bg-bg-d15.png
+    - assets/designs/images/cellular-connection-n8s.png
+    - assets/slides/images/iconly-bold-calendar-Xs9.png
+    - assets/designs/images/group-hWj.png
+    - assets/slides/images/cellular-connection-Tko.png
+    - assets/designs/images/wifi-Bgo.png
+    - assets/designs/images/vector-Z39.png
+    - assets/designs/images/cellular-connection-WNF.png
+    - assets/designs/images/wifi-Faj.png
+    - assets/slides/images/iconly-bold-time-circle.png
+    - assets/slides/images/time-circle-zfM.png
+    - assets/slides/images/fluent-home-28-filled-rgB.png
+    - assets/designs/images/time-circle-jkX.png
+    - assets/designs/images/eva-arrow-back-outline.png
+    - assets/designs/images/auto-group-etao.png
+    - assets/designs/images/time-circle-hoy.png
+    - assets/slides/images/image-6-3sq.png
+    - assets/designs/images/wifi-93q.png
+    - assets/slides/images/map-pin.png
+    - assets/designs/images/cellular-connection-T4X.png
+    - assets/slides/images/time-circle-Cno.png
+    - assets/designs/images/wifi-a99.png
+    - assets/designs/images/auto-group-lput.png
+    - assets/slides/images/time-circle-JL3.png
+    - assets/slides/images/eva-arrow-ios-forward-outline-qas.png
+    - assets/slides/images/rectangle-35.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-bFq.png
+    - assets/designs/images/time-circle-LUK.png
+    - assets/slides/images/map-pin-W7u.png
+    - assets/slides/images/vector-sUF.png
+    - assets/designs/images/time-circle-nKd.png
+    - assets/designs/images/calendar-Lrw.png
+    - assets/designs/images/rectangle-35-4ew.png
+    - assets/slides/images/rectangle-32-L4b.png
+    - assets/slides/images/rectangle-35-6dR.png
+    - assets/designs/images/rectangle-4204-bg.png
+    - assets/designs/images/tabler-edit.png
+    - assets/designs/images/tabler-edit-qoR.png
+    - assets/designs/images/rectangle-4204-bg-mmu.png
+    - assets/designs/images/group-15.png
+    - assets/designs/images/eva-arrow-back-outline-7D5.png
+    - assets/designs/images/cellular-connection-dJK.png
+    - assets/designs/images/cellular-connection-h9u.png
+    - assets/designs/images/wifi-GJf.png
+    - assets/designs/images/eva-arrow-back-outline-JRh.png
+    - assets/designs/images/battery-5P1.png
+    - assets/designs/images/rectangle-4204-bg-t3d.png
+    - assets/designs/images/wifi-MrT.png
+    - assets/designs/images/battery-jqu.png
+    - assets/designs/images/cellular-connection-ahZ.png
+    - assets/designs/images/vector-zQT.png
+    - assets/designs/images/wifi-rZy.png
+    - assets/designs/images/cellular-connection-eBd.png
+    - assets/designs/images/battery-iD1.png
+    - assets/designs/images/cellular-connection-ewd.png
+    - assets/designs/images/battery-5vT.png
+    - assets/designs/images/ellipse-159.png
+    - assets/designs/images/ellipse-158.png
+    - assets/designs/images/rectangle-4199-CiF.png
+    - assets/designs/images/rectangle-4199-Q5Z.png
+    - assets/designs/images/eva-arrow-back-outline-FKh.png
+    - assets/designs/images/wifi-myD.png
+    - assets/designs/images/battery-s5m.png
+    - assets/designs/images/ellipse-159-mY7.png
+    - assets/designs/images/wifi-LRH.png
+    - assets/designs/images/wifi-xzP.png
+    - assets/designs/images/ellipse-159-MH5.png
+    - assets/designs/images/vector-FFy.png
+    - assets/designs/images/map-pin-jaT.png
+    - assets/designs/images/eva-arrow-back-outline-Hco.png
+    - assets/designs/images/calendar-xyZ.png
+    - assets/designs/images/auto-group-cskx.png
+    - assets/designs/images/time-circle-Po1.png
+    - assets/designs/images/cellular-connection-6Bd.png
+    - assets/designs/images/time-circle-gD1.png
+    - assets/designs/images/fluent-home-28-filled-quV.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-Msq.png
+    - assets/designs/images/unsplash-jmurdhtm7ng.png
+    - assets/designs/images/rectangle-35-teo.png
+    - assets/designs/images/fluent-home-28-filled-uib.png
+    - assets/designs/images/map-pin-vsD.png
+    - assets/designs/images/time-circle-GWP.png
+    - assets/designs/images/cellular-connection-aUK.png
+    - assets/designs/images/calendar-kcK.png
+    - assets/designs/images/eva-arrow-ios-forward-outline-v4s.png
+    - assets/designs/images/battery-8if.png
+    - assets/designs/images/vector-kdZ.png
+    - assets/designs/images/group-CDy.png
+    - assets/designs/images/time-circle-TjZ.png
+    - assets/designs/images/calendar-kWX.png
+    - assets/designs/images/iconly-bold-calendar-vy9.png
+    - assets/designs/images/cellular-connection-tQ3.png
+    - assets/designs/images/iconly-bold-calendar-r8j.png
+    - assets/designs/images/fluent-home-28-filled-jdm.png
+    - assets/designs/images/time-circle-37H.png
+    - assets/designs/images/auto-group-g1ij.png
+    - assets/designs/images/vector-SRZ.png
+    - assets/designs/images/vector-gjD.png
+    - assets/designs/images/group-6-xEo.png
+    - assets/designs/images/wifi-S3V.png
+    - assets/designs/images/time-circle-XKh.png
+    - assets/designs/images/group-WxK.png
+    - assets/designs/images/iconly-bold-time-square-qNK.png
+    - assets/designs/images/auto-group-dgwm.png
+    - assets/designs/images/eva-arrow-ios-forward-outline-gRq.png
+    - assets/designs/images/carbon-notification-filled.png
+    - assets/designs/images/calendar-VVu.png
+    - assets/designs/images/cellular-connection-y1V.png
+    - assets/designs/images/battery-Q83.png
+    - assets/designs/images/rectangle-32-ZPZ.png
+    - assets/designs/images/wifi-xuy.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-eyh.png
+    - assets/designs/images/ellipse-2-bg-wxf.png
+    - assets/designs/images/rectangle-4199-XeK.png
+    - assets/designs/images/time-circle-iP5.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-ijd.png
+    - assets/designs/images/auto-group-hkru.png
+    - assets/designs/images/iconly-bold-calendar-5j9.png
+    - assets/designs/images/wifi-aks.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-dh5.png
+    - assets/designs/images/auto-group-3hnj.png
+    - assets/designs/images/group-Z3q.png
+    - assets/designs/images/auto-group-praw.png
+    - assets/designs/images/auto-group-ofuf.png
+    - assets/designs/images/battery-KUP.png
+    - assets/designs/images/ellipse-19-bg.png
+    - assets/designs/images/iconly-bold-calendar-izw.png
+    - assets/designs/images/ellipse-15-bg.png
+    - assets/designs/images/ellipse-18-bg-Tmu.png
+    - assets/designs/images/ellipse-17-bg.png
+    - assets/designs/images/ellipse-16-bg.png
+    - assets/designs/images/ellipse-20-bg.png
+    - assets/designs/images/map-pin-v1R.png
+    - assets/designs/images/time-circle-8Tu.png
+    - assets/designs/images/group-Qfd.png
+    - assets/designs/images/group-6-hRm.png
+    - assets/designs/images/vector-bFZ.png
+    - assets/designs/images/ellipse-21.png
+    - assets/designs/images/fluent-home-28-filled-vfV.png
+    - assets/designs/images/rectangle-4199-S9y.png
+    - assets/designs/images/ellipse-7.png
+    - assets/designs/images/iconly-bold-calendar-byd.png
+    - assets/designs/images/wifi-8G3.png
+    - assets/designs/images/cellular-connection-ihh.png
+    - assets/designs/images/battery-PSj.png
+    - assets/designs/images/line-2.png
+    - assets/designs/images/time-circle-u3q.png
+    - assets/designs/images/group-Yq9.png
+    - assets/designs/images/wifi-R79.png
+    - assets/designs/images/ellipse-2.png
+    - assets/designs/images/battery-E3D.png
+    - assets/designs/images/cellular-connection-zZR.png
+    - assets/designs/images/auto-group-nzb1.png
+    - assets/designs/images/cellular-connection-ciw.png
+    - assets/designs/images/fluent-home-28-filled-cbV.png
+    - assets/designs/images/time-circle-JgT.png
+    - assets/designs/images/vector-wP9.png
+    - assets/designs/images/flat-color-icons-checkmark.png
+    - assets/designs/images/vector-QLb.png
+    - assets/designs/images/wifi-UUs.png
+    - assets/designs/images/battery-Z6K.png
+    - assets/designs/images/fluent-home-28-filled-xZh.png
+    - assets/designs/images/vector-XRm.png
+    - assets/designs/images/vector-onb.png
+    - assets/designs/images/time-circle-mN3.png
+    - assets/designs/images/ellipse-18-bg-MLw.png
+    - assets/designs/images/rectangle-4199-ACs.png
+    - assets/designs/images/triangle.png
+    - assets/designs/images/battery-Qfu.png
+    - assets/designs/images/flat-color-icons-checkmark-4Ef.png
+    - assets/designs/images/star.png
+    - assets/designs/images/cellular-connection-rbm.png
+    - assets/designs/images/wifi-YDh.png
+    - assets/designs/images/vector-6m1.png
+    - assets/designs/images/ph-x-light.png
+    - assets/designs/images/wifi-w6j.png
+    - assets/designs/images/ph-x-light-HwH.png
+    - assets/designs/images/ph-x-light-rzP.png
+    - assets/designs/images/flat-color-icons-checkmark-WZ9.png
+    - assets/designs/images/line-2-aZ1.png
+    - assets/designs/images/star-9s1.png
+    - assets/designs/images/time-circle-JE7.png
+    - assets/designs/images/fluent-home-28-filled-UJo.png
+    - assets/designs/images/flat-color-icons-checkmark-eYj.png
+    - assets/designs/images/ph-x-light-zjV.png
+    - assets/designs/images/flat-color-icons-checkmark-6bD.png
+    - assets/designs/images/fluent-home-28-filled-V4w.png
+    - assets/designs/images/flat-color-icons-checkmark-CKD.png
+    - assets/designs/images/ph-x-light-RYf.png
+    - assets/designs/images/flat-color-icons-checkmark-sUX.png
+    - assets/designs/images/cellular-connection-sij.png
+    - assets/designs/images/fluent-home-28-filled-RZD.png
+    - assets/designs/images/battery-igb.png
+    - assets/designs/images/battery-ekb.png
+    - assets/designs/images/vector-wj1.png
+    - assets/designs/images/group-12.png
+    - assets/designs/images/group-10.png
+    - assets/designs/images/ph-x-light-a2X.png
+    - assets/designs/images/fluent-home-28-filled-uj1.png
+    - assets/designs/images/ph-x-light-24s.png
+    - assets/designs/images/cellular-connection-xUK.png
+    - assets/designs/images/vector-Gef.png
+    - assets/designs/images/ph-x-light-LPd.png
+    - assets/designs/images/group-13.png
+    - assets/designs/images/time-circle-1sh.png
+    - assets/designs/images/vector-g43.png
+    - assets/designs/images/battery-E2w.png
+    - assets/designs/images/cellular-connection-euZ.png
+    - assets/designs/images/vector-CyZ.png
+    - assets/designs/images/wifi-Nwu.png
+    - assets/designs/images/group-11.png
+    - assets/designs/images/flat-color-icons-checkmark-MEs.png
+    - assets/designs/images/auto-group-1imq.png
+    - assets/designs/images/vector-EqR.png
+    - assets/designs/images/time-circle-5w1.png
+    - assets/designs/images/wifi-gh9.png
+    - assets/designs/images/ellipse-163.png
+    - assets/designs/images/vector-1TZ.png
+    - assets/designs/images/main-card-bg-bg-Ud9.png
+    - assets/designs/images/iwwa-arrow-up.png
+    - assets/designs/images/battery-Y8s.png
+    - assets/designs/images/wifi-oKH.png
+    - assets/designs/images/cellular-connection-hPy.png
+    - assets/designs/images/wifi-tXm.png
+    - assets/designs/images/iwwa-arrow-up-qm5.png
+    - assets/designs/images/iwwa-arrow-up-nAw.png
+    - assets/designs/images/ellipse-161.png
+    - assets/designs/images/main-card-bg-bg-WbM.png
+    - assets/designs/images/main-card-bg-bg-CUj.png
+    - assets/designs/images/group-105.png
+    - assets/designs/images/time-circle-KqM.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-qFZ.png
+    - assets/designs/images/group-104.png
+    - assets/designs/images/time-circle-9V5.png
+    - assets/designs/images/vector-bW3.png
+    - assets/designs/images/fluent-home-28-filled-cxB.png
+    - assets/designs/images/fluent-home-28-filled-M5m.png
+    - assets/designs/images/carbon-notification-filled-8k3.png
+    - assets/designs/images/cellular-connection-p2X.png
+    - assets/designs/images/emoji-rocket.png
+    - assets/designs/images/vector-pYB.png
+    - assets/designs/images/time-circle-oz3.png
+    - assets/designs/images/time-circle-tYs.png
+    - assets/designs/images/fluent-location-12-filled.png
+    - assets/designs/images/fluent-home-28-filled-RY7.png
+    - assets/designs/images/battery-KC7.png
+    - assets/designs/images/group-15-CbD.png
+    - assets/designs/images/battery-NGT.png
+    - assets/designs/images/main-card-bg-bg-7Y7.png
+    - assets/designs/images/main-card-bg-bg-oaT.png
+    - assets/designs/images/carbon-notification-filled-anw.png
+    - assets/designs/images/battery-HtF.png
+    - assets/designs/images/main-card-bg-bg-7ns.png
+    - assets/designs/images/time-circle-cGs.png
+    - assets/designs/images/main-card-bg-bg-RLF.png
+    - assets/designs/images/battery-bG7.png
+    - assets/designs/images/wifi-AEf.png
+    - assets/designs/images/carbon-notification-filled-PoZ.png
+    - assets/designs/images/image-6-ydu.png
+    - assets/designs/images/ellipse-159-jL7.png
+    - assets/designs/images/wifi-ngB.png
+    - assets/designs/images/main-card-bg-bg-jyM.png
+    - assets/designs/images/time-circle-cgj.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-mgw.png
+    - assets/designs/images/time-circle-qkf.png
+    - assets/designs/images/emoji-white-heavy-check-mark.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-Ft7.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-p5y.png
+    - assets/designs/images/rectangle-32-Unf.png
+    - assets/designs/images/vector-vaP.png
+    - assets/designs/images/wifi-oKy.png
+    - assets/designs/images/cellular-connection-mVd.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-Pmd.png
+    - assets/designs/images/cellular-connection-UVZ.png
+    - assets/designs/images/main-card-bg-bg-kmq.png
+    - assets/designs/images/vector-yDu.png
+    - assets/designs/images/fluent-home-28-filled-9KR.png
+    - assets/designs/images/fluent-home-28-filled-4Kd.png
+    - assets/designs/images/line-2-MYF.png
+    - assets/designs/images/auto-group-jizo.png
+    - assets/designs/images/main-card-bg-bg-zTm.png
+    - assets/designs/images/auto-group-ox2t.png
+    - assets/designs/images/line-1-fGw.png
+    - assets/designs/images/group-FCX.png
+    - assets/designs/images/time-circle-ibu.png
+    - assets/designs/images/fluent-home-28-filled-sDu.png
+    - assets/designs/images/wifi-qAj.png
+    - assets/designs/images/vector-jHM.png
+    - assets/designs/images/cellular-connection-Qz7.png
+    - assets/designs/images/battery-HH5.png
+    - assets/designs/images/auto-group-ehhd.png
+    - assets/designs/images/triangle-8Dh.png
+    - assets/designs/images/line-2-kXu.png
+    - assets/designs/images/main-card-bg-bg-UHR.png
+    - assets/designs/images/auto-group-t8vr.png
+    - assets/designs/images/star-dv3.png
+    - assets/designs/images/star-HRm.png
+    - assets/designs/images/main-card-bg-bg-JNX.png
+    - assets/designs/images/vector-JXm.png
+    - assets/designs/images/fluent-home-28-filled-cZh.png
+    - assets/designs/images/vector-uYo.png
+    - assets/designs/images/wifi-sVd.png
+    - assets/designs/images/fluent-home-28-filled-wSs.png
+    - assets/designs/images/battery-4NP.png
+    - assets/designs/images/auto-group-py9h.png
+    - assets/designs/images/unsplash-jmurdhtm7ng-com.png
+    - assets/designs/images/cellular-connection-LAw.png
+    - assets/designs/images/triangle-xy1.png
+    - assets/designs/images/battery-jD5.png
+    - assets/designs/images/cellular-connection-LyZ.png
+    - assets/designs/images/time-circle-W7M.png
+    - assets/designs/images/carbon-notification-filled-5pf.png
+    - assets/designs/images/time-circle-3Wb.png
+    - assets/designs/images/carbon-notification-filled-YCT.png
+    - assets/designs/images/battery-u31.png
+    - assets/designs/images/emoji-postbox.png
+    - assets/designs/images/wifi-Mvb.png
+    - assets/designs/images/cellular-connection-1kF.png
+    - assets/designs/images/ellipse-2-rNf.png
+    - assets/designs/images/auto-group-sggj.png
+    - assets/designs/images/auto-group-a3xh.png
+    - assets/designs/images/time-circle-dXh.png
+    - assets/designs/images/line-2-3n3.png
+    - assets/designs/images/cellular-connection-b2s.png
+    - assets/designs/images/battery-9q5.png
+    - assets/designs/images/auto-group-6mcp.png
+    - assets/designs/images/ellipse-2-KsH.png
+    - assets/designs/images/auto-group-ympy.png
+    - assets/designs/images/star-z5q.png
+    - assets/designs/images/auto-group-9crh.png
+    - assets/designs/images/star-pdH.png
+    - assets/designs/images/fluent-home-28-filled-9jy.png
+    - assets/designs/images/auto-group-u9w1.png
+    - assets/designs/images/line-2-GNX.png
+    - assets/designs/images/rectangle-35-bgF.png
+    - assets/designs/images/group-ZX9.png
+    - assets/designs/images/material-symbols-pending-actions-rounded-hZD.png
+    - assets/designs/images/time-circle-VUP.png
+    - assets/designs/images/group-PVD.png
+    - assets/designs/images/wifi-747.png
+    - assets/designs/images/carbon-notification-filled-kuh.png
+    - assets/designs/images/wifi-8PD.png
+    - assets/designs/images/fluent-home-28-filled-uUP.png
+    - assets/designs/images/cellular-connection-bMD.png
+    - assets/designs/images/ellipse-18-bg-2zf.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
