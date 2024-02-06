@@ -21,220 +21,11 @@ class Scene31 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // autogroupp6vrv9y (7P5uQ4YR6ND32DZQtCp6VR)
-              width: double.infinity,
-              height: 99*fem,
-              child: Stack(
-                children: [
-                  Positioned(
-                    // rectangle1TQo (269:138)
-                    left: 0*fem,
-                    top: 0*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 428*fem,
-                        height: 99*fem,
-                        child: Container(
-                          decoration: BoxDecoration (
-                            color: Color(0xff042745),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Positioned(
-                    // confirmationzLB (269:153)
-                    left: 163.4427450146*fem,
-                    top: 48.8069458008*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 90*fem,
-                        height: 27*fem,
-                        child: Text(
-                          'Edit Profile\n',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 18*ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5*ffem/fem,
-                            letterSpacing: -0.3000000119*fem,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // line1TzT (270:1077)
-                    left: 0*fem,
-                    top: 94*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 428.02*fem,
-                        height: 1*fem,
-                        child: Container(
-                          decoration: BoxDecoration (
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
               // autogroup7xmmaZH (7P5vKnVu8M2LiWGMLA7XMm)
               width: double.infinity,
               height: 834*fem,
               child: Stack(
                 children: [
-                  Positioned(
-                    // footericon7ZD (269:155)
-                    left: 0*fem,
-                    top: 750*fem,
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(39*fem, 15*fem, 24*fem, 11*fem),
-                      width: 428*fem,
-                      height: 83*fem,
-                      decoration: BoxDecoration (
-                        color: Color(0xffffffff),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x261b1a28),
-                            offset: Offset(-1*fem, -1*fem),
-                            blurRadius: 4*fem,
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Expanded(
-                           child:Container(
-                            // homeZRD (269:157)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 123*fem, 5*fem),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom (
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.fromLTRB(0*fem, 3.22*fem, 0*fem, 0*fem),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-
-                                      // fluenthome28filledrQK (269:158)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7.21*fem),
-                                      width: 21.43*fem,
-                                      height: 23.57*fem,
-                                      child: Image.asset(
-                                        'assets/designs/images/fluent-home-28-filled-wSs.png',
-                                        width: 21.43*fem,
-                                        height: 23.57*fem,
-                                      ),
-                                    ),
-                                    ),
-                                    Text(
-                                      // homewwZ (269:160)
-                                      'Home',
-                                      style: SafeGoogleFont (
-                                        'Poppins',
-                                        fontSize: 12*ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.5*ffem/fem,
-                                        color: Color(0xffc4c4c4),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          ),
-                          Container(
-                            // autogroupjhettbu (7P5vih1QAYD4t3DaCnjHET)
-                            margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 114*fem, 0*fem),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  // groupDu5 (269:163)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                                  width: 32*fem,
-                                  height: 32*fem,
-                                  child: Image.asset(
-                                    'assets/designs/images/group-PVD.png',
-                                    width: 32*fem,
-                                    height: 32*fem,
-                                  ),
-                                ),
-                                Text(
-                                  // profilejMd (269:162)
-                                  'Profile',
-                                  style: SafeGoogleFont (
-                                    'Poppins',
-                                    fontSize: 12*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.5*ffem/fem,
-                                    color: Color(0xff1c58f2),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // autogroupa2c35Ab (7P5vpGgSBHRodhYw4FA2C3)
-                            margin: EdgeInsets.fromLTRB(0*fem, 2*fem, 0*fem, 5*fem),
-                            height: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                child:Container(
-                                  // carbonnotificationfilledQTm (269:166)
-                                  margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 0*fem, 0*fem),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    style: TextButton.styleFrom (
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: Container(
-                                      width: 32*fem,
-                                      height: 32*fem,
-                                      child: Image.asset(
-                                        'assets/designs/images/carbon-notification-filled-YCT.png',
-                                        width: 32*fem,
-                                        height: 32*fem,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                ),
-                                Text(
-                                  // requests6bV (269:169)
-                                  'Requests',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Poppins',
-                                    fontSize: 12*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.5*ffem/fem,
-                                    color: Color(0xffc4c4c4),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                   Positioned(
                     // autogroups9ibEhh (7P5uddz8MAVJjWe6Mts9ib)
                     left: 0*fem,
@@ -244,22 +35,6 @@ class Scene31 extends StatelessWidget {
                       height: 262*fem,
                       child: Stack(
                         children: [
-                          Positioned(
-                            // rectangle45AbM (270:1033)
-                            left: 0*fem,
-                            top: 0*fem,
-                            child: Align(
-                              child: SizedBox(
-                                width: 428*fem,
-                                height: 204*fem,
-                                child: Container(
-                                  decoration: BoxDecoration (
-                                    color: Color(0xff042745),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
                           Positioned(
                             // unsplashjmurdhtm7ngt1Z (270:1035)
                             left: 143*fem,
@@ -511,6 +286,7 @@ class Scene31 extends StatelessWidget {
             ),
           ],
         ),
+
       ),
           );
   }

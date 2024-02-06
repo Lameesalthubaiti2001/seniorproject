@@ -472,6 +472,7 @@ flutter:
     - assets/designs/images/fluent-home-28-filled-uUP.png
     - assets/designs/images/cellular-connection-bMD.png
     - assets/designs/images/ellipse-18-bg-2zf.png
+    - assets/designs/images/Group.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
