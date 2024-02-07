@@ -81,7 +81,6 @@ flutter:
     - assets/slides/images/battery-fjH.png
     - assets/slides/images/battery-mGX.png
     - assets/designs/images/vector.png
-    - assets/designs/images/group.png
     - assets/designs/images/fluent-home-28-filled-LzP.png
     - assets/slides/images/rectangle-4199-cH1.png
     - assets/slides/images/vector-3DD.png
@@ -472,7 +471,7 @@ flutter:
     - assets/designs/images/fluent-home-28-filled-uUP.png
     - assets/designs/images/cellular-connection-bMD.png
     - assets/designs/images/ellipse-18-bg-2zf.png
-    - assets/designs/images/Group.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
