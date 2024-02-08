@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
-class Scene33 extends StatelessWidget {
+class RequestConfirmClubSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
