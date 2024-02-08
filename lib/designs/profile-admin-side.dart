@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
-class Scene31 extends StatelessWidget {
+class ProfileAdminSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428.0186767578;

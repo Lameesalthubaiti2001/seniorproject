@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
 
-class Scene35 extends StatelessWidget {
+class RequestRejectClubSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
