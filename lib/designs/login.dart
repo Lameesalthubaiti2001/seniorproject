@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/password-reset.dart';
+
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -215,6 +217,10 @@ class LoginScreen extends StatelessWidget {
             // Reset password button
             GestureDetector(
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PasswordRest()),
+                );
                 // Handle reset password
               },
               child: Container(
