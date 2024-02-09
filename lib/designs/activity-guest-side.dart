@@ -4,8 +4,7 @@ import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
 
-
-class Scene38 extends StatelessWidget {
+class RegisterdEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -47,23 +46,6 @@ class Scene38 extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          // time3NT (218:333)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 30.25*fem),
-                          width: double.infinity,
-                          child: Text(
-                            '9:41',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 15*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
-                              letterSpacing: -0.3000000119*fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                        Container(
                           // vectorYKD (101:157)
                           width: 20*fem,
                           height: 17.5*fem,
@@ -90,39 +72,6 @@ class Scene38 extends StatelessWidget {
                         letterSpacing: -0.3000000119*fem,
                         color: Color(0xffffffff),
                       ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectionzBD (218:328)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.99*fem, 48.08*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-T4X.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifihrK (218:324)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.88*fem, 47.75*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-a99.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batterypg3 (218:320)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 47.42*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
                     ),
                   ),
                 ],
@@ -576,139 +525,7 @@ class Scene38 extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // footericonPhm (222:463)
-              padding: EdgeInsets.fromLTRB(39*fem, 15*fem, 48*fem, 16*fem),
-              width: double.infinity,
-              height: 83*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x261b1a28),
-                    offset: Offset(-1*fem, -1*fem),
-                    blurRadius: 4*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // home4Z1 (222:465)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 115*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0*fem, 3.22*fem, 0*fem, 0*fem),
-                        height: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // fluenthome28filledMo1 (222:466)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7.21*fem),
-                              width: 21.43*fem,
-                              height: 23.57*fem,
-                              child: Image.asset(
-                                'assets/designs/images/fluent-home-28-filled-LzP.png',
-                                width: 21.43*fem,
-                                height: 23.57*fem,
-                              ),
-                            ),
-                            Text(
-                              // homeg4b (222:468)
-                              'Home',
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 12*ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.5*ffem/fem,
-                                color: Color(0xffc4c4c4),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // autogroupuq7yRXy (7P4L3wFRXGomDGDjgfUq7y)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 113*fem, 0*fem),
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // timecircleAVZ (222:475)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                          width: 30*fem,
-                          height: 30*fem,
-                          child: Image.asset(
-                            'assets/designs/images/time-circle-93q.png',
-                            width: 30*fem,
-                            height: 30*fem,
-                          ),
-                        ),
-                        Text(
-                          // activityHKH (222:470)
-                          'Activity',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xff1c58f2),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupzbbq2nf (7P4L91wHqGLQQSt8zrZBBq)
-                    margin: EdgeInsets.fromLTRB(0*fem, 7*fem, 0*fem, 0*fem),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // groupaJP (224:128)
-                          margin: EdgeInsets.fromLTRB(0.5*fem, 0*fem, 0*fem, 4*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 27.5*fem,
-                              height: 23*fem,
-                              child: Image.asset(
-                                'assets/designs/images/group-hWj.png',
-                                width: 27.5*fem,
-                                height: 23*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          // clubs4zF (222:472)
-                          'clubs',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
           ],
         ),
       ),

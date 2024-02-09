@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
-
+import 'package:seniorproject/designs/login.dart';
+import 'package:seniorproject/designs/guest-home.dart';
 class Scene37 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class Scene37 extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ],
+                ],
               ),
             ),
 
@@ -91,7 +92,13 @@ class Scene37 extends StatelessWidget {
                         width: 95*fem,
                         height: 27*fem,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigate to the login page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => LoginScreen()),
+                            );
+                          },
                           style: TextButton.styleFrom (
                             padding: EdgeInsets.zero,
                           ),
@@ -206,7 +213,13 @@ class Scene37 extends StatelessWidget {
                         width: 99*fem,
                         height: 26*fem,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigate to the login page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => LoginScreen()),
+                            );
+                          },
                           style: TextButton.styleFrom (
                             padding: EdgeInsets.zero,
                           ),
@@ -306,7 +319,13 @@ class Scene37 extends StatelessWidget {
             ),
             TextButton(
               // bookticketVwh (206:227)
-              onPressed: () {},
+              onPressed: () {
+                // Navigate to the login page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GuestHome()),
+                );
+              },
               style: TextButton.styleFrom (
                 padding: EdgeInsets.zero,
               ),
@@ -363,6 +382,6 @@ class Scene37 extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }

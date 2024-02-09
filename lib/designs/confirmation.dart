@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
 
-class Scene4 extends StatelessWidget {
+class RegistrationConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -228,147 +228,7 @@ class Scene4 extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // footericonVpX (226:91)
-              padding: EdgeInsets.fromLTRB(39*fem, 15*fem, 48*fem, 16*fem),
-              width: double.infinity,
-              height: 83*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x261b1a28),
-                    offset: Offset(-1*fem, -1*fem),
-                    blurRadius: 4*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // homenHq (226:93)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 115*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0*fem, 3.22*fem, 0*fem, 0*fem),
-                        height: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // fluenthome28filledUAf (226:94)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7.21*fem),
-                              width: 21.43*fem,
-                              height: 23.57*fem,
-                              child: Image.asset(
-                                'assets/designs/images/fluent-home-28-filled-cbV.png',
-                                width: 21.43*fem,
-                                height: 23.57*fem,
-                              ),
-                            ),
-                            Text(
-                              // homeP2j (226:96)
-                              'Home',
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 12*ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.5*ffem/fem,
-                                color: Color(0xffc4c4c4),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // autogroupbcbdiKu (7P4zzZrycog1QWPUQQBcbD)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 113*fem, 0*fem),
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // timecircleFaj (226:106)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 30*fem,
-                              height: 30*fem,
-                              child: Image.asset(
-                                'assets/designs/images/time-circle-u3q.png',
-                                width: 30*fem,
-                                height: 30*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          // activitywiT (226:98)
-                          'Activity',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupnkxkt7u (7P515pDEViS1nWwXZgNkxK)
-                    margin: EdgeInsets.fromLTRB(0*fem, 7*fem, 0*fem, 0*fem),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // groupd5V (226:101)
-                          margin: EdgeInsets.fromLTRB(0.5*fem, 0*fem, 0*fem, 4*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 27.5*fem,
-                              height: 23*fem,
-                              child: Image.asset(
-                                'assets/designs/images/group-Yq9.png',
-                                width: 27.5*fem,
-                                height: 23*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          // clubsW9H (226:100)
-                          'clubs',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
           ],
         ),
       ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/event-registration-guest.dart';
 
-class Scene7 extends StatelessWidget {
+class EventDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -47,23 +48,6 @@ class Scene7 extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            // timehcw (101:249)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 32.25*fem),
-                            width: double.infinity,
-                            child: Text(
-                              '9:41',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 15*ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5*ffem/fem,
-                                letterSpacing: -0.3000000119*fem,
-                                color: Color(0xffffffff),
-                              ),
-                            ),
-                          ),
-                          Container(
                             // evaarrowbackoutlinebyD (101:239)
                             margin: EdgeInsets.fromLTRB(1.5*fem, 0*fem, 0*fem, 0*fem),
                             width: 20*fem,
@@ -75,39 +59,6 @@ class Scene7 extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Container(
-                      // cellularconnectionJsd (101:250)
-                      margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                      child: Image.asset(
-                        'assets/designs/images/cellular-connection-WNF.png',
-                        width: 16.95*fem,
-                        height: 10.67*fem,
-                      ),
-                    ),
-                    Container(
-                      // wifipb5 (101:245)
-                      margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                      width: 15.29*fem,
-                      height: 11*fem,
-                      child: Image.asset(
-                        'assets/designs/images/wifi-Bgo.png',
-                        width: 15.29*fem,
-                        height: 11*fem,
-                      ),
-                    ),
-                    Container(
-                      // batteryjxw (101:241)
-                      margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                      width: 24.33*fem,
-                      height: 11.33*fem,
-                      child: Image.asset(
-                        'assets/designs/images/battery-RRM.png',
-                        width: 24.33*fem,
-                        height: 11.33*fem,
                       ),
                     ),
                   ],
@@ -284,7 +235,7 @@ class Scene7 extends StatelessWidget {
                       width: double.infinity,
                       child: Text(
                         'Description',
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.left,
                         style: SafeGoogleFont (
                           'Poppins',
                           fontSize: 18*ffem,
@@ -332,29 +283,7 @@ class Scene7 extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              // casts2s (101:303)
-              left: 20*fem,
-              top: 873*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 42*fem,
-                  height: 27*fem,
-                  child: Text(
-                    'Cast',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont (
-                      'Poppins',
-                      fontSize: 18*ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5*ffem/fem,
-                      letterSpacing: -0.3000000119*fem,
-                      color: Color(0xff1c1b19),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+
             Positioned(
               // autogroupwzzqZwH (7P4PgLCrLQr7x7zsd6WzZq)
               left: 9.5*fem,
@@ -369,7 +298,12 @@ class Scene7 extends StatelessWidget {
               left: 0*fem,
               top: 835*fem,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EventRegistration()),
+                  );
+                },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
                 ),

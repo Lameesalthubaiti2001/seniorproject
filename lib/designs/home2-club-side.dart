@@ -36,22 +36,7 @@ class Scene22 extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    // timeCHR (253:422)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 136*fem, 47*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
+
                   Container(
                     // homesuM (253:471)
                     margin: EdgeInsets.fromLTRB(0*fem, 37*fem, 96.72*fem, 0*fem),
@@ -68,45 +53,14 @@ class Scene22 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    // cellularconnectionzUB (253:417)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.99*fem, 47.33*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-b2s.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifitpT (253:413)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.88*fem, 47*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-qAj.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
+
+
                   Container(
                     // autogroupotmvRJb (7P5hTuRiw3kGVSHBJcoTMV)
                     margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          // batteryx3d (253:409)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 19.67*fem),
-                          width: 24.33*fem,
-                          height: 11.33*fem,
-                          child: Image.asset(
-                            'assets/designs/images/battery-u31.png',
-                            width: 24.33*fem,
-                            height: 11.33*fem,
-                          ),
-                        ),
                         Container(
                           // image63qm (253:487)
                           margin: EdgeInsets.fromLTRB(2.67*fem, 0*fem, 0*fem, 0*fem),
