@@ -3,8 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/confirmation.dart';
 
-class Scene9 extends StatelessWidget {
+class EventRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -30,93 +31,6 @@ class Scene9 extends StatelessWidget {
                 height: 99*fem,
                 child: Stack(
                   children: [
-                    Positioned(
-                      // evaarrowbackoutlinemVm (219:374)
-                      left: 25*fem,
-                      top: 65.2484436035*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 20*fem,
-                          height: 17.5*fem,
-                          child: Image.asset(
-                            'assets/designs/images/eva-arrow-back-outline-FKh.png',
-                            width: 20*fem,
-                            height: 17.5*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // batteryGSX (219:376)
-                      left: 378.3332519531*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 24.33*fem,
-                          height: 11.33*fem,
-                          child: Image.asset(
-                            'assets/designs/images/battery-jqu.png',
-                            width: 24.33*fem,
-                            height: 11.33*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // wifiBJb (219:380)
-                      left: 358.1595458984*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 15.29*fem,
-                          height: 11*fem,
-                          child: Image.asset(
-                            'assets/designs/images/wifi-LRH.png',
-                            width: 15.29*fem,
-                            height: 11*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // timeHMd (219:384)
-                      left: 23.5*fem,
-                      top: 10*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 27*fem,
-                          height: 23*fem,
-                          child: Text(
-                            '9:41',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 15*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
-                              letterSpacing: -0.3000000119*fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // cellularconnectionkm1 (219:385)
-                      left: 336.2180175781*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 16.95*fem,
-                          height: 10.67*fem,
-                          child: Image.asset(
-                            'assets/designs/images/cellular-connection-ewd.png',
-                            width: 16.95*fem,
-                            height: 10.67*fem,
-                          ),
-                        ),
-                      ),
-                    ),
                     Positioned(
                       // rectangle1rp3 (220:423)
                       left: 0*fem,
@@ -160,77 +74,7 @@ class Scene9 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      // batteryqR5 (220:426)
-                      left: 378.3332519531*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 24.33*fem,
-                          height: 11.33*fem,
-                          child: Image.asset(
-                            'assets/designs/images/battery-5vT.png',
-                            width: 24.33*fem,
-                            height: 11.33*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // wifiY4b (220:430)
-                      left: 358.1595458984*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 15.29*fem,
-                          height: 11*fem,
-                          child: Image.asset(
-                            'assets/designs/images/wifi-myD.png',
-                            width: 15.29*fem,
-                            height: 11*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // cellularconnectionGFV (220:434)
-                      left: 336.2180175781*fem,
-                      top: 16*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 16.95*fem,
-                          height: 10.67*fem,
-                          child: Image.asset(
-                            'assets/designs/images/cellular-connection-ahZ.png',
-                            width: 16.95*fem,
-                            height: 10.67*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // timeyvb (220:439)
-                      left: 23.5*fem,
-                      top: 10*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 27*fem,
-                          height: 23*fem,
-                          child: Text(
-                            '9:41',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 15*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
-                              letterSpacing: -0.3000000119*fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+
                     Positioned(
                       // vectorfHd (237:180)
                       left: 36*fem,
@@ -253,145 +97,136 @@ class Scene9 extends StatelessWidget {
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
             ),
-            Positioned(
-              // autogroupakuzxXd (7P4Z99Gj7zX4NPT7RGAkuZ)
-              left: 9.5*fem,
-              top: 920*fem,
-              child: Container(
-                width: 430*fem,
-                height: 139*fem,
-              ),
-            ),
-            Positioned(
-              // autogroupswbr5s9 (7P4YrV5pNDUXhpPrnSSwBR)
-              left: 25*fem,
-              top: 200*fem,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(20*fem, 9*fem, 20*fem, 69*fem),
-                width: 382*fem,
-                height: 385*fem,
-                decoration: BoxDecoration (
-                  color: Color(0xfff8f8f8),
-                  borderRadius: BorderRadius.circular(25*fem),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      // fullname9c7 (221:445)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                      width: double.infinity,
-                      child: Text(
-                        'Full Name ',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
+
+                    // Full Name field
+                    Positioned(
+                      left: 25 * fem,
+                      top: 250 * fem,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
+                        width: 382 * fem,
+                        height: 50 * fem,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Full Name',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    Container(
-                      // rectangle63xP (221:446)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7*fem),
-                      width: 321*fem,
-                      height: 47*fem,
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(15*fem),
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                    Container(
-                      // pmuidyr3 (221:448)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
-                      width: double.infinity,
-                      child: Text(
-                        'PMU ID',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
+
+                    // PMU ID field
+                    Positioned(
+                      left: 25 * fem,
+                      top: 330 * fem,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
+                        width: 382 * fem,
+                        height: 50 * fem,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'PMU ID',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    Container(
-                      // rectangle25h1M (221:447)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7*fem),
-                      width: 321*fem,
-                      height: 47*fem,
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(15*fem),
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                    Container(
-                      // pmuemailRCF (221:450)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                      width: double.infinity,
-                      child: Text(
-                        'PMU Email',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
+
+                    // PMU Email field
+                    Positioned(
+                      left: 25 * fem,
+                      top: 410 * fem,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
+                        width: 382 * fem,
+                        height: 50 * fem,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'PMU Email',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    Container(
-                      // rectangle26vuh (221:449)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7*fem),
-                      width: 321*fem,
-                      height: 47*fem,
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(15*fem),
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                    Container(
-                      // majors4F (221:452)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
-                      width: double.infinity,
-                      child: Text(
-                        'Major',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
+                    // Major dropdown menu
+                    Positioned(
+                      left: 25 * fem,
+                      top: 490 * fem,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
+                        width: 382 * fem,
+                        height: 50 * fem,
+                        child: DropdownButtonFormField<String>(
+                          decoration: InputDecoration(
+                            labelText: 'Major',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                            ),
+                          ),
+                          items: [
+                            DropdownMenuItem<String>(
+                              value: 'Software Engineering',
+                              child: Text('Software Engineering'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Computer Science',
+                              child: Text('Computer Science'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Electrical Engineering',
+                              child: Text('Electrical Engineering'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Business Administration',
+                              child: Text('Business Administration'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Graphic Design',
+                              child: Text('Graphic Design'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Architecture',
+                              child: Text('Architecture'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Finance',
+                              child: Text('Finance'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Law',
+                              child: Text('Law'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Cyber Security',
+                              child: Text('Cyber Security'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Information System Technology',
+                              child: Text('Information System Technology'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Others',
+                              child: Text('Others'),
+                            ),
+                          ],
+                          onChanged: (String? value) {
+                            // Handle major selection
+                          },
                         ),
                       ),
                     ),
-                    Container(
-                      // rectangle27Baj (221:451)
-                      width: 321*fem,
-                      height: 47*fem,
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(15*fem),
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
             Positioned(
               // fillinyourinformation8ks (221:444)
               left: 32.5*fem,
@@ -420,7 +255,12 @@ class Scene9 extends StatelessWidget {
               left: 0*fem,
               top: 831*fem,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+                  );
+                },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
                 ),

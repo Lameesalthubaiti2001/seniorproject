@@ -3,8 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/event-detail-guest-side.dart';
+import 'package:seniorproject/designs/activity-guest-side.dart';
 
-class Scene21 extends StatelessWidget {
+class GuestHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -35,22 +37,7 @@ class Scene21 extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // timeiTD (206:19)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 120.5*fem, 0*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
+
                   Container(
                     // autogrouphnzyD95 (7P4dxb5SBYaKyVsDfmHnZy)
                     margin: EdgeInsets.fromLTRB(0*fem, 39*fem, 78.22*fem, 0*fem),
@@ -67,39 +54,6 @@ class Scene21 extends StatelessWidget {
                         letterSpacing: -0.3000000119*fem,
                         color: Color(0xffffffff),
                       ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectiong2f (206:14)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-aUK.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifin5h (206:10)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-S3V.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batteryteX (206:6)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery-Q83.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
                     ),
                   ),
                 ],
@@ -884,15 +838,23 @@ class Scene21 extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                          Text(
-                                            // thasaudideal7Nj (206:74)
-                                            'Tha Saudi Deal',
-                                            style: SafeGoogleFont (
-                                              'Poppins',
-                                              fontSize: 16*ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.5*ffem/fem,
-                                              color: Color(0xff042745),
+                                          GestureDetector(
+                                            onTap: () {
+                                              // Navigate to the OtherPage
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => EventDetail()),
+                                              );
+                                            },
+                                            child: Text(
+                                              'Tha Saudi Deal',
+                                              style: SafeGoogleFont(
+                                                'Poppins',
+                                                fontSize: 16 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height: 1.5 * ffem / fem,
+                                                color: Color(0xff042745),
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -1296,17 +1258,25 @@ class Scene21 extends StatelessWidget {
                                     child: Row(
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          // viewallUGT (216:217)
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.62*fem, 0*fem),
-                                          child: Text(
-                                            'View all',
-                                            style: SafeGoogleFont (
-                                              'Poppins',
-                                              fontSize: 14*ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.5*ffem/fem,
-                                              color: Color(0xff042745),
+                                        GestureDetector(
+                                          onTap: () {
+                                            // Navigate to the OtherPage
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => RegisterdEvents()),
+                                            );
+                                          },
+                                          child: Container(
+                                            margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.62 * fem, 0 * fem),
+                                            child: Text(
+                                              'View all',
+                                              style: SafeGoogleFont(
+                                                'Poppins',
+                                                fontSize: 14 * ffem,
+                                                fontWeight: FontWeight.w500,
+                                                height: 1.5 * ffem / fem,
+                                                color: Color(0xff042745),
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1335,139 +1305,7 @@ class Scene21 extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // footericongtK (224:135)
-              padding: EdgeInsets.fromLTRB(39*fem, 15*fem, 48*fem, 16*fem),
-              width: double.infinity,
-              height: 83*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x261b1a28),
-                    offset: Offset(-1*fem, -1*fem),
-                    blurRadius: 4*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // homemes (224:137)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 115*fem, 0*fem),
-                    padding: EdgeInsets.fromLTRB(0*fem, 3.22*fem, 0*fem, 0*fem),
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // fluenthome28filledg19 (224:138)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7.21*fem),
-                          width: 21.43*fem,
-                          height: 23.57*fem,
-                          child: Image.asset(
-                            'assets/designs/images/fluent-home-28-filled-uib.png',
-                            width: 21.43*fem,
-                            height: 23.57*fem,
-                          ),
-                        ),
-                        Text(
-                          // homen4B (224:140)
-                          'Home',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xff1c58f2),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupqltsKZu (7P4jsAjcLvy3KYodghqLts)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 113*fem, 0*fem),
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // timecircledab (224:145)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 30*fem,
-                              height: 30*fem,
-                              child: Image.asset(
-                                'assets/designs/images/time-circle-XKh.png',
-                                width: 30*fem,
-                                height: 30*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          // activityU5R (224:142)
-                          'Activity',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupg5rtBkX (7P4jxkQeMgBn5D8zYAG5rT)
-                    margin: EdgeInsets.fromLTRB(0*fem, 7*fem, 0*fem, 0*fem),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // groupHYf (224:147)
-                          margin: EdgeInsets.fromLTRB(0.5*fem, 0*fem, 0*fem, 4*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 27.5*fem,
-                              height: 23*fem,
-                              child: Image.asset(
-                                'assets/designs/images/group-CDy.png',
-                                width: 27.5*fem,
-                                height: 23*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text(
-                          // clubsNKD (224:144)
-                          'clubs',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
           ],
         ),
       ),

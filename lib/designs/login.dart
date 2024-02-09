@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
 
-class Scene25 extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -79,22 +79,6 @@ class Scene25 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    // ellipse2vqy (259:513)
-                    left: 100*fem,
-                    top: 25*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 152*fem,
-                        height: 142*fem,
-                        child: Image.asset(
-                          'assets/designs/images/ellipse-2-rNf.png',
-                          width: 152*fem,
-                          height: 142*fem,
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -147,217 +131,108 @@ class Scene25 extends StatelessWidget {
                 ),
               ),
             ),
+            // Username field
             Container(
-              // autogrouppraturK (7P5nPbZ2H1wjbWbFnvpRAT)
-              margin: EdgeInsets.fromLTRB(35*fem, 0*fem, 30*fem, 24*fem),
-              padding: EdgeInsets.fromLTRB(19.5*fem, 5*fem, 19.5*fem, 10*fem),
+              margin: EdgeInsets.fromLTRB(35 * fem, 0 * fem, 30 * fem, 14 * fem),
+              padding: EdgeInsets.fromLTRB(19.5 * fem, 5 * fem, 19.5 * fem, 10 * fem),
               width: double.infinity,
-              decoration: BoxDecoration (
+              decoration: BoxDecoration(
                 color: Color(0xffffffff),
-                borderRadius: BorderRadius.circular(15*fem),
+                borderRadius: BorderRadius.circular(15 * fem),
               ),
-              child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  style: SafeGoogleFont (
-                    'Playfair Display',
-                    fontSize: 24*ffem,
-                    fontWeight: FontWeight.w400,
-                    height: 1.3329999447*ffem/fem,
-                    color: Color(0x99000000),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Username',
+                  hintStyle: TextStyle(color: Color(0x99000000)),
+                  border: InputBorder.none,
+                ),
+                style: TextStyle(color: Color(0x99000000)),
+              ),
+            ),
+            // Password field
+            Container(
+              margin: EdgeInsets.fromLTRB(35 * fem, 0 * fem, 30 * fem, 14 * fem),
+              padding: EdgeInsets.fromLTRB(19.5 * fem, 5 * fem, 19.5 * fem, 10 * fem),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(15 * fem),
+              ),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  hintStyle: TextStyle(color: Color(0x99000000)),
+                  border: InputBorder.none,
+                ),
+                style: TextStyle(color: Color(0x99000000)),
+              ),
+            ),
+            // Login button
+            Container(
+              margin: EdgeInsets.fromLTRB(109 * fem, 0 * fem, 109 * fem, 24 * fem),
+              width: 180 * fem,
+              height: 37 * fem,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle login button press
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xffffffff),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15 * fem),
                   ),
-                  children: [
-                    TextSpan(
-                      text: 'Username',
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5*ffem/fem,
-                        color: Color(0x99000000),
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' ',
-                      style: SafeGoogleFont (
-                        'Playfair Display',
-                        fontSize: 24*ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.3325*ffem/fem,
-                        color: Color(0x99000000),
-                      ),
-                    ),
-                  ],
+                ),
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 20 * ffem,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff042745),
+                  ),
                 ),
               ),
             ),
-            Container(
-              // autogroupozgfv99 (7P5nVG4FaDn9wasSZvoZGf)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 32*fem, 14*fem),
-              width: 354*fem,
-              height: 154*fem,
-              child: Stack(
-                children: [
-                  Positioned(
-                    // rectangle52hy (259:516)
-                    left: 33*fem,
-                    top: 0*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 321*fem,
-                        height: 47*fem,
-                        child: Container(
-                          decoration: BoxDecoration (
-                            borderRadius: BorderRadius.circular(15*fem),
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
+
+            // Forget password text
+            GestureDetector(
+              onTap: () {
+                // Handle forget password
+              },
+              child: Container(
+                margin: EdgeInsets.only(bottom: 14 * fem),
+                child: Text(
+                  'Forget your password?',
+                  style: TextStyle(
+                    color: Color(0xffffffff),
+                    fontSize: 14 * ffem,
+                    fontWeight: FontWeight.w400,
                   ),
-                  Positioned(
-                    // passwordLyZ (259:517)
-                    left: 56*fem,
-                    top: 14*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 73*fem,
-                        height: 23*fem,
-                        child: Text(
-                          'Password',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 15*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0x99000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // rectangle7SFu (259:520)
-                    left: 109*fem,
-                    top: 80*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 180*fem,
-                        height: 37*fem,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(15*fem),
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // loginXo9 (259:521)
-                    left: 171*fem,
-                    top: 83*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 60*fem,
-                        height: 30*fem,
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            style: SafeGoogleFont (
-                              'Playfair Display',
-                              fontSize: 20*ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.3325*ffem/fem,
-                              color: Color(0xff042745),
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'Login',
-                                style: SafeGoogleFont (
-                                  'Poppins',
-                                  fontSize: 20*ffem,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.5*ffem/fem,
-                                  color: Color(0xff042745),
-                                ),
-                              ),
-                              TextSpan(
-                                text: ' \n',
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // forgetyourpasswordLVh (259:522)
-                    left: 119*fem,
-                    top: 133*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 163*fem,
-                        height: 21*fem,
-                        child: Text(
-                          'Forget your password? ',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 14*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-            Container(
-              // autogroupormzSHq (7P5neWHr5A4voQoA3KormZ)
-              margin: EdgeInsets.fromLTRB(129*fem, 0*fem, 116*fem, 0*fem),
-              width: double.infinity,
-              height: 28*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.circular(15*fem),
-              ),
-              child: Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: SafeGoogleFont (
-                      'Playfair Display',
-                      fontSize: 14*ffem,
+
+            // Reset password button
+            GestureDetector(
+              onTap: () {
+                // Handle reset password
+              },
+              child: Container(
+                margin: EdgeInsets.fromLTRB(129 * fem, 0 * fem, 116 * fem, 0 * fem),
+                width: double.infinity,
+                height: 28 * fem,
+                decoration: BoxDecoration(
+                  color: Color(0xffffffff),
+                  borderRadius: BorderRadius.circular(15 * fem),
+                ),
+                child: Center(
+                  child: Text(
+                    'Reset password',
+                    style: TextStyle(
+                      fontSize: 14 * ffem,
                       fontWeight: FontWeight.w400,
-                      height: 1.3325*ffem/fem,
-                      color: Color(0xffffffff),
+                      color: Color(0xfff37022),
                     ),
-                    children: [
-                      TextSpan(
-                        text: 'Reset password',
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.5*ffem/fem,
-                          color: Color(0xfff37022),
-                        ),
-                      ),
-                      TextSpan(
-                        text: ' ',
-                      ),
-                    ],
                   ),
                 ),
               ),
