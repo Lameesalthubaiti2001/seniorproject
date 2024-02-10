@@ -57,10 +57,11 @@ class MyApp extends StatelessWidget {
 			),
 			home: Scaffold(
 				appBar: AppBar(
-					title: Text('Event Information'),
+					title: Text('MyEvent'),
+					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child: EventInfoPage(),
+					child: EventInfo4ClubSide(),
 				),
 			),
 		);

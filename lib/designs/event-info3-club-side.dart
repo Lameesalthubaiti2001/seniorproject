@@ -24,6 +24,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
               ElevatedButton(
                 onPressed: () => _selectDate(context),
                 child: Text('Select Date: ${selectedDate.toString().substring(0, 10)}'),
+
               ),
               SizedBox(height: 20.0),
               TextField(
