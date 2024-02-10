@@ -56,8 +56,11 @@ class MyApp extends StatelessWidget {
 				primarySwatch: Colors.blue,
 			),
 			home: Scaffold(
+				appBar: AppBar(
+					title: Text('Event Information'),
+				),
 				body: SingleChildScrollView(
-					child: LoginScreen(),
+					child: EventInfoPage(),
 				),
 			),
 		);
