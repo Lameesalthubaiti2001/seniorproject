@@ -29,15 +29,13 @@ import 'designs/event-info3-club-side.dart';
 import 'designs/posters-clubs-side.dart';
 import 'designs/request-status-club-side.dart';
 import 'designs/request-confirm-club-side.dart';
-// import 'package:myapp/designs/request-reject-club-side.dart';
+import 'designs/request-reject-club-side.dart';
 import 'designs/home2-club-side.dart';
 // import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
 import 'designs/confirmation-admin-side.dart';
 import 'designs/profile-admin-side.dart';
 import 'designs/edit-confirmation-club-side.dart';
 import 'designs/poster-request-confirm-club-side.dart';
-import 'package:flutter/material.dart';
-import 'package:seniorproject/designs/role-selection.dart'; // Updated import statement for role selection page
 
 void main() => runApp(MyApp());
 
@@ -47,12 +45,17 @@ class MyApp extends StatelessWidget {
 		return MaterialApp(
 			title: 'Flutter',
 			debugShowCheckedModeBanner: false,
+			scrollBehavior: MyCustomScrollBehavior(),
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
 			home: Scaffold(
+				appBar: AppBar(
+					title: Text('MyEvent'),
+					backgroundColor: Color(0xff042745),
+				),
 				body: SingleChildScrollView(
-					child: Scene37(),
+					child: AboutClubPage(),
 				),
 			),
 		);
