@@ -7,11 +7,14 @@ import 'package:seniorproject/designs/event-detail-guest-side.dart';
 import 'package:seniorproject/designs/activity-guest-side.dart';
 
 class GuestHome extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
     double ffem = fem * 0.97;
+
     return Container(
       width: double.infinity,
       child: Container(
@@ -1309,6 +1312,6 @@ class GuestHome extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }

@@ -37,72 +37,6 @@ class RequestRejectClubSide extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // timeoWT (253:326)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 112.5*fem, 0*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // autogrouphwef6kT (7P5dVX3c1n45MVdjobhWEf)
-                    margin: EdgeInsets.fromLTRB(0*fem, 40*fem, 72.22*fem, 0*fem),
-                    height: 43*fem,
-                    child: Text(
-                      'Notification\n',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectionB1D (253:321)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-1kF.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifigCs (253:317)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-ngB.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batteryCh1 (253:313)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery-bG7.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -116,8 +50,8 @@ class RequestRejectClubSide extends StatelessWidget {
                 children: [
                   Container(
                     // autogroup1kpuk6F (7P5dkBHqxYLDnA1AHN1kPu)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 77.33*fem, 0*fem),
-                    width: 374*fem,
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                    width: 370*fem,
                     height: double.infinity,
                     child: Stack(
                       children: [
@@ -203,22 +137,19 @@ class RequestRejectClubSide extends StatelessWidget {
                                     text: TextSpan(
                                       style: SafeGoogleFont (
                                         'Mulish',
-                                        fontSize: 14*ffem,
+                                        fontSize: 9*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.255*ffem/fem,
                                         color: Color(0xff545454),
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: 'Your event request has been rejected due to ',
-                                        ),
-                                        TextSpan(
-                                          text: 'Incomplete proposal. \n',
+                                          text: 'Your event request has been rejected due to \n Incomplete proposal. \n',
                                           style: SafeGoogleFont (
                                             'Mulish',
-                                            fontSize: 14*ffem,
+                                            fontSize: 9*ffem,
                                             fontWeight: FontWeight.w700,
-                                            height: 1.255*ffem/fem,
+                                            height: 1.2*ffem/fem,
                                             color: Color(0xff545454),
                                           ),
                                         ),
@@ -250,6 +181,6 @@ class RequestRejectClubSide extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }

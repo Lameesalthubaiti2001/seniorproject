@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/request-reject-club-side.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -29,13 +30,15 @@ import 'designs/event-info3-club-side.dart';
 import 'designs/posters-clubs-side.dart';
 import 'designs/request-status-club-side.dart';
 import 'designs/request-confirm-club-side.dart';
-import 'designs/request-reject-club-side.dart';
+// import 'package:myapp/designs/request-reject-club-side.dart';
 import 'designs/home2-club-side.dart';
 // import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
 import 'designs/confirmation-admin-side.dart';
 import 'designs/profile-admin-side.dart';
 import 'designs/edit-confirmation-club-side.dart';
 import 'designs/poster-request-confirm-club-side.dart';
+import 'package:flutter/material.dart';
+import 'package:seniorproject/designs/role-selection.dart'; // Updated import statement for role selection page
 
 void main() => runApp(MyApp());
 
@@ -55,7 +58,7 @@ class MyApp extends StatelessWidget {
 					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child: AboutClubPage(),
+					child: EditConfirmationClubSide(),
 				),
 			),
 		);

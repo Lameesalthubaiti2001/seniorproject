@@ -38,71 +38,8 @@ class EditConfirmationClubSide extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // timexbd (270:1324)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 97*fem, 0*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // confirmation4Pm (270:1325)
-                    margin: EdgeInsets.fromLTRB(0*fem, 38.75*fem, 66.72*fem, 0*fem),
-                    child: Text(
-                      'Confirmation ',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectionxk3 (270:1319)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-bMD.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifiss1 (270:1315)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-sVd.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batteryc3u (270:1311)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery-4NP.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
-                    ),
-                  ),
+
+
                 ],
               ),
             ),
@@ -347,17 +284,7 @@ class EditConfirmationClubSide extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          // activityNwV (270:1378)
-                          'Activity',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
+                        
                       ],
                     ),
                   ),
@@ -386,17 +313,7 @@ class EditConfirmationClubSide extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          // notificationAcT (270:1380)
-                          'Notification',
-                          style: SafeGoogleFont (
-                            'Poppins',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5*ffem/fem,
-                            color: Color(0xffc4c4c4),
-                          ),
-                        ),
+
                       ],
                     ),
                   ),

@@ -35,72 +35,6 @@ class RequestConfirmClubSide extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // timeb79 (253:221)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 112.5*fem, 0*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // autogrouptwsp63u (7P5ZvHfZz5PfAKmzwqtWSP)
-                    margin: EdgeInsets.fromLTRB(0*fem, 40*fem, 72.22*fem, 0*fem),
-                    height: 43*fem,
-                    child: Text(
-                      'Notification\n',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectionmA3 (253:216)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-UVZ.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifiGcb (253:212)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-oKy.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batteryCFM (253:208)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery-HtF.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -108,14 +42,14 @@ class RequestConfirmClubSide extends StatelessWidget {
               // autogroup3dx1JpB (7P5a3cngxTXjNexiBj3dX1)
               margin: EdgeInsets.fromLTRB(19*fem, 0*fem, 0*fem, 110*fem),
               width: double.infinity,
-              height: 502*fem,
+              height: 440*fem,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // autogrouptwaoRto (7P5aErxxGQatUPaFpBTWao)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 77.33*fem, 0*fem),
-                    width: 374*fem,
+                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                    width: 370*fem,
                     height: double.infinity,
                     child: Stack(
                       children: [
@@ -153,8 +87,8 @@ class RequestConfirmClubSide extends StatelessWidget {
                                 Container(
                                   // emojiwhiteheavycheckmark7v3 (253:402)
                                   margin: EdgeInsets.fromLTRB(1.5*fem, 0*fem, 0*fem, 43.5*fem),
-                                  width: 99.5*fem,
-                                  height: 99.5*fem,
+                                  width: 90*fem,
+                                  height: 90*fem,
                                   child: Image.asset(
                                     'assets/designs/images/emoji-white-heavy-check-mark.png',
                                     width: 99.5*fem,
