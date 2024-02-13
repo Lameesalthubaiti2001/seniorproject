@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
-import 'package:seniorproject/designs/confirmation.dart';
+import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
 
 class EventRegistration extends StatelessWidget {
   @override

@@ -3,8 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
-import 'package:seniorproject/designs/event-detail-guest-side.dart';
-import 'package:seniorproject/designs/activity-guest-side.dart';
+import 'package:seniorproject/designs/guest-side-event-detail.dart';
+import 'package:seniorproject/designs/guest-side-activity.dart';
 
 class GuestHome extends StatelessWidget {
   Widget build(BuildContext context) {

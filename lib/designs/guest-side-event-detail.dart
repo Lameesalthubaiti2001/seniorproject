@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
-import 'package:seniorproject/designs/event-registration-guest.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 
 class EventDetail extends StatelessWidget {
   @override

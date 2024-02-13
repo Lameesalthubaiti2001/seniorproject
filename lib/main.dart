@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:seniorproject/designs/request-reject-club-side.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -9,36 +8,34 @@ import 'designs/role-selection.dart';
 import 'designs/login.dart';
 import 'designs/password-reset.dart';
 import 'designs/admin-home.dart';
-import 'designs/clubs-home.dart';
-import 'designs/activity-guest-side.dart';
-import 'designs/requests-admin-side.dart';
-import 'designs/event-detail-guest-side.dart';
-import 'designs/editing-eventinfo-club-side.dart';
-import 'designs/detail-admin-side.dart';
-import 'designs/event-registration-guest.dart';
-import 'designs/rejection-admin-side.dart';
+import 'designs/club-side-home.dart';
+import 'designs/guest-side-activity.dart';
+import 'designs/admin-side-request.dart';
+import 'designs/guest-side-event-detail.dart';
+import 'designs/club-side-editing-eventinfo.dart';
+import 'designs/admin-side-detailpage.dart';
+import 'designs/guest-side-event-registration.dart';
+import 'designs/admin-side-rejection.dart';
 import 'designs/guest-home.dart';
-import 'designs/explore-clubs-guest.dart';
-import 'designs/aboutclub-guest.dart';
-import 'designs/confirmation.dart';
-import 'designs/event-info4-club-side.dart';
-import 'designs/event-info1-club-side.dart';
-import 'designs/event-tracking-club-side.dart';
-import 'designs/checklist-tracking-club-side.dart';
-import 'designs/event-info2-club-side.dart';
-import 'designs/event-info3-club-side.dart';
-import 'designs/posters-clubs-side.dart';
-import 'designs/request-status-club-side.dart';
-import 'designs/request-confirm-club-side.dart';
-// import 'package:myapp/designs/request-reject-club-side.dart';
-import 'designs/home2-club-side.dart';
+import 'designs/guest-side-explore-clubs.dart';
+import 'designs/guest-side-aboutclub.dart';
+import 'designs/guest-side-registration-confirmation.dart';
+import 'designs/club-side-event-info4.dart';
+import 'designs/club-side-event-info1.dart';
+import 'designs/club-side-event-tracking.dart';
+import 'designs/club-side-checklist-tracking.dart';
+import 'designs/club-side-event-info2.dart';
+import 'designs/club-side-event-info3.dart';
+import 'designs/club-side-posters.dart';
+import 'designs/club-side-request-status.dart';
+import 'designs/club-side-request-confirm.dart';
+import 'designs/club-side-request-reject.dart';
+import 'designs/club-side-home2.dart';
 // import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
-import 'designs/confirmation-admin-side.dart';
-import 'designs/profile-admin-side.dart';
-import 'designs/edit-confirmation-club-side.dart';
-import 'designs/poster-request-confirm-club-side.dart';
-import 'package:flutter/material.dart';
-import 'package:seniorproject/designs/role-selection.dart'; // Updated import statement for role selection page
+import 'designs/admin-side-confirmationpage.dart';
+import 'designs/admin-side-profile.dart';
+import 'designs/club-side-edit-confirmation.dart';
+import 'designs/club-side-poster-request-confirm.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,7 +55,7 @@ class MyApp extends StatelessWidget {
 					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child: EditConfirmationClubSide(),
+					child: Scene32(),
 				),
 			),
 		);
