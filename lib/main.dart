@@ -59,9 +59,9 @@ class MyApp extends StatelessWidget {
 					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child: ClubHome(),
+					child: Scene37(),
 				),
-				 bottomNavigationBar: ClubFooter(),
+				 //bottomNavigationBar: ClubFooter(),
 				 //bottomNavigationBar: GuestFooter(),
 				//bottomNavigationBar: AdminFooter(),
 			),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
-
-
 import 'package:seniorproject/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/role-selection.dart'; // Updated import statement for role selection page
