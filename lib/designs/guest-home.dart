@@ -27,42 +27,6 @@ class GuestHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // autogroupimufEnw (7P4dgr2fYpJJqUD4BviMUf)
-              padding: EdgeInsets.fromLTRB(23.5*fem, 10*fem, 25.34*fem, 6*fem),
-              width: double.infinity,
-              decoration: BoxDecoration (
-                color: Color(0xff042745),
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(5*fem),
-                  bottomLeft: Radius.circular(5*fem),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Container(
-                    // autogrouphnzyD95 (7P4dxb5SBYaKyVsDfmHnZy)
-                    margin: EdgeInsets.fromLTRB(0*fem, 39*fem, 78.22*fem, 0*fem),
-                    padding: EdgeInsets.fromLTRB(14.5*fem, 0*fem, 19.5*fem, 0*fem),
-                    height: 44*fem,
-                    child: Text(
-                      'Home',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
               // autogroup4yry1UF (7P4gdBJWsERKBkJm5e4YRy)
               padding: EdgeInsets.fromLTRB(18*fem, 19*fem, 0*fem, 17*fem),
               width: double.infinity,

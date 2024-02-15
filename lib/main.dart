@@ -36,6 +36,10 @@ import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
 import 'designs/club-side-edit-confirmation.dart';
 import 'designs/club-side-poster-request-confirm.dart';
+import 'designs/admin_footer.dart';
+import 'designs/guest_footer.dart';
+import 'designs/club_footer.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -55,8 +59,11 @@ class MyApp extends StatelessWidget {
 					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child: Scene32(),
+					child: ClubHome(),
 				),
+				 bottomNavigationBar: ClubFooter(),
+				 //bottomNavigationBar: GuestFooter(),
+				//bottomNavigationBar: AdminFooter(),
 			),
 		);
 	}
