@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+
+import 'club-side-checklist-tracking.dart';
 class EventTrackingClubSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,7 @@ class EventTrackingClubSide extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(23 * fem, 10 * fem, 25* fem, 18 * fem),
+            padding: EdgeInsets.fromLTRB(23 * fem, 10 * fem, 25 * fem, 18 * fem),
             width: double.infinity,
             height: 99 * fem,
             decoration: BoxDecoration(
@@ -216,18 +219,33 @@ class EventTrackingClubSide extends StatelessWidget {
                                   width: 41 * fem,
                                   height: 21 * fem,
                                   child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      // Add your navigation logic here
+                                      // For example, you can use Navigator to push a new page
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => ChecklistTrackingClubSide()),
+                                      );
+                                    },
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Text(
-                                      'Track\n',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: 14 * ffem,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.5 * ffem / fem,
-                                        color: Color(0xffffffff),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15 * fem),
+                                        color: Color(0xfff37022),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Track\n',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 14 * ffem,
+                                            fontWeight: FontWeight.w700,
+                                            height: 1.5 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -243,11 +261,8 @@ class EventTrackingClubSide extends StatelessWidget {
               ],
             ),
           ),
-
         ],
       ),
     );
-
-
   }
 }

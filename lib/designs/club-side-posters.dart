@@ -4,6 +4,8 @@ import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
 
+import 'club-side-poster-request-confirm.dart';
+
 class PostersClubsSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,89 +23,7 @@ class PostersClubsSide extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              // autogroupa98o515 (7P5QnYtFBac3cbnyZHA98o)
-              padding: EdgeInsets.fromLTRB(23.5*fem, 10*fem, 25.34*fem, 10*fem),
-              width: double.infinity,
-              height: 99*fem,
-              decoration: BoxDecoration (
-                color: Color(0xff042745),
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(5*fem),
-                  bottomLeft: Radius.circular(5*fem),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // timeY9Z (245:336)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 128.5*fem, 0*fem),
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // postersdB1 (245:385)
-                    margin: EdgeInsets.fromLTRB(0*fem, 40*fem, 88.22*fem, 0*fem),
-                    child: Text(
-                      'Posters ',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // cellularconnectionvvo (245:331)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.99*fem, 0*fem),
-                    width: 16.95*fem,
-                    height: 10.67*fem,
-                    child: Image.asset(
-                      'assets/designs/images/cellular-connection-hPy.png',
-                      width: 16.95*fem,
-                      height: 10.67*fem,
-                    ),
-                  ),
-                  Container(
-                    // wifi3Vd (245:327)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 4.88*fem, 0*fem),
-                    width: 15.29*fem,
-                    height: 11*fem,
-                    child: Image.asset(
-                      'assets/designs/images/wifi-tXm.png',
-                      width: 15.29*fem,
-                      height: 11*fem,
-                    ),
-                  ),
-                  Container(
-                    // batteryxsV (245:323)
-                    margin: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 0*fem),
-                    width: 24.33*fem,
-                    height: 11.33*fem,
-                    child: Image.asset(
-                      'assets/designs/images/battery-NGT.png',
-                      width: 24.33*fem,
-                      height: 11.33*fem,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
             Container(
               // autogroupycgbUaw (7P5TGeQp7Sw24q8QebYcGb)
               padding: EdgeInsets.fromLTRB(0*fem, 61*fem, 0*fem, 23*fem),
@@ -350,21 +270,33 @@ class PostersClubsSide extends StatelessWidget {
                               ),
                               Positioned(
                                 // writedownyourlocationbHV (245:680)
-                                left: 29*fem,
-                                top: 16*fem,
+                                left: 29 * fem,
+                                top: 16 * fem,
                                 child: Align(
                                   child: SizedBox(
-                                    width: 176*fem,
-                                    height: 21*fem,
-                                    child: Text(
-                                      'Write down your location',
-                                      style: SafeGoogleFont (
+                                    width: 176 * fem,
+                                    height: 21 * fem,
+                                    child: TextField(
+                                      // You can customize the TextField properties as needed
+                                      style: SafeGoogleFont(
                                         'Poppins',
-                                        fontSize: 14*ffem,
+                                        fontSize: 14 * ffem,
                                         fontWeight: FontWeight.w500,
-                                        height: 1.5*ffem/fem,
+                                        height: 1.5 * ffem / fem,
                                         color: Color(0xffc4c4c4),
                                       ),
+                                      decoration: InputDecoration(
+                                        // You can add decoration properties here
+                                        hintText: 'Write down your location',
+                                        hintStyle: SafeGoogleFont(
+                                          'Poppins',
+                                          fontSize: 14 * ffem,
+                                          fontWeight: FontWeight.w500,
+                                          height: 1 * ffem / fem,
+                                          color: Color(0xffc4c4c4),
+                                        ),
+                                      ),
+                                      // Add any additional TextField properties as needed
                                     ),
                                   ),
                                 ),
@@ -377,23 +309,32 @@ class PostersClubsSide extends StatelessWidget {
                   ),
                   Container(
                     // autogrouplmhutGb (7P5Ri7BLeeBz84cGA9Lmhu)
-                    margin: EdgeInsets.fromLTRB(140*fem, 0*fem, 145*fem, 0*fem),
+                    margin: EdgeInsets.fromLTRB(140 * fem, 0 * fem, 145 * fem, 0 * fem),
                     width: double.infinity,
-                    height: 30*fem,
-                    decoration: BoxDecoration (
+                    height: 30 * fem,
+                    decoration: BoxDecoration(
                       color: Color(0xfff37022),
-                      borderRadius: BorderRadius.circular(15*fem),
+                      borderRadius: BorderRadius.circular(15 * fem),
                     ),
-                    child: Center(
-                      child: Text(
-                        'Submit ',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 14*ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.5*ffem/fem,
-                          color: Color(0xffffffff),
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigate to the other page when the button is clicked
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PosterRequestConfirmClubSide()),
+                        );
+                      },
+                      child: Center(
+                        child: Text(
+                          'Submit',
+                          textAlign: TextAlign.center,
+                          style: SafeGoogleFont(
+                            'Poppins',
+                            fontSize: 14 * ffem,
+                            fontWeight: FontWeight.w700,
+                            height: 1.5 * ffem / fem,
+                            color: Color(0xffffffff),
+                          ),
                         ),
                       ),
                     ),
@@ -404,6 +345,6 @@ class PostersClubsSide extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
