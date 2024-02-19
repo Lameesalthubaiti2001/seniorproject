@@ -41,30 +41,32 @@ import 'designs/admin_footer.dart';
 import 'designs/guest_footer.dart';
 import 'designs/club_footer.dart';
 
-
-void main(){
-	runApp(MyEvent());
+void main() {
+  runApp(MyEvent());
 }
+
 class MyEvent extends StatelessWidget {
   const MyEvent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-			title: 'MyEvent',
-			theme: ThemeData(
-				primarySwatch: Colors.blue,
-			),
-			initialRoute: AdminHome.screenRoute,
-			routes: {
-				AdminHome.screenRoute:(context) => AdminHome(),
-				ConfirmationAdminSide.screenRoute:(context) => ConfirmationAdminSide(),
-				RequestDetail.screenRoute:(context) => RequestDetail(),
-				RequestDetailTwo.screenRoute:(context) => RequestDetailTwo(),
-				ProfileAdminSide.screenRoute:(context) => ProfileAdminSide(),
-				Rejection.screenRoute:(context) => Rejection(),
-				RequestsAdminSide.screenRoute:(context) => RequestsAdminSide(),
-			},
-		);
+      title: 'MyEvent',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: AdminHome.screenRoute,
+      routes: {
+        AdminHome.screenRoute: (context) => AdminHome(),
+        ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
+        RequestDetail.screenRoute: (context) => RequestDetail(),
+        RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
+        ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
+        Rejection.screenRoute: (context) => Rejection(),
+        RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
+      },
+    );
   }
 }
+
+//comment
