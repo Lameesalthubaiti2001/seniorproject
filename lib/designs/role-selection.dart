@@ -5,8 +5,13 @@ import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/login.dart';
 import 'package:seniorproject/designs/guest-home.dart';
 
+class RoleSelection extends StatefulWidget {
+  static const String screenRoute = 'role_selection_screen';
+  @override
+  _RoleSelectionState createState() => _RoleSelectionState();
+}
 
-class Scene37 extends StatelessWidget {
+class _RoleSelectionState extends State<RoleSelection> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -15,7 +20,6 @@ class Scene37 extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // roleselection7sy (206:177)
         padding: EdgeInsets.fromLTRB(0 * fem, 10 * fem, 0 * fem, 0 * fem),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -25,7 +29,6 @@ class Scene37 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // autogroupb4f5dLX (7P4pDDAK3WciiqDuDCB4f5)
               margin: EdgeInsets.fromLTRB(23.5 * fem, 0 * fem, 25.34 * fem, 27 * fem),
               width: double.infinity,
               height: 23 * fem,
@@ -35,12 +38,10 @@ class Scene37 extends StatelessWidget {
               ),
             ),
             Container(
-              // autogrouprbfq3qV (7P4pzwM7qSNVTVBX2urBFq)
               margin: EdgeInsets.fromLTRB(121 * fem, 0 * fem, 117 * fem, 71 * fem),
               padding: EdgeInsets.fromLTRB(0 * fem, 15 * fem, 0 * fem, 0 * fem),
               width: double.infinity,
               child: Align(
-                // ellipse2a4j (206:224)
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
                   width: double.infinity,
@@ -60,14 +61,12 @@ class Scene37 extends StatelessWidget {
               ),
             ),
             Container(
-              // autogroup4uxxspX (7P4q6wB8GUfeBDF1W64uxX)
               margin: EdgeInsets.fromLTRB(25 * fem, 0 * fem, 21 * fem, 57 * fem),
               width: double.infinity,
               height: 217 * fem,
               child: Stack(
                 children: [
                   Positioned(
-                    // rectangle24Q3m (206:213)
                     left: 0 * fem,
                     top: 1 * fem,
                     child: Align(
@@ -84,7 +83,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle23uFR (206:214)
                     left: 266 * fem,
                     top: 179 * fem,
                     child: Align(
@@ -111,7 +109,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // loginhereoLo (206:215)
                     left: 289.5 * fem,
                     top: 184 * fem,
                     child: Align(
@@ -132,7 +129,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle32JYT (206:216)
                     left: 0 * fem,
                     top: 0 * fem,
                     child: Align(
@@ -153,7 +149,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // administratornyR (206:217)
                     left: 19 * fem,
                     top: 162 * fem,
                     child: Align(
@@ -177,14 +172,12 @@ class Scene37 extends StatelessWidget {
               ),
             ),
             Container(
-              // autogrouptoy7HvB (7P4qHM3SjqZyLpQHu6toY7)
               margin: EdgeInsets.fromLTRB(19 * fem, 0 * fem, 21 * fem, 9 * fem),
               width: double.infinity,
               height: 216 * fem,
               child: Stack(
                 children: [
                   Positioned(
-                    // rectangle33Qju (206:218)
                     left: 6 * fem,
                     top: 0 * fem,
                     child: Align(
@@ -201,7 +194,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle348A7 (206:219)
                     left: 282 * fem,
                     top: 171 * fem,
                     child: Align(
@@ -228,7 +220,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // loginherepYj (206:221)
                     left: 307.5 * fem,
                     top: 177 * fem,
                     child: Align(
@@ -249,7 +240,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // rectangle35KVV (206:222)
                     left: 6 * fem,
                     top: 0 * fem,
                     child: Align(
@@ -270,7 +260,6 @@ class Scene37 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    // clubsandchaptersRYX (206:223)
                     left: 32.5 * fem,
                     top: 156 * fem,
                     child: Align(
@@ -309,9 +298,8 @@ class Scene37 extends StatelessWidget {
               ),
             ),
             TextButton(
-              // bookticketY9Z (206:173)
               onPressed: () {
-                // Navigate to the RoleSelection page
+                // Navigate to the GuestHome page
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => GuestHome()),
@@ -329,7 +317,6 @@ class Scene37 extends StatelessWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                      // rectangle4208Fpf (206:175)
                       left: 20 * fem,
                       top: 20 * fem,
                       child: Align(

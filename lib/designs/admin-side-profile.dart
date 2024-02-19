@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+import 'package:seniorproject/designs/admin_footer.dart';
 
 class ProfileAdminSide extends StatefulWidget {
+  static const String screenRoute = 'admin_profile_screen';
   @override
   _ProfileAdminSideState createState() => _ProfileAdminSideState();
 }
@@ -21,7 +21,13 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
     double baseWidth = 428.0186767578;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return SingleChildScrollView(
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        backgroundColor: Color(0xff042745),
+      ),
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Container(
           width: double.infinity,
@@ -34,7 +40,7 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Add your existing widgets here...
+                // Your existing widgets...
 
                 // Profile Icon
                 SizedBox(height: 20.0),
@@ -107,7 +113,9 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
             ),
           ),
         ),
-      );
+      ),
+      bottomNavigationBar: AdminFooter(),
+    );
   }
 
   Widget buildTextField({

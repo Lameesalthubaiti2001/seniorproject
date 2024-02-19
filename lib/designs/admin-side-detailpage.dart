@@ -1,22 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
-
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/admin_footer.dart';
 
-class Scene8 extends StatelessWidget {
+
+class RequestDetail extends StatefulWidget {
+  static const String screenRoute = 'admin_detail_screen';
+  @override
+  _RequestDetailState createState() => _RequestDetailState();
+}
+
+class _RequestDetailState extends State<RequestDetail> {
+  double baseWidth = 428;
+  double fem = 1.0;
+  double ffem = 1.0;
+
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
-    return Container(
+    fem = MediaQuery.of(context).size.width / baseWidth;
+    ffem = fem * 0.97;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        backgroundColor: Color(0xff042745),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(0),
+         child:Container(
       width: double.infinity,
       child: Container(
-        // detaileiF (227:595)
         width: double.infinity,
-        height: 926*fem,
-        decoration: BoxDecoration (
+        height: 926 * fem,
+        decoration: BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Stack(
@@ -747,6 +763,9 @@ class Scene8 extends StatelessWidget {
           ],
         ),
       ),
-          );
+    ),
+      ),
+      bottomNavigationBar: AdminFooter(),
+    );
   }
 }

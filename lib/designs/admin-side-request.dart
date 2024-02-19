@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
-
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/admin_footer.dart';
 
+class RequestsAdminSide extends StatefulWidget {
+  static const String screenRoute = 'admin_request_screen';
+  @override
+  _RequestsAdminSideState createState() => _RequestsAdminSideState();
+}
 
-class RequestsAdminSide extends StatelessWidget {
+class _RequestsAdminSideState extends State<RequestsAdminSide> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Registered Events'),
+        backgroundColor: Color(0xff042745),
+      ),
+      body: Container(
         width: double.infinity,
         color: Color(0xffffffff),
         padding: EdgeInsets.all(20 * fem), // Added padding for spacing
@@ -190,6 +200,8 @@ class RequestsAdminSide extends StatelessWidget {
             // Add more GestureDetector widgets for other events as needed
           ],
         ),
-      );
+      ),
+      bottomNavigationBar: AdminFooter(),
+    );
   }
 }

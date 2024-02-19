@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
 					backgroundColor: Color(0xff042745),
 				),
 				body: SingleChildScrollView(
-					child:  PostersClubsSide(),
+					child: ClubHome(),
 				),
 				 bottomNavigationBar: ClubFooter(),
 				 //bottomNavigationBar: GuestFooter(),
