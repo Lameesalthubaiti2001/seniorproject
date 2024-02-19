@@ -14,6 +14,7 @@ import 'designs/admin-side-request.dart';
 import 'designs/guest-side-event-detail.dart';
 import 'designs/club-side-editing-eventinfo.dart';
 import 'designs/admin-side-detailpage.dart';
+import 'designs/admin-side-detailpage2.dart';
 import 'designs/guest-side-event-registration.dart';
 import 'designs/admin-side-rejection.dart';
 import 'designs/guest-home.dart';
@@ -41,30 +42,29 @@ import 'designs/guest_footer.dart';
 import 'designs/club_footer.dart';
 
 
-void main() => runApp(MyApp());
+void main(){
+	runApp(MyEvent());
+}
+class MyEvent extends StatelessWidget {
+  const MyEvent({super.key});
 
-class MyApp extends StatelessWidget {
-	@override
-	Widget build(BuildContext context) {
-		return MaterialApp(
-			title: 'Flutter',
-			debugShowCheckedModeBanner: false,
-			scrollBehavior: MyCustomScrollBehavior(),
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+			title: 'MyEvent',
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			home: Scaffold(
-				appBar: AppBar(
-					title: Text('MyEvent'),
-					backgroundColor: Color(0xff042745),
-				),
-				body: SingleChildScrollView(
-					child: ClubHome(),
-				),
-				 bottomNavigationBar: ClubFooter(),
-				 //bottomNavigationBar: GuestFooter(),
-				//bottomNavigationBar: AdminFooter(),
-			),
+			initialRoute: AdminHome.screenRoute,
+			routes: {
+				AdminHome.screenRoute:(context) => AdminHome(),
+				ConfirmationAdminSide.screenRoute:(context) => ConfirmationAdminSide(),
+				RequestDetail.screenRoute:(context) => RequestDetail(),
+				RequestDetailTwo.screenRoute:(context) => RequestDetailTwo(),
+				ProfileAdminSide.screenRoute:(context) => ProfileAdminSide(),
+				Rejection.screenRoute:(context) => Rejection(),
+				RequestsAdminSide.screenRoute:(context) => RequestsAdminSide(),
+			},
 		);
-	}
+  }
 }
