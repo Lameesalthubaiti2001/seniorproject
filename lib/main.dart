@@ -31,7 +31,7 @@ import 'designs/club-side-posters.dart';
 import 'designs/club-side-request-status.dart';
 import 'designs/club-side-request-confirm.dart';
 import 'designs/club-side-request-reject.dart';
-import 'designs/club-side-home2.dart';
+
 // import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
 import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
@@ -42,31 +42,41 @@ import 'designs/guest_footer.dart';
 import 'designs/club_footer.dart';
 
 void main() {
-  runApp(MyEvent());
+	runApp(MyEvent());
 }
 
 class MyEvent extends StatelessWidget {
-  const MyEvent({super.key});
+	const MyEvent({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyEvent',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: AdminHome.screenRoute,
-      routes: {
-        AdminHome.screenRoute: (context) => AdminHome(),
-        ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
-        RequestDetail.screenRoute: (context) => RequestDetail(),
-        RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
-        ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
-        Rejection.screenRoute: (context) => Rejection(),
-        RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
-      },
-    );
-  }
+	@override
+	Widget build(BuildContext context) {
+		return MaterialApp(
+			title: 'MyEvent',
+			theme: ThemeData(
+				primarySwatch: Colors.blue,
+			),
+			initialRoute: RequestStatusClubSide.screenRoute,
+			routes: {
+				AdminHome.screenRoute: (context) => AdminHome(),
+				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
+				RequestDetail.screenRoute: (context) => RequestDetail(),
+				RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
+				ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
+				Rejection.screenRoute: (context) => Rejection(),
+				RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
+				ClubHome.screenRoute: (context) => ClubHome(),
+				PosterRequestConfirmClubSide.screenRoute: (context) => PosterRequestConfirmClubSide(),
+				PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
+				RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
+				RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
+				RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
+
+
+
+
+			},
+		);
+	}
 }
 
 //comment

@@ -14,7 +14,7 @@ import 'club-side-edit-confirmation.dart';
 import 'club-side-poster-request-confirm.dart';
 import 'club-side-posters.dart';
 import 'club-side-event-tracking.dart';
-import 'club-side-home2.dart';
+
 import 'club-side-request-reject.dart';
 import 'club-side-checklist-tracking.dart';
 
