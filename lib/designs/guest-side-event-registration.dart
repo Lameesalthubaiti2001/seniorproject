@@ -38,7 +38,7 @@ class EventRegistration extends StatelessWidget {
                       child: Align(
                         child: SizedBox(
                           width: 428*fem,
-                          height: 99*fem,
+                          height: 10*fem,
                           child: Container(
                             decoration: BoxDecoration (
                               color: Color(0xff042745),
@@ -51,34 +51,12 @@ class EventRegistration extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      // eventregistrationx6P (221:453)
-                      left: 125*fem,
-                      top: 45*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 163*fem,
-                          height: 27*fem,
-                          child: Text(
-                            'Event Registration ',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 18*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
-                              letterSpacing: -0.3000000119*fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+
 
                     Positioned(
                       // vectorfHd (237:180)
-                      left: 36*fem,
-                      top: 63.25*fem,
+                      left: 20*fem,
+                      top: 0 *fem,
                       child: Align(
                         child: SizedBox(
                           width: 20*fem,
@@ -104,77 +82,76 @@ class EventRegistration extends StatelessWidget {
             ),
 
                     // Full Name field
-                    Positioned(
-                      left: 25 * fem,
-                      top: 250 * fem,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
-                        width: 382 * fem,
-                        height: 50 * fem,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Full Name',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15 * fem),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+            Positioned(
+              left: 25 * fem,
+              top: 80 * fem,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[200], // Set the desired gray color
+                  borderRadius: BorderRadius.circular(40 * fem),
+                ),
+                padding: EdgeInsets.all(20 * fem),
+                width: 382 * fem,
+                height: 330 * fem, // Adjust the height based on the total height of the form fields
 
-                    // PMU ID field
-                    Positioned(
-                      left: 25 * fem,
-                      top: 330 * fem,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
-                        width: 382 * fem,
-                        height: 50 * fem,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'PMU ID',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15 * fem),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                child: Column(
 
-                    // PMU Email field
-                    Positioned(
-                      left: 25 * fem,
-                      top: 410 * fem,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
-                        width: 382 * fem,
-                        height: 50 * fem,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'PMU Email',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15 * fem),
-                            ),
-                          ),
-                        ),
-                      ),
+                    children: [
+                Container(
+                margin: EdgeInsets.only(bottom: 10 * fem),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Full Name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15 * fem),
                     ),
-                    // Major dropdown menu
-                    Positioned(
-                      left: 25 * fem,
-                      top: 490 * fem,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(20 * fem, 9 * fem, 20 * fem, 0 * fem),
-                        width: 382 * fem,
-                        height: 50 * fem,
-                        child: DropdownButtonFormField<String>(
-                          decoration: InputDecoration(
-                            labelText: 'Major',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15 * fem),
-                            ),
-                          ),
-                          items: [
+                    filled: true, // Set filled to true
+                    fillColor: Colors.white,
+                  ),
+                ),
+
+              ),
+              Expanded(
+                child: Container(
+                  height: 240 * fem, // Adjust the height to make it bigger
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'PMU ID',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15 * fem),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.symmetric(vertical: 16 * fem, horizontal: 20 * fem),
+                    ),
+                  ),
+                ),
+              ),
+
+              Container(
+                margin: EdgeInsets.only(bottom: 10 * fem),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'PMU Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15 * fem),
+                    ),
+                    filled: true, // Set filled to true
+                    fillColor: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                child: DropdownButtonFormField<String>(
+                  decoration: InputDecoration(
+                    labelText: 'Major',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15 * fem),
+                    ),
+                    filled: true, // Set filled to true
+                    fillColor: Colors.white,
+                  ),
+                  items: [
                             DropdownMenuItem<String>(
                               value: 'Software Engineering',
                               child: Text('Software Engineering'),
@@ -223,14 +200,16 @@ class EventRegistration extends StatelessWidget {
                           onChanged: (String? value) {
                             // Handle major selection
                           },
-                        ),
-                      ),
-                    ),
-
+                ),
+              ),
+                    ],
+                ),
+              ),
+            ),
             Positioned(
               // fillinyourinformation8ks (221:444)
               left: 32.5*fem,
-              top: 155*fem,
+              top: 55*fem,
               child: Align(
                 child: SizedBox(
                   width: 199*fem,
@@ -251,73 +230,80 @@ class EventRegistration extends StatelessWidget {
               ),
             ),
             Positioned(
-              // submitrequestq9V (219:419)
-              left: 0*fem,
-              top: 831*fem,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => RegistrationConfirm()),
-                  );
-                },
-                style: TextButton.styleFrom (
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  width: 428*fem,
-                  height: 91*fem,
-                  decoration: BoxDecoration (
-                    borderRadius: BorderRadius.circular(10*fem),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        // rectangle4208Y3u (219:421)
-                        left: 20*fem,
-                        top: 20*fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 388*fem,
-                            height: 50*fem,
-                            child: Container(
-                              decoration: BoxDecoration (
-                                borderRadius: BorderRadius.circular(10*fem),
-                                color: Color(0xfff36f23),
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: FractionalTranslation(
+                  translation: Offset(0, -1),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Container(
+                      width: 428 * fem,
+                      height: 91 * fem,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10 * fem),
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 20 * fem,
+                            top: 0 * fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 388 * fem,
+                                height: 50 * fem,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10 * fem),
+                                    color: Color(0xfff36f23),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        // submitdr3 (219:422)
-                        left: 185*fem,
-                        top: 33*fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 58*fem,
-                            height: 24*fem,
-                            child: Text(
-                              'Submit',
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 16*ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5*ffem/fem,
-                                color: Color(0xffffffff),
+                          Positioned(
+                            left: 180 * fem,
+                            top: 13 * fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 105 * fem,
+                                height: 24 * fem,
+                                child: Text(
+                                  'Submit',
+                                  style: SafeGoogleFont(
+                                    'Poppins',
+                                    fontSize: 16 * ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.5 * ffem / fem,
+                                    color: Color(0xffffffff),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
             ),
           ],
+
         ),
+
       ),
+
           );
   }
 }

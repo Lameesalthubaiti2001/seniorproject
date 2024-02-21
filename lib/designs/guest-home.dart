@@ -1,24 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/Rwad.dart';
+import 'package:seniorproject/designs/Smarthomes.dart';
+import 'package:seniorproject/designs/jewelry.dart';
+import 'package:seniorproject/designs/club-side-home.dart';
+import 'package:seniorproject/designs/guest-side-aboutclub.dart';
 import 'dart:ui';
-
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-event-detail.dart';
 import 'package:seniorproject/designs/guest-side-activity.dart';
+import 'package:seniorproject/designs/robotics.dart';
+import 'package:seniorproject/designs/Finance.dart';
 
-class GuestHome extends StatelessWidget {
+class GuestHome extends StatefulWidget {
+  static const String screenRoute = 'Guest_Home_screen';
+  @override
+  _GuestHomeState createState() => _GuestHomeState();
+}
+
+class _GuestHomeState extends State<GuestHome> {
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery
-        .of(context)
-        .size
-        .width / baseWidth;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
+      ),
+    body: Container(
       width: double.infinity,
       child: Container(
-        // guesthomeho1 (206:2)
+
         width: double.infinity,
         decoration: BoxDecoration (
           color: Color(0xffffffff),
@@ -27,16 +49,14 @@ class GuestHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // autogroup4yry1UF (7P4gdBJWsERKBkJm5e4YRy)
               padding: EdgeInsets.fromLTRB(18*fem, 19*fem, 0*fem, 17*fem),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    // autogroupzhwqKUw (7P4e65rwiqwmNewakjZhwq)
                     margin: EdgeInsets.fromLTRB(2*fem, 0*fem, 31*fem, 10*fem),
-                    padding: EdgeInsets.fromLTRB(14*fem, 6*fem, 250*fem, 0*fem),
+                    padding: EdgeInsets.fromLTRB(14*fem, 6*fem, 120*fem, 0*fem),
                     width: double.infinity,
                     height: 39*fem,
                     decoration: BoxDecoration (
@@ -46,8 +66,9 @@ class GuestHome extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          // vectorPjh (213:5)
+                        Expanded(
+                        child:Container(
+
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13.49*fem, 10.49*fem),
                           width: 22.51*fem,
                           height: 22.51*fem,
@@ -57,17 +78,13 @@ class GuestHome extends StatelessWidget {
                             height: 22.51*fem,
                           ),
                         ),
-                        Container(
-                          // autogroup3dabhkP (7P4eDAVUqrEnokHpDz3dab)
-                          height: double.infinity,
-                          child: Text(
-                            'Search......',
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 16*ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5*ffem/fem,
-                              color: Color(0xffc4c4c4),
+                        ),
+                        SizedBox(
+                          width: 200,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              labelText: 'Search...',
+                              border: InputBorder.none,
                             ),
                           ),
                         ),
@@ -75,7 +92,6 @@ class GuestHome extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // clubsRRV (206:60)
                     margin: EdgeInsets.fromLTRB(2*fem, 0*fem, 0*fem, 10*fem),
                     child: Text(
                       'Clubs',
@@ -88,76 +104,77 @@ class GuestHome extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    // frame4wej (290:55)
-                    margin: EdgeInsets.fromLTRB(9*fem, 0*fem, 0*fem, 30*fem),
-                    width: double.infinity,
-                    height: 39*fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // autogroupoxvhf4w (7P4gvayBB8zzC2sT2MoxVh)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 4.85*fem, 0*fem),
-                          width: 333.8*fem,
+      Container(
+        height: 39 * fem,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+
+                        Expanded(
+                        child:Container(
+                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.85 * fem, 0 * fem),
+                          width: 333.8 * fem,
                           height: double.infinity,
                           child: Stack(
                             children: [
                               Positioned(
-                                // club2BJB (206:26)
-                                left: 92*fem,
-                                top: 0*fem,
+                                left: 92 * fem,
+                                top: -2.7 * fem,
                                 child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom (
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => AboutClubPage()),
+                                    );
+                                  },
+                                  style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero,
                                   ),
                                   child: Container(
-                                    width: 152*fem,
-                                    height: 39*fem,
+                                    width: 152 * fem,
+                                    height: 39 * fem,
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // rectangle41966AF (206:27)
-                                          left: 26.7698974609*fem,
-                                          top: 0*fem,
+                                          left: 26.7698974609 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 100.69*fem,
-                                              height: 39*fem,
+                                              width: 106.77 * fem,
+                                              height: 39 * fem,
                                               child: Container(
-                                                decoration: BoxDecoration (
-                                                  borderRadius: BorderRadius.circular(20.9626293182*fem),
-                                                  border: Border.all(color: Color(0xfff59762)),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x1e2e2e4e),
-                                                      offset: Offset(0*fem, 6*fem),
-                                                      blurRadius: 10*fem,
-                                                    ),
-                                                  ],
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(20 * fem),
+                                                  color: Color(0xfff59762),
+
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // googledevelopersZpX (206:28)
-                                          left: 42*fem,
-                                          top: 0*fem,
+                                          left: 42 * fem,
+                                          top: 0 * fem,
                                           child: Align(
-                                            child: SizedBox(
-                                              width: 68*fem,
-                                              height: 36*fem,
-                                              child: Text(
-                                                'Google \nDevelopers',
-                                                textAlign: TextAlign.center,
-                                                style: SafeGoogleFont (
-                                                  'Poppins',
-                                                  fontSize: 12*ffem,
-                                                  fontWeight: FontWeight.w500,
-                                                  height: 1.5*ffem/fem,
-                                                  color: Color(0xfff59762),
+                                            child: Container(
+                                              width: 68 * fem,
+                                              height: 36 * fem,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(20 * fem),
+                                                color: Color(0xfff59762),
+
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  'Google \nDevelopers',
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont(
+                                                    'Poppins',
+                                                    fontSize: 12 * ffem,
+                                                    fontWeight: FontWeight.w500,
+                                                    height: 1.5 * ffem / fem,
+                                                    color: Colors.white,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -165,11 +182,11 @@ class GuestHome extends StatelessWidget {
                                         ),
                                         Positioned(
                                           // 3jh (206:29)
-                                          left: 47.7698974609*fem,
-                                          top: 10.9824981689*fem,
+                                          left: 47.7698974609 * fem,
+                                          top: 10.9824981689 * fem,
                                           child: Container(
-                                            width: 17.73*fem,
-                                            height: 17.71*fem,
+                                            width: 17.73 * fem,
+                                            height: 17.71 * fem,
                                           ),
                                         ),
                                       ],
@@ -178,163 +195,179 @@ class GuestHome extends StatelessWidget {
                                 ),
                               ),
                               Positioned(
-                                // club1PYf (206:31)
-                                left: 0*fem,
-                                top: 0*fem,
-                                child: Container(
-                                  width: 119*fem,
-                                  height: 39*fem,
-                                  decoration: BoxDecoration (
-                                    borderRadius: BorderRadius.circular(20.9626293182*fem),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        // rectangle4197WtB (206:32)
-                                        left: 0*fem,
-                                        top: 0*fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 106.77*fem,
-                                            height: 39*fem,
-                                            child: Container(
-                                              decoration: BoxDecoration (
-                                                borderRadius: BorderRadius.circular(20.9626293182*fem),
-                                                color: Color(0xfff0635a),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Color(0x1e2e2e4e),
-                                                    offset: Offset(0*fem, 6*fem),
-                                                    blurRadius: 10*fem,
-                                                  ),
-                                                ],
+                                left: 0 * fem,
+                                top: 0 * fem,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Robotics()),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 119 * fem,
+                                    height: 39 * fem,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.9626293182 * fem),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          left: 0 * fem,
+                                          top: 0 * fem,
+                                          child: Align(
+                                            child: SizedBox(
+                                              width: 106.77 * fem,
+                                              height: 39 * fem,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(20.9626293182 * fem),
+                                                  color: Color(0xfff0635a),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Color(0x1e2e2e4e),
+                                                      offset: Offset(0 * fem, 6 * fem),
+                                                      blurRadius: 10 * fem,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        // roboticssocietycgK (206:34)
-                                        left: 4*fem,
-                                        top: 11*fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 100*fem,
-                                            height: 18*fem,
-                                            child: Text(
-                                              'Robotics Society',
-                                              style: SafeGoogleFont (
-                                                'Poppins',
-                                                fontSize: 12*ffem,
-                                                fontWeight: FontWeight.w500,
-                                                height: 1.5*ffem/fem,
-                                                color: Color(0xffffffff),
+                                        Positioned(
+                                          left: 4 * fem,
+                                          top: 11 * fem,
+                                          child: Align(
+                                            child: SizedBox(
+                                              width: 100 * fem,
+                                              height: 18 * fem,
+                                              child: Text(
+                                                'Robotics Society',
+                                                style: SafeGoogleFont(
+                                                  'Poppins',
+                                                  fontSize: 11.5 * ffem,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.5 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                               Positioned(
-                                // club38Pm (206:38)
-                                left: 231.4635009766*fem,
-                                top: 0*fem,
-                                child: Container(
-                                  width: 102.34*fem,
-                                  height: 39*fem,
-                                  decoration: BoxDecoration (
-                                    borderRadius: BorderRadius.circular(20.9626293182*fem),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        // rectangle4194raf (206:39)
-                                        left: 0*fem,
-                                        top: 0*fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 95.19*fem,
-                                            height: 39*fem,
-                                            child: Container(
-                                              decoration: BoxDecoration (
-                                                borderRadius: BorderRadius.circular(20.9626293182*fem),
-                                                border: Border.all(color: Color(0xff29d697)),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Color(0x1e2e2e4e),
-                                                    offset: Offset(0*fem, 6*fem),
-                                                    blurRadius: 10*fem,
+                                left: 231.4635009766 * fem,
+                                top: 0 * fem,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Finance()),
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.9626293182 * fem),
+                                    child: Container(
+                                      width: 102.34 * fem,
+                                      height: 39 * fem,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff29d697),
+                                        border: Border.all(color: Color(0xff29d697)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Color(0x1e2e2e4e),
+                                            offset: Offset(0 * fem, 6 * fem),
+                                            blurRadius: 30 * fem,
+                                          ),
+                                        ],
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          Positioned(
+                                            left: 0 * fem,
+                                            top: 0 * fem,
+                                            child: Align(
+                                              child: SizedBox(
+                                                width: 106.77 * fem,
+                                                height: 39 * fem,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xff29d697),
                                                   ),
-                                                ],
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                        // financeclubYyH (206:51)
-                                        left: 8.5364990234*fem,
-                                        top: 12*fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 80*fem,
-                                            height: 18*fem,
-                                            child: Text(
-                                              'Finance Club',
-                                              style: SafeGoogleFont (
-                                                'Poppins',
-                                                fontSize: 12*ffem,
-                                                fontWeight: FontWeight.w500,
-                                                height: 1.5*ffem/fem,
-                                                color: Color(0xff29d697),
+
+                                          Positioned(
+                                            left: 7.5364990234 * fem,
+                                            top: 12 * fem,
+                                            child: Align(
+                                              child: SizedBox(
+                                                width: 80 * fem,
+                                                height: 18 * fem,
+                                                child: Text(
+                                                  'Finance Club',
+                                                  style: SafeGoogleFont(
+                                                    'Poppins',
+                                                    fontSize: 12 * ffem,
+                                                    fontWeight: FontWeight.w500,
+                                                    height: 1.5 * ffem / fem,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        Container(
-                          // club4fHD (206:52)
-                          width: 99*fem,
-                          height: double.infinity,
-                          decoration: BoxDecoration (
-                            border: Border.all(color: Color(0xffffc600)),
-                            borderRadius: BorderRadius.circular(20.9626293182*fem),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color(0x1e2e2e4e),
-                                offset: Offset(0*fem, 6*fem),
-                                blurRadius: 10*fem,
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Rwad Club',
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 12*ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5*ffem/fem,
-                                color: Color(0xffffc600),
-                              ),
-                            ),
-                          ),
                         ),
-                      ],
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Rwad()),
+                );
+              },
+              child: Container(
+                width: 99 * fem,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xffffc600)),
+                  borderRadius: BorderRadius.circular(20.9626293182 * fem),
+                  color: Color(0xffffc600),
+                ),
+                child: Center(
+                  child: Text(
+                    'Rwad Club',
+                    style: SafeGoogleFont(
+                      'Poppins',
+                      fontSize: 12 * ffem,
+                      fontWeight: FontWeight.w500,
+                      height: 1.5 * ffem / fem,
+                      color: Colors.white,
                     ),
                   ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+
                   Container(
-                    // upcomingeventsjH5 (206:61)
                     margin: EdgeInsets.fromLTRB(2*fem, 0*fem, 0*fem, 21*fem),
                     child: RichText(
                       text: TextSpan(
@@ -352,26 +385,21 @@ class GuestHome extends StatelessWidget {
                               'Poppins',
                               fontSize: 18*ffem,
                               fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
+                              height: 3.5*ffem/fem,
                               color: Color(0xff042745),
                             ),
-                          ),
-                          TextSpan(
-                            text: '  ',
                           ),
                         ],
                       ),
                     ),
                   ),
                   Container(
-                    // autogroupbaqroAT (7P4eJupuRWgtkEWpvXbAqR)
                     margin: EdgeInsets.fromLTRB(2*fem, 0*fem, 0*fem, 28*fem),
                     width: 526*fem,
                     height: 253*fem,
                     child: Stack(
                       children: [
                         Positioned(
-                          // timecircleWqZ (216:192)
                           left: 88.3333282471*fem,
                           top: 199.3334121704*fem,
                           child: Align(
@@ -387,7 +415,6 @@ class GuestHome extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // timecircleDjy (216:200)
                           left: 450.3333129883*fem,
                           top: 196.3334121704*fem,
                           child: Align(
@@ -403,7 +430,6 @@ class GuestHome extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // calendar8c3 (214:37)
                           left: 261*fem,
                           top: 182*fem,
                           child: Align(
@@ -419,7 +445,6 @@ class GuestHome extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // frame34Eo (290:53)
                           left: 0*fem,
                           top: 0*fem,
                           child: Container(
@@ -429,21 +454,19 @@ class GuestHome extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  // event4nAo (206:63)
                                   margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 16*fem, 0*fem),
                                   width: 160*fem,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Container(
-                                        // autogroupspov7Ty (7P4esPtn6Ud89FB4xjSpoV)
+                                      Expanded(
+                                      child:Container(
                                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
                                         width: double.infinity,
                                         height: 220*fem,
                                         child: Stack(
                                           children: [
                                             Positioned(
-                                              // rectangle419936j (206:64)
                                               left: 0*fem,
                                               top: 0*fem,
                                               child: Align(
@@ -461,7 +484,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // maincardbgYJP (206:65)
                                               left: 0*fem,
                                               top: 168*fem,
                                               child: ClipRect(
@@ -494,7 +516,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // lecturehallmS3 (214:57)
                                               left: 26*fem,
                                               top: 181*fem,
                                               child: Align(
@@ -502,11 +523,11 @@ class GuestHome extends StatelessWidget {
                                                   width: 41*fem,
                                                   height: 29*fem,
                                                   child: Text(
-                                                    'LECTURE\n HALL',
+                                                    'LECTURE HALL',
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.6*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -532,7 +553,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // iconlyboldcalendarAj5 (214:61)
                                               left: 89.4296569824*fem,
                                               top: 175*fem,
                                               child: Align(
@@ -560,7 +580,7 @@ class GuestHome extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.8*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -570,7 +590,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // pm4pmmis (214:78)
                                               left: 106.5*fem,
                                               top: 195*fem,
                                               child: Align(
@@ -582,7 +601,7 @@ class GuestHome extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.6*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -594,22 +613,29 @@ class GuestHome extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      Text(
-                                        // jewelryindustryUNP (206:66)
-                                        'Jewelry Industry ',
-                                        style: SafeGoogleFont (
-                                          'Poppins',
-                                          fontSize: 16*ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.5*ffem/fem,
-                                          color: Color(0xff042745),
+                                      ),
+
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => jewerly()),
+                                          );
+                                        },
+                                        child: Text(
+                                          'Jewelry Industry',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.5,
+                                            color: Color(0xff042745),
+                                          ),
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  // event2ovT (206:71)
                                   margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
                                   child: TextButton(
                                     onPressed: () {},
@@ -622,14 +648,12 @@ class GuestHome extends StatelessWidget {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Container(
-                                            // autogrouptaksuyV (7P4fHU3176RQcZMrkytAks)
                                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
                                             width: double.infinity,
                                             height: 221*fem,
                                             child: Stack(
                                               children: [
                                                 Positioned(
-                                                  // rectangle4199EF5 (206:72)
                                                   left: 0*fem,
                                                   top: 0*fem,
                                                   child: Align(
@@ -647,7 +671,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // maincardbgjBq (206:73)
                                                   left: 0*fem,
                                                   top: 169*fem,
                                                   child: ClipRect(
@@ -680,7 +703,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // lecturehallMU7 (206:77)
                                                   left: 24*fem,
                                                   top: 184*fem,
                                                   child: Align(
@@ -688,11 +710,11 @@ class GuestHome extends StatelessWidget {
                                                       width: 41*fem,
                                                       height: 29*fem,
                                                       child: Text(
-                                                        'LECTURE\n HALL',
+                                                        'LECTURE HALL',
                                                         textAlign: TextAlign.center,
                                                         style: SafeGoogleFont (
                                                           'Roboto',
-                                                          fontSize: 12*ffem,
+                                                          fontSize: 9.6*ffem,
                                                           fontWeight: FontWeight.w500,
                                                           height: 1.1725*ffem/fem,
                                                           color: Color(0xffffffff),
@@ -702,7 +724,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // novFZV (206:78)
                                                   left: 103.5*fem,
                                                   top: 179*fem,
                                                   child: Align(
@@ -714,7 +735,7 @@ class GuestHome extends StatelessWidget {
                                                         textAlign: TextAlign.center,
                                                         style: SafeGoogleFont (
                                                           'Roboto',
-                                                          fontSize: 12*ffem,
+                                                          fontSize: 9.6*ffem,
                                                           fontWeight: FontWeight.w500,
                                                           height: 1.1725*ffem/fem,
                                                           color: Color(0xffffffff),
@@ -724,19 +745,18 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // pm4pmwx7 (214:47)
                                                   left: 99*fem,
                                                   top: 198*fem,
                                                   child: Align(
                                                     child: SizedBox(
                                                       width: 59*fem,
-                                                      height: 15*fem,
+                                                      height: 18*fem,
                                                       child: Text(
                                                         '12PM-4PM',
                                                         textAlign: TextAlign.center,
                                                         style: SafeGoogleFont (
                                                           'Roboto',
-                                                          fontSize: 12*ffem,
+                                                          fontSize: 9.6*ffem,
                                                           fontWeight: FontWeight.w500,
                                                           height: 1.1725*ffem/fem,
                                                           color: Color(0xffffffff),
@@ -746,7 +766,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // iconlyboldcalendareLj (214:35)
                                                   left: 82*fem,
                                                   top: 198*fem,
                                                   child: Align(
@@ -762,7 +781,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // timecircle9HV (216:166)
                                                   left: 0*fem,
                                                   top: 0*fem,
                                                   child: Container(
@@ -771,7 +789,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // group66Cj (214:53)
                                                   left: 2*fem,
                                                   top: 185*fem,
                                                   child: Align(
@@ -787,7 +804,6 @@ class GuestHome extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                  // calendarosq (308:67)
                                                   left: 85*fem,
                                                   top: 178*fem,
                                                   child: Align(
@@ -807,7 +823,6 @@ class GuestHome extends StatelessWidget {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              // Navigate to the OtherPage
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(builder: (context) => EventDetail()),
@@ -830,21 +845,18 @@ class GuestHome extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  // event3rLK (206:79)
                                   margin: EdgeInsets.fromLTRB(0*fem, 5*fem, 0*fem, 0*fem),
                                   width: 160*fem,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        // autogroupyrkrBNb (7P4frHReutpNPDoQVMyRKR)
                                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 8*fem),
                                         width: double.infinity,
                                         height: 216*fem,
                                         child: Stack(
                                           children: [
                                             Positioned(
-                                              // rectangle41995ym (206:80)
                                               left: 0*fem,
                                               top: 0*fem,
                                               child: Align(
@@ -862,7 +874,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // maincardbgndH (206:81)
                                               left: 0*fem,
                                               top: 164*fem,
                                               child: ClipRect(
@@ -895,7 +906,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // antdesignstarfilledSSw (206:83)
                                               left: 10*fem,
                                               top: 190*fem,
                                               child: Container(
@@ -904,7 +914,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // f054ySs (206:85)
                                               left: 23*fem,
                                               top: 185*fem,
                                               child: Align(
@@ -916,7 +925,7 @@ class GuestHome extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.6*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -926,7 +935,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // marfab (206:86)
                                               left: 111*fem,
                                               top: 173*fem,
                                               child: Align(
@@ -938,7 +946,7 @@ class GuestHome extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.6*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -948,7 +956,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // pm2pmZvs (214:33)
                                               left: 101.5*fem,
                                               top: 195*fem,
                                               child: Align(
@@ -960,7 +967,7 @@ class GuestHome extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont (
                                                       'Roboto',
-                                                      fontSize: 12*ffem,
+                                                      fontSize: 9.6*ffem,
                                                       fontWeight: FontWeight.w500,
                                                       height: 1.1725*ffem/fem,
                                                       color: Color(0xffffffff),
@@ -970,7 +977,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // iconlyboldcalendarswZ (214:11)
                                               left: 80.4391479492*fem,
                                               top: 171.3333358765*fem,
                                               child: Align(
@@ -986,7 +992,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // iconlyboldtimesquareCD9 (214:28)
                                               left: 82.7591552734*fem,
                                               top: 198.3333969116*fem,
                                               child: Align(
@@ -1002,7 +1007,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // timecircle7L7 (216:212)
                                               left: 83.3333129883*fem,
                                               top: 194.3334121704*fem,
                                               child: Align(
@@ -1018,7 +1022,6 @@ class GuestHome extends StatelessWidget {
                                               ),
                                             ),
                                             Positioned(
-                                              // mappincnf (308:78)
                                               left: 7*fem,
                                               top: 184.6666793823*fem,
                                               child: Align(
@@ -1036,8 +1039,14 @@ class GuestHome extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      Text(
-                                        // smarthomesXud (206:82)
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Smarthomes()),
+                              );
+                            },
+                                      child:Text(
                                         'Smart Homes',
                                         style: SafeGoogleFont (
                                           'Poppins',
@@ -1047,6 +1056,7 @@ class GuestHome extends StatelessWidget {
                                           color: Color(0xff042745),
                                         ),
                                       ),
+                          ),
                                     ],
                                   ),
                                 ),
@@ -1058,13 +1068,11 @@ class GuestHome extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // autogroupa1orGcK (7P4gBcCnkMYk3176fba1oR)
                     width: 403*fem,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          // youractivity1po (206:62)
                           margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 0*fem, 7*fem),
                           child: Text(
                             'Your Activity ',
@@ -1078,7 +1086,6 @@ class GuestHome extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // registeredevents9RD (215:98)
                           padding: EdgeInsets.fromLTRB(8*fem, 25*fem, 14*fem, 9*fem),
                           width: double.infinity,
                           decoration: BoxDecoration (
@@ -1096,7 +1103,6 @@ class GuestHome extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // registeredeventsDvs (215:100)
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 201*fem, 14*fem),
                                 child: Text(
                                   'Registered Events ',
@@ -1110,14 +1116,12 @@ class GuestHome extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                // group143Lkb (218:346)
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 54*fem, 28.5*fem),
                                 width: 327*fem,
                                 height: 65.5*fem,
                                 child: Stack(
                                   children: [
                                     Positioned(
-                                      // rectangle2TqD (218:347)
                                       left: 0*fem,
                                       top: 0*fem,
                                       child: Align(
@@ -1134,7 +1138,6 @@ class GuestHome extends StatelessWidget {
                                       ),
                                     ),
                                     Positioned(
-                                      // group139BWK (218:350)
                                       left: 74*fem,
                                       top: 39.5*fem,
                                       child: Container(
@@ -1144,8 +1147,8 @@ class GuestHome extends StatelessWidget {
                                         child: Row(
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
-                                            Container(
-                                              // timecircletvX (218:351)
+                                            Expanded(
+                                            child:Container(
                                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.33*fem, 1*fem),
                                               width: 13.33*fem,
                                               height: 13.33*fem,
@@ -1155,8 +1158,8 @@ class GuestHome extends StatelessWidget {
                                                 height: 13.33*fem,
                                               ),
                                             ),
+                                            ),
                                             Text(
-                                              // pm400pm1kF (218:355)
                                               '12.00pm - 4.00pm',
                                               style: SafeGoogleFont (
                                                 'Roboto',
@@ -1172,7 +1175,6 @@ class GuestHome extends StatelessWidget {
                                       ),
                                     ),
                                     Positioned(
-                                      // thesaudidealtodayMJK (218:367)
                                       left: 79*fem,
                                       top: 3*fem,
                                       child: Align(
@@ -1193,7 +1195,6 @@ class GuestHome extends StatelessWidget {
                                       ),
                                     ),
                                     Positioned(
-                                      // calendareHR (227:427)
                                       left: 20*fem,
                                       top: 18*fem,
                                       child: Align(
@@ -1212,7 +1213,6 @@ class GuestHome extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                // viewallZfH (216:216)
                                 margin: EdgeInsets.fromLTRB(312*fem, 0*fem, 0*fem, 0*fem),
                                 child: TextButton(
                                   onPressed: () {},
@@ -1227,7 +1227,6 @@ class GuestHome extends StatelessWidget {
                                       children: [
                                         GestureDetector(
                                           onTap: () {
-                                            // Navigate to the OtherPage
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => RegisterdEvents()),
@@ -1248,7 +1247,6 @@ class GuestHome extends StatelessWidget {
                                           ),
                                         ),
                                         Container(
-                                          // evaarrowiosforwardoutlineb6B (216:218)
                                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0.02*fem),
                                           width: 4.41*fem,
                                           height: 8.77*fem,
@@ -1272,10 +1270,10 @@ class GuestHome extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
       ),
+    ),
     );
   }
 }

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 
-class EventDetail extends StatelessWidget {
+class jewerly extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -32,7 +33,7 @@ class EventDetail extends StatelessWidget {
                   image: DecorationImage (
                     fit: BoxFit.cover,
                     image: AssetImage (
-                      'assets/designs/images/rectangle-4204-bg.png',
+                      'assets/designs/images/rectangle-4199-Q5Z.png',
                     ),
                   ),
                 ),
@@ -96,7 +97,7 @@ class EventDetail extends StatelessWidget {
                                   width: 151*fem,
                                   height: 30*fem,
                                   child: Text(
-                                    'The Saudi Deal ',
+                                    'AJ Jewelry ',
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Poppins',
@@ -119,7 +120,7 @@ class EventDetail extends StatelessWidget {
                                   width: 80*fem,
                                   height: 18*fem,
                                   child: Text(
-                                    '29 November ',
+                                    '12 November ',
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Poppins',
@@ -159,7 +160,7 @@ class EventDetail extends StatelessWidget {
                                   width: 76*fem,
                                   height: 18*fem,
                                   child: Text(
-                                    '12pm-4pm    ',
+                                    '1pm-4pm    ',
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Poppins',
@@ -258,7 +259,7 @@ class EventDetail extends StatelessWidget {
                         maxWidth: 352*fem,
                       ),
                       child: Text(
-                        '"The Saudi Deal" is a prestigious event set against the\n backdrop of the Kingdom of Saudi Arabia,\n poised as an immersive forum where global innovators,\n industry leaders, and visionaries converge.\n This event promises an unparalleled platform, \ninviting attendees to explore and discover the boundless\n opportunities emerging within the heart of Saudi Arabia\'s\n transformative landscape  ',
+                        'AJ Jewelry was established in May 2015 by Alanoud and Aljazi Althunayan. The Saudi born sisters were brought up in the city of Alkhobar, where they both currently live. Their mother and father both artistically aware, taught them to appreciate art and culture, regularly travelling with them to visit galleries andmuseums around the world as they grew up. They then went on to study art during school breaks todevelop their skills in drawing and design. ',
                         style: SafeGoogleFont (
                           'Roboto',
                           fontSize: 14*ffem,
@@ -320,72 +321,79 @@ class EventDetail extends StatelessWidget {
                 height: 139*fem,
               ),
             ),
-        Positioned(
-          // registernowuET (101:321)
-          left: 0 * fem,
-          top: 0 * fem,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: FractionalTranslation(
-              translation: Offset(0, 8),
-              child: TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  width: 428 * fem,
-                  height: 91 * fem,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10 * fem),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        // rectangle4208CzF (101:323)
-                        left: 20 * fem,
-                        top: 0 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 388 * fem,
-                            height: 50 * fem,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10 * fem),
-                                color: Color(0xfff36f23),
+            Positioned(
+              // registernowuET (101:321)
+              left: 0 * fem,
+              top: 0 * fem,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: FractionalTranslation(
+                  translation: Offset(0, 8),
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Container(
+                      width: 428 * fem,
+                      height: 91 * fem,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10 * fem),
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            // rectangle4208CzF (101:323)
+                            left: 20 * fem,
+                            top: 0 * fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 388 * fem,
+                                height: 50 * fem,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10 * fem),
+                                    color: Color(0xfff36f23),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        // registernow7rK (101:324)
-                        left: 161 * fem,
-                        top: 13 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 105 * fem,
-                            height: 24 * fem,
-                            child: Text(
-                              'Register Now',
-                              style: SafeGoogleFont(
-                                'Poppins',
-                                fontSize: 16 * ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5 * ffem / fem,
-                                color: Color(0xffffffff),
+                          Positioned(
+                            left: 161 * fem,
+                            top: 13 * fem,
+                            child: Align(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => EventRegistration()),
+                                  );
+                                },
+                                child: SizedBox(
+                                  width: 105 * fem,
+                                  height: 24 * fem,
+                                  child: Text(
+                                    'Register Now',
+                                    style: SafeGoogleFont(
+                                      'Poppins',
+                                      fontSize: 16 * ffem,
+                                      fontWeight: FontWeight.w500,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xffffffff),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-        )
+            )
           ],
         ),
       ),

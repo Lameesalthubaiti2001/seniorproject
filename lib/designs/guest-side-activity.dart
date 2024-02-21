@@ -21,65 +21,11 @@ class RegisterdEvents extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              // autogroupvrhyqGP (7P4JPKMkLy9txMhGoVVrhy)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 57*fem),
-              padding: EdgeInsets.fromLTRB(12*fem, 10*fem, 25.34*fem, 18.25*fem),
-              width: double.infinity,
-              height: 99*fem,
-              decoration: BoxDecoration (
-                color: Color(0xff042745),
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(5*fem),
-                  bottomLeft: Radius.circular(5*fem),
-                ),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // autogroupzmpwi5H (7P4JXEJEJZbkKaVmWBZmpw)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 130.5*fem, 0*fem),
-                    width: 38.5*fem,
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // vectorYKD (101:157)
-                          width: 20*fem,
-                          height: 17.5*fem,
-                          child: Image.asset(
-                            'assets/designs/images/vector-Z39.png',
-                            width: 20*fem,
-                            height: 17.5*fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // activityUTm (237:179)
-                    margin: EdgeInsets.fromLTRB(0*fem, 36.25*fem, 90.22*fem, 0*fem),
-                    child: Text(
-                      'Activity',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        letterSpacing: -0.3000000119*fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
+
             Container(
               // registeredeventswEs (218:315)
-              margin: EdgeInsets.fromLTRB(35*fem, 0*fem, 0*fem, 0*fem),
+              margin: EdgeInsets.fromLTRB(35*fem, 80*fem, 0*fem, 0*fem),
               child: RichText(
                 text: TextSpan(
                   style: SafeGoogleFont (
