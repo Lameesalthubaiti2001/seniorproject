@@ -101,7 +101,7 @@ class _Scene40State extends State<Scene40> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => AboutClubPage()),
+                              MaterialPageRoute(builder: (context) => AboutClub()),
                             );
                           },
                           child: Container(

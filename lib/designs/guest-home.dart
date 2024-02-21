@@ -12,7 +12,7 @@ import 'package:seniorproject/designs/guest-side-activity.dart';
 import 'package:seniorproject/designs/robotics.dart';
 import 'package:seniorproject/designs/Finance.dart';
 import 'package:seniorproject/designs/guest-side-explore-clubs.dart';
-import 'package:seniorproject/designs/guest-side-aboutclub.dart';
+
 
 class GuestHome extends StatefulWidget {
   static const String screenRoute = 'Guest_Home_screen';
@@ -126,7 +126,7 @@ class _GuestHomeState extends State<GuestHome> {
                                   onPressed: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => AboutClubPage()),
+                                      MaterialPageRoute(builder: (context) => AboutClub()),
                                     );
                                   },
                                   style: TextButton.styleFrom(
@@ -621,7 +621,7 @@ class _GuestHomeState extends State<GuestHome> {
                                         onTap: () {
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => jewerly()),
+                                            MaterialPageRoute(builder: (context) => jewelry()),
                                           );
                                         },
                                         child: Text(

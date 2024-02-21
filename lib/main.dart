@@ -102,6 +102,7 @@ class MyEvent extends StatelessWidget {
 				Rwad.screenRoute:(context)=>Rwad(),
 				Samaa.screenRoute:(context)=>Samaa(),
 				Smarthomes.screenRoute:(context)=>Smarthomes(),
+
 			},
 		);
   }
