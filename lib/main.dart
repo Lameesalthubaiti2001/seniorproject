@@ -1,5 +1,14 @@
+import 'dart:js_interop_unsafe';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/Finance.dart';
+import 'package:seniorproject/designs/MIS.dart';
+import 'package:seniorproject/designs/Rwad.dart';
+import 'package:seniorproject/designs/Samaa.dart';
+import 'package:seniorproject/designs/Smarthomes.dart';
+import 'package:seniorproject/designs/jewelry.dart';
+import 'package:seniorproject/designs/robotics.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -39,9 +48,13 @@ import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
 import 'designs/club-side-edit-confirmation.dart';
 import 'designs/club-side-poster-request-confirm.dart';
-import 'designs/admin_footer.dart';
+import 'designs/Finance.dart';
 import 'designs/guest_footer.dart';
-import 'designs/club_footer.dart';
+import 'designs/jewelry.dart';
+import 'designs/MIS.dart';
+import 'designs/robotics.dart';
+import 'designs/Rwad.dart';
+import 'designs/Samaa.dart';
 
 
 void main(){
@@ -74,6 +87,21 @@ class MyEvent extends StatelessWidget {
 				RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
 				RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
 				RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
+				Finance.screenRoute:(context)=>Finance(),
+				GuestHome.screenRoute:(context)=>GuestHome(),
+				AboutClub.screenRoute:(context)=>AboutClub(),
+				Scene40.screenRoute:(context)=>Scene40(),
+				RegisterdEvents.screenRoute:(context)=>RegisterdEvents(),
+				EventDetail.screenRoute:(context)=>EventDetail(),
+				EventRegistration.screenRoute:(context)=>EventRegistration(),
+				RegistrationConfirm.screenRoute:(context)=>RegistrationConfirm(),
+				GuestFooter.screenRoute:(context)=>GuestFooter(),
+				jewelry.screenRoute:(context)=>jewelry(),
+				MIS.screenRoute:(context)=>MIS(),
+				Robotics.screenRoute:(context)=>Robotics(),
+				Rwad.screenRoute:(context)=>Rwad(),
+				Samaa.screenRoute:(context)=>Samaa(),
+				Smarthomes.screenRoute:(context)=>Smarthomes(),
 			},
 		);
   }

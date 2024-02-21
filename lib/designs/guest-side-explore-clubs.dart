@@ -13,10 +13,10 @@ import 'package:seniorproject/utils.dart';
 class Scene40 extends StatefulWidget {
   static const String screenRoute = 'Explore_screen';
   @override
-  _Scene40 createState() => _Scene40();
+  _Scene40State createState() => _Scene40State();
 }
 
-class _Scene40 extends State<Scene40> {
+class _Scene40State extends State<Scene40> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;

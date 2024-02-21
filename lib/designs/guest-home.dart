@@ -11,6 +11,8 @@ import 'package:seniorproject/designs/guest-side-event-detail.dart';
 import 'package:seniorproject/designs/guest-side-activity.dart';
 import 'package:seniorproject/designs/robotics.dart';
 import 'package:seniorproject/designs/Finance.dart';
+import 'package:seniorproject/designs/guest-side-explore-clubs.dart';
+import 'package:seniorproject/designs/guest-side-aboutclub.dart';
 
 class GuestHome extends StatefulWidget {
   static const String screenRoute = 'Guest_Home_screen';
