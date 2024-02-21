@@ -48,13 +48,13 @@ import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
 import 'designs/club-side-edit-confirmation.dart';
 import 'designs/club-side-poster-request-confirm.dart';
-import 'designs/Finance.dart';
+import 'designs/Finance.dart' show Finance;
 import 'designs/guest_footer.dart';
-import 'designs/jewelry.dart';
-import 'designs/MIS.dart';
-import 'designs/robotics.dart';
-import 'designs/Rwad.dart';
-import 'designs/Samaa.dart';
+import 'designs/jewelry.dart' show jewelry;
+import 'designs/MIS.dart' show MIS;
+import 'designs/robotics.dart' show Robotics;
+import 'designs/Rwad.dart' show Rwad;
+import 'designs/Samaa.dart'show Samaa;
 
 
 void main(){
@@ -70,7 +70,7 @@ class MyEvent extends StatelessWidget {
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute: AdminHome.screenRoute,
+			initialRoute: GuestHome.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
