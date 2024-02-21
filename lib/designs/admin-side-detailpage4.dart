@@ -5,13 +5,13 @@ import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
 
 
-class RequestDetail extends StatefulWidget {
-  static const String screenRoute = 'admin_detail_screen';
+class RequestDetailFour extends StatefulWidget {
+  static const String screenRoute = 'admin_detail4_screen';
   @override
-  _RequestDetailState createState() => _RequestDetailState();
+  _RequestDetailFourState createState() => _RequestDetailFourState();
 }
 
-class _RequestDetailState extends State<RequestDetail> {
+class _RequestDetailFourState extends State<RequestDetailFour> {
   double baseWidth = 428;
   double fem = 1.0;
   double ffem = 1.0;
@@ -49,7 +49,7 @@ class _RequestDetailState extends State<RequestDetail> {
                   image: DecorationImage (
                     fit: BoxFit.cover,
                     image: AssetImage (
-                      'assets/designs/images/rectangle-4204-bg-t3d.png',
+                      'assets/designs/images/chatgpt.png',
                     ),
                   ),
                 ),

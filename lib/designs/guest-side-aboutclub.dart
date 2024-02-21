@@ -108,7 +108,7 @@ class AboutClubPage extends StatelessWidget {
                       time: '12PM-1PM',
                       location: 'MALE CAMPUS',
                       icon: Icons.calendar_today,
-                      image: 'assets/designs/images/rectangle-4199-ACs.png',
+                      image: 'assets/designs/images/smarthomes.png',
                     ),
                   ),
                 ),

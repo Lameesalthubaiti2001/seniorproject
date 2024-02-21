@@ -5,13 +5,13 @@ import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
 
 
-class RequestDetailTwo extends StatefulWidget {
-  static const String screenRoute = 'admin_detail2_screen';
+class RequestDetailThree extends StatefulWidget {
+  static const String screenRoute = 'admin_detail3_screen';
   @override
-  _RequestDetailTwoState createState() => _RequestDetailTwoState();
+  _RequestDetailThreeState createState() => _RequestDetailThreeState();
 }
 
-class _RequestDetailTwoState extends State<RequestDetailTwo> {
+class _RequestDetailThreeState extends State<RequestDetailThree> {
   double baseWidth = 428;
   double fem = 1.0;
   double ffem = 1.0;
@@ -49,7 +49,7 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                       image: DecorationImage (
                         fit: BoxFit.cover,
                         image: AssetImage (
-                          'assets/designs/images/cybersecurityevent.png',
+                          'assets/designs/images/rectangle-4199-CiF.png',
                         ),
                       ),
                     ),

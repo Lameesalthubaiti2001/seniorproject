@@ -15,6 +15,8 @@ import 'designs/guest-side-event-detail.dart';
 import 'designs/club-side-editing-eventinfo.dart';
 import 'designs/admin-side-detailpage.dart';
 import 'designs/admin-side-detailpage2.dart';
+import 'designs/admin-side-detailpage3.dart';
+import 'designs/admin-side-detailpage4.dart';
 import 'designs/guest-side-event-registration.dart';
 import 'designs/admin-side-rejection.dart';
 import 'designs/guest-home.dart';
@@ -31,7 +33,7 @@ import 'designs/club-side-posters.dart';
 import 'designs/club-side-request-status.dart';
 import 'designs/club-side-request-confirm.dart';
 import 'designs/club-side-request-reject.dart';
-
+//import 'designs/club-side-home2.dart';
 // import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
 import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
@@ -41,26 +43,28 @@ import 'designs/admin_footer.dart';
 import 'designs/guest_footer.dart';
 import 'designs/club_footer.dart';
 
-void main() {
+
+void main(){
 	runApp(MyEvent());
 }
-
 class MyEvent extends StatelessWidget {
-	const MyEvent({super.key});
+  const MyEvent({super.key});
 
-	@override
-	Widget build(BuildContext context) {
-		return MaterialApp(
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
 			title: 'MyEvent',
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute: RequestStatusClubSide.screenRoute,
+			initialRoute: AdminHome.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
 				RequestDetail.screenRoute: (context) => RequestDetail(),
 				RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
+				RequestDetailThree.screenRoute: (context) => RequestDetailThree(),
+				RequestDetailFour.screenRoute: (context) => RequestDetailFour(),
 				ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
 				Rejection.screenRoute: (context) => Rejection(),
 				RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
@@ -70,13 +74,7 @@ class MyEvent extends StatelessWidget {
 				RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
 				RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
 				RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
-
-
-
-
 			},
 		);
-	}
+  }
 }
-
-//comment

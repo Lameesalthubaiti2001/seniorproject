@@ -177,11 +177,11 @@ class _AdminHomeState extends State<AdminHome> {
     if (eventName == 'The Saudi Deal workshop') {
       Navigator.pushNamed(context, 'admin_detail_screen');
     } else if (eventName == 'Intro to CyberSecurity workshop') {
-      Navigator.pushNamed(context, 'admin_detail_screen');
+      Navigator.pushNamed(context, 'admin_detail2_screen');
     } else if (eventName == 'Smart Homes workshop') {
-      Navigator.pushNamed(context, 'admin_detail_screen');
+      Navigator.pushNamed(context, 'admin_detail3_screen');
     } else if (eventName == 'ChatGPT workshop') {
-      Navigator.pushNamed(context, 'admin_detail_screen');
+      Navigator.pushNamed(context, 'admin_detail4_screen');
     }
   }
 }

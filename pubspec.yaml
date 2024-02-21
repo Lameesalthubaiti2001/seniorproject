@@ -292,7 +292,7 @@ flutter:
     - assets/designs/images/vector-onb.png
     - assets/designs/images/time-circle-mN3.png
     - assets/designs/images/ellipse-18-bg-MLw.png
-    - assets/designs/images/rectangle-4199-ACs.png
+    - assets/designs/images/smarthomes.png
     - assets/designs/images/triangle.png
     - assets/designs/images/battery-Qfu.png
     - assets/designs/images/flat-color-icons-checkmark-4Ef.png
@@ -460,6 +460,9 @@ flutter:
     - assets/designs/images/ellipse-18-bg-2zf.png
     - assets/designs/images/ellipse-2-bg.png
     - assets/designs/images/cybersecurityevent.png
+    - assets/designs/images/chatgpt.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
