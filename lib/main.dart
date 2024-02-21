@@ -48,13 +48,8 @@ import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
 import 'designs/club-side-edit-confirmation.dart';
 import 'designs/club-side-poster-request-confirm.dart';
-import 'designs/Finance.dart' show Finance;
+
 import 'designs/guest_footer.dart';
-import 'designs/jewelry.dart' show jewelry;
-import 'designs/MIS.dart' show MIS;
-import 'designs/robotics.dart' show Robotics;
-import 'designs/Rwad.dart' show Rwad;
-import 'designs/Samaa.dart'show Samaa;
 
 
 void main(){
