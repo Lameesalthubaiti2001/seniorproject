@@ -11,6 +11,29 @@ class RequestsAdminSide extends StatefulWidget {
 }
 
 class _RequestsAdminSideState extends State<RequestsAdminSide> {
+  void navigateToDetailScreen(String eventName) {
+    switch (eventName) {
+      case 'The Saudi Deal workshop':
+        Navigator.pushNamed(context, 'admin_detail_screen');
+        break;
+      case 'Intro to CyberSecurity workshop':
+        Navigator.pushNamed(context, 'admin_detail2_screen');
+        break;
+      case 'Smart Homes workshop':
+        Navigator.pushNamed(context, 'admin_detail3_screen');
+        break;
+      case 'ChatGPT workshop':
+        Navigator.pushNamed(context, 'admin_detail4_screen');
+        break;
+      case 'Jewelry Industry workshop':
+        Navigator.pushNamed(context, 'admin_detail5_screen');
+        break;
+      default:
+      // Handle case when eventName does not match any expected value
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -40,161 +63,61 @@ class _RequestsAdminSideState extends State<RequestsAdminSide> {
             SizedBox(height: 20 * fem), // Added SizedBox for spacing
             GestureDetector(
               onTap: () {
-                // Navigate to another page
+                navigateToDetailScreen('The Saudi Deal workshop');
               },
-              child: Container(
-                padding: EdgeInsets.all(20 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xff042745),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      color: Colors.white,
-                      size: 30 * fem, // Adjust icon size
-                    ),
-                    SizedBox(width: 20 * fem), // Added SizedBox for spacing
-                    Text(
-                      'The Saudi Deal workshop',
-                      style: TextStyle(
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
+              child: buildEventContainer(
+                icon: Icons.calendar_today,
+                eventName: 'The Saudi Deal workshop',
+                fem: fem,
+                ffem: ffem,
               ),
             ),
             SizedBox(height: 20 * fem), // Added SizedBox for spacing
             GestureDetector(
               onTap: () {
-                // Navigate to another page
+                navigateToDetailScreen('Intro to CyberSecurity workshop');
               },
-              child: Container(
-                padding: EdgeInsets.all(20 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xff042745),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      color: Colors.white,
-                      size: 30 * fem, // Adjust icon size
-                    ),
-                    SizedBox(width: 20 * fem), // Added SizedBox for spacing
-                    Text(
-                      'Intro to CyberSecurity workshop',
-                      style: TextStyle(
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
+              child: buildEventContainer(
+                icon: Icons.calendar_today,
+                eventName: 'Intro to CyberSecurity workshop',
+                fem: fem,
+                ffem: ffem,
               ),
             ),
             SizedBox(height: 20 * fem), // Added SizedBox for spacing
             GestureDetector(
               onTap: () {
-                // Navigate to another page
+                navigateToDetailScreen('Smart Homes workshop');
               },
-              child: Container(
-                padding: EdgeInsets.all(20 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xff042745),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      color: Colors.white,
-                      size: 30 * fem, // Adjust icon size
-                    ),
-                    SizedBox(width: 20 * fem), // Added SizedBox for spacing
-                    Text(
-                      'Smart Homes workshop',
-                      style: TextStyle(
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
+              child: buildEventContainer(
+                icon: Icons.calendar_today,
+                eventName: 'Smart Homes workshop',
+                fem: fem,
+                ffem: ffem,
               ),
             ),
             SizedBox(height: 20 * fem), // Added SizedBox for spacing
             GestureDetector(
               onTap: () {
-                // Navigate to another page
+                navigateToDetailScreen('ChatGPT workshop');
               },
-              child: Container(
-                padding: EdgeInsets.all(20 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xff042745),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      color: Colors.white,
-                      size: 30 * fem, // Adjust icon size
-                    ),
-                    SizedBox(width: 20 * fem), // Added SizedBox for spacing
-                    Text(
-                      'ChatGPT workshop',
-                      style: TextStyle(
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
+              child: buildEventContainer(
+                icon: Icons.calendar_today,
+                eventName: 'ChatGPT workshop',
+                fem: fem,
+                ffem: ffem,
               ),
             ),
             SizedBox(height: 20 * fem), // Added SizedBox for spacing
             GestureDetector(
               onTap: () {
-                // Navigate to another page
+                navigateToDetailScreen('Jewelry Industry workshop');
               },
-              child: Container(
-                padding: EdgeInsets.all(20 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xff042745),
-                  borderRadius: BorderRadius.circular(10 * fem),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      color: Colors.white,
-                      size: 30 * fem, // Adjust icon size
-                    ),
-                    SizedBox(width: 20 * fem), // Added SizedBox for spacing
-                    Text(
-                      'Jewelry Industry workshop',
-                      style: TextStyle(
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
+              child: buildEventContainer(
+                icon: Icons.calendar_today,
+                eventName: 'Jewelry Industry workshop',
+                fem: fem,
+                ffem: ffem,
               ),
             ),
             // Add more GestureDetector widgets for other events as needed
@@ -202,6 +125,40 @@ class _RequestsAdminSideState extends State<RequestsAdminSide> {
         ),
       ),
       bottomNavigationBar: AdminFooter(),
+    );
+  }
+
+  Widget buildEventContainer({
+    required IconData icon,
+    required String eventName,
+    required double fem,
+    required double ffem,
+  }) {
+    return Container(
+      padding: EdgeInsets.all(20 * fem),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Color(0xff042745),
+        borderRadius: BorderRadius.circular(10 * fem),
+      ),
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            color: Colors.white,
+            size: 30 * fem, // Adjust icon size
+          ),
+          SizedBox(width: 20 * fem), // Added SizedBox for spacing
+          Text(
+            eventName,
+            style: TextStyle(
+              fontSize: 14 * ffem,
+              fontWeight: FontWeight.w400,
+              color: Color(0xffffffff),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

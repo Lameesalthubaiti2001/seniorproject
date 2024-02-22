@@ -1,16 +1,10 @@
-import 'dart:js_interop_unsafe';
+//import 'dart:js_interop_unsafe';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:seniorproject/designs/Finance.dart';
-import 'package:seniorproject/designs/MIS.dart';
-import 'package:seniorproject/designs/Rwad.dart';
-import 'package:seniorproject/designs/Samaa.dart';
-import 'package:seniorproject/designs/Smarthomes.dart';
-import 'package:seniorproject/designs/jewelry.dart';
-import 'package:seniorproject/designs/robotics.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
+
 
 import 'designs/landing-page-.dart';
 import 'designs/role-selection.dart';
@@ -26,6 +20,7 @@ import 'designs/admin-side-detailpage.dart';
 import 'designs/admin-side-detailpage2.dart';
 import 'designs/admin-side-detailpage3.dart';
 import 'designs/admin-side-detailpage4.dart';
+import 'designs/admin-side-detailpage5.dart';
 import 'designs/guest-side-event-registration.dart';
 import 'designs/admin-side-rejection.dart';
 import 'designs/guest-home.dart';
@@ -42,12 +37,17 @@ import 'designs/club-side-posters.dart';
 import 'designs/club-side-request-status.dart';
 import 'designs/club-side-request-confirm.dart';
 import 'designs/club-side-request-reject.dart';
-//import 'designs/club-side-home2.dart';
-// import 'package:myapp/designs/expand-your-events-audience-and-reach.dart';
 import 'designs/admin-side-confirmationpage.dart';
 import 'designs/admin-side-profile.dart';
 import 'designs/club-side-edit-confirmation.dart';
 import 'designs/club-side-poster-request-confirm.dart';
+import 'designs/Finance.dart';
+import 'designs/MIS.dart';
+import 'designs/Rwad.dart';
+import 'designs/Samaa.dart';
+import 'designs/Smarthomes.dart';
+import 'designs/jewelry.dart';
+import 'designs/robotics.dart';
 
 import 'designs/guest_footer.dart';
 
@@ -65,7 +65,7 @@ class MyEvent extends StatelessWidget {
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute: GuestHome.screenRoute,
+			initialRoute: AdminHome.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -73,6 +73,7 @@ class MyEvent extends StatelessWidget {
 				RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
 				RequestDetailThree.screenRoute: (context) => RequestDetailThree(),
 				RequestDetailFour.screenRoute: (context) => RequestDetailFour(),
+				RequestDetailFive.screenRoute: (context) => RequestDetailFive(),
 				ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
 				Rejection.screenRoute: (context) => Rejection(),
 				RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),

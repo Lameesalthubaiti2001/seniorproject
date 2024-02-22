@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
-
+import 'package:seniorproject/designs/admin-side-request.dart';
 
 class AdminHome extends StatefulWidget {
   static const String screenRoute = 'admin_home_screen';
@@ -110,7 +110,10 @@ class _AdminHomeState extends State<AdminHome> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () {
-                          // Implement your logic for "View All"
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RequestsAdminSide()),
+                          );
                         },
                         child: Text(
                           'View All',
