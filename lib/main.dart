@@ -56,16 +56,16 @@ void main(){
 	runApp(MyEvent());
 }
 class MyEvent extends StatelessWidget {
-  const MyEvent({super.key});
+	const MyEvent({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+	@override
+	Widget build(BuildContext context) {
+		return MaterialApp(
 			title: 'MyEvent',
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute: AdminHome.screenRoute,
+			initialRoute: RequestStatusClubSide.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -77,6 +77,7 @@ class MyEvent extends StatelessWidget {
 				ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
 				Rejection.screenRoute: (context) => Rejection(),
 				RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
+				EventTrackingClubSide.screenRoute: (context) => EventTrackingClubSide(),
 				ClubHome.screenRoute: (context) => ClubHome(),
 				PosterRequestConfirmClubSide.screenRoute: (context) => PosterRequestConfirmClubSide(),
 				PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
@@ -101,5 +102,5 @@ class MyEvent extends StatelessWidget {
 
 			},
 		);
-  }
+	}
 }

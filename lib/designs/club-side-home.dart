@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
-
-import 'package:seniorproject/utils.dart';
 
 import 'club-side-event-info2.dart';
 import 'club-side-posters.dart';
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 import 'club_footer.dart';
-import 'your_package_name/posters_clubs_side.dart'; // Replace with the correct import
 
 class ClubHome extends StatefulWidget {
   static const String screenRoute = 'club_home_screen';
+
   @override
   _ClubHomeState createState() => _ClubHomeState();
 }
@@ -30,8 +23,7 @@ class _ClubHomeState extends State<ClubHome> {
         title: Text('Home'),
         backgroundColor: Color(0xff042745),
       ),
-      body: Container(
-        width: double.infinity,
+      body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
