@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
 import 'package:seniorproject/designs/guest-side-event-detail.dart';
+import 'package:seniorproject/designs/Smarthomes.dart';
 
 
 class EventRegistration extends StatefulWidget {

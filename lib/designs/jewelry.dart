@@ -16,6 +16,17 @@ class _JewelryState extends State<Jewelry> {
     double ffem = fem * 0.97;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'AJ Jewelry',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
+      ),
         body: Container(
         width: double.infinity,
         child: Container(
@@ -51,25 +62,8 @@ class _JewelryState extends State<Jewelry> {
                       width: 27*fem,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-
-                          Container(
-                            // evaarrowbackoutlinebyD (101:239)
-                            margin: EdgeInsets.fromLTRB(1.5*fem, 0*fem, 0*fem, 0*fem),
-                            width: 20*fem,
-                            height: 17.5*fem,
-                            child: Image.asset(
-                              'assets/designs/images/eva-arrow-back-outline.png',
-                              width: 20*fem,
-                              height: 17.5*fem,
-                            ),
-                          ),
-                        ],
                       ),
                     ),
-
-
-
                   ],
                 ),
               ),
@@ -241,9 +235,8 @@ class _JewelryState extends State<Jewelry> {
                       ),
                     ),
                     Container(
-                      // descriptionJTd (101:257)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                      width: double.infinity,
+                      // descriptionUmy (246:87)
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 12*fem, 0*fem),
                       child: Text(
                         'Description',
                         textAlign: TextAlign.center,

@@ -65,7 +65,7 @@ class MyEvent extends StatelessWidget {
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute:EventDetail.screenRoute,
+			initialRoute:GuestHome.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
