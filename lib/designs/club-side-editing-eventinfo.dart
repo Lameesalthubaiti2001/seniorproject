@@ -6,9 +6,11 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/club-side-edit-confirmation.dart';
 
+import 'club-side-event-info2.dart';
+
 class Scene11 extends StatelessWidget {
   static const String screenRoute = 'club_side_editing_event_info';
-
+//hello
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -375,7 +377,7 @@ class Scene11 extends StatelessWidget {
                   child: TextButton(
                     onPressed: () {
                       Navigator.pushNamed(
-                          context, EditConfirmationClubSide.screenRoute);
+                          context, EventInfo2ClubSide.screenRoute);
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
@@ -416,6 +418,70 @@ class Scene11 extends StatelessWidget {
                                 height: 24 * fem,
                                 child: Text(
                                   'Edit information',
+                                  style: SafeGoogleFont(
+                                    'Poppins',
+                                    fontSize: 16 * ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.5 * ffem / fem,
+                                    color: Color(0xffffffff),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  // bookticketBr3 (246:114)
+                  left: 0 * fem,
+                  top: 835 * fem,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, EditConfirmationClubSide.screenRoute);
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Container(
+                      width: 428 * fem,
+                      height: 91 * fem,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10 * fem),
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            // rectangle4208GsV (246:116)
+                            left: 20 * fem,
+                            top: 20 * fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 388 * fem,
+                                height: 50 * fem,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.circular(10 * fem),
+                                    color: Color(0xfff36f23),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // editinformationN9q (246:117)
+                            left: 149 * fem,
+                            top: 33 * fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 129 * fem,
+                                height: 24 * fem,
+                                child: Text(
+                                  'Submit',
                                   style: SafeGoogleFont(
                                     'Poppins',
                                     fontSize: 16 * ffem,

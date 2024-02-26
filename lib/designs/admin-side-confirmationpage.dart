@@ -81,7 +81,7 @@ class _ConfirmationAdminSideState extends State<ConfirmationAdminSide> {
                   ),
                   SizedBox(height: 40 * fem),
                   Text(
-                    'Your Respond Submitted\nSuccessfully',
+                    'Response Submitted\nSuccessfully',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Jost',

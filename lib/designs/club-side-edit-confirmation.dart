@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/club_footer.dart';
 
+//hello
 class EditConfirmationClubSide extends StatelessWidget {
   static const String screenRoute = 'club_side_edit_confirmation';
   @override

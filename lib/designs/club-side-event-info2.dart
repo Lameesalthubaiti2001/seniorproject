@@ -7,6 +7,7 @@ import 'package:seniorproject/designs/club-side-event-info3.dart';
 
 import 'club_footer.dart';
 
+//hello
 class EventInfo2ClubSide extends StatefulWidget {
   static const String screenRoute = 'club_event_info2';
   @override

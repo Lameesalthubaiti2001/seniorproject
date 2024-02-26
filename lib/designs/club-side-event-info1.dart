@@ -8,7 +8,7 @@ import 'club_footer.dart';
 
 class EventInfo1ClubSide extends StatelessWidget {
   static const String screenRoute = 'club_event_info1';
-
+//hello
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
