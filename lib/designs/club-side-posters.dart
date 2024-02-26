@@ -315,7 +315,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                 'Poppins',
                                 fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w700,
-                                height: 1.5 * ffem / fem,
+                                height: 1 * ffem / fem,
                                 color: Color(0xffffffff),
                               ),
                             ),

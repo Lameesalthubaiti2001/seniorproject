@@ -51,69 +51,69 @@ import 'designs/robotics.dart';
 import 'designs/guest_footer.dart';
 
 void main() {
-  runApp(MyEvent());
+	runApp(MyEvent());
 }
 
 class MyEvent extends StatelessWidget {
-  const MyEvent({super.key});
+	const MyEvent({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyEvent',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: EventInfo2ClubSide.screenRoute,
-      routes: {
-        AdminHome.screenRoute: (context) => AdminHome(),
-        ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
-        RequestDetail.screenRoute: (context) => RequestDetail(),
-        RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
-        RequestDetailThree.screenRoute: (context) => RequestDetailThree(),
-        RequestDetailFour.screenRoute: (context) => RequestDetailFour(),
-        RequestDetailFive.screenRoute: (context) => RequestDetailFive(),
-        ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
-        Rejection.screenRoute: (context) => Rejection(),
-        RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
-        EventTrackingClubSide.screenRoute: (context) => EventTrackingClubSide(),
-        ClubHome.screenRoute: (context) => ClubHome(),
-        PosterRequestConfirmClubSide.screenRoute: (context) =>
-            PosterRequestConfirmClubSide(),
-        PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
-        RequestConfirmClubSide.screenRoute: (context) =>
-            RequestConfirmClubSide(),
-        RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
-        RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
-        Finance.screenRoute: (context) => Finance(),
-        GuestHome.screenRoute: (context) => GuestHome(),
-        AboutClub.screenRoute: (context) => AboutClub(),
-        Scene40.screenRoute: (context) => Scene40(),
-        RegisterdEvents.screenRoute: (context) => RegisterdEvents(),
-        EventDetail.screenRoute: (context) => EventDetail(),
-        EventRegistration.screenRoute: (context) => EventRegistration(),
-        RegistrationConfirm.screenRoute: (context) => RegistrationConfirm(),
-        GuestFooter.screenRoute: (context) => GuestFooter(),
-        jewelry.screenRoute: (context) => jewelry(),
-        MIS.screenRoute: (context) => MIS(),
-        Robotics.screenRoute: (context) => Robotics(),
-        Rwad.screenRoute: (context) => Rwad(),
-        Samaa.screenRoute: (context) => Samaa(),
-        Smarthomes.screenRoute: (context) => Smarthomes(),
+	@override
+	Widget build(BuildContext context) {
+		return MaterialApp(
+			title: 'MyEvent',
+			theme: ThemeData(
+				primarySwatch: Colors.blue,
+			),
+			initialRoute: ClubHome.screenRoute,
+			routes: {
+				AdminHome.screenRoute: (context) => AdminHome(),
+				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
+				RequestDetail.screenRoute: (context) => RequestDetail(),
+				RequestDetailTwo.screenRoute: (context) => RequestDetailTwo(),
+				RequestDetailThree.screenRoute: (context) => RequestDetailThree(),
+				RequestDetailFour.screenRoute: (context) => RequestDetailFour(),
+				RequestDetailFive.screenRoute: (context) => RequestDetailFive(),
+				ProfileAdminSide.screenRoute: (context) => ProfileAdminSide(),
+				Rejection.screenRoute: (context) => Rejection(),
+				RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
+				EventTrackingClubSide.screenRoute: (context) => EventTrackingClubSide(),
+				ClubHome.screenRoute: (context) => ClubHome(),
+				PosterRequestConfirmClubSide.screenRoute: (context) =>
+						PosterRequestConfirmClubSide(),
+				PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
+				RequestConfirmClubSide.screenRoute: (context) =>
+						RequestConfirmClubSide(),
+				RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
+				RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
+				Finance.screenRoute: (context) => Finance(),
+				GuestHome.screenRoute: (context) => GuestHome(),
+				AboutClub.screenRoute: (context) => AboutClub(),
+				Scene40.screenRoute: (context) => Scene40(),
+				RegisterdEvents.screenRoute: (context) => RegisterdEvents(),
+				EventDetail.screenRoute: (context) => EventDetail(),
+				EventRegistration.screenRoute: (context) => EventRegistration(),
+				RegistrationConfirm.screenRoute: (context) => RegistrationConfirm(),
+				GuestFooter.screenRoute: (context) => GuestFooter(),
+				jewelry.screenRoute: (context) => jewelry(),
+				MIS.screenRoute: (context) => MIS(),
+				Robotics.screenRoute: (context) => Robotics(),
+				Rwad.screenRoute: (context) => Rwad(),
+				Samaa.screenRoute: (context) => Samaa(),
+				Smarthomes.screenRoute: (context) => Smarthomes(),
 
-        /////
+				/////
 // info 2,3,4,1
-        EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),
-        EventInfoPage.screenRoute: (context) => EventInfoPage(),
-        EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),
-        EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),
-        // club 1,2,3
-        Scene11.screenRoute: (context) =>
-            Scene11(), // editing event info (club side)
-        EditConfirmationClubSide.screenRoute: (context) =>
-            EditConfirmationClubSide(),
-        // is submission confirmation needed????????????
-      },
-    );
-  }
+				EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),
+				EventInfoPage.screenRoute: (context) => EventInfoPage(),
+				EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),
+				EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),
+				// club 1,2,3
+				Scene11.screenRoute: (context) =>
+						Scene11(), // editing event info (club side)
+				EditConfirmationClubSide.screenRoute: (context) =>
+						EditConfirmationClubSide(),
+				// is submission confirmation needed????????????
+			},
+		);
+	}
 }
