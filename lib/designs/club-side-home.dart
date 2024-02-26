@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'club-side-checklist-tracking.dart';
+import 'club-side-event-info1.dart';
 import 'club-side-event-info2.dart';
 import 'club-side-event-tracking.dart';
 import 'club-side-posters.dart';
@@ -264,7 +265,7 @@ class _ClubHomeState extends State<ClubHome> {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => EventInfo2ClubSide()),
+                                      MaterialPageRoute(builder: (context) => EventInfo1ClubSide()),
                                     );
                                   },
                                   child: Container(
