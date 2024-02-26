@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
 
-import 'package:seniorproject/utils.dart';
-
+import 'club_footer.dart';
 
 class EventInfoPage extends StatefulWidget {
   static const String screenRoute = 'Event_info3_screen';
+
   @override
   _EventInfoPageState createState() => _EventInfoPageState();
 }

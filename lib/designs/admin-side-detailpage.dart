@@ -271,7 +271,7 @@ class _RequestDetailState extends State<RequestDetail> {
                             '"The Saudi Deal" is a prestigious event set against the\n backdrop of the Kingdom of Saudi Arabia,\n poised as an immersive forum where global innovators,\n industry leaders, and visionaries converge.\n This event promises an unparalleled platform, \ninviting attendees to explore and discover the boundless\n opportunities emerging within the heart of Saudi Arabia\'s\n transformative landscape  ',
                             style: SafeGoogleFont (
                               'Roboto',
-                              fontSize: 14*ffem,
+                              fontSize: 13*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.1725*ffem/fem,
                               color: Color(0xff6a6a6a),
