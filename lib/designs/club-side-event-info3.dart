@@ -6,6 +6,7 @@ import 'package:seniorproject/utils.dart';
 
 
 class EventInfoPage extends StatefulWidget {
+  static const String screenRoute = 'Event_info3_screen';
   @override
   _EventInfoPageState createState() => _EventInfoPageState();
 }

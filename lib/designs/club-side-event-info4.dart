@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
 class EventInfo4ClubSide extends StatefulWidget {
+  static const String screenRoute = 'Event_info4_screen';
   @override
   _EventInfo4ClubSideState createState() => _EventInfo4ClubSideState();
 }

@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
 class Scene11 extends StatelessWidget {
+  static const String screenRoute = 'Event_edit_screen';
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;

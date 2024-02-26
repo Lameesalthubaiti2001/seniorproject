@@ -6,6 +6,7 @@ import 'dart:math';
 
 
 class EventInfo2ClubSide extends StatefulWidget {
+  static const String screenRoute = 'Event_info2_screen';
   @override
   _EventInfo2ClubSideState createState() => _EventInfo2ClubSideState();
 }

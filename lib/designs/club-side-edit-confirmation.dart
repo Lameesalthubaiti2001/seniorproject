@@ -6,6 +6,7 @@ import 'package:seniorproject/utils.dart';
 
 
 class EditConfirmationClubSide extends StatelessWidget {
+  static const String screenRoute = 'Event_edit_confirm_screen';
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;

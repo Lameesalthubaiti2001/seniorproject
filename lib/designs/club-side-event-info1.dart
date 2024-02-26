@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
 class EventInfo1ClubSide extends StatelessWidget {
+  static const String screenRoute = 'Event_info1_screen';
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
