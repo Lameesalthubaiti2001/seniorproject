@@ -18,6 +18,7 @@ class _RequestConfirmClubSideState extends State<RequestConfirmClubSide> {
       appBar: AppBar(
         title: Text('Request Confirm'),
         backgroundColor: Color(0xff042745),
+         // Set elevation to 0 to remove the bottom line
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -32,7 +33,7 @@ class _RequestConfirmClubSideState extends State<RequestConfirmClubSide> {
               children: [
                 Container(
                   margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 132 * fem),
-                  padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25.34 * fem, 6 * fem),
+                  //padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25 * fem, 6 * fem),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xff042745),

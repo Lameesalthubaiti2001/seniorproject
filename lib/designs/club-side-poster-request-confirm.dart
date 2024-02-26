@@ -35,7 +35,7 @@ class _PosterRequestConfirmClubSideState
               children: [
                 Container(
                   margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 132 * fem),
-                  padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25.34 * fem, 6 * fem),
+                  //padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25.34 * fem, 6 * fem),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xff042745),

@@ -35,11 +35,11 @@ class _RequestStatusClubSideState extends State<RequestStatusClubSide> {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 241 * fem, 0 * fem),
+                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 140 * fem, 0 * fem),
                       child: Text(
-                        'Requested Events',
+                        'View Requested Events',
                         style: TextStyle(
-                          fontSize: 18 * ffem,
+                          fontSize: 20 * ffem,
                           fontWeight: FontWeight.w500,
                           height: 6 * ffem / fem,
                           color: Color(0xff042745),
@@ -53,14 +53,7 @@ class _RequestStatusClubSideState extends State<RequestStatusClubSide> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              'View Requested Events',
-                              style: TextStyle(
-                                fontSize: 18 * ffem,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff042745),
-                              ),
-                            ),
+
                           ],
                         ),
                       ),

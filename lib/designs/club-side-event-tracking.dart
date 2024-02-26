@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils.dart';
 import 'club-side-checklist-tracking.dart';
 import 'club_footer.dart';
 
@@ -249,12 +250,13 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
                                           ),
                                           child: Center(
                                             child: Text(
-                                              'Track\n',
+                                              'Track',
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(
+                                              style: SafeGoogleFont(
+                                                'Poppins',
                                                 fontSize: 14 * ffem,
                                                 fontWeight: FontWeight.w700,
-                                                height: 1.5 * ffem / fem,
+                                                height: 1 * ffem / fem,
                                                 color: Color(0xffffffff),
                                               ),
                                             ),
