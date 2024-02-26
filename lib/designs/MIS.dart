@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/designs/guest_footer.dart';
@@ -120,15 +121,20 @@ class _MISState extends State<MIS> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'HRIS Trends ',
-                        date: 'January 29',
-                        time: '12PM-4PM',
-                        location: 'Female Campus',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MISWS.png',
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'HRIS Trends',
+                          date: 'January 29',
+                          time: '12PM-4PM',
+                          location: 'Female Campus',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MISWS.png',
+                        ),
                       ),
                     ),
                   ),
@@ -139,15 +145,20 @@ class _MISState extends State<MIS> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Data Analysis ',
-                        date: 'feb 10- feb 17',
-                        time: '12PM-4PM',
-                        location: 'Maicrosoft Teams',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MIS2.png',
+                      child: GestureDetector(
+                        onTap: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Data Analysis',
+                          date: 'Feb 10 - Feb 17',
+                          time: '12PM-4PM',
+                          location: 'Microsoft Teams',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MIS2.png',
+                        ),
                       ),
                     ),
                   ),

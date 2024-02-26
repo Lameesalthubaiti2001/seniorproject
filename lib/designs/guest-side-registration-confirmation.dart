@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 
 class RegistrationConfirm extends StatefulWidget {
   static const String screenRoute = 'confirmation_screen';

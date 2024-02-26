@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
@@ -118,34 +119,44 @@ class _AboutClubPageState extends State<AboutClubPage> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Intro to Digital Forensics',
-                        date: '5 NOV',
-                        time: '12PM-1PM',
-                        location: 'MALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: 'assets/designs/images/smarthomes.png',
+                      child: GestureDetector(
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Intro to Digital Forensics',
+                          date: '5 NOV',
+                          time: '12PM-1PM',
+                          location: 'MALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: 'assets/designs/images/smarthomes.png',
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(width: 20 * fem), // Space between cards
                   // Second Event Card
                   Container(
-                    width: 180* fem, // Adjust width as needed
+                    width: 180 * fem, // Adjust width as needed
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Intro to Cyber Security',
-                        date: '27 NOV',
-                        time: '2PM-3PM',
-                        location: 'FEMALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: 'assets/designs/images/rectangle-4199-S9y.png',
+                      child: GestureDetector(
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Intro to Cyber Security',
+                          date: '27 NOV',
+                          time: '2PM-3PM',
+                          location: 'FEMALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: 'assets/designs/images/rectangle-4199-S9y.png',
+                        ),
                       ),
                     ),
                   ),

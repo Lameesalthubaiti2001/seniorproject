@@ -73,28 +73,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                           ),
                         ),
                       ),
-                      Positioned(
-                        // vectorfHd (237:180)
-                        left: 20 * fem,
-                        top: 0 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 20 * fem,
-                            height: 17.5 * fem,
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Image.asset(
-                                'assets/designs/images/vector-zQT.png',
-                                width: 20 * fem,
-                                height: 17.5 * fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+
                     ],
                   ),
                 ),
@@ -103,7 +82,7 @@ class _EventRegistrationState extends State<EventRegistration> {
               // Full Name field
               Positioned(
                 left: 25 * fem,
-                top: 80 * fem,
+                top: 100 * fem,
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.grey[200], // Set the desired gray color
@@ -117,46 +96,55 @@ class _EventRegistrationState extends State<EventRegistration> {
                     children: [
                       Container(
                         margin: EdgeInsets.only(bottom: 10 * fem),
+
                         child: TextFormField(
                           decoration: InputDecoration(
                             labelText: 'Full Name',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
+                              borderSide: BorderSide.none, // Remove the border
                             ),
                             filled: true, // Set filled to true
                             fillColor: Colors.white,
+                            contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          height: 240 * fem, // Adjust the height to make it bigger
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'PMU ID',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15 * fem),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 10 * fem),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                labelText: 'PMU ID',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                  borderSide: BorderSide.none, // Remove the border
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
                               ),
-                              filled: true,
-                              fillColor: Colors.white,
-                              contentPadding: EdgeInsets.symmetric(vertical: 16 * fem, horizontal: 20 * fem),
                             ),
                           ),
-                        ),
-                      ),
-
-                      Container(
-                        margin: EdgeInsets.only(bottom: 10 * fem),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'PMU Email',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15 * fem),
+                          SizedBox(height: 3),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 10 * fem),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                labelText: 'PMU Email',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15 * fem),
+                                  borderSide: BorderSide.none, // Remove the border
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
+                              ),
                             ),
-                            filled: true, // Set filled to true
-                            fillColor: Colors.white,
                           ),
-                        ),
+                        ],
                       ),
                       Container(
                         child: DropdownButtonFormField<String>(
@@ -164,9 +152,11 @@ class _EventRegistrationState extends State<EventRegistration> {
                             labelText: 'Major',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
+                              borderSide: BorderSide.none, // Remove the border
                             ),
                             filled: true, // Set filled to true
                             fillColor: Colors.white,
+                            contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
                           ),
                           items: [
                             DropdownMenuItem<String>(
@@ -254,16 +244,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                   alignment: Alignment.bottomCenter,
                   child: FractionalTranslation(
                     translation: Offset(0, -1),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => RegistrationConfirm()),
-                        );
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
                       child: Container(
                         width: 428 * fem,
                         height: 91 * fem,
@@ -279,41 +259,26 @@ class _EventRegistrationState extends State<EventRegistration> {
                                 child: SizedBox(
                                   width: 388 * fem,
                                   height: 50 * fem,
-                                  child: GestureDetector(
-                                    onTap: () {
 
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => RegistrationConfirm()),
-                                      );
-                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10 * fem),
                                         color: Color(0xfff36f23),
                                       ),
+                                      child: Center(
+                                        child: Text(
+                                          'Submit',
+                                          style: SafeGoogleFont(
+                                            'Poppins',
+                                            fontSize: 16 * ffem,
+                                            fontWeight: FontWeight.w500,
+                                            height: 1.5 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 180 * fem,
-                              top: 13 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 105 * fem,
-                                  height: 24 * fem,
-                                  child: Text(
-                                    'Submit',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 16 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
+
                                 ),
                               ),
                             ),
@@ -323,7 +288,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                     ),
                   ),
                 ),
-              ),
+
             ],
           ),
         ),
