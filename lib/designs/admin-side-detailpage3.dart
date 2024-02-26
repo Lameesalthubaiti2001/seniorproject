@@ -81,7 +81,7 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
                                     width: 151*fem,
                                     height: 30*fem,
                                     child: Text(
-                                      'The Saudi Deal ',
+                                      'Smart Homes',
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Poppins',
@@ -293,29 +293,6 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
                       child: Container(
                         decoration: BoxDecoration (
                           color: Color(0xffc4c4c4),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // castjXy (227:624)
-                  left: 37*fem,
-                  top: 875*fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 42*fem,
-                      height: 27*fem,
-                      child: Text(
-                        'Cast',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 18*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
                         ),
                       ),
                     ),

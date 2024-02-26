@@ -64,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: EventInfoPage.screenRoute,
+      initialRoute: GuestHome.screenRoute,
       routes: {
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -102,8 +102,7 @@ class MyEvent extends StatelessWidget {
         EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),//done
         EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
         Scene11.screenRoute: (context) => Scene11(),//done
-        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),
-        //done
+        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),//done
         //take this main After Lamees
 
 
