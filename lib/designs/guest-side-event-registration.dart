@@ -53,26 +53,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                   height: 99 * fem,
                   child: Stack(
                     children: [
-                      Positioned(
-                        // rectangle1rp3 (220:423)
-                        left: 0 * fem,
-                        top: 0 * fem,
-                        child: Align(
-                          child: SizedBox(
-                            width: 428 * fem,
-                            height: 10 * fem,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xff042745),
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(5 * fem),
-                                  bottomLeft: Radius.circular(5 * fem),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+
 
                     ],
                   ),
