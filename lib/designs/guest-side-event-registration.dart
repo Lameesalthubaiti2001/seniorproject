@@ -252,37 +252,43 @@ class _EventRegistrationState extends State<EventRegistration> {
                         ),
                         child: Stack(
                           children: [
-                            Positioned(
-                              left: 20 * fem,
-                              top: 0 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 388 * fem,
-                                  height: 50 * fem,
-
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10 * fem),
-                                        color: Color(0xfff36f23),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          'Submit',
-                                          style: SafeGoogleFont(
-                                            'Poppins',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.5 * ffem / fem,
-                                            color: Color(0xffffffff),
-                                          ),
-                                        ),
+                          Positioned(
+                          left: 20 * fem,
+                          top: 0 * fem,
+                          child: Align(
+                            child: SizedBox(
+                              width: 388 * fem,
+                              height: 50 * fem,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+                                  );
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10 * fem),
+                                    color: Color(0xfff36f23),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Submit',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 16 * ffem,
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.5 * ffem / fem,
+                                        color: Color(0xffffffff),
                                       ),
                                     ),
-
+                                  ),
                                 ),
                               ),
                             ),
-                          ],
+                          ),
+                        ),
+                        ]
                         ),
                       ),
                     ),
