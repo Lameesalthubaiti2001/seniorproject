@@ -299,29 +299,6 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // castjXy (227:624)
-                  left: 37*fem,
-                  top: 875*fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 42*fem,
-                      height: 27*fem,
-                      child: Text(
-                        'Cast',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 18*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
                   // autogroupqwqzShH (7P4VeF6or9r92gkLZoQWqZ)
                   left: 9.5*fem,
                   top: 920*fem,
@@ -384,7 +361,6 @@ class _RequestDetailState extends State<RequestDetail> {
                                             ],
                                           ),
                                         ),
-
                                       ],
                                     ),
                                   ),
