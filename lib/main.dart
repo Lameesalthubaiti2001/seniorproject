@@ -64,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: EventInfo2ClubSide.screenRoute,
+      initialRoute: EventRegistration.screenRoute,
       routes: {
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -78,11 +78,9 @@ class MyEvent extends StatelessWidget {
         RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
         EventTrackingClubSide.screenRoute: (context) => EventTrackingClubSide(),
         ClubHome.screenRoute: (context) => ClubHome(),
-        PosterRequestConfirmClubSide.screenRoute: (context) =>
-            PosterRequestConfirmClubSide(),
+        PosterRequestConfirmClubSide.screenRoute: (context) => PosterRequestConfirmClubSide(),
         PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
-        RequestConfirmClubSide.screenRoute: (context) =>
-            RequestConfirmClubSide(),
+        RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
         RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
         RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
         Finance.screenRoute: (context) => Finance(),
@@ -100,19 +98,13 @@ class MyEvent extends StatelessWidget {
         Rwad.screenRoute: (context) => Rwad(),
         Samaa.screenRoute: (context) => Samaa(),
         Smarthomes.screenRoute: (context) => Smarthomes(),
-
-        /////
-// info 2,3,4,1
         EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),
         EventInfoPage.screenRoute: (context) => EventInfoPage(),
         EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),
         EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),
-        // club 1,2,3
-        Scene11.screenRoute: (context) =>
-            Scene11(), // editing event info (club side)
-        EditConfirmationClubSide.screenRoute: (context) =>
-            EditConfirmationClubSide(),
-        // is submission confirmation needed????????????
+        Scene11.screenRoute: (context) => Scene11(),
+        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),
+        //take this main After Lamees
       },
     );
   }
