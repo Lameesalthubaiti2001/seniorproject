@@ -5,6 +5,7 @@ import 'package:seniorproject/designs/MIS.dart';
 import 'package:seniorproject/designs/Rwad.dart';
 import 'package:seniorproject/designs/Samaa.dart';
 import 'package:seniorproject/designs/guest-side-aboutclub.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'package:seniorproject/designs/robotics.dart';
 import 'dart:ui';
 
@@ -101,7 +102,7 @@ class _Scene40State extends State<Scene40> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => AboutClub()),
+                              MaterialPageRoute(builder: (context) => AboutClubPage()),
                             );
                           },
                           child: Container(
@@ -396,6 +397,10 @@ class _Scene40State extends State<Scene40> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

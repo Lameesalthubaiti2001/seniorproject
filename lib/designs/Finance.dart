@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -17,7 +19,15 @@ class _FinanceState extends State<Finance> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Finance'),
+        title: Text(
+          'Finance',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -109,15 +119,20 @@ class _FinanceState extends State<Finance> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Linked Finances ',
-                        date: 'January 31',
-                        time: '12PM-1PM',
-                        location: 'MALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/f-workshop.jpeg',
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Linked Finances',
+                          date: 'January 31',
+                          time: '12PM-1PM',
+                          location: 'MALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/f-workshop.jpeg',
+                        ),
                       ),
                     ),
                   ),
@@ -128,15 +143,20 @@ class _FinanceState extends State<Finance> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Money Mastery ',
-                        date: 'March 22nd',
-                        time: '1PM-2PM',
-                        location: 'FEMALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/financial-presentation-person-icon-illustration-free-vector.jpg',
+                      child: GestureDetector(
+                        onTap: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Money Mastery',
+                          date: 'March 22nd',
+                          time: '1PM-2PM',
+                          location: 'FEMALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/financial-presentation-person-icon-illustration-free-vector.jpg',
+                        ),
                       ),
                     ),
                   ),
@@ -145,6 +165,10 @@ class _FinanceState extends State<Finance> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

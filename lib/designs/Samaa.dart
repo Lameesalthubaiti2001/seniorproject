@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -17,7 +19,15 @@ class _SamaaState extends State<Samaa> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Samaa'),
+        title: Text(
+          'Samaa',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -109,15 +119,20 @@ class _SamaaState extends State<Samaa> {
                     height: 300 * fem,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem),
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'World Conference ',
-                        date: 'January 12',
-                        time: '12PM-4PM',
-                        location: 'Auditorium',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Talk.png',
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'World Conference',
+                          date: 'January 12',
+                          time: '12PM-4PM',
+                          location: 'Auditorium',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Talk.png',
+                        ),
                       ),
                     ),
                   ),
@@ -128,15 +143,20 @@ class _SamaaState extends State<Samaa> {
                     height: 300 * fem,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem),
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Pmu winter ',
-                        date: 'feb 15',
-                        time: '12PM-9PM',
-                        location: 'F015',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/talk2.png',
+                      child: GestureDetector(
+                        onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Built Environment ',
+                          date: 'Feb 15',
+                          time: '12PM-9PM',
+                          location: 'F015',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/talk2.png',
+                        ),
                       ),
                     ),
                   ),
@@ -145,6 +165,10 @@ class _SamaaState extends State<Samaa> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

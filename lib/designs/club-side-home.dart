@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'club-side-checklist-tracking.dart';
 import 'club-side-event-info2.dart';
+import 'club-side-event-tracking.dart';
 import 'club-side-posters.dart';
 import 'club_footer.dart';
 
@@ -22,6 +24,66 @@ class _ClubHomeState extends State<ClubHome> {
       appBar: AppBar(
         title: Text('Home'),
         backgroundColor: Color(0xff042745),
+      ),
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xff042745),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 60 * fem,
+                    height: 60 * fem,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30 * fem),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          'assets/designs/images/ellipse-18-bg.png',
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10 * fem),
+                  Text(
+                    'Hi Finance Club!',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 16 * ffem,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: Text('Event Tracking'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventTrackingClubSide()),
+                );
+                Navigator.pop(context); // Close the drawer after navigation
+              },
+            ),
+            ListTile(
+              title: Text('Checklist Tracking'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChecklistTrackingClubSide()),
+                );
+                Navigator.pop(context); // Close the drawer after navigation
+              },
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(

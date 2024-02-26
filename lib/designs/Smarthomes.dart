@@ -5,7 +5,7 @@ import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-event-registration.dart';
 
 class Smarthomes extends StatefulWidget {
-  static const String screenRoute = 'Samarthomes_screen';
+  static const String screenRoute = 'SmartHomes_screen';
   @override
   _SmarthomesState createState() => _SmarthomesState();
 }
@@ -18,7 +18,15 @@ class _SmarthomesState extends State<Smarthomes> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Smart Homes'),
+        title: Text(
+          'Smart Homes',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: Container(
         width: double.infinity,
@@ -36,7 +44,8 @@ class _SmarthomesState extends State<Smarthomes> {
                 left: 0 * fem,
                 top: 0 * fem,
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25.34 * fem, 10 * fem),
+                  padding: EdgeInsets.fromLTRB(
+                      23.5 * fem, 10 * fem, 25.34 * fem, 10 * fem),
                   width: 428 * fem,
                   height: 234 * fem,
                   decoration: BoxDecoration(
@@ -52,23 +61,11 @@ class _SmarthomesState extends State<Smarthomes> {
                     children: [
                       Container(
                         // autogroupxrnkBPh (7P4PJverQUjgU24XNFxRNK)
-                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 285.72 * fem, 0 * fem),
+                        margin:
+                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 285.72 * fem, 0 * fem),
                         width: 27 * fem,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              // evaarrowbackoutlinebyD (101:239)
-                              margin: EdgeInsets.fromLTRB(1.5 * fem, 0 * fem, 0 * fem, 0 * fem),
-                              width: 20 * fem,
-                              height: 17.5 * fem,
-                              child: Image.asset(
-                                'assets/designs/images/eva-arrow-back-outline.png',
-                                width: 20 * fem,
-                                height: 17.5 * fem,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -89,7 +86,8 @@ class _SmarthomesState extends State<Smarthomes> {
                       Expanded(
                         child: Container(
                           // autogroupxisdZh5 (7P4PUAtSuR2TKqzEqexisD)
-                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 29 * fem),
+                          margin:
+                          EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 29 * fem),
                           width: 151 * fem,
                           height: 77 * fem,
                           child: Stack(
@@ -118,7 +116,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
-                                left: 0 * fem,
+                                left: 0* fem,
                                 top: 29 * fem,
                                 child: Align(
                                   child: SizedBox(
@@ -149,7 +147,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -157,7 +156,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
-                                left: 10 * fem,
+                                left: 11 * fem,
                                 top: 44 * fem,
                                 child: Align(
                                   child: SizedBox(
@@ -179,6 +178,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // ellipse7k2o (218:371)
                                 left: 9 * fem,
                                 top: 50 * fem,
                                 child: Align(
@@ -187,7 +187,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -195,6 +196,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // inlecturehallFkF (218:368)
                                 left: 0 * fem,
                                 top: 59 * fem,
                                 child: Align(
@@ -217,6 +219,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // ellipse6NK5 (218:369)
                                 left: 9 * fem,
                                 top: 66 * fem,
                                 child: Align(
@@ -225,7 +228,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -237,18 +241,17 @@ class _SmarthomesState extends State<Smarthomes> {
                         ),
                       ),
                       Container(
-                        // descriptionJTd (101:257)
-                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 4 * fem),
-                        width: double.infinity,
+                        // descriptionUmy (246:87)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 12*fem, 0*fem),
                         child: Text(
                           'Description',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
+                          style: SafeGoogleFont (
                             'Poppins',
-                            fontSize: 18 * ffem,
+                            fontSize: 18*ffem,
                             fontWeight: FontWeight.w500,
-                            height: 1.5 * ffem / fem,
-                            letterSpacing: -0.3000000119 * fem,
+                            height: 1.5*ffem/fem,
+                            letterSpacing: -0.3000000119*fem,
                             color: Color(0xff1c1b19),
                           ),
                         ),
@@ -298,18 +301,6 @@ class _SmarthomesState extends State<Smarthomes> {
                   child: SizedBox(
                     width: 42 * fem,
                     height: 27 * fem,
-                    child: Text(
-                      'Cast',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 18 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        letterSpacing: -0.3000000119 * fem,
-                        color: Color(0xff1c1b19),
-                      ),
-                    ),
                   ),
                 ),
               ),
@@ -330,47 +321,48 @@ class _SmarthomesState extends State<Smarthomes> {
                   alignment: Alignment.bottomCenter,
                   child: FractionalTranslation(
                     translation: Offset(0, 8),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 428 * fem,
-                        height: 91 * fem,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10 * fem),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => EventRegistration()),
+                        );
+                      },
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
                         ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              // rectangle4208CzF (101:323)
-                              left: 20 * fem,
-                              top: 0 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 388 * fem,
-                                  height: 50 * fem,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10 * fem),
-                                      color: Color(0xfff36f23),
+                        child: Container(
+                          width: 428 * fem,
+                          height: 91 * fem,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10 * fem),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                // rectangle4208CzF (101:323)
+                                left: 20 * fem,
+                                top: 0 * fem,
+                                child: Align(
+                                  child: SizedBox(
+                                    width: 388 * fem,
+                                    height: 50 * fem,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                        BorderRadius.circular(10 * fem),
+                                        color: Color(0xfff36f23),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Positioned(
-                              left: 161 * fem,
-                              top: 13 * fem,
-                              child: Align(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => EventRegistration()),
-                                    );
-                                  },
+                              Positioned(
+                                left: 161 * fem,
+                                top: 13 * fem,
+                                child: Align(
                                   child: SizedBox(
                                     width: 105 * fem,
                                     height: 24 * fem,
@@ -385,16 +377,18 @@ class _SmarthomesState extends State<Smarthomes> {
                                       ),
                                     ),
                                   ),
+
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
               )
+
             ],
           ),
         ),
