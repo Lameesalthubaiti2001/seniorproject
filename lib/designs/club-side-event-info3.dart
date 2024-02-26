@@ -4,7 +4,7 @@ import 'package:seniorproject/designs/club-side-event-info4.dart';
 
 import 'club_footer.dart';
 
-//hello
+//Helloooooo nooora was here
 class EventInfoPage extends StatefulWidget {
   static const String screenRoute = 'club_event_info3';
   @override
