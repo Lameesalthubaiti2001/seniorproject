@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 
+import 'package:seniorproject/designs/guest_footer.dart';
+
 
 
 class MIS extends StatefulWidget {
@@ -18,7 +20,15 @@ class _MISState extends State<MIS> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('MIS'),
+        title: Text(
+          'MIS',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -146,6 +156,10 @@ class _MISState extends State<MIS> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-event-registration.dart';
 
 class Smarthomes extends StatefulWidget {
-  static const String screenRoute = 'Samarthomes_screen';
+  static const String screenRoute = 'SmartHomes_screen';
   @override
   _SmarthomesState createState() => _SmarthomesState();
 }
@@ -36,7 +36,8 @@ class _SmarthomesState extends State<Smarthomes> {
                 left: 0 * fem,
                 top: 0 * fem,
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(23.5 * fem, 10 * fem, 25.34 * fem, 10 * fem),
+                  padding: EdgeInsets.fromLTRB(
+                      23.5 * fem, 10 * fem, 25.34 * fem, 10 * fem),
                   width: 428 * fem,
                   height: 234 * fem,
                   decoration: BoxDecoration(
@@ -52,14 +53,16 @@ class _SmarthomesState extends State<Smarthomes> {
                     children: [
                       Container(
                         // autogroupxrnkBPh (7P4PJverQUjgU24XNFxRNK)
-                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 285.72 * fem, 0 * fem),
+                        margin:
+                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 285.72 * fem, 0 * fem),
                         width: 27 * fem,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
                               // evaarrowbackoutlinebyD (101:239)
-                              margin: EdgeInsets.fromLTRB(1.5 * fem, 0 * fem, 0 * fem, 0 * fem),
+                              margin: EdgeInsets.fromLTRB(
+                                  1.5 * fem, 0 * fem, 0 * fem, 0 * fem),
                               width: 20 * fem,
                               height: 17.5 * fem,
                               child: Image.asset(
@@ -89,7 +92,8 @@ class _SmarthomesState extends State<Smarthomes> {
                       Expanded(
                         child: Container(
                           // autogroupxisdZh5 (7P4PUAtSuR2TKqzEqexisD)
-                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 29 * fem),
+                          margin:
+                          EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 29 * fem),
                           width: 151 * fem,
                           height: 77 * fem,
                           child: Stack(
@@ -149,7 +153,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -179,6 +184,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // ellipse7k2o (218:371)
                                 left: 9 * fem,
                                 top: 50 * fem,
                                 child: Align(
@@ -187,7 +193,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -195,6 +202,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // inlecturehallFkF (218:368)
                                 left: 0 * fem,
                                 top: 59 * fem,
                                 child: Align(
@@ -217,6 +225,7 @@ class _SmarthomesState extends State<Smarthomes> {
                                 ),
                               ),
                               Positioned(
+                                // ellipse6NK5 (218:369)
                                 left: 9 * fem,
                                 top: 66 * fem,
                                 child: Align(
@@ -225,7 +234,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                     height: 3 * fem,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(1.5 * fem),
+                                        borderRadius:
+                                        BorderRadius.circular(1.5 * fem),
                                         color: Color(0xff1c58f2),
                                       ),
                                     ),
@@ -353,7 +363,8 @@ class _SmarthomesState extends State<Smarthomes> {
                                   height: 50 * fem,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10 * fem),
+                                      borderRadius:
+                                      BorderRadius.circular(10 * fem),
                                       color: Color(0xfff36f23),
                                     ),
                                   ),
@@ -368,7 +379,9 @@ class _SmarthomesState extends State<Smarthomes> {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => EventRegistration()),
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EventRegistration()),
                                     );
                                   },
                                   child: SizedBox(

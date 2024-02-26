@@ -49,7 +49,7 @@ import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
 
-import 'designs/guest_footer.dart';
+
 
 
 void main(){
@@ -65,7 +65,7 @@ class MyEvent extends StatelessWidget {
 			theme: ThemeData(
 				primarySwatch: Colors.blue,
 			),
-			initialRoute: RequestStatusClubSide.screenRoute,
+			initialRoute:EventDetail.screenRoute,
 			routes: {
 				AdminHome.screenRoute: (context) => AdminHome(),
 				ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -86,19 +86,21 @@ class MyEvent extends StatelessWidget {
 				RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
 				Finance.screenRoute:(context)=>Finance(),
 				GuestHome.screenRoute:(context)=>GuestHome(),
-				AboutClub.screenRoute:(context)=>AboutClub(),
 				Scene40.screenRoute:(context)=>Scene40(),
-				RegisterdEvents.screenRoute:(context)=>RegisterdEvents(),
 				EventDetail.screenRoute:(context)=>EventDetail(),
-				EventRegistration.screenRoute:(context)=>EventRegistration(),
-				RegistrationConfirm.screenRoute:(context)=>RegistrationConfirm(),
-				GuestFooter.screenRoute:(context)=>GuestFooter(),
-				jewelry.screenRoute:(context)=>jewelry(),
 				MIS.screenRoute:(context)=>MIS(),
 				Robotics.screenRoute:(context)=>Robotics(),
 				Rwad.screenRoute:(context)=>Rwad(),
 				Samaa.screenRoute:(context)=>Samaa(),
+				AboutClubPage.screenRoute:(context)=>AboutClubPage(),
+				RegisterdEvents.screenRoute:(context)=>RegisterdEvents(),
+				EventRegistration.screenRoute:(context)=>EventRegistration(),
+				RegistrationConfirm.screenRoute:(context)=>RegistrationConfirm(),
+				Jewelry.screenRoute:(context)=>Jewelry(),
 				Smarthomes.screenRoute:(context)=>Smarthomes(),
+
+
+
 
 			},
 		);

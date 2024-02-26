@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-activity.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
+
 class EventDetail extends StatefulWidget {
-  static const String screenRoute = 'EventDetails_screen';
+  static const String screenRoute = 'Detail_screen';
   @override
   _EventDetailState createState() => _EventDetailState();
 }
@@ -294,107 +298,99 @@ class _EventDetailState extends State<EventDetail> {
                   ),
                 ),
               ),
-              Positioned(
-                // casts2s (101:303)
-                left: 20 * fem,
-                top: 873 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 42 * fem,
-                    height: 27 * fem,
-                    child: Text(
-                      'Cast',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 18 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        letterSpacing: -0.3000000119 * fem,
-                        color: Color(0xff1c1b19),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+
               Positioned(
                 // autogroupwzzqZwH (7P4PgLCrLQr7x7zsd6WzZq)
                 left: 9.5 * fem,
-                top: 920 * fem,
+                top: 90 * fem,
                 child: Container(
                   width: 430 * fem,
                   height: 139 * fem,
                 ),
               ),
               Positioned(
-                // registernowuET (101:321)
                 left: 0 * fem,
-                top: 0 * fem,
+                top: 10 * fem,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: FractionalTranslation(
                     translation: Offset(0, 8),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 428 * fem,
-                        height: 91 * fem,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10 * fem),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              // rectangle4208CzF (101:323)
-                              left: 20 * fem,
-                              top: 0 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 388 * fem,
-                                  height: 50 * fem,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10 * fem),
-                                      color: Color(0xfff36f23),
-                                    ),
+                    child: Material(
+                      
+                        child: Container(
+                          width: 428 * fem,
+                          height: 91 * fem,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10 * fem),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 20 * fem,
+                                top: 0 * fem,
+                                child: Align(
+                                  child: SizedBox(
+                                    width: 388 * fem,
+                                    height: 50 * fem,
+
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10 * fem),
+                                          color: Color(0xfff36f23),
+                                        ),
+                                      ),
+
                                   ),
                                 ),
                               ),
-                            ),
-                            Positioned(
-                              // registernow7rK (101:324)
-                              left: 161 * fem,
-                              top: 13 * fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 105 * fem,
-                                  height: 24 * fem,
-                                  child: Text(
-                                    'Register Now',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 16 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xffffffff),
-                                    ),
+                              Positioned(
+                                left: 161 * fem,
+                                top: 13 * fem,
+                                child: Align(
+                                  child: SizedBox(
+                                    width: 105 * fem,
+                                    height: 24 * fem,
+
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10 * fem),
+                                          color: Color(0xfff36f23),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Register Now',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 16 * ffem,
+                                              fontWeight: FontWeight.w500,
+                                              height: 1.5 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+
+
+                            ],
+                          ),
                         ),
-                      ),
+
                     ),
                   ),
                 ),
-              )
+              ),
+
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

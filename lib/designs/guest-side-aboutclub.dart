@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
-class AboutClub extends StatefulWidget {
-  static const String screenRoute = 'Aboutclub_screen';
+class AboutClubPage extends StatefulWidget {
+  static const String screenRoute = 'AboutClub_screen';
   @override
-  _AboutClubState createState() => _AboutClubState();
+  _AboutClubPageState createState() => _AboutClubPageState();
 }
 
-class _AboutClubState extends State<AboutClub> {
+class _AboutClubPageState extends State<AboutClubPage> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -17,7 +18,15 @@ class _AboutClubState extends State<AboutClub> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Club'),
+        title: Text(
+          'Google Developers',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -145,6 +154,10 @@ class _AboutClubState extends State<AboutClub> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

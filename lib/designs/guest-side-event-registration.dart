@@ -4,6 +4,8 @@ import 'dart:ui';
 
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
+import 'package:seniorproject/designs/guest-side-event-detail.dart';
+
 
 class EventRegistration extends StatefulWidget {
   static const String screenRoute = 'Registration_screen';
@@ -17,10 +19,23 @@ class _EventRegistrationState extends State<EventRegistration> {
     double baseWidth = 428;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Event Registration',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
+      ),
       body: Container(
         width: double.infinity,
         child: Container(
+          // detailjZ5 (219:372)
           width: double.infinity,
           height: 926 * fem,
           decoration: BoxDecoration(
@@ -29,6 +44,7 @@ class _EventRegistrationState extends State<EventRegistration> {
           child: Stack(
             children: [
               Positioned(
+                // autogroupm8dyGJ7 (7P4YYaRzMZCm94ADJTM8Dy)
                 left: 0 * fem,
                 top: 0 * fem,
                 child: Container(
@@ -37,6 +53,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                   child: Stack(
                     children: [
                       Positioned(
+                        // rectangle1rp3 (220:423)
                         left: 0 * fem,
                         top: 0 * fem,
                         child: Align(
@@ -56,6 +73,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                         ),
                       ),
                       Positioned(
+                        // vectorfHd (237:180)
                         left: 20 * fem,
                         top: 0 * fem,
                         child: Align(
@@ -80,17 +98,20 @@ class _EventRegistrationState extends State<EventRegistration> {
                   ),
                 ),
               ),
+
+              // Full Name field
               Positioned(
                 left: 25 * fem,
                 top: 80 * fem,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                    color: Colors.grey[200], // Set the desired gray color
                     borderRadius: BorderRadius.circular(40 * fem),
                   ),
                   padding: EdgeInsets.all(20 * fem),
                   width: 382 * fem,
-                  height: 330 * fem,
+                  height: 330 * fem, // Adjust the height based on the total height of the form fields
+
                   child: Column(
                     children: [
                       Container(
@@ -101,14 +122,14 @@ class _EventRegistrationState extends State<EventRegistration> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
                             ),
-                            filled: true,
+                            filled: true, // Set filled to true
                             fillColor: Colors.white,
                           ),
                         ),
                       ),
                       Expanded(
                         child: Container(
-                          height: 240 * fem,
+                          height: 240 * fem, // Adjust the height to make it bigger
                           child: TextFormField(
                             decoration: InputDecoration(
                               labelText: 'PMU ID',
@@ -122,6 +143,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                           ),
                         ),
                       ),
+
                       Container(
                         margin: EdgeInsets.only(bottom: 10 * fem),
                         child: TextFormField(
@@ -130,7 +152,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
                             ),
-                            filled: true,
+                            filled: true, // Set filled to true
                             fillColor: Colors.white,
                           ),
                         ),
@@ -142,7 +164,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
                             ),
-                            filled: true,
+                            filled: true, // Set filled to true
                             fillColor: Colors.white,
                           ),
                           items: [
@@ -201,6 +223,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                 ),
               ),
               Positioned(
+                // fillinyourinformation8ks (221:444)
                 left: 32.5 * fem,
                 top: 55 * fem,
                 child: Align(
@@ -255,10 +278,19 @@ class _EventRegistrationState extends State<EventRegistration> {
                                 child: SizedBox(
                                   width: 388 * fem,
                                   height: 50 * fem,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10 * fem),
-                                      color: Color(0xfff36f23),
+                                  child: GestureDetector(
+                                    onTap: () {
+
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+                                      );
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10 * fem),
+                                        color: Color(0xfff36f23),
+                                      ),
                                     ),
                                   ),
                                 ),
