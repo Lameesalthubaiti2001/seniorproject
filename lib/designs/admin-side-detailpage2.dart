@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
-
+import 'package:seniorproject/designs/admin-side-rejection.dart';
+import 'package:seniorproject/designs/admin-side-confirmationpage.dart';
 
 class RequestDetailTwo extends StatefulWidget {
   static const String screenRoute = 'admin_detail2_screen';
@@ -81,8 +82,8 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                                     width: 151*fem,
                                     height: 30*fem,
                                     child: Text(
-                                      'Intro to CyperSecurity',
-                                      textAlign: TextAlign.center,
+                                      'CyperSecurity',
+                                      textAlign: TextAlign.left,
                                       style: SafeGoogleFont (
                                         'Poppins',
                                         fontSize: 20*ffem,
@@ -585,7 +586,11 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                   left: 27.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ConfirmationAdminSide()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -646,7 +651,11 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                   left: 221.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Rejection()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),

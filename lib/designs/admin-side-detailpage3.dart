@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
-
+import 'package:seniorproject/designs/admin-side-rejection.dart';
+import 'package:seniorproject/designs/admin-side-confirmationpage.dart';
 
 class RequestDetailThree extends StatefulWidget {
   static const String screenRoute = 'admin_detail3_screen';
@@ -82,7 +83,7 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
                                     height: 30*fem,
                                     child: Text(
                                       'Smart Homes',
-                                      textAlign: TextAlign.center,
+                                      textAlign: TextAlign.left,
                                       style: SafeGoogleFont (
                                         'Poppins',
                                         fontSize: 20*ffem,
@@ -585,7 +586,11 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
                   left: 27.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ConfirmationAdminSide()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -646,7 +651,11 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
                   left: 221.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Rejection()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
