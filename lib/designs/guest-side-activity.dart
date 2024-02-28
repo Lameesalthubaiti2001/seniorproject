@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:seniorproject/designs/guest_footer.dart';
 import 'package:seniorproject/utils.dart';
 
+//Lamees update
 
 class RegisterdEvents extends StatefulWidget {
   static const String screenRoute = 'Registered_screen';
