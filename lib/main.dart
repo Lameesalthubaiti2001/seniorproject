@@ -64,8 +64,12 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: ProfileAdminSide.screenRoute,
+      initialRoute: LandingPage.screenRoute,
       routes: {
+        LandingPage.screenRoute: (context) => LandingPage(),
+        RoleSelection.screenRoute: (context) => RoleSelection(),
+        LoginScreen.screenRoute: (context) => LoginScreen(),
+        PasswordReset.screenRoute: (context) => PasswordReset(),
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
         RequestDetail.screenRoute: (context) => RequestDetail(),

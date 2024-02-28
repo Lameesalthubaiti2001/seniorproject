@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
+import 'package:seniorproject/designs/admin-side-confirmationpage.dart';
 
 class Rejection extends StatefulWidget {
   static const String screenRoute = 'admin_rejection_screen';
@@ -82,9 +83,14 @@ class _RejectionState extends State<Rejection> {
                 width: 283 * fem,
                 height: 40 * fem,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Submit action
+                  onPressed: ()
+                  {
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ConfirmationAdminSide()),
+                    );
                   },
+                    // Submit action
+
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),

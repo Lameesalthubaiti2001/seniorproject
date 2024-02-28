@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
-
+import 'package:seniorproject/designs/admin-side-rejection.dart';
+import 'package:seniorproject/designs/admin-side-confirmationpage.dart';
 
 class RequestDetail extends StatefulWidget {
   static const String screenRoute = 'admin_detail_screen';
@@ -38,7 +39,7 @@ class _RequestDetailState extends State<RequestDetail> {
             child: Stack(
               children: [
                 Positioned(
-                  // autogroupjebunZZ (7P4UVCCCQkbcQLoCQnjEBu)
+
                   left: 0*fem,
                   top: 0*fem,
                   child: Container(
@@ -56,7 +57,7 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // autogroupmnmhtH9 (7P4WC9MKXuUbGono9CMNmH)
+
                   left: 0*fem,
                   top: 234*fem,
                   child: Container(
@@ -67,13 +68,13 @@ class _RequestDetailState extends State<RequestDetail> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          // autogroupaa9hn7d (7P4UuGLRRNPtseyzD3Aa9H)
+
                           width: 151*fem,
                           height: 59*fem,
                           child: Stack(
                             children: [
                               Positioned(
-                                // thesaudidealvDq (227:614)
+
                                 left: 0*fem,
                                 top: 0*fem,
                                 child: Align(
@@ -81,8 +82,8 @@ class _RequestDetailState extends State<RequestDetail> {
                                     width: 151*fem,
                                     height: 30*fem,
                                     child: Text(
-                                      'The Saudi Deal ',
-                                      textAlign: TextAlign.center,
+                                      'The Saudi Deal',
+                                      textAlign: TextAlign.left,
                                       style: SafeGoogleFont (
                                         'Poppins',
                                         fontSize: 20*ffem,
@@ -96,7 +97,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Positioned(
-                                // marchzzP (227:616)
+
                                 left: 15.5*fem,
                                 top: 27*fem,
                                 child: Align(
@@ -119,7 +120,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Positioned(
-                                // ellipse2gcK (227:617)
+
                                 left: 9*fem,
                                 top: 36*fem,
                                 child: Align(
@@ -136,7 +137,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Positioned(
-                                // am12pmPmd (227:618)
+
                                 left: 10.5*fem,
                                 top: 41*fem,
                                 child: Align(
@@ -159,7 +160,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Positioned(
-                                // ellipse7fz3 (227:619)
+
                                 left: 9*fem,
                                 top: 50*fem,
                                 child: Align(
@@ -179,7 +180,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Container(
-                          // autogroupvffrb71 (7P4V76L3iXkq8HDKJJVFFR)
+
                           margin: EdgeInsets.fromLTRB(9*fem, 0*fem, 228.5*fem, 0*fem),
                           width: double.infinity,
                           child: Row(
@@ -196,7 +197,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Text(
-                                // inlecturehallmalecampus3zb (227:620)
+
                                 'In Lecture Hall, male campus ',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
@@ -212,14 +213,14 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Container(
-                          // autogroupdvsmP2s (7P4VJ61jB6xwSmzPA8DvsM)
+
                           margin: EdgeInsets.fromLTRB(9*fem, 0*fem, 356*fem, 11*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // ellipse8iL3 (253:85)
+
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 1*fem),
                                 width: 3*fem,
                                 height: 3*fem,
@@ -229,7 +230,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 ),
                               ),
                               Text(
-                                // days3NK (253:84)
+
                                 '4 days',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
@@ -245,7 +246,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Container(
-                          // descriptionad9 (227:615)
+
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
                           width: double.infinity,
                           child: Text(
@@ -283,7 +284,7 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // line1ciF (227:623)
+
                   left: 0*fem,
                   top: 579*fem,
                   child: Align(
@@ -299,7 +300,7 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // autogroupqwqzShH (7P4VeF6or9r92gkLZoQWqZ)
+
                   left: 9.5*fem,
                   top: 920*fem,
                   child: Container(
@@ -308,7 +309,7 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // autogroupekwwxvX (7P4WZJQjcTjyyftfdQEkWw)
+
                   left: 0*fem,
                   top: 580*fem,
                   child: Container(
@@ -317,7 +318,7 @@ class _RequestDetailState extends State<RequestDetail> {
                     child: Stack(
                       children: [
                         Positioned(
-                          // autogroupndwsUdy (7P4VTR5WxVsPu1rvZ4ndWs)
+
                           left: 9*fem,
                           top: 12*fem,
                           child: Container(
@@ -366,7 +367,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                   ),
                                 ),
                                 Positioned(
-                                  // numberofparticipantsZhM (253:79)
+
                                   left: 0*fem,
                                   top: 0*fem,
                                   child: Align(
@@ -393,7 +394,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Positioned(
-                          // group12Fq5 (253:69)
+
                           left: 9*fem,
                           top: 72.9999321579*fem,
                           child: Container(
@@ -407,7 +408,7 @@ class _RequestDetailState extends State<RequestDetail> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    // expectednumbervwD (253:72)
+
                                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 10*fem),
                                     child: Text(
                                       'Expected number ',
@@ -426,7 +427,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Positioned(
-                          // genderofparticipantsyeb (253:80)
+
                           left: 10.5*fem,
                           top: 128*fem,
                           child: Align(
@@ -470,7 +471,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Positioned(
-                          // personinchargeoftheeventyHD (253:86)
+
                           left: 10*fem,
                           top: 172*fem,
                           child: Align(
@@ -493,7 +494,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Positioned(
-                          // fullnamelameesalthubaitisdV (253:87)
+
                           left: 14*fem,
                           top: 195*fem,
                           child: Align(
@@ -532,7 +533,7 @@ class _RequestDetailState extends State<RequestDetail> {
                           ),
                         ),
                         Positioned(
-                          // pmuid202000504ovT (253:88)
+
                           left: 14*fem,
                           top: 218*fem,
                           child: Align(
@@ -580,11 +581,15 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // bookticketbbR (227:642)
+
                   left: 27.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ConfirmationAdminSide()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -641,11 +646,15 @@ class _RequestDetailState extends State<RequestDetail> {
                   ),
                 ),
                 Positioned(
-                  // bookticket7iB (227:646)
+
                   left: 221.5154418945*fem,
                   top: 837*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Rejection()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -658,7 +667,7 @@ class _RequestDetailState extends State<RequestDetail> {
                       child: Stack(
                         children: [
                           Positioned(
-                            // rectangle4208RD5 (227:648)
+
                             left: 9.4845581055*fem,
                             top: 20*fem,
                             child: Align(

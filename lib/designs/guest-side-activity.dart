@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
-
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'package:seniorproject/utils.dart';
 
 
@@ -29,7 +29,8 @@ class _RegisterdEventsState extends State<RegisterdEvents> {
         ),
         backgroundColor: Color(0xff042745),
       ),
-      body: Container(
+      body: SingleChildScrollView(
+      child: Container(
         // searchVCX (101:155)
         width: double.infinity,
         decoration: BoxDecoration (
@@ -492,6 +493,8 @@ class _RegisterdEventsState extends State<RegisterdEvents> {
           ],
         ),
       ),
+      ),
+      bottomNavigationBar: GuestFooter(),
     );
   }
 }
