@@ -1,10 +1,8 @@
-//import 'dart:js_interop_unsafe';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
-
 import 'designs/landing-page-.dart';
 import 'designs/role-selection.dart';
 import 'designs/login.dart';
@@ -50,7 +48,7 @@ import 'designs/robotics.dart';
 
 import 'designs/guest_footer.dart';
 
-//Lamees have updated the main
+//take this main After Lamees
 void main() {
   runApp(MyEvent());
 }
@@ -108,9 +106,6 @@ class MyEvent extends StatelessWidget {
         EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
         Scene11.screenRoute: (context) => Scene11(),//done
         EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),//done
-        //take this main After Lamees
-
-
       },
     );
   }
