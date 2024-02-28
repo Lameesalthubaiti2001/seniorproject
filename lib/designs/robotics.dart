@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -17,7 +19,15 @@ class _RoboticsState extends State<Robotics> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Robotics Society'),
+        title: Text(
+          'Robotics Socity',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -109,15 +119,20 @@ class _RoboticsState extends State<Robotics> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'AI chatbot ',
-                        date: 'January 31',
-                        time: '12PM-1PM',
-                        location: 'MALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/chatbox.jpg',
+                      child: GestureDetector(
+                        onTap: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'AI chatbot ',
+                          date: 'January 31',
+                          time: '12PM-1PM',
+                          location: 'MALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/chatbox.jpg',
+                        ),
                       ),
                     ),
                   ),
@@ -128,15 +143,20 @@ class _RoboticsState extends State<Robotics> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Smart Homes',
-                        date: 'March 2nd',
-                        time: '1PM-2PM',
-                        location: 'FEMALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/rectangle-4199-cH1.png',
+                      child: GestureDetector(
+                        onTap: () {
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Smart Homes',
+                          date: 'March 2nd',
+                          time: '1PM-2PM',
+                          location: 'FEMALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/rectangle-4199-cH1.png',
+                        ),
                       ),
                     ),
                   ),
@@ -145,6 +165,10 @@ class _RoboticsState extends State<Robotics> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

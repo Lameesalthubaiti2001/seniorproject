@@ -64,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: EventInfo2ClubSide.screenRoute,
+      initialRoute: ProfileAdminSide.screenRoute,
       routes: {
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),
@@ -78,41 +78,34 @@ class MyEvent extends StatelessWidget {
         RequestsAdminSide.screenRoute: (context) => RequestsAdminSide(),
         EventTrackingClubSide.screenRoute: (context) => EventTrackingClubSide(),
         ClubHome.screenRoute: (context) => ClubHome(),
-        PosterRequestConfirmClubSide.screenRoute: (context) =>
-            PosterRequestConfirmClubSide(),
+        PosterRequestConfirmClubSide.screenRoute: (context) => PosterRequestConfirmClubSide(),
         PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
-        RequestConfirmClubSide.screenRoute: (context) =>
-            RequestConfirmClubSide(),
+        RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
         RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
         RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
         Finance.screenRoute: (context) => Finance(),
         GuestHome.screenRoute: (context) => GuestHome(),
-        AboutClub.screenRoute: (context) => AboutClub(),
+        AboutClubPage.screenRoute: (context) => AboutClubPage(),
         Scene40.screenRoute: (context) => Scene40(),
         RegisterdEvents.screenRoute: (context) => RegisterdEvents(),
         EventDetail.screenRoute: (context) => EventDetail(),
         EventRegistration.screenRoute: (context) => EventRegistration(),
         RegistrationConfirm.screenRoute: (context) => RegistrationConfirm(),
-        GuestFooter.screenRoute: (context) => GuestFooter(),
-        jewelry.screenRoute: (context) => jewelry(),
+        Jewelry.screenRoute: (context) => Jewelry(),
         MIS.screenRoute: (context) => MIS(),
         Robotics.screenRoute: (context) => Robotics(),
         Rwad.screenRoute: (context) => Rwad(),
         Samaa.screenRoute: (context) => Samaa(),
         Smarthomes.screenRoute: (context) => Smarthomes(),
+        EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),//done
+        EventInfoPage.screenRoute: (context) => EventInfoPage(),//done
+        EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),//done
+        EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
+        Scene11.screenRoute: (context) => Scene11(),//done
+        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),//done
+        //take this main After Lamees
 
-        /////
-// info 2,3,4,1
-        EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),
-        EventInfoPage.screenRoute: (context) => EventInfoPage(),
-        EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),
-        EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),
-        // club 1,2,3
-        Scene11.screenRoute: (context) =>
-            Scene11(), // editing event info (club side)
-        EditConfirmationClubSide.screenRoute: (context) =>
-            EditConfirmationClubSide(),
-        // is submission confirmation needed????????????
+
       },
     );
   }

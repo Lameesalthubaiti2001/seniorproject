@@ -81,7 +81,7 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                                     width: 151*fem,
                                     height: 30*fem,
                                     child: Text(
-                                      'The Saudi Deal ',
+                                      'Intro to CyperSecurity',
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Poppins',
@@ -271,7 +271,7 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                             '"The Saudi Deal" is a prestigious event set against the\n backdrop of the Kingdom of Saudi Arabia,\n poised as an immersive forum where global innovators,\n industry leaders, and visionaries converge.\n This event promises an unparalleled platform, \ninviting attendees to explore and discover the boundless\n opportunities emerging within the heart of Saudi Arabia\'s\n transformative landscape  ',
                             style: SafeGoogleFont (
                               'Roboto',
-                              fontSize: 14*ffem,
+                              fontSize: 13.5*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.1725*ffem/fem,
                               color: Color(0xff6a6a6a),
@@ -293,29 +293,6 @@ class _RequestDetailTwoState extends State<RequestDetailTwo> {
                       child: Container(
                         decoration: BoxDecoration (
                           color: Color(0xffc4c4c4),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // castjXy (227:624)
-                  left: 37*fem,
-                  top: 875*fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 42*fem,
-                      height: 27*fem,
-                      child: Text(
-                        'Cast',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Poppins',
-                          fontSize: 18*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5*ffem/fem,
-                          letterSpacing: -0.3000000119*fem,
-                          color: Color(0xff1c1b19),
                         ),
                       ),
                     ),

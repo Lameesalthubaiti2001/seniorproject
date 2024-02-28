@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
-class AboutClub extends StatefulWidget {
-  static const String screenRoute = 'Aboutclub_screen';
+class AboutClubPage extends StatefulWidget {
+  static const String screenRoute = 'AboutClub_screen';
   @override
-  _AboutClubState createState() => _AboutClubState();
+  _AboutClubPageState createState() => _AboutClubPageState();
 }
 
-class _AboutClubState extends State<AboutClub> {
+class _AboutClubPageState extends State<AboutClubPage> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -17,7 +19,15 @@ class _AboutClubState extends State<AboutClub> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Club'),
+        title: Text(
+          'Google Developers',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -109,34 +119,44 @@ class _AboutClubState extends State<AboutClub> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Intro to Digital Forensics',
-                        date: '5 NOV',
-                        time: '12PM-1PM',
-                        location: 'MALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: 'assets/designs/images/smarthomes.png',
+                      child: GestureDetector(
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Intro to Digital Forensics',
+                          date: '5 NOV',
+                          time: '12PM-1PM',
+                          location: 'MALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: 'assets/designs/images/smarthomes.png',
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(width: 20 * fem), // Space between cards
                   // Second Event Card
                   Container(
-                    width: 180* fem, // Adjust width as needed
+                    width: 180 * fem, // Adjust width as needed
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Intro to Cyber Security',
-                        date: '27 NOV',
-                        time: '2PM-3PM',
-                        location: 'FEMALE CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: 'assets/designs/images/rectangle-4199-S9y.png',
+                      child: GestureDetector(
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Intro to Cyber Security',
+                          date: '27 NOV',
+                          time: '2PM-3PM',
+                          location: 'FEMALE CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: 'assets/designs/images/rectangle-4199-S9y.png',
+                        ),
                       ),
                     ),
                   ),
@@ -145,6 +165,10 @@ class _AboutClubState extends State<AboutClub> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }

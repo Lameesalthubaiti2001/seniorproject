@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
+import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 
@@ -17,7 +19,15 @@ class _RwadState extends State<Rwad> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Rwad'),
+        title: Text(
+          'Rwad',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18 * ffem,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -109,15 +119,20 @@ class _RwadState extends State<Rwad> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Clean Beach ',
-                        date: 'January 29',
-                        time: '12PM-4PM',
-                        location: 'Half-Moon Beach',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Beach.png',
+                      child: GestureDetector(
+                        onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Clean Beach',
+                          date: 'January 29',
+                          time: '12PM-4PM',
+                          location: 'Half-Moon Beach',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Beach.png',
+                        ),
                       ),
                     ),
                   ),
@@ -128,15 +143,20 @@ class _RwadState extends State<Rwad> {
                     height: 300 * fem, // Adjust height as needed
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: EventCard(
-                        fem: fem,
-                        ffem: ffem,
-                        title: 'Pmu winter ',
-                        date: 'feb 10- feb 17',
-                        time: '12PM-9PM',
-                        location: 'CAMPUS',
-                        icon: Icons.calendar_today,
-                        image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/download.png',
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                        },
+                        child: EventCard(
+                          fem: fem,
+                          ffem: ffem,
+                          title: 'Pmu winter',
+                          date: 'Feb 10 - Feb 17',
+                          time: '12PM-9PM',
+                          location: 'CAMPUS',
+                          icon: Icons.calendar_today,
+                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/download.png',
+                        ),
                       ),
                     ),
                   ),
@@ -145,6 +165,10 @@ class _RwadState extends State<Rwad> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80, // Set the desired height
+        child: GuestFooter(),
       ),
     );
   }
