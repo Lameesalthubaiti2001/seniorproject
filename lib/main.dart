@@ -64,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: GuestHome.screenRoute,
+      initialRoute: Scene11.screenRoute,
       routes: {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),
@@ -106,7 +106,8 @@ class MyEvent extends StatelessWidget {
         EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),//done
         EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
         Scene11.screenRoute: (context) => Scene11(),//done
-        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),//done
+        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),
+        ChecklistTrackingClubSide.screenRoute: (context) => ChecklistTrackingClubSide(),//done
       },
     );
   }
