@@ -64,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: Scene11.screenRoute,
+      initialRoute: RequestConfirmClubSide.screenRoute,
       routes: {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),

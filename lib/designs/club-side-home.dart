@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'club-side-checklist-tracking.dart';
+import 'club-side-editing-eventinfo.dart';
 import 'club-side-event-info1.dart';
 import 'club-side-event-info2.dart';
 import 'club-side-event-tracking.dart';
@@ -69,6 +70,15 @@ class _ClubHomeState extends State<ClubHome> {
               ),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EventTrackingClubSide()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.edit),
+              title: Text('Edit Event Information',
+                style: TextStyle(fontSize: 20),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Scene11()));
               },
             ),
           ],
