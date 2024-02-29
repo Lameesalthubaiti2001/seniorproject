@@ -319,81 +319,79 @@ class _JewelryState extends State<Jewelry> {
                 height: 139*fem,
               ),
             ),
-            Positioned(
-              // registernowuET (101:321)
-              left: 0 * fem,
-              top: 0 * fem,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: FractionalTranslation(
-                  translation: Offset(0, 8),
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Container(
-                      width: 428 * fem,
-                      height: 91 * fem,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10 * fem),
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            // rectangle4208CzF (101:323)
-                            left: 20 * fem,
-                            top: 0 * fem,
-                            child: Align(
-                              child: SizedBox(
-                                width: 388 * fem,
-                                height: 50 * fem,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10 * fem),
-                                    color: Color(0xfff36f23),
-                                  ),
-                                ),
-                              ),
+      Container(
+        width: MediaQuery.of(context).size.width, // Match the screen width
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: FractionalTranslation(
+            translation: Offset(0, 0), // Adjust this value to fine-tune the vertical position
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventRegistration()),
+                );
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+              ),
+              child: Container(
+                width: 428 * fem,
+                height: 91 * fem,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10 * fem),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      // rectangle4208CzF (101:323)
+                      left: 20 * fem,
+                      top: 0 * fem,
+                      child: Align(
+                        child: SizedBox(
+                          width: 388 * fem,
+                          height: 50 * fem,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10 * fem),
+                              color: Color(0xfff36f23),
                             ),
                           ),
-                          Positioned(
-                            left: 161 * fem,
-                            top: 13 * fem,
-                            child: Align(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => EventRegistration()),
-                                  );
-                                },
-                                child: SizedBox(
-                                  width: 105 * fem,
-                                  height: 24 * fem,
-                                  child: Text(
-                                    'Register Now',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 16 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
+                    Positioned(
+                      left: 161 * fem,
+                      top: 13 * fem,
+                      child: Align(
+                        child: SizedBox(
+                          width: 105 * fem,
+                          height: 24 * fem,
+                          child: Text(
+                            'Register Now',
+                            style: SafeGoogleFont(
+                              'Poppins',
+                              fontSize: 16 * ffem,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5 * ffem / fem,
+                              color: Color(0xffffffff),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            )
-          ],
+            ),
+          ),
         ),
+      ),
+
+
+    ],
+        ),
+
       ),
         ),
     );
