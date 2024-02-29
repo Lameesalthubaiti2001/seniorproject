@@ -41,12 +41,14 @@ class _MISState extends State<MIS> {
               alignment: Alignment.center,
               child: ClipOval(
                 child: Container(
-                  width: 150 * fem, // Adjust width as needed
-                  height: 150 * fem, // Adjust height as needed
-                  color: Colors.white, // Background color of the ellipse
-                  child: Image.asset(
-                    '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MIS.png',
-                    width: 150 * fem, // Adjust width as needed
+                  width: 150 * fem,
+                  height: 150 * fem,
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the ellipse
+                    image: DecorationImage(
+                      image: AssetImage('assets/designs/images/MIS.png'),
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
                   ),
                 ),
               ),
@@ -133,7 +135,7 @@ class _MISState extends State<MIS> {
                           time: '12PM-4PM',
                           location: 'Female Campus',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MISWS.png',
+                          image: 'assets/designs/images/MISWS.png',
                         ),
                       ),
                     ),
@@ -157,7 +159,7 @@ class _MISState extends State<MIS> {
                           time: '12PM-4PM',
                           location: 'Microsoft Teams',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/MIS2.png',
+                          image: 'assets/designs/images/MIS2.png',
                         ),
                       ),
                     ),

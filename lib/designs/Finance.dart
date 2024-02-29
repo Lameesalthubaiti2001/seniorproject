@@ -39,12 +39,14 @@ class _FinanceState extends State<Finance> {
               alignment: Alignment.center,
               child: ClipOval(
                 child: Container(
-                  width: 150 * fem, // Adjust width as needed
-                  height: 150 * fem, // Adjust height as needed
-                  color: Colors.white, // Background color of the ellipse
-                  child: Image.asset(
-                    '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Finance.jpeg',
-                    width: 150 * fem, // Adjust width as needed
+                  width: 150 * fem,
+                  height: 150 * fem,
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the ellipse
+                    image: DecorationImage(
+                      image: AssetImage('assets/designs/images/Finance.png'),
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
                   ),
                 ),
               ),
@@ -131,7 +133,7 @@ class _FinanceState extends State<Finance> {
                           time: '12PM-1PM',
                           location: 'MALE CAMPUS',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/f-workshop.jpeg',
+                          image: 'assets/designs/images/f-workshop.png', // Provide asset path as a String
                         ),
                       ),
                     ),
@@ -155,7 +157,7 @@ class _FinanceState extends State<Finance> {
                           time: '1PM-2PM',
                           location: 'FEMALE CAMPUS',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/financial-presentation-person-icon-illustration-free-vector.jpg',
+                          image: 'assets/designs/images/financial.png',
                         ),
                       ),
                     ),

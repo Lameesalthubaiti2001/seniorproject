@@ -39,12 +39,14 @@ class _RwadState extends State<Rwad> {
               alignment: Alignment.center,
               child: ClipOval(
                 child: Container(
-                  width: 150 * fem, // Adjust width as needed
-                  height: 150 * fem, // Adjust height as needed
-                  color: Colors.white, // Background color of the ellipse
-                  child: Image.asset(
-                    '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Rwad.png',
-                    width: 150 * fem, // Adjust width as needed
+                  width: 150 * fem,
+                  height: 150 * fem,
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the ellipse
+                    image: DecorationImage(
+                      image: AssetImage('assets/designs/images/Rwad.png'),
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
                   ),
                 ),
               ),
@@ -131,7 +133,7 @@ class _RwadState extends State<Rwad> {
                           time: '12PM-4PM',
                           location: 'Half-Moon Beach',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Beach.png',
+                          image: 'assets/designs/images/Beach.png',
                         ),
                       ),
                     ),
@@ -155,7 +157,7 @@ class _RwadState extends State<Rwad> {
                           time: '12PM-9PM',
                           location: 'CAMPUS',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/download.png',
+                          image: 'assets/designs/images/Pmuwinter.png',
                         ),
                       ),
                     ),

@@ -39,17 +39,18 @@ class _RoboticsState extends State<Robotics> {
               alignment: Alignment.center,
               child: ClipOval(
                 child: Container(
-                  width: 150 * fem, // Adjust width as needed
-                  height: 150 * fem, // Adjust height as needed
-                  color: Colors.white, // Background color of the ellipse
-                  child: Image.asset(
-                    '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/robotics.png',
-                    width: 150 * fem, // Adjust width as needed
+                  width: 150 * fem,
+                  height: 150 * fem,
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the ellipse
+                    image: DecorationImage(
+                      image: AssetImage('assets/designs/images/robotics.png'),
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
                   ),
                 ),
               ),
             ),
-
             // About this club
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20 * fem),
@@ -131,7 +132,7 @@ class _RoboticsState extends State<Robotics> {
                           time: '12PM-1PM',
                           location: 'MALE CAMPUS',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/chatbox.jpg',
+                          image: 'assets/designs/images/chatbox.png',
                         ),
                       ),
                     ),
@@ -155,7 +156,7 @@ class _RoboticsState extends State<Robotics> {
                           time: '1PM-2PM',
                           location: 'FEMALE CAMPUS',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/rectangle-4199-cH1.png',
+                          image: 'assets/designs/images/rectangle-4199-CiF.png',
                         ),
                       ),
                     ),
