@@ -14,9 +14,9 @@ import 'club-side-edit-confirmation.dart';
 import 'club-side-poster-request-confirm.dart';
 import 'club-side-posters.dart';
 import 'club-side-event-tracking.dart';
-
 import 'club-side-request-reject.dart';
 import 'club-side-checklist-tracking.dart';
+import 'club-side-editpage.dart';
 
 class ClubFooter extends StatelessWidget {
   @override
@@ -48,7 +48,7 @@ class ClubFooter extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Scene11()),
+                MaterialPageRoute(builder: (context) => EditPageClubSide()),
               );
             },
           ),
