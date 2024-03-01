@@ -13,6 +13,8 @@ import 'designs/guest-side-activity.dart';
 import 'designs/admin-side-request.dart';
 import 'designs/guest-side-event-detail.dart';
 import 'designs/club-side-editing-eventinfo.dart';
+import 'designs/club-side-editing-eventinfo2.dart';
+import 'designs/club-side-editing-eventifo3.dart';
 import 'designs/admin-side-detailpage.dart';
 import 'designs/admin-side-detailpage2.dart';
 import 'designs/admin-side-detailpage3.dart';
@@ -45,7 +47,7 @@ import 'designs/Samaa.dart';
 import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
-
+import 'designs/club-side-editpage.dart';
 
 import 'designs/guest_footer.dart';
 
@@ -64,7 +66,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: RequestConfirmClubSide.screenRoute,
+      initialRoute: ClubHome.screenRoute,
       routes: {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),
@@ -101,13 +103,16 @@ class MyEvent extends StatelessWidget {
         Rwad.screenRoute: (context) => Rwad(),
         Samaa.screenRoute: (context) => Samaa(),
         Smarthomes.screenRoute: (context) => Smarthomes(),
-        EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),//done
-        EventInfoPage.screenRoute: (context) => EventInfoPage(),//done
-        EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),//done
-        EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
-        Scene11.screenRoute: (context) => Scene11(),//done
+        EventInfo2ClubSide.screenRoute: (context) => EventInfo2ClubSide(),
+        EventInfoPage.screenRoute: (context) => EventInfoPage(),
+        EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),
+        EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),
+        Scene11.screenRoute: (context) => Scene11(),
         EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),
-        ChecklistTrackingClubSide.screenRoute: (context) => ChecklistTrackingClubSide(),//done
+        ChecklistTrackingClubSide.screenRoute: (context) => ChecklistTrackingClubSide(),
+        EditPageClubSide.screenRoute: (context) =>EditPageClubSide(),
+        Editing2.screenRoute: (context) => Editing2(),
+        Editing3.screenRoute: (context) => Editing3(),
       },
     );
   }
