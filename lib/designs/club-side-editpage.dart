@@ -145,11 +145,6 @@ class _EditPageClubSideState extends State<EditPageClubSide> {
               margin: EdgeInsets.all(12 * fem),
               width: 40 * fem,
               height: 40 * fem,
-              child: Icon(
-                iconData,
-                size: 30 * fem,
-                color: Color(0xffffffff),
-              ),
             ),
             Container(
               width: 300 * fem,
