@@ -434,216 +434,34 @@ class _GuestHomeState extends State<GuestHome> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 16*fem, 0*fem),
-                                    width: 160*fem,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          child:Container(
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                                            width: double.infinity,
-                                            height: 220*fem,
-                                            child: Stack(
-                                              children: [
-                                                Positioned(
-                                                  left: 0*fem,
-                                                  top: 0*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 160*fem,
-                                                      height: 214*fem,
-                                                      child: ClipRRect(
-                                                        borderRadius: BorderRadius.circular(5*fem),
-                                                        child: Image.asset(
-                                                          'assets/designs/images/rectangle-4199-Q5Z.png',
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  left: 0*fem,
-                                                  top: 168*fem,
-                                                  child: ClipRect(
-                                                    child: BackdropFilter(
-                                                      filter: ImageFilter.blur (
-                                                        sigmaX: 2*fem,
-                                                        sigmaY: 2*fem,
-                                                      ),
-                                                      child: Align(
-                                                        child: SizedBox(
-                                                          width: 160*fem,
-                                                          height: 52*fem,
-                                                          child: Container(
-                                                            decoration: BoxDecoration (
-                                                              borderRadius: BorderRadius.only (
-                                                                bottomRight: Radius.circular(5*fem),
-                                                                bottomLeft: Radius.circular(5*fem),
-                                                              ),
-                                                              gradient: LinearGradient (
-                                                                begin: Alignment(0.003, -0),
-                                                                end: Alignment(0, 1),
-                                                                colors: <Color>[Color(0x591c1b19), Color(0xff1c1b19)],
-                                                                stops: <double>[0, 1],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  left: 26*fem,
-                                                  top: 181*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 41*fem,
-                                                      height: 29*fem,
-                                                      child: Text(
-                                                        'LECTURE HALL',
-                                                        textAlign: TextAlign.center,
-                                                        style: SafeGoogleFont (
-                                                          'Roboto',
-                                                          fontSize: 9.6*ffem,
-                                                          fontWeight: FontWeight.w500,
-                                                          height: 1.1725*ffem/fem,
-                                                          color: Color(0xffffffff),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  // mappinrCb (214:58)
-                                                  left: 7*fem,
-                                                  top: 187.6666793823*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 12*fem,
-                                                      height: 14.67*fem,
-                                                      child: Image.asset(
-                                                        'assets/designs/images/map-pin-vsD.png',
-                                                        width: 12*fem,
-                                                        height: 14.67*fem,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  left: 89.4296569824*fem,
-                                                  top: 175*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 16*fem,
-                                                      height: 44*fem,
-                                                      child: Image.asset(
-                                                        'assets/designs/images/iconly-bold-calendar-vy9.png',
-                                                        width: 16*fem,
-                                                        height: 44*fem,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  // nov5LF (214:73)
-                                                  left: 113.5*fem,
-                                                  top: 177*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 41*fem,
-                                                      height: 15*fem,
-                                                      child: Text(
-                                                        '12 NOV ',
-                                                        textAlign: TextAlign.center,
-                                                        style: SafeGoogleFont (
-                                                          'Roboto',
-                                                          fontSize: 9.8*ffem,
-                                                          fontWeight: FontWeight.w500,
-                                                          height: 1.1725*ffem/fem,
-                                                          color: Color(0xffffffff),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  left: 106.5*fem,
-                                                  top: 195*fem,
-                                                  child: Align(
-                                                    child: SizedBox(
-                                                      width: 52*fem,
-                                                      height: 15*fem,
-                                                      child: Text(
-                                                        '1PM-4PM',
-                                                        textAlign: TextAlign.center,
-                                                        style: SafeGoogleFont (
-                                                          'Roboto',
-                                                          fontSize: 9.6*ffem,
-                                                          fontWeight: FontWeight.w500,
-                                                          height: 1.1725*ffem/fem,
-                                                          color: Color(0xffffffff),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(builder: (context) => Jewelry()),
-                                            );
-                                          },
-                                          child: Text(
-                                            'Jewelry Industry',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.5,
-                                              color: Color(0xff042745),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
+                                    margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 30 * fem, 0 * fem),
                                     child: TextButton(
                                       onPressed: () {},
-                                      style: TextButton.styleFrom (
+                                      style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,
                                       ),
                                       child: Container(
-                                        width: 160*fem,
+                                        width: 160 * fem,
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Container(
-                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 3 * fem),
                                               width: double.infinity,
-                                              height: 221*fem,
+                                              height: 221 * fem,
                                               child: Stack(
                                                 children: [
                                                   Positioned(
-                                                    left: 0*fem,
-                                                    top: 0*fem,
+                                                    left: 0 * fem,
+                                                    top: 0 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 160*fem,
-                                                        height: 214*fem,
+                                                        width: 160 * fem,
+                                                        height: 214 * fem,
                                                         child: ClipRRect(
-                                                          borderRadius: BorderRadius.circular(5*fem),
+                                                          borderRadius: BorderRadius.circular(5 * fem),
                                                           child: Image.asset(
-                                                            'assets/designs/images/rectangle-4199-XeK.png',
+                                                            'assets/designs/images/rectangle-4199-Q5Z.png',
                                                             fit: BoxFit.cover,
                                                           ),
                                                         ),
@@ -651,28 +469,31 @@ class _GuestHomeState extends State<GuestHome> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 0*fem,
-                                                    top: 169*fem,
+                                                    left: 0 * fem,
+                                                    top: 169 * fem,
                                                     child: ClipRect(
                                                       child: BackdropFilter(
-                                                        filter: ImageFilter.blur (
-                                                          sigmaX: 2*fem,
-                                                          sigmaY: 2*fem,
+                                                        filter: ImageFilter.blur(
+                                                          sigmaX: 2 * fem,
+                                                          sigmaY: 2 * fem,
                                                         ),
                                                         child: Align(
                                                           child: SizedBox(
-                                                            width: 160*fem,
-                                                            height: 52*fem,
+                                                            width: 160 * fem,
+                                                            height: 50 * fem,
                                                             child: Container(
-                                                              decoration: BoxDecoration (
-                                                                borderRadius: BorderRadius.only (
-                                                                  bottomRight: Radius.circular(5*fem),
-                                                                  bottomLeft: Radius.circular(5*fem),
+                                                              decoration: BoxDecoration(
+                                                                borderRadius: BorderRadius.only(
+                                                                  bottomRight: Radius.circular(5 * fem),
+                                                                  bottomLeft: Radius.circular(5 * fem),
                                                                 ),
-                                                                gradient: LinearGradient (
+                                                                gradient: LinearGradient(
                                                                   begin: Alignment(0.003, -0),
                                                                   end: Alignment(0, 1),
-                                                                  colors: <Color>[Color(0x591c1b19), Color(0xff1c1b19)],
+                                                                  colors: <Color>[
+                                                                    Color(0x591c1b19),
+                                                                    Color(0xff1c1b19)
+                                                                  ],
                                                                   stops: <double>[0, 1],
                                                                 ),
                                                               ),
@@ -683,20 +504,20 @@ class _GuestHomeState extends State<GuestHome> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 24*fem,
-                                                    top: 184*fem,
+                                                    left: 24 * fem,
+                                                    top: 184 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 41*fem,
-                                                        height: 29*fem,
+                                                        width: 41 * fem,
+                                                        height: 29 * fem,
                                                         child: Text(
                                                           'LECTURE HALL',
                                                           textAlign: TextAlign.center,
-                                                          style: SafeGoogleFont (
+                                                          style: SafeGoogleFont(
                                                             'Roboto',
-                                                            fontSize: 9.6*ffem,
+                                                            fontSize: 9.6 * ffem,
                                                             fontWeight: FontWeight.w500,
-                                                            height: 1.1725*ffem/fem,
+                                                            height: 1.1725 * ffem / fem,
                                                             color: Color(0xffffffff),
                                                           ),
                                                         ),
@@ -704,20 +525,234 @@ class _GuestHomeState extends State<GuestHome> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 103.5*fem,
-                                                    top: 179*fem,
+                                                    left: 103.5 * fem,
+                                                    top: 179 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 41*fem,
-                                                        height: 15*fem,
+                                                        width: 41 * fem,
+                                                        height: 15 * fem,
+                                                        child: Text(
+                                                          '19 NOV ',
+                                                          textAlign: TextAlign.center,
+                                                          style: SafeGoogleFont(
+                                                            'Roboto',
+                                                            fontSize: 9.6 * ffem,
+                                                            fontWeight: FontWeight.w500,
+                                                            height: 1.1725 * ffem / fem,
+                                                            color: Color(0xffffffff),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 99 * fem,
+                                                    top: 198 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 59 * fem,
+                                                        height: 18 * fem,
+                                                        child: Text(
+                                                          '12PM-2PM',
+                                                          textAlign: TextAlign.center,
+                                                          style: SafeGoogleFont(
+                                                            'Roboto',
+                                                            fontSize: 9.6 * ffem,
+                                                            fontWeight: FontWeight.w500,
+                                                            height: 1.1725 * ffem / fem,
+                                                            color: Color(0xffffffff),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 82 * fem,
+                                                    top: 198 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 16.26 * fem,
+                                                        height: 21 * fem,
+                                                        child: Image.asset(
+                                                          'assets/designs/images/iconly-bold-calendar-5j9.png',
+                                                          width: 16.26 * fem,
+                                                          height: 21 * fem,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 0 * fem,
+                                                    top: 0 * fem,
+                                                    child: Container(
+                                                      width: 16 * fem,
+                                                      height: 16 * fem,
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 2 * fem,
+                                                    top: 185 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 16 * fem,
+                                                        height: 16 * fem,
+                                                        child: Image.asset(
+                                                          'assets/designs/images/group-6-xEo.png',
+                                                          width: 16 * fem,
+                                                          height: 16 * fem,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 85 * fem,
+                                                    top: 178 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 11.93 * fem,
+                                                        height: 13.33 * fem,
+                                                        child: Image.asset(
+                                                          'assets/designs/images/calendar-VVu.png',
+                                                          width: 11.93 * fem,
+                                                          height: 13.33 * fem,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) => Jewelry()),
+                                                );
+                                              },
+                                              child: Text(
+                                                'AJ jewlry',
+                                                style: SafeGoogleFont(
+                                                  'Poppins',
+                                                  fontSize: 16 * ffem,
+                                                  fontWeight: FontWeight.w400,
+                                                  height: 1.5 * ffem / fem,
+                                                  color: Color(0xff042745),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
+
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 30 * fem, 0 * fem),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      style: TextButton.styleFrom(
+                                        padding: EdgeInsets.zero,
+                                      ),
+                                      child: Container(
+                                        width: 160 * fem,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 3 * fem),
+                                              width: double.infinity,
+                                              height: 221 * fem,
+                                              child: Stack(
+                                                children: [
+                                                  Positioned(
+                                                    left: 0 * fem,
+                                                    top: 0 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 160 * fem,
+                                                        height: 214 * fem,
+                                                        child: ClipRRect(
+                                                          borderRadius: BorderRadius.circular(5 * fem),
+                                                          child: Image.asset(
+                                                            'assets/designs/images/rectangle-4199-XeK.png',
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 0 * fem,
+                                                    top: 169 * fem,
+                                                    child: ClipRect(
+                                                      child: BackdropFilter(
+                                                        filter: ImageFilter.blur(
+                                                          sigmaX: 2 * fem,
+                                                          sigmaY: 2 * fem,
+                                                        ),
+                                                        child: Align(
+                                                          child: SizedBox(
+                                                            width: 160 * fem,
+                                                            height: 30 * fem,
+                                                            child: Container(
+                                                              decoration: BoxDecoration(
+                                                                borderRadius: BorderRadius.only(
+                                                                  bottomRight: Radius.circular(5 * fem),
+                                                                  bottomLeft: Radius.circular(5 * fem),
+                                                                ),
+                                                                gradient: LinearGradient(
+                                                                  begin: Alignment(0.003, -0),
+                                                                  end: Alignment(0, 1),
+                                                                  colors: <Color>[
+                                                                    Color(0x591c1b19),
+                                                                    Color(0xff1c1b19)
+                                                                  ],
+                                                                  stops: <double>[0, 1],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 24 * fem,
+                                                    top: 184 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 41 * fem,
+                                                        height: 29 * fem,
+                                                        child: Text(
+                                                          'LECTURE HALL',
+                                                          textAlign: TextAlign.center,
+                                                          style: SafeGoogleFont(
+                                                            'Roboto',
+                                                            fontSize: 9.6 * ffem,
+                                                            fontWeight: FontWeight.w500,
+                                                            height: 1.1725 * ffem / fem,
+                                                            color: Color(0xffffffff),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 103.5 * fem,
+                                                    top: 179 * fem,
+                                                    child: Align(
+                                                      child: SizedBox(
+                                                        width: 41 * fem,
+                                                        height: 15 * fem,
                                                         child: Text(
                                                           '29 NOV ',
                                                           textAlign: TextAlign.center,
-                                                          style: SafeGoogleFont (
+                                                          style: SafeGoogleFont(
                                                             'Roboto',
-                                                            fontSize: 9.6*ffem,
+                                                            fontSize: 9.6 * ffem,
                                                             fontWeight: FontWeight.w500,
-                                                            height: 1.1725*ffem/fem,
+                                                            height: 1.1725 * ffem / fem,
                                                             color: Color(0xffffffff),
                                                           ),
                                                         ),
@@ -725,20 +760,20 @@ class _GuestHomeState extends State<GuestHome> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 99*fem,
-                                                    top: 198*fem,
+                                                    left: 99 * fem,
+                                                    top: 198 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 59*fem,
-                                                        height: 18*fem,
+                                                        width: 59 * fem,
+                                                        height: 18 * fem,
                                                         child: Text(
                                                           '12PM-4PM',
                                                           textAlign: TextAlign.center,
-                                                          style: SafeGoogleFont (
+                                                          style: SafeGoogleFont(
                                                             'Roboto',
-                                                            fontSize: 9.6*ffem,
+                                                            fontSize: 9.6 * ffem,
                                                             fontWeight: FontWeight.w500,
-                                                            height: 1.1725*ffem/fem,
+                                                            height: 1.1725 * ffem / fem,
                                                             color: Color(0xffffffff),
                                                           ),
                                                         ),
@@ -746,54 +781,54 @@ class _GuestHomeState extends State<GuestHome> {
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 82*fem,
-                                                    top: 198*fem,
+                                                    left: 82 * fem,
+                                                    top: 198 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 16.26*fem,
-                                                        height: 21*fem,
+                                                        width: 16.26 * fem,
+                                                        height: 21 * fem,
                                                         child: Image.asset(
                                                           'assets/designs/images/iconly-bold-calendar-5j9.png',
-                                                          width: 16.26*fem,
-                                                          height: 21*fem,
+                                                          width: 16.26 * fem,
+                                                          height: 21 * fem,
                                                         ),
                                                       ),
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 0*fem,
-                                                    top: 0*fem,
+                                                    left: 0 * fem,
+                                                    top: 0 * fem,
                                                     child: Container(
-                                                      width: 16*fem,
-                                                      height: 16*fem,
+                                                      width: 16 * fem,
+                                                      height: 16 * fem,
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 2*fem,
-                                                    top: 185*fem,
+                                                    left: 2 * fem,
+                                                    top: 185 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 16*fem,
-                                                        height: 16*fem,
+                                                        width: 16 * fem,
+                                                        height: 16 * fem,
                                                         child: Image.asset(
                                                           'assets/designs/images/group-6-xEo.png',
-                                                          width: 16*fem,
-                                                          height: 16*fem,
+                                                          width: 16 * fem,
+                                                          height: 16 * fem,
                                                         ),
                                                       ),
                                                     ),
                                                   ),
                                                   Positioned(
-                                                    left: 85*fem,
-                                                    top: 178*fem,
+                                                    left: 85 * fem,
+                                                    top: 178 * fem,
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 11.93*fem,
-                                                        height: 13.33*fem,
+                                                        width: 11.93 * fem,
+                                                        height: 13.33 * fem,
                                                         child: Image.asset(
                                                           'assets/designs/images/calendar-VVu.png',
-                                                          width: 11.93*fem,
-                                                          height: 13.33*fem,
+                                                          width: 11.93 * fem,
+                                                          height: 13.33 * fem,
                                                         ),
                                                       ),
                                                     ),
@@ -824,27 +859,28 @@ class _GuestHomeState extends State<GuestHome> {
                                       ),
                                     ),
                                   ),
+
                                   Container(
-                                    margin: EdgeInsets.fromLTRB(0*fem, 5*fem, 0*fem, 0*fem),
-                                    width: 160*fem,
+                                    margin: EdgeInsets.fromLTRB(0 * fem, 5 * fem, 0 * fem, 0 * fem),
+                                    width: 160 * fem,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 8*fem),
+                                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                           width: double.infinity,
-                                          height: 216*fem,
+                                          height: 216 * fem,
                                           child: Stack(
                                             children: [
                                               Positioned(
-                                                left: 0*fem,
-                                                top: 0*fem,
+                                                left: 0 * fem,
+                                                top: 0 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 160*fem,
-                                                    height: 214*fem,
+                                                    width: 160 * fem,
+                                                    height: 214 * fem,
                                                     child: ClipRRect(
-                                                      borderRadius: BorderRadius.circular(5*fem),
+                                                      borderRadius: BorderRadius.circular(5 * fem),
                                                       child: Image.asset(
                                                         'assets/designs/images/rectangle-4199-CiF.png',
                                                         fit: BoxFit.cover,
@@ -854,28 +890,31 @@ class _GuestHomeState extends State<GuestHome> {
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 0*fem,
-                                                top: 164*fem,
+                                                left: 0 * fem,
+                                                top: 164 * fem,
                                                 child: ClipRect(
                                                   child: BackdropFilter(
-                                                    filter: ImageFilter.blur (
-                                                      sigmaX: 2*fem,
-                                                      sigmaY: 2*fem,
+                                                    filter: ImageFilter.blur(
+                                                      sigmaX: 2 * fem,
+                                                      sigmaY: 2 * fem,
                                                     ),
                                                     child: Align(
                                                       child: SizedBox(
-                                                        width: 160*fem,
-                                                        height: 52*fem,
+                                                        width: 160 * fem,
+                                                        height: 52 * fem,
                                                         child: Container(
-                                                          decoration: BoxDecoration (
-                                                            borderRadius: BorderRadius.only (
-                                                              bottomRight: Radius.circular(5*fem),
-                                                              bottomLeft: Radius.circular(5*fem),
+                                                          decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius.only(
+                                                              bottomRight: Radius.circular(5 * fem),
+                                                              bottomLeft: Radius.circular(5 * fem),
                                                             ),
-                                                            gradient: LinearGradient (
+                                                            gradient: LinearGradient(
                                                               begin: Alignment(0.003, -0),
                                                               end: Alignment(0, 1),
-                                                              colors: <Color>[Color(0x591c1b19), Color(0xff1c1b19)],
+                                                              colors: <Color>[
+                                                                Color(0x591c1b19),
+                                                                Color(0xff1c1b19)
+                                                              ],
                                                               stops: <double>[0, 1],
                                                             ),
                                                           ),
@@ -886,28 +925,20 @@ class _GuestHomeState extends State<GuestHome> {
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 10*fem,
-                                                top: 190*fem,
-                                                child: Container(
-                                                  width: 16*fem,
-                                                  height: 16*fem,
-                                                ),
-                                              ),
-                                              Positioned(
-                                                left: 23*fem,
-                                                top: 185*fem,
+                                                left: 10 * fem,
+                                                top: 190 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 31*fem,
-                                                    height: 15*fem,
+                                                    width: 31 * fem,
+                                                    height: 15 * fem,
                                                     child: Text(
                                                       'F 054',
                                                       textAlign: TextAlign.center,
-                                                      style: SafeGoogleFont (
+                                                      style: SafeGoogleFont(
                                                         'Roboto',
-                                                        fontSize: 9.6*ffem,
+                                                        fontSize: 9.6 * ffem,
                                                         fontWeight: FontWeight.w500,
-                                                        height: 1.1725*ffem/fem,
+                                                        height: 1.1725 * ffem / fem,
                                                         color: Color(0xffffffff),
                                                       ),
                                                     ),
@@ -915,20 +946,20 @@ class _GuestHomeState extends State<GuestHome> {
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 111*fem,
-                                                top: 173*fem,
+                                                left: 111 * fem,
+                                                top: 173 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 32*fem,
-                                                    height: 15*fem,
+                                                    width: 32 * fem,
+                                                    height: 15 * fem,
                                                     child: Text(
                                                       '2 MAR',
                                                       textAlign: TextAlign.center,
-                                                      style: SafeGoogleFont (
+                                                      style: SafeGoogleFont(
                                                         'Roboto',
-                                                        fontSize: 9.6*ffem,
+                                                        fontSize: 9.6 * ffem,
                                                         fontWeight: FontWeight.w500,
-                                                        height: 1.1725*ffem/fem,
+                                                        height: 1.1725 * ffem / fem,
                                                         color: Color(0xffffffff),
                                                       ),
                                                     ),
@@ -936,20 +967,20 @@ class _GuestHomeState extends State<GuestHome> {
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 101.5*fem,
-                                                top: 195*fem,
+                                                left: 101.5 * fem,
+                                                top: 195 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 52*fem,
-                                                    height: 15*fem,
+                                                    width: 52 * fem,
+                                                    height: 15 * fem,
                                                     child: Text(
                                                       '1PM-2PM',
                                                       textAlign: TextAlign.center,
-                                                      style: SafeGoogleFont (
+                                                      style: SafeGoogleFont(
                                                         'Roboto',
-                                                        fontSize: 9.6*ffem,
+                                                        fontSize: 9.6 * ffem,
                                                         fontWeight: FontWeight.w500,
-                                                        height: 1.1725*ffem/fem,
+                                                        height: 1.1725 * ffem / fem,
                                                         color: Color(0xffffffff),
                                                       ),
                                                     ),
@@ -957,61 +988,61 @@ class _GuestHomeState extends State<GuestHome> {
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 80.4391479492*fem,
-                                                top: 171.3333358765*fem,
+                                                left: 80.4391479492 * fem,
+                                                top: 171.3333358765 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 11.93*fem,
-                                                    height: 13.33*fem,
+                                                    width: 11.93 * fem,
+                                                    height: 13.33 * fem,
                                                     child: Image.asset(
                                                       'assets/designs/images/iconly-bold-calendar-r8j.png',
-                                                      width: 11.93*fem,
-                                                      height: 13.33*fem,
+                                                      width: 11.93 * fem,
+                                                      height: 13.33 * fem,
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 82.7591552734*fem,
-                                                top: 198.3333969116*fem,
+                                                left: 82.7591552734 * fem,
+                                                top: 198.3333969116 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 13.26*fem,
-                                                    height: 13.33*fem,
+                                                    width: 13.26 * fem,
+                                                    height: 13.33 * fem,
                                                     child: Image.asset(
                                                       'assets/designs/images/iconly-bold-time-square-qNK.png',
-                                                      width: 13.26*fem,
-                                                      height: 13.33*fem,
+                                                      width: 13.26 * fem,
+                                                      height: 13.33 * fem,
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 83.3333129883*fem,
-                                                top: 194.3334121704*fem,
+                                                left: 83.3333129883 * fem,
+                                                top: 194.3334121704 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 13.33*fem,
-                                                    height: 13.33*fem,
+                                                    width: 13.33 * fem,
+                                                    height: 13.33 * fem,
                                                     child: Image.asset(
                                                       'assets/designs/images/time-circle-Po1.png',
-                                                      width: 13.33*fem,
-                                                      height: 13.33*fem,
+                                                      width: 13.33 * fem,
+                                                      height: 13.33 * fem,
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                               Positioned(
-                                                left: 7*fem,
-                                                top: 184.6666793823*fem,
+                                                left: 7 * fem,
+                                                top: 184.6666793823 * fem,
                                                 child: Align(
                                                   child: SizedBox(
-                                                    width: 12*fem,
-                                                    height: 14.67*fem,
+                                                    width: 12 * fem,
+                                                    height: 14.67 * fem,
                                                     child: Image.asset(
                                                       'assets/designs/images/map-pin-jaT.png',
-                                                      width: 12*fem,
-                                                      height: 14.67*fem,
+                                                      width: 12 * fem,
+                                                      height: 14.67 * fem,
                                                     ),
                                                   ),
                                                 ),
@@ -1026,13 +1057,13 @@ class _GuestHomeState extends State<GuestHome> {
                                               MaterialPageRoute(builder: (context) => Smarthomes()),
                                             );
                                           },
-                                          child:Text(
+                                          child: Text(
                                             'Smart Homes',
-                                            style: SafeGoogleFont (
+                                            style: SafeGoogleFont(
                                               'Poppins',
-                                              fontSize: 16*ffem,
+                                              fontSize: 16 * ffem,
                                               fontWeight: FontWeight.w400,
-                                              height: 1.5*ffem/fem,
+                                              height: 1.5 * ffem / fem,
                                               color: Color(0xff042745),
                                             ),
                                           ),
@@ -1040,6 +1071,7 @@ class _GuestHomeState extends State<GuestHome> {
                                       ],
                                     ),
                                   ),
+
                                 ],
                               ),
                             ),

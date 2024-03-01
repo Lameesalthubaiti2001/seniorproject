@@ -217,14 +217,22 @@ class _EventRegistrationState extends State<EventRegistration> {
                   ),
                 ),
               ),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
+              Container(
+                width: MediaQuery.of(context).size.width, // Match the screen width
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: FractionalTranslation(
-                    translation: Offset(0, -1),
+                    translation: Offset(0, 0), // Adjust this value to fine-tune the vertical position
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+                        );
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                      ),
                       child: Container(
                         width: 428 * fem,
                         height: 91 * fem,
@@ -233,48 +241,50 @@ class _EventRegistrationState extends State<EventRegistration> {
                         ),
                         child: Stack(
                           children: [
-                          Positioned(
-                          left: 20 * fem,
-                          top: 0 * fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 388 * fem,
-                              height: 50 * fem,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => RegistrationConfirm()),
-                                  );
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10 * fem),
-                                    color: Color(0xfff36f23),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Submit',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 16 * ffem,
-                                        fontWeight: FontWeight.w500,
-                                        height: 1.5 * ffem / fem,
-                                        color: Color(0xffffffff),
-                                      ),
+                            Positioned(
+                              // rectangle4208CzF (101:323)
+                              left: 20 * fem,
+                              top: 0 * fem,
+                              child: Align(
+                                child: SizedBox(
+                                  width: 388 * fem,
+                                  height: 50 * fem,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10 * fem),
+                                      color: Color(0xfff36f23),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                        ]
+                            Positioned(
+                              left: 161 * fem,
+                              top: 13 * fem,
+                              child: Align(
+                                child: SizedBox(
+                                  width: 105 * fem,
+                                  height: 24 * fem,
+                                  child: Text(
+                                    'submit',
+                                    style: SafeGoogleFont(
+                                      'Poppins',
+                                      fontSize: 16 * ffem,
+                                      fontWeight: FontWeight.w500,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xffffffff),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
                 ),
+              ),
 
             ],
           ),

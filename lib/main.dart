@@ -46,6 +46,7 @@ import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
 
+
 import 'designs/guest_footer.dart';
 
 //take this main After Lamees
@@ -63,7 +64,7 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: LandingPage.screenRoute,
+      initialRoute: RequestConfirmClubSide.screenRoute,
       routes: {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),
@@ -105,7 +106,8 @@ class MyEvent extends StatelessWidget {
         EventInfo4ClubSide.screenRoute: (context) => EventInfo4ClubSide(),//done
         EventInfo1ClubSide.screenRoute: (context) => EventInfo1ClubSide(),//done
         Scene11.screenRoute: (context) => Scene11(),//done
-        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),//done
+        EditConfirmationClubSide.screenRoute: (context) => EditConfirmationClubSide(),
+        ChecklistTrackingClubSide.screenRoute: (context) => ChecklistTrackingClubSide(),//done
       },
     );
   }

@@ -44,11 +44,11 @@ class ClubFooter extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.edit),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RequestConfirmClubSide()),
+                MaterialPageRoute(builder: (context) => Scene11()),
               );
             },
           ),

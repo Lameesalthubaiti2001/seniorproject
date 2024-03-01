@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'club-side-checklist-tracking.dart';
+import 'club-side-editing-eventinfo.dart';
 import 'club-side-event-info1.dart';
 import 'club-side-event-info2.dart';
 import 'club-side-event-tracking.dart';
@@ -52,10 +52,10 @@ class _ClubHomeState extends State<ClubHome> {
                   ),
                   SizedBox(height: 10 * fem),
                   Text(
-                    'Hi Finance Club!',
+                    'Finance Club',
                     style: TextStyle(
                       fontFamily: 'Poppins',
-                      fontSize: 16 * ffem,
+                      fontSize: 20 * ffem,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,
                     ),
@@ -64,23 +64,21 @@ class _ClubHomeState extends State<ClubHome> {
               ),
             ),
             ListTile(
-              title: Text('Event Tracking'),
+              leading: Icon(Icons.checklist),
+              title: Text('Event Tracking',
+              style: TextStyle(fontSize: 20),
+              ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EventTrackingClubSide()),
-                );
-                Navigator.pop(context); // Close the drawer after navigation
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EventTrackingClubSide()));
               },
             ),
             ListTile(
-              title: Text('Checklist Tracking'),
+              leading: Icon(Icons.edit),
+              title: Text('Edit Event Information',
+                style: TextStyle(fontSize: 20),
+              ),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChecklistTrackingClubSide()),
-                );
-                Navigator.pop(context); // Close the drawer after navigation
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Scene11()));
               },
             ),
           ],

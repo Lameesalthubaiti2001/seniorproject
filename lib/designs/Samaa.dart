@@ -41,10 +41,12 @@ class _SamaaState extends State<Samaa> {
                 child: Container(
                   width: 150 * fem,
                   height: 150 * fem,
-                  color: Colors.white,
-                  child: Image.asset(
-                    '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Samaa.png',
-                    width: 150 * fem,
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the ellipse
+                    image: DecorationImage(
+                      image: AssetImage('assets/designs/images/Samaa.png'),
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
                   ),
                 ),
               ),
@@ -131,7 +133,7 @@ class _SamaaState extends State<Samaa> {
                           time: '12PM-4PM',
                           location: 'Auditorium',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/Talk.png',
+                          image: 'assets/designs/images/Talk.png',
                         ),
                       ),
                     ),
@@ -155,7 +157,7 @@ class _SamaaState extends State<Samaa> {
                           time: '12PM-9PM',
                           location: 'F015',
                           icon: Icons.calendar_today,
-                          image: '/Users/najla/StudioProjects/seniorproject2/assets/slides/images/talk2.png',
+                          image: 'assets/designs/images/talk2.png',
                         ),
                       ),
                     ),

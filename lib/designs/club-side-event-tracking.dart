@@ -205,7 +205,7 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 27 * fem, 0 * fem),
+                            margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 20 * fem, 0 * fem),
                             width: double.infinity,
                             height: 21 * fem,
                             child: Stack(
@@ -227,11 +227,11 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
                                   ),
                                 ),
                                 Positioned(
-                                  left: 49.5 * fem,
+                                  left: 0 * fem,
                                   top: 0 * fem,
                                   child: Align(
                                     child: SizedBox(
-                                      width: 41 * fem,
+                                      width: 140 * fem,
                                       height: 21 * fem,
                                       child: TextButton(
                                         onPressed: () {
