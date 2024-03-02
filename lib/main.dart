@@ -6,6 +6,7 @@ import 'package:seniorproject/utils.dart';
 import 'designs/landing-page-.dart';
 import 'designs/role-selection.dart';
 import 'designs/login.dart';
+import 'designs/login2.dart';
 import 'designs/password-reset.dart';
 import 'designs/admin-home.dart';
 import 'designs/club-side-home.dart';
@@ -48,10 +49,9 @@ import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
 import 'designs/club-side-editpage.dart';
-
 import 'designs/guest_footer.dart';
 
-//take this main After Lamees
+
 void main() {
   runApp(MyEvent());
 }
@@ -66,11 +66,12 @@ class MyEvent extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: ClubHome.screenRoute,
+      initialRoute: LandingPage.screenRoute,
       routes: {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),
         LoginScreen.screenRoute: (context) => LoginScreen(),
+        LoginScreen2.screenRoute: (context) => LoginScreen2(),
         PasswordReset.screenRoute: (context) => PasswordReset(),
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),

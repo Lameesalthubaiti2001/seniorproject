@@ -3,15 +3,14 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/password-reset.dart';
-import 'package:seniorproject/designs/admin-home.dart';
-
-class LoginScreen extends StatefulWidget {
-  static const String screenRoute = 'login_screen';
+import 'package:seniorproject/designs/club-side-home.dart';
+class LoginScreen2 extends StatefulWidget {
+  static const String screenRoute = 'login_screen2';
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginScreen2State createState() => _LoginScreen2State();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreen2State extends State<LoginScreen2> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -84,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: EdgeInsets.fromLTRB(2 * fem, 0 * fem, 0 * fem, 39 * fem),
                 constraints: BoxConstraints(maxWidth: 366 * fem),
                 child: Text(
-                  'Login into your Account \n and manage all your PMU Events Requests!',
+                  'Login into your Club Account \n and Plan all your PMU Events!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Poppins',
@@ -171,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AdminHome()),
+                      MaterialPageRoute(builder: (context) => ClubHome()),
                     );
                     // Handle login button press
                   },

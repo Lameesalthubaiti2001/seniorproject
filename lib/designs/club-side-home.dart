@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'club-side-checklist-tracking.dart';
 import 'club-side-editing-eventinfo.dart';
+import 'club-side-editpage.dart';
 import 'club-side-event-info1.dart';
 import 'club-side-event-info2.dart';
 import 'club-side-event-tracking.dart';
@@ -78,7 +79,7 @@ class _ClubHomeState extends State<ClubHome> {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Scene11()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EditPageClubSide()));
               },
             ),
           ],
@@ -263,7 +264,7 @@ class _ClubHomeState extends State<ClubHome> {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => EventInfo1ClubSide()),
+                                      MaterialPageRoute(builder: (context) => EventInfo2ClubSide()),
                                     );
                                   },
                                   child: Container(

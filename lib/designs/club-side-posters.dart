@@ -1,15 +1,62 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:seniorproject/utils.dart';
 import 'club-side-poster-request-confirm.dart';
 import 'club_footer.dart';
 
 class PostersClubsSide extends StatefulWidget {
   static const String screenRoute = 'posters_club_screen';
+
   @override
   _PostersClubsSideState createState() => _PostersClubsSideState();
 }
 
 class _PostersClubsSideState extends State<PostersClubsSide> {
+  Future<void> _getFromGallery(BuildContext context) async {
+    try {
+      final pickedFile = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        maxWidth: 1800,
+        maxHeight: 1800,
+      );
+      if (pickedFile != null) {
+        File imageFile = File(pickedFile.path);
+        // Do something with the image file, if needed
+      }
+    } catch (e) {
+      final status = await Permission.photos.status;
+      if (status.isDenied) {
+        print('Access Denied');
+        showAlertDialog(context);
+      } else {
+        print('Exception occurred!');
+      }
+    }
+  }
+
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: Text('Permission Denied'),
+        content: Text('Allow access to gallery and photos'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => openAppSettings(),
+            child: Text('Settings'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -179,13 +226,12 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                 height: 80 * fem,
                               ),
                             ),
-                            Container(
-                              margin: EdgeInsets.fromLTRB(4 * fem, 0 * fem, 0 * fem, 0 * fem),
+                            TextButton(
+                              onPressed: () => _getFromGallery(context),
                               child: Text(
-                                'Select file',
+                                'Upload',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Poppins',
+                                style: TextStyle(
                                   fontSize: 14 * ffem,
                                   fontWeight: FontWeight.w500,
                                   height: 1.5 * ffem / fem,
@@ -265,8 +311,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                         width: 176 * fem,
                                         height: 21 * fem,
                                         child: TextField(
-                                          style: SafeGoogleFont(
-                                            'Poppins',
+                                          style: TextStyle(
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w500,
                                             height: 1.5 * ffem / fem,
@@ -274,8 +319,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                           ),
                                           decoration: InputDecoration(
                                             hintText: 'Write down your location',
-                                            hintStyle: SafeGoogleFont(
-                                              'Poppins',
+                                            hintStyle: TextStyle(
                                               fontSize: 14 * ffem,
                                               fontWeight: FontWeight.w500,
                                               height: 1 * ffem / fem,
@@ -311,8 +355,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                             child: Text(
                               'Submit',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Poppins',
+                              style: TextStyle(
                                 fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1 * ffem / fem,

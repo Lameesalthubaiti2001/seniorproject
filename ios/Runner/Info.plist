@@ -2,8 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Our app requires access to your photo gallery to upload images of their posters.</string>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>$(MyEvent) Our app requires access to your photo gallery to upload images of their posters.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>$(MyEvent) needs access to your camera to take photos.</string>
+
 	<key>CFBundleDisplayName</key>
 	<string>Seniorproject</string>
 	<key>CFBundleExecutable</key>
