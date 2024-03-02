@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/login.dart';
+import 'package:seniorproject/designs/login2.dart';
 import 'package:seniorproject/designs/guest-home.dart';
 
 class RoleSelection extends StatefulWidget {
@@ -149,20 +150,35 @@ class _RoleSelectionState extends State<RoleSelection> {
                     ),
                   ),
                   Positioned(
-                    left: 19 * fem,
-                    top: 162 * fem,
+                    left: 32.5 * fem,
+                    top: 156 * fem,
                     child: Align(
                       child: SizedBox(
-                        width: 117 * fem,
-                        height: 24 * fem,
-                        child: Text(
-                          'Administrator',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xff042745),
+                        width: 169 * fem,
+                        height: 27 * fem,
+                        child: RichText(
+                          textAlign: TextAlign.left,
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontSize: 20 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.3325 * ffem / fem,
+                              color: Color(0xff042745),
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'Adminstrator',
+                                style: TextStyle(
+                                  fontSize: 16 * ffem,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.5 * ffem / fem,
+                                  color: Color(0xff042745),
+                                ),
+                              ),
+                              TextSpan(
+                                text: ' ',
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -205,7 +221,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                             // Navigate to the login page
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LoginScreen()),
+                              MaterialPageRoute(builder: (context) => LoginScreen2()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
@@ -225,12 +241,12 @@ class _RoleSelectionState extends State<RoleSelection> {
                     child: Align(
                       child: SizedBox(
                         width: 54 * fem,
-                        height: 15 * fem,
+                        height: 20 * fem,
                         child: Text(
                           'Login here',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 10 * ffem,
+                            fontSize: 10* ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.5 * ffem / fem,
                             color: Color(0xffffffff),
@@ -267,7 +283,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                         width: 169 * fem,
                         height: 27 * fem,
                         child: RichText(
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.left,
                           text: TextSpan(
                             style: TextStyle(
                               fontSize: 20 * ffem,
