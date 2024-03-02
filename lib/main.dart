@@ -91,7 +91,7 @@ class MyEvent extends StatelessWidget {
         RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
         RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
         Finance.screenRoute: (context) => Finance(),
-        GuestHome.screenRoute: (context) => GuestHome(),
+        ProductListPage.screenRoute: (context) => ProductListPage(),
         AboutClubPage.screenRoute: (context) => AboutClubPage(),
         Scene40.screenRoute: (context) => Scene40(),
         RegisterdEvents.screenRoute: (context) => RegisterdEvents(),

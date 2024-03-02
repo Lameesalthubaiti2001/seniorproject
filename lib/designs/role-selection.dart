@@ -318,7 +318,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                 // Navigate to the GuestHome page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => GuestHome()),
+                  MaterialPageRoute(builder: (context) => ProductListPage()),
                 );
               },
               style: TextButton.styleFrom(
