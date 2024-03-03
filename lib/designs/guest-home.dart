@@ -14,7 +14,6 @@ import 'package:seniorproject/designs/Finance.dart';
 import 'package:seniorproject/designs/guest-side-explore-clubs.dart';
 import 'package:seniorproject/designs/guest_footer.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -31,13 +30,22 @@ class MyApp extends StatelessWidget {
 }
 
 class Product {
-  final String name;
-  final String category;
-  final String imagePath;
+final String name;
+final String category;
+final String imagePath;
+final String time;
+final String location;
+final String calendar;
 
-  Product({required this.name, required this.category, required this.imagePath});
+Product({
+  required this.name,
+  required this.category,
+  required this.imagePath,
+  required this.time,
+  required this.location,
+  required this.calendar,
+});
 }
-
 class ProductListPage extends StatefulWidget {
   static const String screenRoute = 'Guest_Home_screen';
   const ProductListPage({Key? key}) : super(key: key);
@@ -48,16 +56,23 @@ class ProductListPage extends StatefulWidget {
 
 class _ProductListPage extends State<ProductListPage> {
   final List<Product> productList = [
-    Product(name: "AJ jewlry", category: "Rwad Club",imagePath: "assets/designs/images/rectangle-4199-Q5Z.png"),
-    Product(name: "The Saudi Deal", category: "Finance Club",imagePath: "assets/designs/images/rectangle-4204-bg.png"),
-    Product(name: "Smart Homes", category: "Robotics Society",imagePath: "assets/designs/images/rectangle-4199-Q5Z.png"),
-    Product(name: "Digital Forensics", category: "Google Developers",imagePath: "assets/designs/images/smarthomes.png"),
+    Product(name: "AJ jewlry", category: "Rwad Club",imagePath: "assets/designs/images/rectangle-4199-Q5Z.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
+    Product(name: "The Saudi Deal", category: "Finance Club",imagePath: "assets/designs/images/rectangle-4204-bg.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar:"Some Date"),
+    Product(name: "Smart Homes", category: "Robotics Society",imagePath: "assets/designs/images/rectangle-4199-CiF.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
+    Product(name: "Cyper security", category: "Google Developers",imagePath: "assets/designs/images/rectangle-4199-S9y.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
     // Add more products as needed
   ];
 
-  final List<String> categories = ['Rwad Club', 'Robotics Society', 'Google Developers','Finance Club'];
+  final List<String> categories = ['Robotics Society', 'Google Developers', 'Finance Club','Rwad Club'];
 
   List<String> selectedCategories = [];
+
+  Map<String, Color> categoryColors = {
+    'Robotics Society': Color(0xFFF0635A), // Red color for Robotics Society
+    'Google Developers': Color(0xFFF59762), // Orange color for Google Developers
+    'Finance Club': Color(0xFF29D697), // Green color for Finance Club
+    'Rwad Club': Colors.yellow, // Yellow color for Rwad Club
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +95,11 @@ class _ProductListPage extends State<ProductListPage> {
         ),
         backgroundColor: const Color(0xff042745),
       ),
-
-      body: Column(
+    body: SingleChildScrollView(
+      child: Column(
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(16 * fem, 0 * fem, 7 * fem, 20 * fem),
+            margin: EdgeInsets.fromLTRB(16 * fem, 20 * fem, 7 * fem, 20 * fem),
             width: double.infinity,
             height: 60* fem,
             child: Stack(
@@ -127,10 +142,9 @@ class _ProductListPage extends State<ProductListPage> {
                     child: SizedBox(
                       width: 22.51 * fem,
                       height: 22.51 * fem,
-                      child: Image.asset(
-                        'assets/designs/images/vector-gjD.png',
-                        width: 22.51 * fem,
-                        height: 22.51 * fem,
+                      child: Icon(
+                        Icons.search,
+                        size: 22.51 * fem,
                       ),
                     ),
                   ),
@@ -159,24 +173,37 @@ class _ProductListPage extends State<ProductListPage> {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: categories.map((category) => FilterChip(
-                  selected: selectedCategories.contains(category),
-                  label: Text(category),
-                  onSelected: (selected) {
-                    setState(() {
-                      if (selected) {
-                        selectedCategories.add(category);
-                      } else {
-                        selectedCategories.remove(category);
-                      }
-                    });
-                  },
-                )).toList(),
-
+                children: List.generate(categories.length, (index) {
+                  return Row(
+                    children: [
+                      FilterChip(
+                        selected: selectedCategories.contains(categories[index]),
+                        label: Text(
+                          categories[index],
+                          style: TextStyle(
+                            color: Colors.white, // Change the color here
+                          ),
+                        ),
+                        backgroundColor: categoryColors[categories[index]], // Always show category colors
+                        selectedColor: categoryColors[categories[index]], // Always show category colors
+                        onSelected: (selected) {
+                          setState(() {
+                            if (selected) {
+                              selectedCategories.add(categories[index]);
+                            } else {
+                              selectedCategories.remove(categories[index]);
+                            }
+                          });
+                        },
+                      ),
+                      SizedBox(width: 5.0), // Adjust the width as needed
+                    ],
+                  );
+                }),
               ),
             ),
           ),
+
           Container(
             margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 250 * fem, 10 * fem),
             child: Text(
@@ -196,31 +223,79 @@ class _ProductListPage extends State<ProductListPage> {
             child: Row(
               children: filterProducts.map((product) {
                 return Card(
-                  elevation: 8.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0), // Set rounded edges
+                  ),
                   margin: const EdgeInsets.all(8.0),
                   child: Container(
-                    width: 200, // Adjust card width as needed
+                    width: 280, // Adjust card width as needed
+                    height: 260, // Fixed height for the card
                     decoration: BoxDecoration(
-                      color: const Color(0xff042745),
+                      borderRadius: BorderRadius.circular(10.0), // Set rounded edges
+                      image: DecorationImage(
+                        image: AssetImage(product.imagePath), // Set image as background
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 5, vertical: 17),
-                      leading: Image.asset(
-                        product.imagePath,
-                        width: 31, // Adjust the width as needed
-                        height: 190, // Adjust the height as needed
-                      ),
-                      title: Text(
-                        product.name,
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(
-                        product.category,
-                        style: const TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                product.name ?? "",
+                                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                product.category ?? "",
+                                style: const TextStyle(color: Colors.white, fontStyle: FontStyle.italic),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: Colors.black.withOpacity(0.5), // Background color for the footer
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.location_on, color: Colors.white), // Location icon
+                                    SizedBox(width: 5), // Spacing between icon and text
+                                    Text(product.location, style: TextStyle(color: Colors.white)), // Location text
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.calendar_today, color: Colors.white), // Calendar icon
+                                    SizedBox(width: 5), // Spacing between icon and text
+                                    Text(product.calendar, style: TextStyle(color: Colors.white)), // Calendar text
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(Icons.access_time, color: Colors.white), // Time icon
+                                  SizedBox(width: 5), // Spacing between icon and text
+                                  Text(product.time, style: TextStyle(color: Colors.white)), // Time text
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-
                 );
               }).toList(),
             ),
@@ -234,7 +309,7 @@ class _ProductListPage extends State<ProductListPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 90 * fem),
+                      SizedBox(height: 10 * fem),
                       Container(
                         margin: EdgeInsets.fromLTRB(8 * fem, 0 * fem, 0 * fem, 0* fem),
                         child: Text(
@@ -314,10 +389,10 @@ class _ProductListPage extends State<ProductListPage> {
                                               margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7.33 * fem, 1 * fem),
                                               width: 13.33 * fem,
                                               height: 13.33 * fem,
-                                              child: Image.asset(
-                                                'assets/designs/images/time-circle-GWP.png',
-                                                width: 13.33 * fem,
-                                                height: 13.33 * fem,
+                                              child: Icon(
+                                                Icons.access_time,
+                                                color: Color(0xffffffff),
+                                                size: 13.33 * fem,
                                               ),
                                             ),
                                           ),
@@ -336,6 +411,7 @@ class _ProductListPage extends State<ProductListPage> {
                                       ),
                                     ),
                                   ),
+
                                   Positioned(
                                     left: 79 * fem,
                                     top: 3 * fem,
@@ -434,6 +510,7 @@ class _ProductListPage extends State<ProductListPage> {
           ),
         ],
       ),
+    ),
       bottomNavigationBar: GuestFooter(),
     );
   }
