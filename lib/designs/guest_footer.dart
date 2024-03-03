@@ -10,7 +10,9 @@ import 'guest-side-aboutclub.dart';
 import 'guest-side-registration-confirmation.dart';
 
 class GuestFooter extends StatelessWidget {
+
   @override
+
   Widget build(BuildContext context) {
     return BottomAppBar(
       child: Row(
@@ -21,7 +23,7 @@ class GuestFooter extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => GuestHome()),
+                MaterialPageRoute(builder: (context) => ProductListPage()),
               );
             },
           ),
