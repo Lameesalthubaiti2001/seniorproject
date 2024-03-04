@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:seniorproject/designs/Rwad.dart';
 import 'package:seniorproject/designs/Smarthomes.dart';
+import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'package:seniorproject/designs/jewelry.dart';
 import 'package:seniorproject/designs/club-side-home.dart';
 import 'package:seniorproject/designs/guest-side-aboutclub.dart';
@@ -56,10 +57,10 @@ class ProductListPage extends StatefulWidget {
 
 class _ProductListPage extends State<ProductListPage> {
   final List<Product> productList = [
-    Product(name: "AJ jewlry", category: "Rwad Club",imagePath: "assets/designs/images/rectangle-4199-Q5Z.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
-    Product(name: "The Saudi Deal", category: "Finance Club",imagePath: "assets/designs/images/rectangle-4204-bg.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar:"Some Date"),
-    Product(name: "Smart Homes", category: "Robotics Society",imagePath: "assets/designs/images/rectangle-4199-CiF.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
-    Product(name: "Cyper security", category: "Google Developers",imagePath: "assets/designs/images/rectangle-4199-S9y.png", time: "12:00pm - 2:00pm", location: "Some Location", calendar: "Some Date"),
+    Product(name: "AJ jewlry", category: "Rwad Club",imagePath: "assets/designs/images/rectangle-4199-Q5Z.png", time: "12:00pm - 2:00pm", location: "Female Campus", calendar: "23 NOV"),
+    Product(name: "The Saudi Deal", category: "Finance Club",imagePath: "assets/designs/images/rectangle-4204-bg.png", time: "12:00pm - 2:00pm", location: "Male Campus", calendar:"10 NOV"),
+    Product(name: "Smart Homes", category: "Robotics Society",imagePath: "assets/designs/images/rectangle-4199-CiF.png", time: "1:00pm - 2:00pm", location: "Female Campus", calendar: "2 March"),
+    Product(name: "Cyper security", category: "Google Developers",imagePath: "assets/designs/images/rectangle-4199-S9y.png", time: "2:00pm - 3:00pm", location: "Female Campus ", calendar: "27 NOV"),
     // Add more products as needed
   ];
 
@@ -222,7 +223,19 @@ class _ProductListPage extends State<ProductListPage> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: filterProducts.map((product) {
-                return Card(
+                return GestureDetector(
+                    onTap: () {
+                  // Navigate to the registration page when the card is tapped
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventRegistration(),
+                    ),
+
+                  );
+                },
+
+                  child:Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0), // Set rounded edges
                   ),
@@ -295,6 +308,7 @@ class _ProductListPage extends State<ProductListPage> {
                         ),
                       ],
                     ),
+                  ),
                   ),
                 );
               }).toList(),
