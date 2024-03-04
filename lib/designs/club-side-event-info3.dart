@@ -3,8 +3,6 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:seniorproject/designs/club-side-event-info4.dart';
 import 'club_footer.dart';
 
-//Helloooooo nooora was here :)
-//Lamees update
 class EventInfoPage extends StatefulWidget {
   static const String screenRoute = 'club_event_info3';
   @override
@@ -12,31 +10,18 @@ class EventInfoPage extends StatefulWidget {
 }
 
 class _EventInfoPageState extends State<EventInfoPage> {
-  TimeOfDay eventTime = TimeOfDay.now();
-  TimeOfDay eventDuration = TimeOfDay(hour: 1, minute: 0);
-  int eventDurationDays = 1;
-  int selectedMinute = 1;
-  List<int> minutesList = List<int>.generate(60, (index) => index + 1);
-
   DateTime? _startDateTime;
   DateTime? _endDateTime;
-  String? _selectedTime;
-
-  String? get selectedTime => _selectedTime;
-
-  set selectedTime(String? value) {
-    _selectedTime = value;
-  }
-
-  DateTimeRange selectedDates =
-  DateTimeRange(start: DateTime.now(), end: DateTime.now());
+  String? selectedEventTime;
+  String? selectedEventDuration;
+  String? selectedEventDurationDays;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Event Information'), // corrected the title
+          title: Text('Event Information'),
           backgroundColor: Color(0xff042745),
         ),
         body: Container(
@@ -44,7 +29,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
             padding: EdgeInsets.all(16.0),
             children: [
               Text(
-                'Select a Date',
+                'Select a Date Range',
                 style: TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.bold,
@@ -53,7 +38,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
               ),
               SizedBox(height: 8),
               Container(
-                height: 350.0,
+                height: 400.0,
                 child: TableCalendar<DateTime>(
                   focusedDay: DateTime.now(),
                   firstDay: DateTime(2000),
@@ -63,23 +48,24 @@ class _EventInfoPageState extends State<EventInfoPage> {
                     cellMargin: EdgeInsets.all(4.0),
                   ),
                   selectedDayPredicate: (day) {
-                    // Check if the day is within the selected date range
-                    return selectedDates != null &&
-                        day.isAfter(
-                            selectedDates!.start.subtract(Duration(days: 1))) &&
-                        day.isBefore(selectedDates!.end.add(Duration(days: 1)));
+                    return _startDateTime != null &&
+                        _endDateTime != null &&
+                        day.isAfter(_startDateTime!) &&
+                        day.isBefore(_endDateTime!);
                   },
+                  rangeStartDay: _startDateTime,
+                  rangeEndDay: _endDateTime,
                   onDaySelected: (selectedDay, focusedDay) {
                     setState(() {
-                      if (selectedDates == null ||
-                          selectedDates!.start != selectedDay) {
-                        // If the selected day is not the start of the range, set it as the start
-                        selectedDates =
-                            DateTimeRange(start: selectedDay, end: selectedDay);
+                      if (_startDateTime == null || _endDateTime != null) {
+                        _startDateTime = selectedDay;
+                        _endDateTime = null;
+                      } else if (_startDateTime != null &&
+                          selectedDay.isAfter(_startDateTime!)) {
+                        _endDateTime = selectedDay;
                       } else {
-                        // If the selected day is already the start, set it as the end
-                        selectedDates = DateTimeRange(
-                            start: selectedDates!.start, end: focusedDay);
+                        _startDateTime = selectedDay;
+                        _endDateTime = null;
                       }
                     });
                   },
@@ -108,7 +94,6 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           'Enter event time',
                           style: TextStyle(
                             fontSize: 16,
-                            //    fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
                             color: Colors.blue[900],
                           ),
@@ -125,9 +110,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: 10),
                       Container(
                         alignment: Alignment.center,
                         height: 38.0,
@@ -140,10 +123,10 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           color: Colors.grey[300],
                         ),
                         child: DropdownButton<String>(
-                          value: selectedTime,
+                          value: selectedEventTime,
                           onChanged: (String? newValue) {
                             setState(() {
-                              selectedTime = newValue!;
+                              selectedEventTime = newValue;
                             });
                           },
                           items: <String>[
@@ -180,16 +163,13 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           }).toList(),
                         ),
                       ),
-                      SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12),
                       Container(
                         alignment: Alignment.center,
                         child: Text(
                           'Enter event duration hours',
                           style: TextStyle(
                             fontSize: 16,
-                            //    fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
                             color: Colors.blue[900],
                           ),
@@ -207,9 +187,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
+                      SizedBox(height: 8),
                       Container(
                         alignment: Alignment.center,
                         height: 38.0,
@@ -222,10 +200,10 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           color: Colors.grey[300],
                         ),
                         child: DropdownButton<String>(
-                          value: selectedTime,
+                          value: selectedEventDuration,
                           onChanged: (String? newValue) {
                             setState(() {
-                              selectedTime = newValue!;
+                              selectedEventDuration = newValue;
                             });
                           },
                           items: <String>[
@@ -250,17 +228,13 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           }).toList(),
                         ),
                       ),
-
-                      SizedBox(height: 20), // Adjust the spacing as needed
-
-                      SizedBox(height: 10),
+                      SizedBox(height: 20),
                       Container(
                         alignment: Alignment.center,
                         child: Text(
                           'Enter event duration days',
                           style: TextStyle(
                             fontSize: 16,
-                            //    fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
                             color: Colors.blue[900],
                           ),
@@ -278,57 +252,82 @@ class _EventInfoPageState extends State<EventInfoPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
+                      SizedBox(height: 8),
                       Container(
-                          alignment: Alignment.center,
-                          height: 38.0,
-                          width: 180.0,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(22.0),
-                            ),
-                            color: Colors.grey[300],
+                        alignment: Alignment.center,
+                        height: 38.0,
+                        width: 180.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(22.0),
                           ),
-                          child: DropdownButton<String>(
-                            value: selectedTime,
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                selectedTime = newValue!;
-                              });
-                            },
-                            items: <String>[
-                              '1',
-                              '2',
-                              '3',
-                              '4',
-                              '5',
-                              '6',
-                              '7',
-                            ].map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                          )),
+                          color: Colors.grey[300],
+                        ),
+                        child: DropdownButton<String>(
+                          value: selectedEventDurationDays,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedEventDurationDays = newValue;
+                            });
+                          },
+                          items: <String>[
+                            '1',
+                            '2',
+                            '3',
+                            '4',
+                            '5',
+                            '6',
+                            '7',
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 20),
-              /////
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, EventInfo4ClubSide.screenRoute);
-                },
-                style: ElevatedButton.styleFrom(
-                  primary: Color(0xfff36f23),
+              Center(
+                child: SizedBox(
+                  width: 150,
+                  height: 30,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, EventInfo4ClubSide.screenRoute);
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      backgroundColor: Color(0xfff36f23),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Text(
+                      'Next',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                  ),
                 ),
-                child: Text('Next'),
               ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, EventInfo4ClubSide.screenRoute);
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     primary: Color(0xfff36f23),
+              //   ),
+              //   child: Text('Next'),
+              // ),
             ],
           ),
         ),
@@ -337,5 +336,3 @@ class _EventInfoPageState extends State<EventInfoPage> {
     );
   }
 }
-
-
