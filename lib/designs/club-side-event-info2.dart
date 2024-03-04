@@ -150,7 +150,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                 children: [
                   Container(
                     width: 200, // Adjust the width as needed
-                    height: 40, // Adjust the height as needed
+                    height: 44, // Adjust the height as needed
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(13),
@@ -259,7 +259,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                 children: [
                   Container(
                     width: 200, // Adjust the width as needed
-                    height: 40, // Adjust the height as needed
+                    height: 44, // Adjust the height as needed
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(13),
