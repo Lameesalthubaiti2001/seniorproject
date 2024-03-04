@@ -17,8 +17,14 @@ class _RequestStatusClubSideState extends State<RequestStatusClubSide> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Status'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Request Status',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: Container(
         width: double.infinity,

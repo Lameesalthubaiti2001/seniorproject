@@ -1,9 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:seniorproject/utils.dart';
+import '../utils.dart';
 import 'club-side-poster-request-confirm.dart';
 import 'club_footer.dart';
 
@@ -15,6 +14,9 @@ class PostersClubsSide extends StatefulWidget {
 }
 
 class _PostersClubsSideState extends State<PostersClubsSide> {
+  TextEditingController locationController = TextEditingController();
+  bool isLocationError = false;
+
   Future<void> _getFromGallery(BuildContext context) async {
     try {
       final pickedFile = await ImagePicker().pickImage(
@@ -57,15 +59,28 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
     );
   }
 
+  void showLocationError(BuildContext context) {
+    setState(() {
+      isLocationError = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Posters'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Posters',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -284,25 +299,13 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                               decoration: BoxDecoration(
                                 color: Color(0xfff8f8f8),
                                 borderRadius: BorderRadius.circular(25 * fem),
+                                border: Border.all(
+                                  color: isLocationError ? Colors.red : Color(0xfff8f8f8),
+                                  width: 2 * fem,
+                                ),
                               ),
                               child: Stack(
                                 children: [
-                                  Positioned(
-                                    left: 13 * fem,
-                                    top: 7 * fem,
-                                    child: Align(
-                                      child: SizedBox(
-                                        width: 308 * fem,
-                                        height: 37 * fem,
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(15 * fem),
-                                            color: Color(0xffffffff),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                   Positioned(
                                     left: 29 * fem,
                                     top: 16 * fem,
@@ -311,6 +314,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                         width: 176 * fem,
                                         height: 21 * fem,
                                         child: TextField(
+                                          controller: locationController,
                                           style: TextStyle(
                                             fontSize: 14 * ffem,
                                             fontWeight: FontWeight.w500,
@@ -325,6 +329,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                                               height: 1 * ffem / fem,
                                               color: Color(0xffc4c4c4),
                                             ),
+                                            errorText: isLocationError ? 'Location is required' : null,
                                           ),
                                         ),
                                       ),
@@ -346,10 +351,14 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                         ),
                         child: TextButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => PosterRequestConfirmClubSide()),
-                            );
+                            if (locationController.text.isEmpty) {
+                              showLocationError(context);
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PosterRequestConfirmClubSide()),
+                              );
+                            }
                           },
                           child: Center(
                             child: Text(

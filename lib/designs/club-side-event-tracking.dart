@@ -20,8 +20,14 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Event Tracking'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Event Tracking',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Container(

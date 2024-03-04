@@ -24,8 +24,14 @@ class _ClubHomeState extends State<ClubHome> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       endDrawer: Drawer(
         child: ListView(

@@ -19,8 +19,14 @@ class _PosterRequestConfirmClubSideState
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Poster Request'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Poster Request',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Container(

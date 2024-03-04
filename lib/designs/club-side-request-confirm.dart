@@ -16,9 +16,14 @@ class _RequestConfirmClubSideState extends State<RequestConfirmClubSide> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Confirm'),
-        backgroundColor: Color(0xff042745),
-         // Set elevation to 0 to remove the bottom line
+        title: const Text(
+          'Request Confirm',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Container(

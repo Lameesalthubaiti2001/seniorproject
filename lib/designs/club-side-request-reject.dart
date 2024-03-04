@@ -16,8 +16,14 @@ class _RequestRejectClubSideState extends State<RequestRejectClubSide> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Reject'),
-        backgroundColor: Color(0xff042745),
+        title: const Text(
+          'Request Reject',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
         child: Container(
