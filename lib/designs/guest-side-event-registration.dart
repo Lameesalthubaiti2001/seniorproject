@@ -284,11 +284,13 @@ class _EventRegistrationState extends State<EventRegistration> {
                               left: 161 * fem,
                               top: 13 * fem,
                               child: Align(
+                                alignment: Alignment.center,
                                 child: SizedBox(
                                   width: 105 * fem,
                                   height: 24 * fem,
                                   child: Text(
                                     'submit',
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w500,

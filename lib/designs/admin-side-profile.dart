@@ -88,6 +88,25 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
                     // emailController.text
                     // phoneNumberController.text
                     // passwordController.text
+
+                    // Show the alert
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Success'),
+                          content: Text('Profile Updated Successfully'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   child: Container(
                     width: 283 * fem,

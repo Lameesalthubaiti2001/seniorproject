@@ -295,46 +295,42 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                             Container(
                               margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 13 * fem, 0 * fem),
                               width: 338 * fem,
-                              height: 51 * fem,
-                              decoration: BoxDecoration(
-                                color: Color(0xfff8f8f8),
-                                borderRadius: BorderRadius.circular(25 * fem),
-                                border: Border.all(
-                                  color: isLocationError ? Colors.red : Color(0xfff8f8f8),
-                                  width: 2 * fem,
-                                ),
-                              ),
-                              child: Stack(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Positioned(
-                                    left: 29 * fem,
-                                    top: 16 * fem,
-                                    child: Align(
-                                      child: SizedBox(
-                                        width: 176 * fem,
-                                        height: 21 * fem,
-                                        child: TextField(
-                                          controller: locationController,
-                                          style: TextStyle(
-                                            fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.5 * ffem / fem,
-                                            color: Color(0xffc4c4c4),
-                                          ),
-                                          decoration: InputDecoration(
-                                            hintText: 'Write down your location',
-                                            hintStyle: TextStyle(
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1 * ffem / fem,
-                                              color: Color(0xffc4c4c4),
-                                            ),
-                                            errorText: isLocationError ? 'Location is required' : null,
-                                          ),
+                                  SizedBox(
+                                    width: 176 * fem,
+                                    height: 21 * fem,
+                                    child: TextField(
+                                      controller: locationController,
+                                      style: TextStyle(
+                                        fontSize: 14 * ffem,
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.5 * ffem / fem,
+                                        color: Color(0xffc4c4c4),
+                                      ),
+                                      decoration: InputDecoration(
+                                        hintText: 'Write down your location',
+                                        hintStyle: TextStyle(
+                                          fontSize: 14 * ffem,
+                                          fontWeight: FontWeight.w500,
+                                          height: 1 * ffem / fem,
+                                          color: Color(0xffc4c4c4),
                                         ),
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: 5 * fem), // Add space between TextField and error message
+                                  if (isLocationError)
+                                    Text(
+                                      'Location is required',
+                                      style: TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 14 * ffem,
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.5 * ffem / fem,
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
