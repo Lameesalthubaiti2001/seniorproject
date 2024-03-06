@@ -41,7 +41,7 @@ class _ChecklistTrackingClubSideState extends State<ChecklistTrackingClubSide> {
             children: [
               Container(
                 margin:
-                    EdgeInsets.fromLTRB(31 * fem, 51 * fem, 70 * fem, 40 * fem),
+                EdgeInsets.fromLTRB(31 * fem, 51 * fem, 70 * fem, 40 * fem),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -74,15 +74,21 @@ class _ChecklistTrackingClubSideState extends State<ChecklistTrackingClubSide> {
                                 ),
                               ),
                             ),
-                            Image.asset(
-                              'assets/designs/images/ph-x-light-zjV.png',
-                              width: 24 * fem,
-                              height: 26 * fem,
+                            GestureDetector(
+                              onTap: () => _showMessage('Absent'),
+                              child: Icon(
+                                Icons.clear,
+                                color: Colors.red,
+                                size: 26 * fem,
+                              ),
                             ),
-                            Image.asset(
-                              'assets/designs/images/flat-color-icons-checkmark-4Ef.png',
-                              width: 24 * fem,
-                              height: 26 * fem,
+                            GestureDetector(
+                              onTap: () => _showMessage('Attended'),
+                              child: Icon(
+                                Icons.check,
+                                color: Colors.green,
+                                size: 26 * fem,
+                              ),
                             ),
                           ],
                         ),
@@ -131,15 +137,21 @@ class _ChecklistTrackingClubSideState extends State<ChecklistTrackingClubSide> {
                                 ),
                               ),
                             ),
-                            Image.asset(
-                              'assets/designs/images/ph-x-light-24s.png',
-                              width: 14.63 * fem,
-                              height: 15.84 * fem,
+                            GestureDetector(
+                              onTap: () => _showMessage('Absent'),
+                              child: Icon(
+                                Icons.clear,
+                                color: Colors.red,
+                                size: 26 * fem,
+                              ),
                             ),
-                            Image.asset(
-                              'assets/designs/images/flat-color-icons-checkmark.png',
-                              width: 19.4 * fem,
-                              height: 15.82 * fem,
+                            GestureDetector(
+                              onTap: () => _showMessage('Attended'),
+                              child: Icon(
+                                Icons.check,
+                                color: Colors.green,
+                                size: 26 * fem,
+                              ),
                             ),
                           ],
                         ),

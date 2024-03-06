@@ -110,6 +110,20 @@ class _RoleSelectionState extends State<RoleSelection> {
               ),
             ),
           ),
+          // Text
+          Positioned(
+            left: 20 * fem,
+            top: 175 * fem,
+            child: Text(
+              'Administration',
+              style: TextStyle(
+                color: Color(0xff042745),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins',
+              ),
+            ),
+          ),
           // Administrator Login Button
           Positioned(
             left: 275 * fem,
@@ -180,6 +194,21 @@ class _RoleSelectionState extends State<RoleSelection> {
               ),
             ),
           ),
+          // Text
+          Positioned(
+            left: 20 * fem,
+            top: 175 * fem,
+            child: Text(
+              'Clubs and Chapters',
+              style: TextStyle(
+                color: Color(0xff042745),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins',
+              ),
+            ),
+          ),
+
           // Clubs and Chapters Login Button
           Positioned(
             left: 282 * fem,

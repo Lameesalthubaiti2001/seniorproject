@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin-home.dart';
 import 'package:seniorproject/designs/password-reset.dart';
+import 'package:seniorproject/designs/role-selection.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String screenRoute = 'login_screen';
@@ -22,11 +23,21 @@ class _LoginScreenState extends State<LoginScreen> {
     double ffem = fem * 0.97;
     return Scaffold(
       backgroundColor: Color(0xff042745),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, RoleSelection.screenRoute);
+          },
+        ),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
             padding:
-                EdgeInsets.fromLTRB(19 * fem, 10 * fem, 23 * fem, 133 * fem),
+            EdgeInsets.fromLTRB(19 * fem, 10 * fem, 23 * fem, 133 * fem),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
