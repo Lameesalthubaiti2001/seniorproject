@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
-import 'package:seniorproject/utils.dart';
 import 'dart:math';
+import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/club-side-event-info3.dart';
 
 import 'club_footer.dart';
@@ -17,6 +17,11 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
   String gender = ''; // State variable to store selected gender
   int maxParticipants = 0;
   int expectedParticipants = 0;
+  bool isOrganizerNameFilled =
+      false; // Define organizer name validation variable
+  bool isEventTitleFilled = false; // Define event title validation variable
+  bool isVenueFilled = false; // Define venue validation variable
+  bool isGenderSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Event Information'), // corrected the title
+          title: Text('Event Information'),
           backgroundColor: Color(0xff042745),
         ),
         body: Container(
@@ -71,63 +76,75 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[200], // Grey background color
-                        borderRadius:
-                            BorderRadius.circular(10.0), // Soft border radius
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: TextField(
+                        onChanged: (value) {
+                          // Update validation
+                          setState(() {
+                            isOrganizerNameFilled = value.isNotEmpty;
+                          });
+                        },
                         decoration: InputDecoration(
                           labelText: '  EVENT ORGANIZER NAME',
                           labelStyle: TextStyle(
                               fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none, // Remove border
+                          border: InputBorder.none,
                           contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0), // Padding
+                              EdgeInsets.symmetric(horizontal: 15.0),
                         ),
                       ),
                     ),
                     SizedBox(height: 17 * ffem),
-                    // Event Title TextField
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[200], // Grey background color
-                        borderRadius:
-                            BorderRadius.circular(10.0), // Soft border radius
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: TextField(
+                        onChanged: (value) {
+                          // Update validation
+                          setState(() {
+                            isEventTitleFilled = value.isNotEmpty;
+                          });
+                        },
                         decoration: InputDecoration(
                           labelText: '   EVENT TITLE',
                           labelStyle: TextStyle(
                               fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none, // Remove border
+                          border: InputBorder.none,
                           contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0), // Padding
+                              EdgeInsets.symmetric(horizontal: 15.0),
                         ),
                       ),
                     ),
                     SizedBox(height: 17 * ffem),
-                    // Venue TextField
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[200], // Grey background color
-                        borderRadius:
-                            BorderRadius.circular(10.0), // Soft border radius
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: TextField(
+                        onChanged: (value) {
+                          // Update validation
+                          setState(() {
+                            isVenueFilled = value.isNotEmpty;
+                          });
+                        },
                         decoration: InputDecoration(
                           labelText: '   VENUE',
                           labelStyle: TextStyle(
                               fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none, // Remove border
+                          border: InputBorder.none,
                           contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0), // Padding
+                              EdgeInsets.symmetric(horizontal: 15.0),
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-
               SizedBox(height: 20 * ffem),
               Container(
                 alignment: Alignment.topLeft,
@@ -141,16 +158,13 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                   ),
                 ),
               ),
-              SizedBox(height: 10 * ffem), // Adjusted spacing
-
-              // Max Number of Participants
-              ///////////////////////////////////////////////////////////////////////////////////
+              SizedBox(height: 10 * ffem),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 200, // Adjust the width as needed
-                    height: 44, // Adjust the height as needed
+                    width: 200,
+                    height: 44,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(13),
@@ -160,7 +174,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -189,21 +203,20 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20 * fem), // Adjusted spacing
+                  SizedBox(width: 20 * fem),
                   Container(
-                    width: 44, // Adjust width as needed
-                    height: 38, // Adjust height as needed
+                    width: 44,
+                    height: 38,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(
-                          18), // Half of the height to make it oval
+                      borderRadius: BorderRadius.circular(18),
                       color: Color(0xff042745),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -214,52 +227,45 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                         setState(() {
                           maxParticipants = max(maxParticipants - 1, 0);
                         });
-                        // Decrement max participants
                       },
                     ),
                   ),
-                  SizedBox(width: 25 * fem), // Adjusted spacing
+                  SizedBox(width: 25 * fem),
                   Container(
-                    width: 44, // Adjust width as needed
-                    height: 38, // Adjust height as needed
+                    width: 44,
+                    height: 38,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(
-                          18), // Half of the height to make it oval
+                      borderRadius: BorderRadius.circular(18),
                       color: Color(0xff042745),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
                     child: IconButton(
                       icon: Icon(Icons.add),
-                      color: Colors.white, // Set icon color to white
+                      color: Colors.white,
                       onPressed: () {
                         setState(() {
                           maxParticipants++;
                         });
-                        // Increment max participants
                       },
                     ),
                   ),
                 ],
               ),
-              //#############################################################
-              //***********************************************************
-              //EXPECTED NUM
-              SizedBox(height: 10 * ffem), // Adjusted spacing
-
+              SizedBox(height: 10 * ffem),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 200, // Adjust the width as needed
-                    height: 44, // Adjust the height as needed
+                    width: 200,
+                    height: 44,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(13),
@@ -269,7 +275,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -298,21 +304,20 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20 * fem), // Adjusted spacing
+                  SizedBox(width: 20 * fem),
                   Container(
-                    width: 44, // Adjust width as needed
-                    height: 38, // Adjust height as needed
+                    width: 44,
+                    height: 38,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(
-                          18), // Half of the height to make it oval
+                      borderRadius: BorderRadius.circular(18),
                       color: Color(0xff042745),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -324,50 +329,39 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           expectedParticipants =
                               max(expectedParticipants - 1, 0);
                         });
-                        // Decrement EXPECTED participants
                       },
                     ),
                   ),
-                  SizedBox(width: 25 * fem), // Adjusted spacing
+                  SizedBox(width: 25 * fem),
                   Container(
-                    width: 44, // Adjust width as needed
-                    height: 38, // Adjust height as needed
+                    width: 44,
+                    height: 38,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(
-                          18), // Half of the height to make it oval
+                      borderRadius: BorderRadius.circular(18),
                       color: Color(0xff042745),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
                     child: IconButton(
                       icon: Icon(Icons.add),
-                      color: Colors.white, // Set icon color to white
+                      color: Colors.white,
                       onPressed: () {
                         setState(() {
                           expectedParticipants++;
                         });
-                        // Increment max participants
                       },
                     ),
                   ),
                 ],
               ),
-
               SizedBox(height: 20 * ffem),
-              // Expected Participants
-
-              SizedBox(
-                height: 10,
-              ),
-
-              ////////////////////////////////////////////////////////
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -396,7 +390,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           Text('Male'),
                           SizedBox(
                             width: 20,
-                          ), // Add some space between radio buttons
+                          ),
                           Radio(
                             value: 'Female',
                             groupValue: gender,
@@ -413,10 +407,6 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                   ),
                 ],
               ),
-              ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-              //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-              // Next Button
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -424,7 +414,22 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                     padding: const EdgeInsets.only(bottom: 20.0),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, EventInfoPage.screenRoute);
+                        // Perform validation
+                        if (!isOrganizerNameFilled ||
+                            !isEventTitleFilled ||
+                            !isVenueFilled ||
+                            maxParticipants == 0 ||
+                            expectedParticipants == 0 ||
+                            gender.isEmpty) {
+                          // Show error message
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text('Please fill in all the fields'),
+                          ));
+                        } else {
+                          // Proceed to the next screen
+                          Navigator.pushNamed(
+                              context, EventInfoPage.screenRoute);
+                        }
                       },
                       child: Container(
                         width: 140 * fem,
