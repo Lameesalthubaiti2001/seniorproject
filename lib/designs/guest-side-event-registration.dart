@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-
-import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
-import 'package:seniorproject/designs/guest-side-event-detail.dart';
-import 'package:seniorproject/designs/Smarthomes.dart';
-
 
 class EventRegistration extends StatefulWidget {
   static const String screenRoute = 'Registration_screen';
@@ -15,6 +8,16 @@ class EventRegistration extends StatefulWidget {
 }
 
 class _EventRegistrationState extends State<EventRegistration> {
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _pmuIdController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+
+  String _selectedMajor = '';
+  String? _nameErrorText;
+  String? _pmuIdErrorText;
+  String? _emailErrorText;
+  String? _majorErrorText;
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -36,7 +39,6 @@ class _EventRegistrationState extends State<EventRegistration> {
       body: Container(
         width: double.infinity,
         child: Container(
-          // detailjZ5 (219:372)
           width: double.infinity,
           height: 926 * fem,
           decoration: BoxDecoration(
@@ -45,101 +47,114 @@ class _EventRegistrationState extends State<EventRegistration> {
           child: Stack(
             children: [
               Positioned(
-                // autogroupm8dyGJ7 (7P4YYaRzMZCm94ADJTM8Dy)
-                left: 0 * fem,
-                top: 0 * fem,
-                child: Container(
-                  width: 428 * fem,
-                  height: 99 * fem,
-                  child: Stack(
-                    children: [
-
-
-                    ],
-                  ),
-                ),
-              ),
-
-              // Full Name field
-              Positioned(
                 left: 25 * fem,
                 top: 100 * fem,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[200], // Set the desired gray color
+                    color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(40 * fem),
                   ),
                   padding: EdgeInsets.all(20 * fem),
                   width: 382 * fem,
-                  height: 330 * fem, // Adjust the height based on the total height of the form fields
+                  height: 425 * fem,
 
                   child: Column(
                     children: [
-                      Container(
+                     Container(
                         margin: EdgeInsets.only(bottom: 10 * fem),
-
                         child: TextFormField(
+                          controller: _nameController,
                           decoration: InputDecoration(
                             labelText: 'Full Name',
+                            hintText: 'Enter your full name',
+                            filled: true,
+                            fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
-                              borderSide: BorderSide.none, // Remove the border
+                              borderSide: BorderSide.none,
                             ),
-                            filled: true, // Set filled to true
-                            fillColor: Colors.white,
-                            contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
+                            errorText: _nameErrorText,
                           ),
+                          onChanged: (value) {
+                            setState(() {
+                              _nameErrorText = value.isEmpty && _nameErrorText != null ? 'Please enter your full name' : null;
+                            });
+                          },
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(bottom: 10 * fem),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: 'PMU ID',
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15 * fem),
-                                  borderSide: BorderSide.none, // Remove the border
-                                ),
-                                filled: true,
-                                fillColor: Colors.white,
-                                contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
-                              ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10 * fem),
+                        child: TextFormField(
+                          controller: _pmuIdController,
+                          decoration: InputDecoration(
+                            labelText: 'PMU ID',
+                            hintText: 'Enter your PMU ID',
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                              borderSide: BorderSide.none,
                             ),
+                            errorText: _pmuIdErrorText,
                           ),
-                          SizedBox(height: 3),
-                          Container(
-                            margin: EdgeInsets.only(bottom: 10 * fem),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: 'PMU Email',
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15 * fem),
-                                  borderSide: BorderSide.none, // Remove the border
-                                ),
-                                filled: true,
-                                fillColor: Colors.white,
-                                contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
-                              ),
+                          onChanged: (value) {
+                            setState(() {
+                              _pmuIdErrorText = value.isEmpty && _pmuIdErrorText != null ? 'Please enter your PMU ID' : null;
+                            });
+                          },
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 10 * fem),
+                        child: TextFormField(
+                          controller: _emailController,
+                          decoration: InputDecoration(
+                            labelText: 'PMU Email',
+                            hintText: 'Enter your PMU email',
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15 * fem),
+                              borderSide: BorderSide.none,
                             ),
+                            errorText: _emailErrorText,
                           ),
-                        ],
+                          onChanged: (value) {
+                            setState(() {
+                              _emailErrorText = value.isEmpty && _emailErrorText != null ? 'Please enter your PMU email' : null;
+                            });
+                          },
+                        ),
                       ),
                       Container(
                         child: DropdownButtonFormField<String>(
+                          value: _selectedMajor,
+                          onChanged: (String? value) {
+                            setState(() {
+                              _selectedMajor = value!;
+                            });
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please select a major';
+                            }
+                            return null;
+                          },
                           decoration: InputDecoration(
-                            labelText: 'Major',
+                            hintText: 'Select your major',
+                            filled: true,
+                            fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15 * fem),
-                              borderSide: BorderSide.none, // Remove the border
+                              borderSide: BorderSide.none,
                             ),
-                            filled: true, // Set filled to true
-                            fillColor: Colors.white,
-                            contentPadding: EdgeInsets.symmetric(vertical: 19 * fem, horizontal: 20 * fem),
+                            errorText: _majorErrorText,
                           ),
                           items: [
+                            DropdownMenuItem<String>(
+                              value: '',
+                              child: Text('Select a major'),
+                            ),
                             DropdownMenuItem<String>(
                               value: 'Software Engineering',
                               child: Text('Software Engineering'),
@@ -185,9 +200,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                               child: Text('Others'),
                             ),
                           ],
-                          onChanged: (String? value) {
-                            // Handle major selection
-                          },
                         ),
                       ),
                     ],
@@ -195,7 +207,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                 ),
               ),
               Positioned(
-                // fillinyourinformation8ks (221:444)
                 left: 32.5 * fem,
                 top: 55 * fem,
                 child: Align(
@@ -205,8 +216,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                     child: Text(
                       'Fill in your Information ',
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont(
-                        'Poppins',
+                      style: TextStyle(
                         fontSize: 18 * ffem,
                         fontWeight: FontWeight.w500,
                         height: 1.5 * ffem / fem,
@@ -218,17 +228,30 @@ class _EventRegistrationState extends State<EventRegistration> {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width, // Match the screen width
+                width: MediaQuery.of(context).size.width,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: FractionalTranslation(
-                    translation: Offset(0, 0), // Adjust this value to fine-tune the vertical position
+                    translation: Offset(0, 0),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => RegistrationConfirm()),
-                        );
+                        if (_nameController.text.isEmpty ||
+                            _pmuIdController.text.isEmpty ||
+                            _emailController.text.isEmpty ||
+                            _selectedMajor.isEmpty) {
+                          setState(() {
+                            _nameErrorText = _nameController.text.isEmpty ? 'Please enter your full name' : null;
+                            _pmuIdErrorText = _pmuIdController.text.isEmpty ? 'Please enter your PMU ID' : null;
+                            _emailErrorText = _emailController.text.isEmpty ? 'Please enter your PMU email' : null;
+                            _majorErrorText = _selectedMajor.isEmpty ? 'Please select a major' : null;
+                          });
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegistrationConfirm()),
+                          );
+                        }
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
@@ -242,7 +265,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                         child: Stack(
                           children: [
                             Positioned(
-                              // rectangle4208CzF (101:323)
                               left: 20 * fem,
                               top: 0 * fem,
                               child: Align(
@@ -267,8 +289,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                                   height: 24 * fem,
                                   child: Text(
                                     'submit',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
+                                    style: TextStyle(
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w500,
                                       height: 1.5 * ffem / fem,
@@ -285,7 +306,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
