@@ -19,6 +19,13 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
   TextEditingController pmuIdController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
 
+  bool isFormValid() {
+    return fullNameController.text.isNotEmpty &&
+        pmuIdController.text.isNotEmpty &&
+        contactNumberController.text.isNotEmpty &&
+        userType != null;
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -197,8 +204,16 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                               height: 30 * fem,
                               child: TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(
-                                      context, EventInfo1ClubSide.screenRoute);
+                                  if (isFormValid()) {
+                                    Navigator.pushNamed(context,
+                                        EventInfo1ClubSide.screenRoute);
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text('Fill in all fields'),
+                                      ),
+                                    );
+                                  }
                                 },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
@@ -233,11 +248,3 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
     );
   }
 }
-//   @override
-//   void dispose() {
-//     fullNameController.dispose();
-//     pmuIdController.dispose();
-//     contactNumberController.dispose();
-//     super.dispose();
-//   }
-// }

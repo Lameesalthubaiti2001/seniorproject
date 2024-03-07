@@ -15,6 +15,7 @@ class _EventInfoPageState extends State<EventInfoPage> {
   String? selectedEventTime;
   String? selectedEventDuration;
   String? selectedEventDurationDays;
+  bool isDateSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -298,6 +299,19 @@ class _EventInfoPageState extends State<EventInfoPage> {
                   height: 30,
                   child: TextButton(
                     onPressed: () {
+                      // Perform validation
+                      if (_startDateTime == null ||
+                          _endDateTime == null ||
+                          selectedEventTime == null ||
+                          selectedEventDuration == null ||
+                          selectedEventDurationDays == null) {
+                        // Show error message
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Please fill in all the fields'),
+                        ));
+                        return; // Stop execution if validation fails
+                      }
+                      // Proceed to the next screen
                       Navigator.pushNamed(
                           context, EventInfo4ClubSide.screenRoute);
                     },
@@ -319,15 +333,6 @@ class _EventInfoPageState extends State<EventInfoPage> {
                   ),
                 ),
               ),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, EventInfo4ClubSide.screenRoute);
-              //   },
-              //   style: ElevatedButton.styleFrom(
-              //     primary: Color(0xfff36f23),
-              //   ),
-              //   child: Text('Next'),
-              // ),
             ],
           ),
         ),

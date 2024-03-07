@@ -38,380 +38,381 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
           title: Text('Event Information'),
           backgroundColor: Color(0xff042745),
         ),
-        body: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: double.infinity,
-                child: Text(
-                  'Enter event information',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 22 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    letterSpacing: -0.3000000119 * fem,
-                    color: Color(0xff042745),
+        body: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+            ),
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: double.infinity,
+                  child: Text(
+                    'Enter event information',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 22 * ffem,
+                      fontWeight: FontWeight.w500,
+                      height: 1.5 * ffem / fem,
+                      letterSpacing: -0.3000000119 * fem,
+                      color: Color(0xff042745),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 9,
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(
-                    5 * fem, 3 * ffem, 0 * fem, 17.4 * ffem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
+                SizedBox(
+                  height: 9,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                Container(
+                  padding: EdgeInsets.fromLTRB(
+                      5 * fem, 3 * ffem, 0 * fem, 17.4 * ffem),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: TextField(
+                          onChanged: (value) {
+                            // Update validation
+                            setState(() {
+                              isOrganizerNameFilled = value.isNotEmpty;
+                            });
+                          },
+                          decoration: InputDecoration(
+                            labelText: '  EVENT ORGANIZER NAME',
+                            labelStyle: TextStyle(
+                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            border: InputBorder.none,
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 15.0),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 17 * ffem),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: TextField(
+                          onChanged: (value) {
+                            // Update validation
+                            setState(() {
+                              isEventTitleFilled = value.isNotEmpty;
+                            });
+                          },
+                          decoration: InputDecoration(
+                            labelText: '   EVENT TITLE',
+                            labelStyle: TextStyle(
+                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            border: InputBorder.none,
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 15.0),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 17 * ffem),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: TextField(
+                          onChanged: (value) {
+                            // Update validation
+                            setState(() {
+                              isVenueFilled = value.isNotEmpty;
+                            });
+                          },
+                          decoration: InputDecoration(
+                            labelText: '   VENUE',
+                            labelStyle: TextStyle(
+                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            border: InputBorder.none,
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 15.0),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20 * ffem),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Enter number of participants',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Poppins',
+                      color: Color(0xff042745),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10 * ffem),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
+                      width: 200,
+                      height: 44,
                       decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                      child: TextField(
-                        onChanged: (value) {
-                          // Update validation
-                          setState(() {
-                            isOrganizerNameFilled = value.isNotEmpty;
-                          });
-                        },
-                        decoration: InputDecoration(
-                          labelText: '  EVENT ORGANIZER NAME',
-                          labelStyle: TextStyle(
-                              fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none,
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'MAX PARTICIPANTS:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey[600],
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                            Text(
+                              '$maxParticipants',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 17 * ffem),
+                    SizedBox(width: 20 * fem),
                     Container(
+                      width: 44,
+                      height: 38,
                       decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(18),
+                        color: Color(0xff042745),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                      child: TextField(
-                        onChanged: (value) {
-                          // Update validation
+                      child: IconButton(
+                        icon: Icon(Icons.remove),
+                        color: Colors.white,
+                        onPressed: () {
                           setState(() {
-                            isEventTitleFilled = value.isNotEmpty;
+                            maxParticipants = max(maxParticipants - 1, 0);
                           });
                         },
-                        decoration: InputDecoration(
-                          labelText: '   EVENT TITLE',
-                          labelStyle: TextStyle(
-                              fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none,
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0),
-                        ),
                       ),
                     ),
-                    SizedBox(height: 17 * ffem),
+                    SizedBox(width: 25 * fem),
                     Container(
+                      width: 44,
+                      height: 38,
                       decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(18),
+                        color: Color(0xff042745),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                      child: TextField(
-                        onChanged: (value) {
-                          // Update validation
+                      child: IconButton(
+                        icon: Icon(Icons.add),
+                        color: Colors.white,
+                        onPressed: () {
                           setState(() {
-                            isVenueFilled = value.isNotEmpty;
+                            maxParticipants++;
                           });
                         },
-                        decoration: InputDecoration(
-                          labelText: '   VENUE',
-                          labelStyle: TextStyle(
-                              fontSize: 10.0, fontWeight: FontWeight.w600),
-                          border: InputBorder.none,
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 15.0),
-                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: 20 * ffem),
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Enter number of participants',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Poppins',
-                    color: Color(0xff042745),
-                  ),
+                SizedBox(height: 10 * ffem),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 200,
+                      height: 44,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'EXPECTED PARTICIPANTS:',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey[600],
+                                letterSpacing: 1,
+                              ),
+                            ),
+                            Text(
+                              '$expectedParticipants',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20 * fem),
+                    Container(
+                      width: 44,
+                      height: 38,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(18),
+                        color: Color(0xff042745),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: IconButton(
+                        icon: Icon(Icons.remove),
+                        color: Colors.white,
+                        onPressed: () {
+                          setState(() {
+                            expectedParticipants =
+                                max(expectedParticipants - 1, 0);
+                          });
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 25 * fem),
+                    Container(
+                      width: 44,
+                      height: 38,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(18),
+                        color: Color(0xff042745),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: IconButton(
+                        icon: Icon(Icons.add),
+                        color: Colors.white,
+                        onPressed: () {
+                          setState(() {
+                            expectedParticipants++;
+                          });
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 10 * ffem),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 200,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(13),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
+                SizedBox(height: 20 * ffem),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Select the gender of the participants: ',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff042745),
+                          ),
                         ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'MAX PARTICIPANTS:',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey[600],
-                              letterSpacing: 1.5,
+                        Row(
+                          children: [
+                            Radio(
+                              value: 'Male',
+                              groupValue: gender,
+                              onChanged: (value) {
+                                setState(() {
+                                  gender = value.toString();
+                                });
+                              },
                             ),
-                          ),
-                          Text(
-                            '$maxParticipants',
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
+                            Text('Male'),
+                            SizedBox(
+                              width: 20,
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 20 * fem),
-                  Container(
-                    width: 44,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(18),
-                      color: Color(0xff042745),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: IconButton(
-                      icon: Icon(Icons.remove),
-                      color: Colors.white,
-                      onPressed: () {
-                        setState(() {
-                          maxParticipants = max(maxParticipants - 1, 0);
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 25 * fem),
-                  Container(
-                    width: 44,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(18),
-                      color: Color(0xff042745),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: IconButton(
-                      icon: Icon(Icons.add),
-                      color: Colors.white,
-                      onPressed: () {
-                        setState(() {
-                          maxParticipants++;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10 * ffem),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 200,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(13),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'EXPECTED PARTICIPANTS:',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey[600],
-                              letterSpacing: 1,
+                            Radio(
+                              value: 'Female',
+                              groupValue: gender,
+                              onChanged: (value) {
+                                setState(() {
+                                  gender = value.toString();
+                                });
+                              },
                             ),
-                          ),
-                          Text(
-                            '$expectedParticipants',
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 20 * fem),
-                  Container(
-                    width: 44,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(18),
-                      color: Color(0xff042745),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
+                            Text('Female'),
+                          ],
                         ),
                       ],
                     ),
-                    child: IconButton(
-                      icon: Icon(Icons.remove),
-                      color: Colors.white,
-                      onPressed: () {
-                        setState(() {
-                          expectedParticipants =
-                              max(expectedParticipants - 1, 0);
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 25 * fem),
-                  Container(
-                    width: 44,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(18),
-                      color: Color(0xff042745),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: IconButton(
-                      icon: Icon(Icons.add),
-                      color: Colors.white,
-                      onPressed: () {
-                        setState(() {
-                          expectedParticipants++;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20 * ffem),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Select the gender of the participants: ',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff042745),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Radio(
-                            value: 'Male',
-                            groupValue: gender,
-                            onChanged: (value) {
-                              setState(() {
-                                gender = value.toString();
-                              });
-                            },
-                          ),
-                          Text('Male'),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Radio(
-                            value: 'Female',
-                            groupValue: gender,
-                            onChanged: (value) {
-                              setState(() {
-                                gender = value.toString();
-                              });
-                            },
-                          ),
-                          Text('Female'),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
+                  ],
+                ),
+                SizedBox(height: 20 * ffem),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
                     child: TextButton(
                       onPressed: () {
                         // Perform validation
@@ -452,8 +453,8 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: ClubFooter(),
