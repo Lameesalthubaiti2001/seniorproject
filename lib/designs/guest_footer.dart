@@ -1,52 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:seniorproject/utils.dart';
-import 'dart:ui';
-import 'guest-home.dart'; // Import your guest pages
+import 'guest-home.dart';
 import 'guest-side-activity.dart';
 import 'guest-side-explore-clubs.dart';
-import 'guest-side-event-registration.dart';
-import 'guest-side-event-detail.dart';
-import 'guest-side-aboutclub.dart';
-import 'guest-side-registration-confirmation.dart';
 
 class GuestFooter extends StatelessWidget {
-
   @override
-
   Widget build(BuildContext context) {
-    return BottomAppBar(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProductListPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.local_activity),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RegisterdEvents()),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.group),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Scene40()),
-              );
-            },
-          ),
-        ],
-      ),
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed, // Ensure icons are always visible
+      selectedItemColor: Colors.grey,
+      unselectedItemColor: Colors.grey,
+      selectedFontSize: 8.0, // Adjust font size as needed
+      unselectedFontSize: 10.0,
+      currentIndex: 0, // Set the initial selected index
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.checklist),
+          label: 'Activity',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.group),
+          label: 'Clubs',
+        ),
+      ],
+      onTap: (index) {
+        // Navigate to the respective pages based on the index
+        switch (index) {
+          case 0:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductListPage()),
+            );
+            break;
+          case 1:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => RegisterdEvents()),
+            );
+            break;
+          case 2:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Scene40()),
+            );
+            break;
+        }
+      },
     );
   }
 }

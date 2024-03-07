@@ -18,6 +18,15 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
   String? activityDescription;
   String? activityBudget;
 
+  // Define the list of activity types
+  List<String> activityTypes = [
+    'Workshop',
+    'Seminar',
+    'Conference',
+    'Meeting',
+    // Add more activity types as needed
+  ];
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -96,20 +105,21 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                       borderRadius: BorderRadius.circular(
                                           10.0), // Adjust the border radius as needed
                                     ),
-                                    child: TextFormField(
+                                    child: DropdownButtonFormField<String>(
+                                      value: activityType,
                                       onChanged: (value) {
                                         setState(() {
                                           activityType = value;
                                         });
                                       },
-                                      validator: (value) {
-                                        if (value == null || value.isEmpty) {
-                                          return 'Please enter activity type';
-                                        }
-                                        return null;
-                                      },
+                                      items: activityTypes.map((type) {
+                                        return DropdownMenuItem<String>(
+                                          value: type,
+                                          child: Text(type),
+                                        );
+                                      }).toList(),
                                       decoration: InputDecoration(
-                                        hintText: 'workshop',
+                                        hintText: 'Select activity type',
                                         contentPadding: EdgeInsets.symmetric(
                                           horizontal: 16.0,
                                           vertical: 12.0,
@@ -133,7 +143,7 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(
-                                          10.0), // Adjust the border radius as needed
+                                          12.0), // Adjust the border radius as needed
                                     ),
                                     child: TextFormField(
                                       onChanged: (value) {
@@ -141,16 +151,11 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                           activityDescription = value;
                                         });
                                       },
-                                      validator: (value) {
-                                        if (value == null || value.isEmpty) {
-                                          return 'Please enter activity description';
-                                        }
-                                        return null;
-                                      },
+                                      maxLines: 5,
                                       decoration: InputDecoration(
                                         hintText: 'write description...',
                                         contentPadding: EdgeInsets.symmetric(
-                                          horizontal: 16.0,
+                                          horizontal: 10.0,
                                           vertical: 12.0,
                                         ),
                                         border: InputBorder.none,
@@ -180,12 +185,6 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                           activityBudget = value;
                                         });
                                       },
-                                      validator: (value) {
-                                        if (value == null || value.isEmpty) {
-                                          return 'Please enter activity budget';
-                                        }
-                                        return null;
-                                      },
                                       decoration: InputDecoration(
                                         hintText: '50 SR',
                                         contentPadding: EdgeInsets.symmetric(
@@ -206,8 +205,22 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                 child: TextButton(
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
-                                      Navigator.pushNamed(context,
-                                          EditConfirmationClubSide.screenRoute);
+                                      // Check if any of the required fields are empty
+                                      if (activityType == null ||
+                                          activityDescription == null ||
+                                          activityBudget == null) {
+                                        // Show error message
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content:
+                                          Text('Please fill out all fields'),
+                                        ));
+                                      } else {
+                                        Navigator.pushNamed(
+                                          context,
+                                          EditConfirmationClubSide.screenRoute,
+                                        );
+                                      }
                                     }
                                   },
                                   style: TextButton.styleFrom(
@@ -215,7 +228,7 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                     backgroundColor: Color(0xfff36f23),
                                     shape: RoundedRectangleBorder(
                                       borderRadius:
-                                          BorderRadius.circular(10 * fem),
+                                      BorderRadius.circular(10 * fem),
                                     ),
                                   ),
                                   child: Text(

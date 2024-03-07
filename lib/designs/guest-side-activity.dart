@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:seniorproject/designs/guest_footer.dart';
 import 'package:seniorproject/utils.dart';
 
-//Lamees update
+// ... (imports)
 
 class RegisterdEvents extends StatefulWidget {
   static const String screenRoute = 'Registered_screen';
@@ -18,6 +18,7 @@ class _RegisterdEventsState extends State<RegisterdEvents> {
     double baseWidth = 428;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -31,471 +32,295 @@ class _RegisterdEventsState extends State<RegisterdEvents> {
         backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
-      child: Container(
-        // searchVCX (101:155)
-        width: double.infinity,
-        decoration: BoxDecoration (
-          color: Color(0xffffffff),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-
-
-            Container(
-              // registeredeventswEs (218:315)
-              margin: EdgeInsets.fromLTRB(35*fem, 80*fem, 0*fem, 0*fem),
-              child: RichText(
-                text: TextSpan(
-                  style: SafeGoogleFont (
-                    'Poppins',
-                    fontSize: 18*ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5*ffem/fem,
-                    color: Color(0xff1c1b19),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Color(0xffffffff),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(35 * fem, 80 * fem, 0 * fem, 0 * fem),
+                child: RichText(
+                  text: TextSpan(
+                    style: SafeGoogleFont(
+                      'Poppins',
+                      fontSize: 18 * ffem,
+                      fontWeight: FontWeight.w500,
+                      height: 1.5 * ffem / fem,
+                      color: Color(0xff1c1b19),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Registered Events',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 18 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff042745),
+                        ),
+                      ),
+                      TextSpan(
+                        text: '  ',
+                      ),
+                    ],
                   ),
+                ),
+              ),
+              // Registered Events section content
+              Container(
+                padding: EdgeInsets.all(8 * fem),  // Adjusted padding values
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TextSpan(
-                      text: 'Registered Events',
-                      style: SafeGoogleFont (
-                        'Poppins',
-                        fontSize: 18*ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5*ffem/fem,
-                        color: Color(0xff042745),
+                    // Event 1
+                    Container(
+                      margin: EdgeInsets.only(bottom: 15.5 * fem),
+                      width: 327 * fem,
+                      height: 64.5 * fem,
+                      child: EventContainer(
+                        time: '12.00pm - 4.00pm',
+                        title: 'The Saudi Deal Today',
+                        description: 'Replace this with actual description',
                       ),
                     ),
-                    TextSpan(
-                      text: '  ',
+                    // Event 2
+                    Container(
+                      margin: EdgeInsets.only(bottom: 13.5 * fem),
+                      width: 327 * fem,
+                      height: 66.5 * fem,
+                      child: EventContainer(
+                        time: '1pm - 2pm',
+                        title: 'Smart Homes Sunday',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                    // Event 3
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20.5 * fem),
+                      width: 327 * fem,
+                      height: 68.5 * fem,
+                      child: EventContainer(
+                        time: '1.00pm - 4.00pm',
+                        title: 'ChatGPT Workshop Tuesday',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                    // Event 4
+                    Container(
+                      margin: EdgeInsets.only(bottom: 0 * fem),
+                      width: 327 * fem,
+                      height: 66.5 * fem,
+                      child: EventContainer(
+                        time: '1pm - 2pm',
+                        title: 'Jewelry Industry Thursday',
+                        description: 'Replace this with actual description',
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
-            Container(
-              // autogrouppetdfaB (7P4JkURARXRHfDo9HhPETd)
-              padding: EdgeInsets.fromLTRB(28*fem, 22*fem, 28*fem, 322.5*fem),
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // group143zcT (218:227)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 39*fem, 15.5*fem),
-                    width: 327*fem,
-                    height: 64.5*fem,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          // rectangle2vFD (218:228)
-                          left: 0*fem,
-                          top: 0*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 327*fem,
-                              height: 64*fem,
-                              child: Container(
-                                decoration: BoxDecoration (
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                  color: Color(0xff042745),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // group139cdq (218:231)
-                          left: 84*fem,
-                          top: 38.5*fem,
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(1.33*fem, 0*fem, 0*fem, 0*fem),
-                            width: 112*fem,
-                            height: 26*fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // timecircleigs (218:232)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.33*fem, 1*fem),
-                                  width: 13.33*fem,
-                                  height: 13.33*fem,
-                                  child: Image.asset(
-                                    'assets/designs/images/time-circle-hMV.png',
-                                    width: 13.33*fem,
-                                    height: 13.33*fem,
-                                  ),
-                                ),
-                                Text(
-                                  // pm400pmdoq (218:236)
-                                  '12.00pm - 4.00pm',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 2.6*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xffffffff),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // calendary71 (218:247)
-                          left: 20*fem,
-                          top: 18*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 26*fem,
-                              height: 26*fem,
-                              child: Image.asset(
-                                'assets/designs/images/calendar-wBZ.png',
-                                width: 26*fem,
-                                height: 26*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // thesaudidealtodaygGK (218:269)
-                          left: 85*fem,
-                          top: 3*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 104*fem,
-                              height: 42*fem,
-                              child: Text(
-                                'The Saudi Deal\nToday\n             ',
-                                style: SafeGoogleFont (
-                                  'Poppins',
-                                  fontSize: 14*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.5*ffem/fem,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // group144Z5D (218:237)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 41*fem, 13.5*fem),
-                    width: 327*fem,
-                    height: 66.5*fem,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          // rectangle2UT5 (218:238)
-                          left: 0*fem,
-                          top: 0*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 327*fem,
-                              height: 64*fem,
-                              child: Container(
-                                decoration: BoxDecoration (
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                  color: Color(0xff042745),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // group139BcP (218:241)
-                          left: 80*fem,
-                          top: 40.5*fem,
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(1.33*fem, 0*fem, 0*fem, 0*fem),
-                            width: 69*fem,
-                            height: 26*fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // timecircle5hm (218:242)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.33*fem, 1*fem),
-                                  width: 13.33*fem,
-                                  height: 13.33*fem,
-                                  child: Image.asset(
-                                    'assets/designs/images/time-circle-LUK.png',
-                                    width: 13.33*fem,
-                                    height: 13.33*fem,
-                                  ),
-                                ),
-                                Text(
-                                  // pm2pmzZq (218:246)
-                                  '1pm-2pm',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 2.6*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xffffffff),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // calendarviP (218:258)
-                          left: 20*fem,
-                          top: 20*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 26*fem,
-                              height: 26*fem,
-                              child: Image.asset(
-                                'assets/designs/images/calendar-iv7.png',
-                                width: 26*fem,
-                                height: 26*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // smarthomessundayFkf (218:270)
-                          left: 81*fem,
-                          top: 5*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 96*fem,
-                              height: 42*fem,
-                              child: Text(
-                                'Smart Homes\nSunday ',
-                                style: SafeGoogleFont (
-                                  'Poppins',
-                                  fontSize: 14*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.5*ffem/fem,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // group145kxK (218:271)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 45*fem, 20.5*fem),
-                    width: 327*fem,
-                    height: 68.5*fem,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          // rectangle2UtK (218:272)
-                          left: 0*fem,
-                          top: 0*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 327*fem,
-                              height: 64*fem,
-                              child: Container(
-                                decoration: BoxDecoration (
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                  color: Color(0xff042745),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // group139CZR (218:275)
-                          left: 82*fem,
-                          top: 42.5*fem,
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(1.33*fem, 0*fem, 0*fem, 0*fem),
-                            width: 105*fem,
-                            height: 26*fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // timecircle7Ab (218:276)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.33*fem, 1*fem),
-                                  width: 13.33*fem,
-                                  height: 13.33*fem,
-                                  child: Image.asset(
-                                    'assets/designs/images/time-circle-nKd.png',
-                                    width: 13.33*fem,
-                                    height: 13.33*fem,
-                                  ),
-                                ),
-                                Text(
-                                  // pm400pmQvP (218:280)
-                                  '1.00pm - 4.00pm',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 2.6*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xffffffff),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // calendarYWo (218:293)
-                          left: 22*fem,
-                          top: 22*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 26*fem,
-                              height: 26*fem,
-                              child: Image.asset(
-                                'assets/designs/images/calendar-CPV.png',
-                                width: 26*fem,
-                                height: 26*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // chatgptworkshoptuesdayrXV (218:291)
-                          left: 83*fem,
-                          top: 2*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 135*fem,
-                              height: 42*fem,
-                              child: Text(
-                                'ChatGPT Workshop\nTuesday',
-                                style: SafeGoogleFont (
-                                  'Poppins',
-                                  fontSize: 14*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.5*ffem/fem,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // group146Yv7 (218:281)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 45*fem, 0*fem),
-                    width: 327*fem,
-                    height: 66.5*fem,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          // rectangle2H71 (218:282)
-                          left: 0*fem,
-                          top: 0*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 327*fem,
-                              height: 64*fem,
-                              child: Container(
-                                decoration: BoxDecoration (
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                  color: Color(0xff042745),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // group139CDy (218:285)
-                          left: 79*fem,
-                          top: 40.5*fem,
-                          child: Container(
-                            padding: EdgeInsets.fromLTRB(1.33*fem, 0*fem, 0*fem, 0*fem),
-                            width: 69*fem,
-                            height: 26*fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // timecircle7Lw (218:286)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.33*fem, 1*fem),
-                                  width: 13.33*fem,
-                                  height: 13.33*fem,
-                                  child: Image.asset(
-                                    'assets/designs/images/time-circle-hoy.png',
-                                    width: 13.33*fem,
-                                    height: 13.33*fem,
-                                  ),
-                                ),
-                                Text(
-                                  // pm2pm2yh (218:290)
-                                  '1pm-2pm',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 10*ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 2.6*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xffffffff),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // calendarBLo (218:304)
-                          left: 25*fem,
-                          top: 19*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 26*fem,
-                              height: 26*fem,
-                              child: Image.asset(
-                                'assets/designs/images/calendar-Lrw.png',
-                                width: 26*fem,
-                                height: 26*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // jewelryindustrythursdayWP5 (226:6)
-                          left: 82*fem,
-                          top: 0*fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 113*fem,
-                              height: 42*fem,
-                              child: Text(
-                                'Jewelry Industry\nThursday',
-                                style: SafeGoogleFont (
-                                  'Poppins',
-                                  fontSize: 14*ffem,
-                                  fontWeight: FontWeight.w400,
-                                  height: 1.5*ffem/fem,
-                                  color: Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
 
-          ],
+              Container(
+                margin: EdgeInsets.fromLTRB(35 * fem, 40 * fem, 0 * fem, 0 * fem),
+                child: RichText(
+                  text: TextSpan(
+                    style: SafeGoogleFont(
+                      'Poppins',
+                      fontSize: 18 * ffem,
+                      fontWeight: FontWeight.w500,
+                      height: 1.5 * ffem / fem,
+                      color: Color(0xff1c1b19),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Previous Events',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 18 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff042745),
+                        ),
+                      ),
+                      TextSpan(
+                        text: '  ',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // History section content (similar to Registered Events)
+              Container(
+                padding: EdgeInsets.all(8 * fem),  // Adjusted padding values
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // Event 1 (Replace this with actual content)
+                    Container(
+                      margin: EdgeInsets.only(bottom: 15.5 * fem),
+                      width: 327 * fem,
+                      height: 64.5 * fem,
+                      child: EventContainer(
+                        time: '12.00pm - 2.00pm',
+                        title: 'Rwad Talk',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                    // Event 2 (Replace this with actual content)
+                    Container(
+                      margin: EdgeInsets.only(bottom: 15.5 * fem),
+                      width: 327 * fem,
+                      height: 64.5 * fem,
+                      child: EventContainer(
+                        time: '1.00pm - 3.00pm',
+                        title: 'UI/UX Workshop',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                    // Event 3 (Replace this with actual content)
+                    Container(
+                      margin: EdgeInsets.only(bottom: 15.5 * fem),
+                      width: 327 * fem,
+                      height: 64.5 * fem,
+                      child: EventContainer(
+                        time: '9.00am - 11.00pm',
+                        title: 'Cultural Workshop',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                    // Event 4 (Replace this with actual content)
+                    Container(
+                      margin: EdgeInsets.only(bottom: 15.5 * fem),
+                      width: 327 * fem,
+                      height: 64.5 * fem,
+                      child: EventContainer(
+                        time: '2.00pm - 4.00pm',
+                        title: 'Flutter Workshop',
+                        description: 'Replace this with actual description',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      ),
       bottomNavigationBar: GuestFooter(),
+    );
+  }
+}
+
+class EventContainer extends StatelessWidget {
+  final String time;
+  final String title;
+  final String description;
+
+  EventContainer({
+    required this.time,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double fem = MediaQuery.of(context).size.width / 428;
+    double ffem = fem * 0.97;
+
+    return Stack(
+      children: [
+        Positioned(
+          left: 0 * fem,
+          top: 0 * fem,
+          child: Align(
+            child: SizedBox(
+              width: 327 * fem,
+              height: 64 * fem,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10 * fem),
+                  color: Color(0xff042745),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: 84 * fem,
+          top: 38.5 * fem,
+          child: Container(
+            padding: EdgeInsets.fromLTRB(1.33 * fem, 0 * fem, 0 * fem, 0 * fem),
+            width: 112 * fem,
+            height: 26 * fem,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7.33 * fem, 1 * fem),
+                  width: 13.33 * fem,
+                  height: 13.33 * fem,
+                  child: Image.asset(
+                    'assets/designs/images/time-circle-hMV.png',
+                    width: 13.33 * fem,
+                    height: 13.33 * fem,
+                  ),
+                ),
+                Text(
+                  time,
+                  style: SafeGoogleFont(
+                    'Roboto',
+                    fontSize: 10 * ffem,
+                    fontWeight: FontWeight.w400,
+                    height: 2.6 * ffem / fem,
+                    letterSpacing: 0.5 * fem,
+                    color: Color(0xffffffff),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Positioned(
+          left: 20 * fem,
+          top: 18 * fem,
+          child: Align(
+            child: SizedBox(
+              width: 26 * fem,
+              height: 26 * fem,
+              child: Image.asset(
+                'assets/designs/images/calendar-wBZ.png',
+                width: 26 * fem,
+                height: 26 * fem,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: 85 * fem,
+          top: 3 * fem,
+          child: Align(
+            child: SizedBox(
+              width: 104 * fem,
+              height: 42 * fem,
+              child: Text(
+                title,
+                style: SafeGoogleFont(
+                  'Poppins',
+                  fontSize: 14 * ffem,
+                  fontWeight: FontWeight.w400,
+                  height: 1.5 * ffem / fem,
+                  color: Color(0xffffffff),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

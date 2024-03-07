@@ -17,12 +17,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
   String gender = ''; // State variable to store selected gender
   int maxParticipants = 0;
   int expectedParticipants = 0;
-  bool isOrganizerNameFilled = false;
-  bool isEventTitleFilled = false;
-  bool isVenueFilled = false;
-  bool isGenderSelected = false;
   String? _selectedVenue; // Define _selectedVenue variable
-  String? _venueErrorText; // Define _venueErrorText variable
 
   @override
   Widget build(BuildContext context) {
@@ -81,12 +76,6 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: TextField(
-                          onChanged: (value) {
-                            // Update validation
-                            setState(() {
-                              isOrganizerNameFilled = value.isNotEmpty;
-                            });
-                          },
                           decoration: InputDecoration(
                             labelText: 'EVENT ORGANIZER NAME',
                             labelStyle:
@@ -103,12 +92,6 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: TextField(
-                          onChanged: (value) {
-                            // Update validation
-                            setState(() {
-                              isEventTitleFilled = value.isNotEmpty;
-                            });
-                          },
                           decoration: InputDecoration(
                             labelText: 'EVENT TITLE',
                             labelStyle:
@@ -129,14 +112,12 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           onChanged: (String? value) {
                             setState(() {
                               _selectedVenue = value!;
-                              isVenueFilled = value.isNotEmpty; // Update venue validation
-                              _venueErrorText = null; // Clear error message when a value is selected
                             });
                           },
                           decoration: InputDecoration(
                             hintText: 'Select the venue',
                             errorText:
-                            isVenueFilled ? null : 'Please select a venue', // Display error message if venue is not selected
+                            _selectedVenue == null ? 'Please select a venue' : null, // Display error message if venue is not selected
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
                           ),
@@ -462,9 +443,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                     child: TextButton(
                       onPressed: () {
                         // Perform validation
-                        if (!isOrganizerNameFilled ||
-                            !isEventTitleFilled ||
-                            !isVenueFilled ||
+                        if (_selectedVenue == null ||
                             maxParticipants == 0 ||
                             expectedParticipants == 0 ||
                             gender.isEmpty) {

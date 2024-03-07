@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
 
+import 'guest_footer.dart';
+
 class EventRegistration extends StatefulWidget {
   static const String screenRoute = 'Registration_screen';
   @override
@@ -60,7 +62,7 @@ class _EventRegistrationState extends State<EventRegistration> {
 
                   child: Column(
                     children: [
-                     Container(
+                      Container(
                         margin: EdgeInsets.only(bottom: 10 * fem),
                         child: TextFormField(
                           controller: _nameController,
@@ -75,11 +77,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                             ),
                             errorText: _nameErrorText,
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              _nameErrorText = value.isEmpty && _nameErrorText != null ? 'Please enter your full name' : null;
-                            });
-                          },
                         ),
                       ),
                       Container(
@@ -97,11 +94,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                             ),
                             errorText: _pmuIdErrorText,
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              _pmuIdErrorText = value.isEmpty && _pmuIdErrorText != null ? 'Please enter your PMU ID' : null;
-                            });
-                          },
                         ),
                       ),
                       Container(
@@ -119,11 +111,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                             ),
                             errorText: _emailErrorText,
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              _emailErrorText = value.isEmpty && _emailErrorText != null ? 'Please enter your PMU email' : null;
-                            });
-                          },
                         ),
                       ),
                       Container(
@@ -235,21 +222,22 @@ class _EventRegistrationState extends State<EventRegistration> {
                     translation: Offset(0, 0),
                     child: TextButton(
                       onPressed: () {
-                        if (_nameController.text.isEmpty ||
-                            _pmuIdController.text.isEmpty ||
-                            _emailController.text.isEmpty ||
-                            _selectedMajor.isEmpty) {
-                          setState(() {
-                            _nameErrorText = _nameController.text.isEmpty ? 'Please enter your full name' : null;
-                            _pmuIdErrorText = _pmuIdController.text.isEmpty ? 'Please enter your PMU ID' : null;
-                            _emailErrorText = _emailController.text.isEmpty ? 'Please enter your PMU email' : null;
-                            _majorErrorText = _selectedMajor.isEmpty ? 'Please select a major' : null;
-                          });
-                        } else {
+                        setState(() {
+                          _nameErrorText = _nameController.text.isEmpty ? 'Please enter your full name' : null;
+                          _pmuIdErrorText = _pmuIdController.text.isEmpty ? 'Please enter your PMU ID' : null;
+                          _emailErrorText = _emailController.text.isEmpty ? 'Please enter your PMU email' : null;
+                          _majorErrorText = _selectedMajor.isEmpty ? 'Please select a major' : null;
+                        });
+
+                        if (_nameErrorText == null &&
+                            _pmuIdErrorText == null &&
+                            _emailErrorText == null &&
+                            _majorErrorText == null) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegistrationConfirm()),
+                              builder: (context) => RegistrationConfirm(),
+                            ),
                           );
                         }
                       },
@@ -312,6 +300,7 @@ class _EventRegistrationState extends State<EventRegistration> {
           ),
         ),
       ),
+      bottomNavigationBar: GuestFooter(),
     );
   }
 }

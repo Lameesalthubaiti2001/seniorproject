@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:seniorproject/designs/club-side-event-info1.dart';
-import 'package:seniorproject/utils.dart';
+import 'club-side-event-info1.dart';
 import 'club_footer.dart';
 
 class EventInfo4ClubSide extends StatefulWidget {
@@ -27,11 +24,12 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
   void validateForm() {
     setState(() {
       fullNameError =
-          fullNameController.text.isEmpty ? 'Full Name is required' : null;
-      pmuIdError = pmuIdController.text.isEmpty ? 'PMU ID is required' : null;
-      contactNumberError = contactNumberController.text.isEmpty ? 'Contact Number is required' : null;
-      emailError = emailController.text.isEmpty ? 'Email is required' : null;
-      userTypeError = userType == null ? '   Please choose a user type' : null;
+      fullNameController.text.isEmpty ? '' : null;
+      pmuIdError = pmuIdController.text.isEmpty ? '' : null;
+      contactNumberError =
+      contactNumberController.text.isEmpty ? '' : null;
+      emailError = emailController.text.isEmpty ? '' : null;
+      userTypeError = userType == null ? '' : null;
     });
   }
 
@@ -99,14 +97,8 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                             Text('Student'),
                           ],
                         ),
-                        if (userTypeError != null)
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Text(
-                              userTypeError!,
-                              style: TextStyle(color: Colors.red),
-                            ),
-                          ),
+
+
                         SizedBox(height: 20 * ffem),
                         Text(
                           '       Person in-charge information',
@@ -236,6 +228,11 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                             userTypeError == null) {
                           Navigator.pushNamed(
                               context, EventInfo1ClubSide.screenRoute);
+                        } else {
+                          // Show error message
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text('Please fill out all the information'),
+                          ));
                         }
                       },
                       style: TextButton.styleFrom(

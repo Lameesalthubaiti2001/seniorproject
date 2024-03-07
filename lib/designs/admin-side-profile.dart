@@ -32,7 +32,6 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
         child: Container(
           width: double.infinity,
           child: Container(
-            // profileNeF (269:137)
             width: double.infinity,
             decoration: BoxDecoration(
               color: Color(0xffffffff),
@@ -40,9 +39,6 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Your existing widgets...
-
-                // Profile Icon
                 SizedBox(height: 20.0),
                 CircleAvatar(
                   radius: 50,
@@ -50,28 +46,24 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
                 ),
                 SizedBox(height: 20.0),
 
-                // Username Text Field
                 buildTextField(
                   label: 'Username',
                   controller: usernameController,
                 ),
                 SizedBox(height: 16.0),
 
-                // Email Text Field
                 buildTextField(
                   label: 'Email',
                   controller: emailController,
                 ),
                 SizedBox(height: 16.0),
 
-                // Phone Number Text Field
                 buildTextField(
                   label: 'Phone Number',
                   controller: phoneNumberController,
                 ),
                 SizedBox(height: 16.0),
 
-                // Password Text Field
                 buildTextField(
                   label: 'Password',
                   controller: passwordController,
@@ -79,34 +71,40 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
                 ),
                 SizedBox(height: 16.0),
 
-                // Update Button
                 GestureDetector(
                   onTap: () {
-                    // Perform update action
-                    // You can access the values using:
-                    // usernameController.text
-                    // emailController.text
-                    // phoneNumberController.text
-                    // passwordController.text
+                    if (_validateFields()) {
+                      // Perform update action
+                      // You can access the values using:
+                      // usernameController.text
+                      // emailController.text
+                      // phoneNumberController.text
+                      // passwordController.text
 
-                    // Show the alert
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('Success'),
-                          content: Text('Profile Updated Successfully'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('OK'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
+                      // Show the alert
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Success'),
+                            content: Text('Profile Updated Successfully'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('OK'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    } else {
+                      // Show error message
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text('Please fill in all the fields'),
+                      ));
+                    }
                   },
                   child: Container(
                     width: 283 * fem,
@@ -164,5 +162,12 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
         ],
       ),
     );
+  }
+
+  bool _validateFields() {
+    return usernameController.text.isNotEmpty &&
+        emailController.text.isNotEmpty &&
+        phoneNumberController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty;
   }
 }
