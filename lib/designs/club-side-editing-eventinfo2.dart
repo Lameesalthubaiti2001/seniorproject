@@ -389,37 +389,58 @@ class _Editing2State extends State<Editing2> {
                         top: 20 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 388 * fem,
+                            width: 194 * fem, // Adjust button width as needed
                             height: 50 * fem,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10 * fem),
-                                color: Color(0xfff36f23),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                // Add logic to cancel the request here
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.red, // Red color for the button
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10 * fem),
+                                ),
+                              ),
+                              child: Text(
+                                'Cancel Request',
+                                style: TextStyle(
+                                  fontSize: 16 * ffem,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                       Positioned(
-                        left: 149 * fem,
-                        top: 33 * fem,
+                        left: 228 * fem, // Adjust the left position to create space
+                        top: 20 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 129 * fem,
-                            height: 24 * fem,
-                            child: Text(
-                              'Edit information',
-                              style: SafeGoogleFont(
-                                'Poppins',
-                                fontSize: 16 * ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5 * ffem / fem,
-                                color: Color(0xffffffff),
+                            width: 194 * fem, // Adjust button width as needed
+                            height: 50 * fem,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                // Add logic to save changes here
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.green, // Green color for the button
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10 * fem),
+                                ),
+                              ),
+                              child: Text(
+                                'Save Changes',
+                                style: TextStyle(
+                                  fontSize: 16 * ffem,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
+
                     ],
                   ),
                 ),

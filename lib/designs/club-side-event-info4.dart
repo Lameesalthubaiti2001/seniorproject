@@ -16,10 +16,12 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
   TextEditingController fullNameController = TextEditingController();
   TextEditingController pmuIdController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   String? fullNameError;
   String? pmuIdError;
   String? contactNumberError;
+  String? emailError;
   String? userTypeError;
 
   void validateForm() {
@@ -27,9 +29,8 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
       fullNameError =
           fullNameController.text.isEmpty ? 'Full Name is required' : null;
       pmuIdError = pmuIdController.text.isEmpty ? 'PMU ID is required' : null;
-      contactNumberError = contactNumberController.text.isEmpty
-          ? 'Contact Number is required'
-          : null;
+      contactNumberError = contactNumberController.text.isEmpty ? 'Contact Number is required' : null;
+      emailError = emailController.text.isEmpty ? 'Email is required' : null;
       userTypeError = userType == null ? '   Please choose a user type' : null;
     });
   }
@@ -58,7 +59,7 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                 SizedBox(height: 10 * ffem),
                 Container(
                   child: Text(
-                    '       Person in-charge of the event ',
+                    '  Person in-charge of the event ',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 18 * ffem,
@@ -191,6 +192,27 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Email',
+                                  style: TextStyle(
+                                    fontSize: 14 * ffem,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff1c1b19),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Container(
+                                  height: 40,
+                                  color: Colors.white,
+                                  child: TextFormField(
+                                    controller: emailController,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      errorText: emailError,
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -210,6 +232,7 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                         if (fullNameError == null &&
                             pmuIdError == null &&
                             contactNumberError == null &&
+                            emailError == null &&
                             userTypeError == null) {
                           Navigator.pushNamed(
                               context, EventInfo1ClubSide.screenRoute);

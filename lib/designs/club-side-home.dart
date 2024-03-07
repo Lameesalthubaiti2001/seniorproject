@@ -72,7 +72,7 @@ class _ClubHomeState extends State<ClubHome> {
             ),
             ListTile(
               leading: Icon(Icons.checklist),
-              title: Text('Event Tracking',
+              title: Text('Attendance list',
               style: TextStyle(fontSize: 20),
               ),
               onTap: () {

@@ -17,11 +17,12 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
   String gender = ''; // State variable to store selected gender
   int maxParticipants = 0;
   int expectedParticipants = 0;
-  bool isOrganizerNameFilled =
-      false; // Define organizer name validation variable
-  bool isEventTitleFilled = false; // Define event title validation variable
-  bool isVenueFilled = false; // Define venue validation variable
+  bool isOrganizerNameFilled = false;
+  bool isEventTitleFilled = false;
+  bool isVenueFilled = false;
   bool isGenderSelected = false;
+  String? _selectedVenue; // Define _selectedVenue variable
+  String? _venueErrorText; // Define _venueErrorText variable
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +67,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                   height: 9,
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(
-                      5 * fem, 3 * ffem, 0 * fem, 17.4 * ffem),
+                  padding: EdgeInsets.fromLTRB(5 * fem, 3 * ffem, 0 * fem, 17.4 * ffem),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -88,12 +88,11 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                             });
                           },
                           decoration: InputDecoration(
-                            labelText: '  EVENT ORGANIZER NAME',
-                            labelStyle: TextStyle(
-                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            labelText: 'EVENT ORGANIZER NAME',
+                            labelStyle:
+                            TextStyle(fontSize: 10.0, fontWeight: FontWeight.w600),
                             border: InputBorder.none,
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 15.0),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
                           ),
                         ),
                       ),
@@ -111,12 +110,11 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                             });
                           },
                           decoration: InputDecoration(
-                            labelText: '   EVENT TITLE',
-                            labelStyle: TextStyle(
-                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            labelText: 'EVENT TITLE',
+                            labelStyle:
+                            TextStyle(fontSize: 10.0, fontWeight: FontWeight.w600),
                             border: InputBorder.none,
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 15.0),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
                           ),
                         ),
                       ),
@@ -126,21 +124,56 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: TextField(
-                          onChanged: (value) {
-                            // Update validation
+                        child: DropdownButtonFormField<String>(
+                          value: _selectedVenue,
+                          onChanged: (String? value) {
                             setState(() {
-                              isVenueFilled = value.isNotEmpty;
+                              _selectedVenue = value!;
+                              isVenueFilled = value.isNotEmpty; // Update venue validation
+                              _venueErrorText = null; // Clear error message when a value is selected
                             });
                           },
                           decoration: InputDecoration(
-                            labelText: '   VENUE',
-                            labelStyle: TextStyle(
-                                fontSize: 10.0, fontWeight: FontWeight.w600),
+                            hintText: 'Select the venue',
+                            errorText:
+                            isVenueFilled ? null : 'Please select a venue', // Display error message if venue is not selected
                             border: InputBorder.none,
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 15.0),
+                            contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
                           ),
+                          items: [
+                            DropdownMenuItem<String>(
+                              value: '',
+                              child: Text('Select a venue'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'male campus Lecture Hall ',
+                              child: Text('male campus Lecture Hall '),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Female Campus Lecture Hall',
+                              child: Text('Female Campus Lecture Hall'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Robotics Lab',
+                              child: Text('Robotics Lab'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Cyber security Lab',
+                              child: Text('Cyber security Lab'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'F015 Male campus library',
+                              child: Text('F015 Male campus library'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Prince Turki center female campus',
+                              child: Text('Prince Turki center female campus'),
+                            ),
+                            DropdownMenuItem<String>(
+                              value: 'Prince Turki center male campus',
+                              child: Text('Prince Turki center male campus'),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -402,6 +435,19 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                               },
                             ),
                             Text('Female'),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Radio(
+                              value: 'Both',
+                              groupValue: gender,
+                              onChanged: (value) {
+                                setState(() {
+                                  gender = value.toString();
+                                });
+                              },
+                            ),
+                            Text('Both'),
                           ],
                         ),
                       ],
