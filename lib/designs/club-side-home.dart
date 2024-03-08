@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:seniorproject/designs/club-side-request-status.dart';
+import 'package:seniorproject/designs/guest-side-activity.dart';
+import 'package:seniorproject/designs/landing-page-.dart';
+import '../utils.dart';
 import 'club-side-checklist-tracking.dart';
 import 'club-side-editing-eventinfo.dart';
 import 'club-side-editpage.dart';
@@ -7,6 +11,8 @@ import 'club-side-event-info2.dart';
 import 'club-side-event-tracking.dart';
 import 'club-side-posters.dart';
 import 'club_footer.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class ClubHome extends StatefulWidget {
   static const String screenRoute = 'club_home_screen';
@@ -22,6 +28,7 @@ class _ClubHomeState extends State<ClubHome> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -29,10 +36,12 @@ class _ClubHomeState extends State<ClubHome> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
+
           ),
         ),
         backgroundColor: const Color(0xff042745),
       ),
+
       endDrawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -86,6 +95,15 @@ class _ClubHomeState extends State<ClubHome> {
               ),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EditPageClubSide()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Log Out',
+                style: TextStyle(fontSize: 20),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LandingPage()));
               },
             ),
           ],
@@ -320,9 +338,9 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(7 * fem, 0 * fem, 0 * fem, 24 * fem),
+                      margin: EdgeInsets.fromLTRB(7 * fem,55 * fem, 0 * fem, 10 * fem),
                       child: Text(
-                        ' Events promotion',
+                        ' Activity',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 18 * ffem,
@@ -333,132 +351,130 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(11 * fem, 0 * fem, 15 * fem, 0 * fem),
-                      padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 26 * fem),
+                      padding: EdgeInsets.fromLTRB(8 * fem, 20 * fem, 14 * fem, 9 * fem),
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xff042745),
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(25 * fem),
-                          bottomLeft: Radius.circular(25 * fem),
-                        ),
+                        color: Color(0xffffffff),
+                        borderRadius: BorderRadius.circular(10 * fem),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x1e2e2e4f),
+                            offset: Offset(0 * fem, 6 * fem),
+                            blurRadius: 10 * fem,
+                          ),
+                        ],
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+
                           Container(
-                            margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 13 * fem),
-                            width: 382 * fem,
-                            height: 135 * fem,
-                            child: Image.asset(
-                              'assets/designs/images/rectangle-35-4ew.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 30 * fem, 0 * fem),
-                            width: double.infinity,
-                            height: 42 * fem,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 54 * fem, 28.5 * fem),
+                            width: 327 * fem,
+                            height: 65.5 * fem,
+                            child: Stack(
                               children: [
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 59 * fem, 0 * fem),
-                                  constraints: BoxConstraints(
-                                    maxWidth: 143 * fem,
-                                  ),
-                                  child: Text(
-                                    'Expand your event’s audience and reach',
-                                    style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 14 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xffffffff),
+                                Positioned(
+                                  left: 0 * fem,
+                                  top: 0 * fem,
+                                  child: Align(
+                                    child: SizedBox(
+                                      width: 327 * fem,
+                                      height: 64 * fem,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10 * fem),
+                                          color: Color(0xff042745),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0 * fem, 13 * fem, 0 * fem, 7 * fem),
-                                  width: 140 * fem,
-                                  height: double.infinity,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        left: 0 * fem,
-                                        top: 2 * fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 140 * fem,
-                                            height: 20 * fem,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(15 * fem),
-                                                color: Color(0xfff37022),
-                                              ),
-                                            ),
-                                          ),
+                                Positioned(
+                                  left: 79 * fem,
+                                  top: 3 * fem,
+                                  child: Align(
+                                    child: SizedBox(
+                                      width: 108 * fem,
+                                      height: 42 * fem,
+                                      child: Text(
+                                        'The Saudi Deal \nPending           ',
+                                        style: SafeGoogleFont(
+                                          'Poppins',
+                                          fontSize: 14 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.5 * ffem / fem,
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
-                                      Positioned(
-                                        left: 16 * fem,
-                                        top: 0 * fem,
-                                        child: Align(
-                                          child: SizedBox(
-                                            width: 112 * fem,
-                                            height: 21 * fem,
-                                            child: TextButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(builder: (context) => PostersClubsSide()),
-                                                );
-                                              },
-                                              style: TextButton.styleFrom(
-                                                padding: EdgeInsets.zero,
-                                              ),
-                                              child: RichText(
-                                                textAlign: TextAlign.center,
-                                                text: TextSpan(
-                                                  style: TextStyle(
-                                                    fontFamily: 'Playfair Display',
-                                                    fontSize: 20 * ffem,
-                                                    fontWeight: FontWeight.w700,
-                                                    height: 1.3329999924 * ffem / fem,
-                                                    color: Color(0xffffffff),
-                                                  ),
-                                                  children: [
-                                                    TextSpan(
-                                                      text: ' Poster Request',
-                                                      style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 14 * ffem,
-                                                        fontWeight: FontWeight.w700,
-                                                        height: 1.5 * ffem / fem,
-                                                        color: Color(0xffffffff),
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: ' \n',
-                                                      style: TextStyle(
-                                                        fontFamily: 'Playfair Display',
-                                                        fontSize: 14 * ffem,
-                                                        fontWeight: FontWeight.w700,
-                                                        height: 1.3325 * ffem / fem,
-                                                        color: Color(0xffffffff),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 20 * fem,
+                                  top: 18 * fem,
+                                  child: Align(
+                                    child: SizedBox(
+                                      width: 26 * fem,
+                                      height: 26 * fem,
+                                      child: Icon(
+                                        Icons.access_time,
+                                        size: 26 * fem,
+                                        color: Colors.white,
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(312 * fem, 0 * fem, 0 * fem, 0 * fem),
+                            child: TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: Container(
+                                padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.96 * fem, 0 * fem),
+                                width: double.infinity,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => RequestStatusClubSide()),
+                                        );
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.62 * fem, 0 * fem),
+                                        child: Text(
+                                          'View all',
+                                          style: SafeGoogleFont(
+                                            'Poppins',
+                                            fontSize: 14 * ffem,
+                                            fontWeight: FontWeight.w500,
+                                            height: 1.5 * ffem / fem,
+                                            color: Color(0xff042745),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0.02 * fem),
+                                      width: 4.41 * fem,
+                                      height: 8.77 * fem,
+                                      child: Image.asset(
+                                        'assets/designs/images/eva-arrow-ios-forward-outline-v4s.png',
+                                        width: 4.41 * fem,
+                                        height: 8.77 * fem,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ],

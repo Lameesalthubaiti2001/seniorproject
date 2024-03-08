@@ -6,6 +6,7 @@ import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'package:seniorproject/designs/jewelry.dart';
 import 'package:seniorproject/designs/club-side-home.dart';
 import 'package:seniorproject/designs/guest-side-aboutclub.dart';
+import 'package:seniorproject/designs/landing-page-.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/guest-side-event-detail.dart';
@@ -81,6 +82,7 @@ class _ProductListPage extends State<ProductListPage> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
+
     final filterProducts = productList.where((product) {
       return selectedCategories.isEmpty ||
           selectedCategories.contains(product.category);
@@ -96,7 +98,48 @@ class _ProductListPage extends State<ProductListPage> {
         ),
         backgroundColor: const Color(0xff042745),
       ),
-    body: SingleChildScrollView(
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 114 * fem,
+              color: Color(0xff042745),
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 20 * fem,
+                    bottom: 10 * fem,
+                    child: Text(
+                      '',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16 * ffem,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text(
+                'Back Home',
+                style: TextStyle(fontSize: 20),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
+              },
+            ),
+          ],
+        ),
+      ),
+
+
+      body: SingleChildScrollView(
       child: Column(
         children: [
           Container(

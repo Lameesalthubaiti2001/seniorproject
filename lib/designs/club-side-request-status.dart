@@ -92,9 +92,46 @@ class _RequestStatusClubSideState extends State<RequestStatusClubSide> {
                         Icons.close,
                         'Rejected  ',
                       ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 310 * fem, 0 * fem),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 6 * ffem),
+                            Text(
+                              'History',
+                              style: TextStyle(
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff042745),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      _buildEventContainer(
+                        fem,
+                        ffem,
+                        'AJ Jewlery\n',
+                        Icons.check_box,
+                        'Completed  ',
+                      ),
+                      _buildEventContainer(
+                        fem,
+                        ffem,
+                        'PMU Winter\n',
+                        Icons.check_box,
+                        'Completed  ',
+                      ),
+                      _buildEventContainer(
+                        fem,
+                        ffem,
+                        'Clean Beach\n',
+                        Icons.close_rounded,
+                        'Canceled  ',
+                      ),
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ),
