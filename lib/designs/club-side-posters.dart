@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../utils.dart';
+import 'club-side-edit-confirmation.dart';
 import 'club-side-poster-request-confirm.dart';
 import 'club_footer.dart';
 
@@ -352,7 +353,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                             } else {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => PosterRequestConfirmClubSide()),
+                                MaterialPageRoute(builder: (context) => EditConfirmationClubSide()),
                               );
                             }
                           },

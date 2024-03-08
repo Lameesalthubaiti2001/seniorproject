@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/club-side-edit-confirmation.dart';
 import 'package:seniorproject/utils.dart';
 
+import 'club-side-posters.dart';
 import 'club_footer.dart';
 
 class EventInfo1ClubSide extends StatefulWidget {
@@ -218,7 +219,7 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                       } else {
                                         Navigator.pushNamed(
                                           context,
-                                          EditConfirmationClubSide.screenRoute,
+                                          PostersClubsSide.screenRoute,
                                         );
                                       }
                                     }
@@ -232,7 +233,7 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                     ),
                                   ),
                                   child: Text(
-                                    'Submit',
+                                    'Create your poster',
                                     style: TextStyle(
                                       fontSize: 16 * ffem,
                                       fontWeight: FontWeight.w500,
