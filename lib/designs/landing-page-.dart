@@ -48,7 +48,7 @@ class _LandingPageState extends State<LandingPage> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    'assets/designs/images/ellipse-2-bg.png',
+                    'assets/designs/images/MyEvent-logo.png',
                   ),
                 ),
               ),
