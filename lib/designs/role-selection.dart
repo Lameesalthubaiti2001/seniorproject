@@ -70,7 +70,7 @@ class _RoleSelectionState extends State<RoleSelection> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/designs/images/MyEvent-logo.png',
+                  'assets/designs/images/My-Event-logo.png',
                 ),
               ),
             ),
