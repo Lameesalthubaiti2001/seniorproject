@@ -139,13 +139,13 @@ class _RoleSelectionState extends State<RoleSelection> {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xfff37022),
+                    backgroundColor: Color(0xfff37022),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25 * fem),
                     ),
                   ),
                   child: Text(
-                    'Login here',
+                    'Login',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 10 * ffem,
@@ -224,7 +224,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen2()));
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xfff37022),
+                    backgroundColor: Color(0xfff37022),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25 * fem),
                     ),
@@ -243,7 +243,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                 width: 54 * fem,
                 height: 20 * fem,
                 child: Text(
-                  'Login here',
+                  'Login',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 10* ffem,

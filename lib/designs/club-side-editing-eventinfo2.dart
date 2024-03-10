@@ -396,7 +396,7 @@ class _Editing2State extends State<Editing2> {
                                 // Add logic to cancel the request here
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.red, // Red color for the button
+                                backgroundColor: Colors.red, // Red color for the button
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10 * fem),
                                 ),
@@ -424,7 +424,7 @@ class _Editing2State extends State<Editing2> {
                                 // Add logic to save changes here
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.green, // Green color for the button
+                                backgroundColor: Colors.green, // Green color for the button
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10 * fem),
                                 ),

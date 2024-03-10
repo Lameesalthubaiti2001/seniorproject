@@ -95,8 +95,7 @@ class _RejectionState extends State<Rejection> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),
-                    ),
-                    primary: Color(0xfff36f23),
+                    ), backgroundColor: Color(0xfff36f23),
                   ),
                   child: Text(
                     'Submit',
