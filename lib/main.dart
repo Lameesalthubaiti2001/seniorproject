@@ -1,8 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:seniorproject/utils.dart';
 import 'designs/landing-page-.dart';
 import 'designs/role-selection.dart';
 import 'designs/login.dart';
@@ -49,14 +45,13 @@ import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
 import 'designs/club-side-editpage.dart';
-import 'designs/guest_footer.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyEvent());
+  runApp(const MyEvent());
 }
 
 class MyEvent extends StatelessWidget {
@@ -94,7 +89,7 @@ class MyEvent extends StatelessWidget {
         RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
         RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),
         Finance.screenRoute: (context) => Finance(),
-        ProductListPage.screenRoute: (context) => ProductListPage(),
+        ProductListPage.screenRoute: (context) => const ProductListPage(),
         AboutClubPage.screenRoute: (context) => AboutClubPage(),
         Scene40.screenRoute: (context) => Scene40(),
         RegisterdEvents.screenRoute: (context) => RegisterdEvents(),
