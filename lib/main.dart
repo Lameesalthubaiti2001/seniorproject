@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'designs/landing-page-.dart';
 import 'designs/role-selection.dart';
 import 'designs/login.dart';
-import 'designs/login2.dart';
 import 'designs/password-reset.dart';
 import 'designs/admin-home.dart';
 import 'designs/club-side-home.dart';
@@ -69,7 +68,6 @@ class MyEvent extends StatelessWidget {
         LandingPage.screenRoute: (context) => LandingPage(),
         RoleSelection.screenRoute: (context) => RoleSelection(),
         LoginScreen.screenRoute: (context) => LoginScreen(),
-        LoginScreen2.screenRoute: (context) => LoginScreen2(),
         PasswordReset.screenRoute: (context) => PasswordReset(),
         AdminHome.screenRoute: (context) => AdminHome(),
         ConfirmationAdminSide.screenRoute: (context) => ConfirmationAdminSide(),

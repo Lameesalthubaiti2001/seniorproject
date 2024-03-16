@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin-home.dart';
 import 'package:seniorproject/designs/password-reset.dart';
 import 'package:seniorproject/designs/role-selection.dart';
-import 'package:seniorproject/firebase/auth.dart'; // Import your Auth class
+import 'package:seniorproject/firebase/auth.dart';
+import 'package:seniorproject/designs/club-side-home.dart';
+
 
 class LoginScreen extends StatefulWidget {
   static const String screenRoute = 'login_screen';
@@ -10,6 +13,7 @@ class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
+
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _isObscure = true;
@@ -25,12 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      backgroundColor: Color(0xff042745),
+      backgroundColor: const Color(0xff042745),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pushReplacementNamed(context, RoleSelection.screenRoute);
           },
@@ -51,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontFamily: 'Poppins',
                     fontSize: 32 * ffem,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xfff37022),
+                    color: const Color(0xfff37022),
                   ),
                 ),
                 SizedBox(height: 20 * fem),
@@ -62,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontFamily: 'Poppins',
                     fontSize: 20 * ffem,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xffffffff),
+                    color: const Color(0xffffffff),
                   ),
                 ),
                 SizedBox(height: 20 * fem),
@@ -74,15 +78,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _usernameController,
                         decoration: InputDecoration(
                           hintText: 'Username',
-                          hintStyle: TextStyle(color: Color(0x99000000)),
+                          hintStyle: const TextStyle(color: Color(0x99000000)),
                           filled: true,
-                          fillColor: Color(0xffffffff),
+                          fillColor: const Color(0xffffffff),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15 * fem),
                             borderSide: BorderSide.none,
                           ),
                         ),
-                        style: TextStyle(color: Color(0x99000000)),
+                        style: const TextStyle(color: Color(0x99000000)),
                         validator: (value) {
                           if (value?.isEmpty ?? true) {
                             return 'Please enter your username';
@@ -96,9 +100,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: _isObscure,
                         decoration: InputDecoration(
                           hintText: 'Password',
-                          hintStyle: TextStyle(color: Color(0x99000000)),
+                          hintStyle: const TextStyle(color: Color(0x99000000)),
                           filled: true,
-                          fillColor: Color(0xffffffff),
+                          fillColor: const Color(0xffffffff),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15 * fem),
                             borderSide: BorderSide.none,
@@ -106,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           suffixIcon: IconButton(
                             icon: Icon(
                               _isObscure ? Icons.visibility : Icons.visibility_off,
-                              color: Color(0xff042745),
+                              color: const Color(0xff042745),
                             ),
                             onPressed: () {
                               setState(() {
@@ -115,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                           ),
                         ),
-                        style: TextStyle(color: Color(0x99000000)),
+                        style: const TextStyle(color: Color(0x99000000)),
                         validator: (value) {
                           if (value?.isEmpty ?? true) {
                             return 'Please enter your password';
@@ -132,21 +136,81 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (_formKey.currentState?.validate() ?? false) {
                       try {
                         await _auth.signInWithEmailAndPassword(
+                          context: context,
                           email: _usernameController.text.trim(),
                           password: _passwordController.text.trim(),
                         );
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => AdminHome()),
-                        );
+
+                        // Check if the user is null after successful login
+                        if (_auth.currentUser == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Invalid credentials'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                          return; // Exit the function to prevent further execution
+                        }
+
+                        // Check the role of the user after successful login
+                        String? userRole = await _auth.getUserRole(_auth.currentUser!.uid);
+                        if (userRole == 'admin') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => AdminHome()),
+                          );
+                        } else if (userRole == 'club') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => ClubHome()),
+                          );
+                        } else {
+
+                          // User is not an admin or club, so display a snackbar
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Only admins or club members are allowed to log in'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        }
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'user-not-found') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please enter correct username'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        } else if (e.code == 'wrong-password') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please enter correct password'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error: ${e.message}'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        }
                       } catch (e) {
-                        // Handle login errors (e.g., show error message)
+                        // Handle other unexpected errors
                         print('Login failed: $e');
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('An unexpected error occurred'),
+                            duration: Duration(seconds: 3),
+                          ),
+                        );
                       }
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffffffff),
+                    backgroundColor: const Color(0xffffffff),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15 * fem),
                     ),
@@ -157,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       fontSize: 20 * ffem,
                       fontWeight: FontWeight.w700,
-                      color: Color(0xff042745),
+                      color: const Color(0xff042745),
                     ),
                   ),
                 ),
@@ -172,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'Forget your password?',
                     style: TextStyle(
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                       fontSize: 14 * ffem,
                       fontWeight: FontWeight.w400,
                     ),
@@ -190,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 28 * fem,
                     decoration: BoxDecoration(
-                      color: Color(0xffffffff),
+                      color: const Color(0xffffffff),
                       borderRadius: BorderRadius.circular(15 * fem),
                     ),
                     child: Center(
@@ -199,7 +263,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           fontSize: 14 * ffem,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xfff37022),
+                          color: const Color(0xfff37022),
                         ),
                       ),
                     ),

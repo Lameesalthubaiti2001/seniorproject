@@ -3,7 +3,6 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/login.dart';
-import 'package:seniorproject/designs/login2.dart';
 import 'package:seniorproject/designs/guest-home.dart';
 
 class RoleSelection extends StatefulWidget {
@@ -221,7 +220,7 @@ class _RoleSelectionState extends State<RoleSelection> {
                 child: ElevatedButton(
                   onPressed: () {
                     // Navigate to the login page
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen2()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xfff37022),
