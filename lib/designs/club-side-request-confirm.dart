@@ -21,6 +21,7 @@ class _RequestConfirmClubSideState extends State<RequestConfirmClubSide> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
+
           ),
         ),
         backgroundColor: const Color(0xff042745),

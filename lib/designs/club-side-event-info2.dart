@@ -31,8 +31,15 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Event Information'),
-          backgroundColor: Color(0xff042745),
+          title: const Text(
+            'Event Information',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+
+            ),
+          ),
+          backgroundColor: const Color(0xff042745),
         ),
         body: SingleChildScrollView(
           child: Container(

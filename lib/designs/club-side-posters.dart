@@ -79,6 +79,7 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
+
           ),
         ),
         backgroundColor: const Color(0xff042745),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../utils.dart';
 import 'club-side-checklist-tracking.dart';
 import 'club_footer.dart';
@@ -13,6 +16,24 @@ class EventTrackingClubSide extends StatefulWidget {
 
 class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
   @override
+  void initState() {
+    super.initState();
+    // Initialize Firebase
+    Firebase.initializeApp();
+  }
+
+  // Function to fetch data from Firestore
+  Future<void> fetchDataFromFirestore() async {
+    try {
+      QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('your_collection').get();
+      // Process the fetched data here, e.g., update state to display data
+    } catch (e) {
+      // Handle errors
+      print('Error fetching data: $e');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
     double fem = MediaQuery.of(context).size.width / baseWidth;
@@ -21,10 +42,11 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Attendance list',
+          'Attendance List',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
+
           ),
         ),
         backgroundColor: const Color(0xff042745),
@@ -36,7 +58,7 @@ class _EventTrackingClubSideState extends State<EventTrackingClubSide> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(15 * fem, 35* fem, 10 * fem, 250 * fem),
+                padding: EdgeInsets.fromLTRB(15 * fem, 35 * fem, 10 * fem, 250 * fem),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
