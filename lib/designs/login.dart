@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin-home.dart';
-import 'package:seniorproject/designs/club-side-home.dart';
 import 'package:seniorproject/designs/password-reset.dart';
 import 'package:seniorproject/designs/role-selection.dart';
-import 'package:seniorproject/firebase/auth.dart'; // Import your Auth class
+import 'package:seniorproject/firebase/auth.dart';
+import 'package:seniorproject/designs/club-side-home.dart';
+
 
 class LoginScreen extends StatefulWidget {
   static const String screenRoute = 'login_screen';
@@ -12,6 +13,7 @@ class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
+
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _isObscure = true;
@@ -132,11 +134,79 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: () async {
                     if (_formKey.currentState?.validate() ?? false) {
-                      await _auth.signInWithEmailAndPassword(
-                        context: context,
-                        email: _usernameController.text.trim(),
-                        password: _passwordController.text.trim(),
-                      );
+                      try {
+                        await _auth.signInWithEmailAndPassword(
+                          context: context,
+                          email: _usernameController.text.trim(),
+                          password: _passwordController.text.trim(),
+                        );
+
+                        // Check if the user is null after successful login
+                        if (_auth.currentUser == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Invalid credentials'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                          return; // Exit the function to prevent further execution
+                        }
+
+                        // Check the role of the user after successful login
+                        String? userRole = await _auth.getUserRole(_auth.currentUser!.uid);
+                        if (userRole == 'admin') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => AdminHome()),
+                          );
+                        } else if (userRole == 'club') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => ClubHome()),
+                          );
+                        } else {
+
+                          // User is not an admin or club, so display a snackbar
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Only admins or club members are allowed to log in'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        }
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'user-not-found') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please enter correct username'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        } else if (e.code == 'wrong-password') {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please enter correct password'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error: ${e.message}'),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        }
+                      } catch (e) {
+                        // Handle other unexpected errors
+                        print('Login failed: $e');
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('An unexpected error occurred'),
+                            duration: Duration(seconds: 3),
+                          ),
+                        );
+                      }
                     }
                   },
                   style: ElevatedButton.styleFrom(
