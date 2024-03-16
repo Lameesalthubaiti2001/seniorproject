@@ -159,19 +159,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             context,
                             MaterialPageRoute(builder: (context) => AdminHome()),
                           );
-                        } else if (userRole == 'club') {
+                        } else if  (userRole == 'club') {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(builder: (context) => ClubHome()),
-                          );
-                        } else {
-
-                          // User is not an admin or club, so display a snackbar
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Only admins or club members are allowed to log in'),
-                              duration: Duration(seconds: 3),
-                            ),
                           );
                         }
                       } on FirebaseAuthException catch (e) {
