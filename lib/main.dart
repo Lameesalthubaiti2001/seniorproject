@@ -47,6 +47,8 @@ import 'designs/Smarthomes.dart';
 import 'designs/jewelry.dart';
 import 'designs/robotics.dart';
 import 'designs/club-side-editpage.dart';
+import 'designs/club_side_add_to_explore_page.dart';
+
 import 'designs/guest_footer.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -87,6 +89,7 @@ class MyEvent extends StatelessWidget {
         ClubHome.screenRoute: (context) => ClubHome(),
         PosterRequestConfirmClubSide.screenRoute: (context) => PosterRequestConfirmClubSide(),
         PostersClubsSide.screenRoute: (context) => PostersClubsSide(),
+        AddToExplore.screenRoute:(context) => AddToExplore(),
         RequestConfirmClubSide.screenRoute: (context) => RequestConfirmClubSide(),
         RequestRejectClubSide.screenRoute: (context) => RequestRejectClubSide(),
         RequestStatusClubSide.screenRoute: (context) => RequestStatusClubSide(),

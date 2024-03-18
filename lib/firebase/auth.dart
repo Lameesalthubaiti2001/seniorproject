@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin-home.dart';
 import 'package:seniorproject/designs/club-side-home.dart';
 
-
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -19,13 +18,11 @@ class Auth {
     required String password,
   }) async {
     try {
-      // Sign in with email and password
       var userCredential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // Check if the user exists
       if (userCredential.user == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -36,11 +33,9 @@ class Auth {
         return;
       }
 
-      // Fetch user role from Firestore
       String? userRole = await _getUserRole(userCredential.user!.uid);
 
       if (userRole == null) {
-        // If user role is not found, sign out the user and show a message
         await _firebaseAuth.signOut();
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -51,13 +46,17 @@ class Auth {
         return;
       }
 
-      // Navigate user based on their role
       if (userRole == 'admin') {
-        // Navigate to admin home screen
         Navigator.pushReplacementNamed(context, AdminHome.screenRoute);
       } else if (userRole == 'club') {
-        // Navigate to club home screen
         Navigator.pushReplacementNamed(context, ClubHome.screenRoute);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Only admins or club members are allowed to log in'),
+            duration: Duration(seconds: 3),
+          ),
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -83,7 +82,6 @@ class Auth {
         );
       }
     } catch (e) {
-      // Handle other unexpected errors
       print('Login failed: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -93,7 +91,6 @@ class Auth {
       );
     }
   }
-
 
   Future<String?> _getUserRole(String userId) async {
     try {
@@ -110,18 +107,5 @@ class Auth {
 
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
-  }
-
-  Future<String?> getUserRole(String userId) async {
-    try {
-      DocumentSnapshot userSnapshot =
-      await _firestore.collection('users').doc(userId).get();
-      Map<String, dynamic>? userData =
-      userSnapshot.data() as Map<String, dynamic>?;
-      return userData?['role'] as String?;
-    } catch (e) {
-      print('Error getting user role: $e');
-      return null;
-    }
   }
 }

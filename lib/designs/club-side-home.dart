@@ -12,6 +12,7 @@ import 'club-side-event-tracking.dart';
 import 'club-side-posters.dart';
 import 'club_footer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:seniorproject/designs/club_side_add_to_explore_page.dart';
 
 
 class ClubHome extends StatefulWidget {
@@ -86,6 +87,15 @@ class _ClubHomeState extends State<ClubHome> {
               ),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EventTrackingClubSide()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.add),
+              title: Text('Add My Club',
+                style: TextStyle(fontSize: 20),
+              ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AddToExplore()));
               },
             ),
             ListTile(
