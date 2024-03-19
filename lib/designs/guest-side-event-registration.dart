@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:seniorproject/designs/guest-side-registration-confirmation.dart';
-
 import 'guest_footer.dart';
 
 class EventRegistration extends StatefulWidget {
@@ -59,7 +59,6 @@ class _EventRegistrationState extends State<EventRegistration> {
                   padding: EdgeInsets.all(20 * fem),
                   width: 382 * fem,
                   height: 425 * fem,
-
                   child: Column(
                     children: [
                       Container(
@@ -137,7 +136,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                             ),
                             errorText: _majorErrorText,
                           ),
-                          items: [
+                          items: const [
                             DropdownMenuItem<String>(
                               value: '',
                               child: Text('Select a major'),
@@ -233,12 +232,7 @@ class _EventRegistrationState extends State<EventRegistration> {
                             _pmuIdErrorText == null &&
                             _emailErrorText == null &&
                             _majorErrorText == null) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegistrationConfirm(),
-                            ),
-                          );
+                          submitForm();
                         }
                       },
                       style: TextButton.styleFrom(
@@ -300,5 +294,24 @@ class _EventRegistrationState extends State<EventRegistration> {
       ),
       bottomNavigationBar: GuestFooter(),
     );
+  }
+
+  void submitForm() {
+    String pmuId = _pmuIdController.text;
+    FirebaseFirestore.instance.collection('Event Registration').doc(pmuId).set({
+      'Full Name': _nameController.text,
+      'PMU ID': pmuId,
+      'PMU Email': _emailController.text,
+      'Major': _selectedMajor,
+    }).then((value) {
+      // Navigate to confirmation screen
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => RegistrationConfirm()),
+      );
+    }).catchError((error) {
+      // Handle errors here
+      print('Failed to submit form: $error');
+    });
   }
 }
