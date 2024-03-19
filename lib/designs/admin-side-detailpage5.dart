@@ -23,17 +23,20 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
     ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request'),
-        backgroundColor: Color(0xff042745),
+        title: const Text('Request',
+          style: TextStyle(
+            color: Colors.white,
+          ),),
+        backgroundColor: const Color(0xff042745),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(0),
+        padding: const EdgeInsets.all(0),
         child:Container(
           width: double.infinity,
           child: Container(
             width: double.infinity,
             height: 926 * fem,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0xffffffff),
             ),
             child: Stack(
@@ -46,7 +49,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                     padding: EdgeInsets.fromLTRB(20*fem, 10*fem, 25.34*fem, 10*fem),
                     width: 428*fem,
                     height: 234*fem,
-                    decoration: BoxDecoration (
+                    decoration: const BoxDecoration (
                       image: DecorationImage (
                         fit: BoxFit.cover,
                         image: AssetImage (
@@ -90,7 +93,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                         fontWeight: FontWeight.w600,
                                         height: 1.5*ffem/fem,
                                         letterSpacing: -0.3000000119*fem,
-                                        color: Color(0xff1c1b19),
+                                        color: const Color(0xff1c1b19),
                                       ),
                                     ),
                                   ),
@@ -113,7 +116,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                         fontWeight: FontWeight.w400,
                                         height: 1.5*ffem/fem,
                                         letterSpacing: -0.3000000119*fem,
-                                        color: Color(0xff1c1b19),
+                                        color: const Color(0xff1c1b19),
                                       ),
                                     ),
                                   ),
@@ -130,7 +133,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                     child: Container(
                                       decoration: BoxDecoration (
                                         borderRadius: BorderRadius.circular(1.5*fem),
-                                        color: Color(0xff1c58f2),
+                                        color: const Color(0xff1c58f2),
                                       ),
                                     ),
                                   ),
@@ -153,7 +156,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                         fontWeight: FontWeight.w400,
                                         height: 1.5*ffem/fem,
                                         letterSpacing: -0.3000000119*fem,
-                                        color: Color(0xff1c1b19),
+                                        color: const Color(0xff1c1b19),
                                       ),
                                     ),
                                   ),
@@ -170,7 +173,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                     child: Container(
                                       decoration: BoxDecoration (
                                         borderRadius: BorderRadius.circular(1.5*fem),
-                                        color: Color(0xff1c58f2),
+                                        color: const Color(0xff1c58f2),
                                       ),
                                     ),
                                   ),
@@ -193,7 +196,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                 height: 3*fem,
                                 decoration: BoxDecoration (
                                   borderRadius: BorderRadius.circular(1.5*fem),
-                                  color: Color(0xff1c58f2),
+                                  color: const Color(0xff1c58f2),
                                 ),
                               ),
                               Text(
@@ -206,7 +209,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w400,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff1c1b19),
+                                  color: const Color(0xff1c1b19),
                                 ),
                               ),
                             ],
@@ -226,7 +229,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                 height: 3*fem,
                                 decoration: BoxDecoration (
                                   borderRadius: BorderRadius.circular(1.5*fem),
-                                  color: Color(0xff1c58f2),
+                                  color: const Color(0xff1c58f2),
                                 ),
                               ),
                               Text(
@@ -239,7 +242,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w400,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff1c1b19),
+                                  color: const Color(0xff1c1b19),
                                 ),
                               ),
                             ],
@@ -258,7 +261,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                               fontWeight: FontWeight.w500,
                               height: 1.5*ffem/fem,
                               letterSpacing: -0.3000000119*fem,
-                              color: Color(0xff1c1b19),
+                              color: const Color(0xff1c1b19),
                             ),
                           ),
                         ),
@@ -275,7 +278,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                               fontSize: 13.5*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.1725*ffem/fem,
-                              color: Color(0xff6a6a6a),
+                              color: const Color(0xff6a6a6a),
                             ),
                           ),
                         ),
@@ -292,7 +295,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                       width: 428.02*fem,
                       height: 1*fem,
                       child: Container(
-                        decoration: BoxDecoration (
+                        decoration: const BoxDecoration (
                           color: Color(0xffc4c4c4),
                         ),
                       ),
@@ -354,7 +357,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                                     fontSize: 12*ffem,
                                                     fontWeight: FontWeight.w500,
                                                     height: 1.1725*ffem/fem,
-                                                    color: Color(0xff858888),
+                                                    color: const Color(0xff858888),
                                                   ),
                                                 ),
                                               ),
@@ -384,7 +387,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                           fontWeight: FontWeight.w500,
                                           height: 1.5*ffem/fem,
                                           letterSpacing: -0.3000000119*fem,
-                                          color: Color(0xff042745),
+                                          color: const Color(0xff042745),
                                         ),
                                       ),
                                     ),
@@ -418,7 +421,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                         fontSize: 12*ffem,
                                         fontWeight: FontWeight.w500,
                                         height: 1*ffem/fem,
-                                        color: Color(0xff858888),
+                                        color: const Color(0xff858888),
                                       ),
                                     ),
                                   ),
@@ -444,7 +447,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w500,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff042745),
+                                  color: const Color(0xff042745),
                                 ),
                               ),
                             ),
@@ -465,7 +468,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontSize: 10*ffem,
                                   fontWeight: FontWeight.w500,
                                   height: 1.5*ffem/fem,
-                                  color: Color(0xff042745),
+                                  color: const Color(0xff042745),
                                 ),
                               ),
                             ),
@@ -488,7 +491,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w500,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff042745),
+                                  color: const Color(0xff042745),
                                 ),
                               ),
                             ),
@@ -510,7 +513,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                     fontWeight: FontWeight.w500,
                                     height: 1.5*ffem/fem,
                                     letterSpacing: -0.3000000119*fem,
-                                    color: Color(0xff1c1b19),
+                                    color: const Color(0xff1c1b19),
                                   ),
                                   children: [
                                     TextSpan(
@@ -521,10 +524,10 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                         fontWeight: FontWeight.w500,
                                         height: 1.5*ffem/fem,
                                         letterSpacing: -0.3000000119*fem,
-                                        color: Color(0xff1c1b19),
+                                        color: const Color(0xff1c1b19),
                                       ),
                                     ),
-                                    TextSpan(
+                                    const TextSpan(
                                       text: ' : Lamees Althubaiti  ',
                                     ),
                                   ],
@@ -549,7 +552,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w500,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff1c1b19),
+                                  color: const Color(0xff1c1b19),
                                 ),
                               ),
                             ),
@@ -571,7 +574,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                   fontWeight: FontWeight.w500,
                                   height: 1.5*ffem/fem,
                                   letterSpacing: -0.3000000119*fem,
-                                  color: Color(0xff1c1b19),
+                                  color: const Color(0xff1c1b19),
                                 ),
                               ),
                             ),
@@ -613,7 +616,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                 child: Container(
                                   decoration: BoxDecoration (
                                     borderRadius: BorderRadius.circular(10*fem),
-                                    color: Color(0xff29d64f),
+                                    color: const Color(0xff29d64f),
                                   ),
                                 ),
                               ),
@@ -635,7 +638,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                     fontSize: 16*ffem,
                                     fontWeight: FontWeight.w500,
                                     height: 1.5*ffem/fem,
-                                    color: Color(0xffffffff),
+                                    color: const Color(0xffffffff),
                                   ),
                                 ),
                               ),
@@ -678,7 +681,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                 child: Container(
                                   decoration: BoxDecoration (
                                     borderRadius: BorderRadius.circular(10*fem),
-                                    color: Color(0xfff32323),
+                                    color: const Color(0xfff32323),
                                   ),
                                 ),
                               ),
@@ -700,7 +703,7 @@ class _RequestDetailFiveState extends State<RequestDetailFive> {
                                     fontSize: 16*ffem,
                                     fontWeight: FontWeight.w500,
                                     height: 1.5*ffem/fem,
-                                    color: Color(0xffffffff),
+                                    color: const Color(0xffffffff),
                                   ),
                                 ),
                               ),

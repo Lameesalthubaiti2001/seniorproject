@@ -23,7 +23,10 @@ class _RequestDetailFourState extends State<RequestDetailFour> {
     ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request'),
+        title: const Text('Request',
+          style: TextStyle(
+            color: Colors.white,
+          ),),
         backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(
@@ -33,20 +36,20 @@ class _RequestDetailFourState extends State<RequestDetailFour> {
       child: Container(
         width: double.infinity,
         height: 926 * fem,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xffffffff),
         ),
         child: Stack(
           children: [
             Positioned(
-              // autogroupjebunZZ (7P4UVCCCQkbcQLoCQnjEBu)
+
               left: 0*fem,
               top: 0*fem,
               child: Container(
                 padding: EdgeInsets.fromLTRB(20*fem, 10*fem, 25.34*fem, 10*fem),
                 width: 428*fem,
                 height: 234*fem,
-                decoration: BoxDecoration (
+                decoration: const BoxDecoration (
                   image: DecorationImage (
                     fit: BoxFit.cover,
                     image: AssetImage (
@@ -68,13 +71,13 @@ class _RequestDetailFourState extends State<RequestDetailFour> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      // autogroupaa9hn7d (7P4UuGLRRNPtseyzD3Aa9H)
+
                       width: 151*fem,
                       height: 59*fem,
                       child: Stack(
                         children: [
                           Positioned(
-                            // thesaudidealvDq (227:614)
+
                             left: 0*fem,
                             top: 0*fem,
                             child: Align(
@@ -525,7 +528,7 @@ class _RequestDetailFourState extends State<RequestDetailFour> {
                                     color: Color(0xff1c1b19),
                                   ),
                                 ),
-                                TextSpan(
+                                const TextSpan(
                                   text: ' : Lamees Althubaiti  ',
                                 ),
                               ],

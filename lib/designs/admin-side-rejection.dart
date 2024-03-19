@@ -28,15 +28,18 @@ class _RejectionState extends State<Rejection> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reject Event'),
-        backgroundColor: Color(0xff042745),
+        title: const Text('Reject Event',
+        style: TextStyle(
+          color: Colors.white,
+        ),),
+        backgroundColor: const Color(0xff042745),
         ),
 
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
           height: 926 * fem,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
           ),
           child: Column(
@@ -51,7 +54,7 @@ class _RejectionState extends State<Rejection> {
                   fontSize: 18 * ffem,
                   fontWeight: FontWeight.w500,
                   letterSpacing: -0.3 * fem,
-                  color: Color(0xff042745),
+                  color: const Color(0xff042745),
                 ),
               ),
               SizedBox(height: 20 * fem),
@@ -71,7 +74,7 @@ class _RejectionState extends State<Rejection> {
               // Text field for custom rejection reason
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20 * fem),
-                child: TextField(
+                child: const TextField(
                   maxLines: 3,
                   decoration: InputDecoration(
                     hintText: 'Enter your reason...',
@@ -95,7 +98,7 @@ class _RejectionState extends State<Rejection> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),
-                    ), backgroundColor: Color(0xfff36f23),
+                    ), backgroundColor: const Color(0xfff36f23),
                   ),
                   child: Text(
                     'Submit',

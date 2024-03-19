@@ -23,7 +23,10 @@ class _RequestDetailThreeState extends State<RequestDetailThree> {
     ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request'),
+        title: Text('Request',
+          style: TextStyle(
+            color: Colors.white,
+          ),),
         backgroundColor: Color(0xff042745),
       ),
       body: SingleChildScrollView(

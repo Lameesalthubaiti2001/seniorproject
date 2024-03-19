@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:seniorproject/utils.dart';
-import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
 
 class ConfirmationAdminSide extends StatefulWidget {
@@ -19,7 +18,10 @@ class _ConfirmationAdminSideState extends State<ConfirmationAdminSide> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confirmation'),
+        title: Text('Confirmation',
+        style: TextStyle(
+            color: Colors.white,
+        ),),
         backgroundColor: Color(0xff042745),
       ),
       body: Center(

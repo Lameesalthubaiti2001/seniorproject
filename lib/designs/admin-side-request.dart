@@ -41,7 +41,10 @@ class _RequestsAdminSideState extends State<RequestsAdminSide> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registered Events'),
+        title: Text('Registered Events',
+        style: TextStyle(
+          color: Colors.white,
+        ),),
         backgroundColor: Color(0xff042745),
       ),
       body: Container(
