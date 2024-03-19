@@ -1,8 +1,11 @@
+import 'dart:ffi';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorproject/designs/admin-home.dart';
 import 'package:seniorproject/designs/club-side-home.dart';
+import 'package:seniorproject/models/user_model/user_model.dart';
 
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -108,4 +111,20 @@ class Auth {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+
+
+
+  var myAdminUser = UserModel().obs; // Observable for admin user
+
+  getAdminUserInfo() {
+    FirebaseFirestore.instance
+        .collection('users')
+        .where('role', isEqualTo: 'admin') // Fetch only users with role 'admin'
+        .snapshots()
+        .listen((event) {
+      myAdminUser.value = UserModel.fromJson(event.docs.first.data()); // Assuming there's only one admin user
+    });
+
+  }
 }
+

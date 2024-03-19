@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:seniorproject/utils.dart';
 import 'package:seniorproject/designs/admin_footer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/user_model/user_model.dart';
+
+
 
 class ProfileAdminSide extends StatefulWidget {
   static const String screenRoute = 'admin_profile_screen';
@@ -14,7 +17,15 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+
+  UserModel? myAdminUser; // Define admin user variable
+
+  @override
+  void initState() {
+    super.initState();
+    // Call the function to fetch admin user info when the widget is initialized
+    getAdminUserInfo();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,63 +59,25 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
 
                 buildTextField(
                   label: 'Username',
-                  controller: usernameController,
+                  initialValue: myAdminUser?.username ?? '',
                 ),
                 SizedBox(height: 16.0),
 
                 buildTextField(
                   label: 'Email',
-                  controller: emailController,
+                  initialValue: myAdminUser?.email ?? '',
                 ),
                 SizedBox(height: 16.0),
 
                 buildTextField(
                   label: 'Phone Number',
-                  controller: phoneNumberController,
-                ),
-                SizedBox(height: 16.0),
-
-                buildTextField(
-                  label: 'Password',
-                  controller: passwordController,
-                  obscureText: true,
+                  initialValue: myAdminUser?.phoneNumber ?? '',
                 ),
                 SizedBox(height: 16.0),
 
                 GestureDetector(
                   onTap: () {
-                    if (_validateFields()) {
-                      // Perform update action
-                      // You can access the values using:
-                      // usernameController.text
-                      // emailController.text
-                      // phoneNumberController.text
-                      // passwordController.text
-
-                      // Show the alert
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: Text('Success'),
-                            content: Text('Profile Updated Successfully'),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('OK'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    } else {
-                      // Show error message
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text('Please fill in all the fields'),
-                      ));
-                    }
+                    // Handle update action here
                   },
                   child: Container(
                     width: 283 * fem,
@@ -137,8 +110,7 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
 
   Widget buildTextField({
     required String label,
-    required TextEditingController controller,
-    bool obscureText = false,
+    required String initialValue,
   }) {
     double fem = MediaQuery.of(context).size.width / 428.0186767578;
     double ffem = fem * 0.97;
@@ -150,8 +122,8 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
           SizedBox(
             width: 318 * fem,
             child: TextField(
-              controller: controller,
-              obscureText: obscureText,
+              readOnly: true, // Make text field read-only
+              controller: TextEditingController(text: initialValue),
               decoration: InputDecoration(
                 labelText: label,
                 border: OutlineInputBorder(),
@@ -164,10 +136,18 @@ class _ProfileAdminSideState extends State<ProfileAdminSide> {
     );
   }
 
-  bool _validateFields() {
-    return usernameController.text.isNotEmpty &&
-        emailController.text.isNotEmpty &&
-        phoneNumberController.text.isNotEmpty &&
-        passwordController.text.isNotEmpty;
+  // Fetch admin user information from Firestore
+  void getAdminUserInfo() {
+    FirebaseFirestore.instance
+        .collection('users')
+        .where('role', isEqualTo: 'admin') // Fetch only users with role 'admin'
+        .get()
+        .then((querySnapshot) {
+      if (querySnapshot.docs.isNotEmpty) {
+        setState(() {
+          myAdminUser = UserModel.fromJson(querySnapshot.docs.first.data()); // Assuming there's only one admin user
+        });
+      }
+    });
   }
 }
