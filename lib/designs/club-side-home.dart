@@ -1,4 +1,7 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:seniorproject/designs/club-side-request-status.dart';
 import 'package:seniorproject/designs/guest-side-activity.dart';
 import 'package:seniorproject/designs/landing-page-.dart';
@@ -14,7 +17,6 @@ import 'club_footer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:seniorproject/designs/club_side_add_to_explore_page.dart';
 
-
 class ClubHome extends StatefulWidget {
   static const String screenRoute = 'club_home_screen';
 
@@ -23,10 +25,53 @@ class ClubHome extends StatefulWidget {
 }
 
 class _ClubHomeState extends State<ClubHome> {
+  late String _clubName;
+  String? _userImageUrl;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance; // Initialize FirebaseStorage instance
+
+  @override
+  void initState() {
+    super.initState();
+    _clubName = '';
+    _loadClubNames();
+  }
+
+  Future<void> _loadClubNames() async {
+    try {
+      final user = _auth.currentUser;
+      final userId = user!.uid;
+      DocumentSnapshot snapshot = await _firestore.collection('users').doc(
+          userId).get();
+
+      Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
+
+      if (data != null && data['name'] != null) {
+        setState(() {
+          _clubName = data['name'];
+        });
+      }
+
+      // Retrieve the image URL from Firestore
+      String? imageUrl = data?['picture'];
+      if (imageUrl != null) {
+        setState(() {
+          _userImageUrl = imageUrl;
+        });
+      }
+    } catch (e) {
+      print('Error loading club data: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
     double ffem = fem * 0.97;
 
 
@@ -61,15 +106,19 @@ class _ClubHomeState extends State<ClubHome> {
                       borderRadius: BorderRadius.circular(30 * fem),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(
-                          'assets/designs/images/ellipse-18-bg.png',
-                        ),
+                        image: _userImageUrl != null
+                            ? NetworkImage(_userImageUrl!)
+                            : AssetImage(
+                            _userImageUrl!,
+                        ) as ImageProvider<Object>,
                       ),
                     ),
                   ),
+
+
                   SizedBox(height: 10 * fem),
                   Text(
-                    'Finance Club',
+                    _clubName,
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 20 * ffem,
@@ -83,10 +132,11 @@ class _ClubHomeState extends State<ClubHome> {
             ListTile(
               leading: Icon(Icons.checklist),
               title: Text('Attendance list',
-              style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EventTrackingClubSide()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => EventTrackingClubSide()));
               },
             ),
             ListTile(
@@ -95,7 +145,8 @@ class _ClubHomeState extends State<ClubHome> {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AddToExplore()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => AddToExplore()));
               },
             ),
             ListTile(
@@ -104,7 +155,8 @@ class _ClubHomeState extends State<ClubHome> {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> EditPageClubSide()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => EditPageClubSide()));
               },
             ),
             ListTile(
@@ -113,7 +165,8 @@ class _ClubHomeState extends State<ClubHome> {
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LandingPage()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => LandingPage()));
               },
             ),
           ],
@@ -129,31 +182,35 @@ class _ClubHomeState extends State<ClubHome> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(10 * fem, 22 * fem, 10 * fem, 34 * fem),
+                padding: EdgeInsets.fromLTRB(
+                    10 * fem, 22 * fem, 10 * fem, 34 * fem),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 19 * fem),
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 0 * fem, 19 * fem),
                       width: double.infinity,
                       height: 130 * fem,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(0 * fem, 12 * fem, 82 * fem, 17 * fem),
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 12 * fem, 52 * fem, 17 * fem),
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 2 * fem),
+                                  margin: EdgeInsets.fromLTRB(
+                                      0 * fem, 0 * fem, 0 * fem, 2 * fem),
                                   child: Text(
-                                    'Hi Finance Club!',
+                                    _clubName,
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 24 * ffem,
+                                      fontSize: 20 * ffem,
                                       fontWeight: FontWeight.w500,
                                       height: 1.5 * ffem / fem,
                                       color: Color(0xff042745),
@@ -201,9 +258,11 @@ class _ClubHomeState extends State<ClubHome> {
                               borderRadius: BorderRadius.circular(65 * fem),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage(
-                                  'assets/designs/images/ellipse-18-bg.png',
-                                ),
+                                image: _userImageUrl != null
+                                    ? NetworkImage(_userImageUrl!)
+                                    : AssetImage(
+                                  'gs://seniorproject-512e2.appspot.com/Rwad.png',
+                                ) as ImageProvider<Object>,
                               ),
                             ),
                           ),
@@ -211,7 +270,8 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(7 * fem, 0 * fem, 0 * fem, 13 * fem),
+                      margin: EdgeInsets.fromLTRB(
+                          7 * fem, 0 * fem, 0 * fem, 13 * fem),
                       child: Text(
                         ' Events creation',
                         style: TextStyle(
@@ -224,7 +284,8 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(5 * fem, 0 * fem, 0 * fem, 15 * fem),
+                      margin: EdgeInsets.fromLTRB(
+                          5 * fem, 0 * fem, 0 * fem, 15 * fem),
                       width: 382 * fem,
                       height: 217 * fem,
                       child: Stack(
@@ -279,7 +340,8 @@ class _ClubHomeState extends State<ClubHome> {
                                   ),
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15 * fem),
+                                      borderRadius: BorderRadius.circular(
+                                          15 * fem),
                                       color: Color(0xfff37022),
                                     ),
                                   ),
@@ -298,12 +360,14 @@ class _ClubHomeState extends State<ClubHome> {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => EventInfo2ClubSide()),
+                                      MaterialPageRoute(builder: (context) =>
+                                          EventInfo2ClubSide()),
                                     );
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15 * fem),
+                                      borderRadius: BorderRadius.circular(
+                                          15 * fem),
                                       color: Color(0xfff37022),
                                     ),
                                     child: Center(
@@ -348,7 +412,8 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(7 * fem,55 * fem, 0 * fem, 10 * fem),
+                      margin: EdgeInsets.fromLTRB(
+                          7 * fem, 55 * fem, 0 * fem, 10 * fem),
                       child: Text(
                         ' Activity',
                         style: TextStyle(
@@ -361,7 +426,8 @@ class _ClubHomeState extends State<ClubHome> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(8 * fem, 20 * fem, 14 * fem, 9 * fem),
+                      padding: EdgeInsets.fromLTRB(
+                          8 * fem, 20 * fem, 14 * fem, 9 * fem),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Color(0xffffffff),
@@ -379,7 +445,8 @@ class _ClubHomeState extends State<ClubHome> {
                         children: [
 
                           Container(
-                            margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 54 * fem, 28.5 * fem),
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 54 * fem, 28.5 * fem),
                             width: 327 * fem,
                             height: 65.5 * fem,
                             child: Stack(
@@ -393,7 +460,8 @@ class _ClubHomeState extends State<ClubHome> {
                                       height: 64 * fem,
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10 * fem),
+                                          borderRadius: BorderRadius.circular(
+                                              10 * fem),
                                           color: Color(0xff042745),
                                         ),
                                       ),
@@ -439,14 +507,16 @@ class _ClubHomeState extends State<ClubHome> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(312 * fem, 0 * fem, 0 * fem, 0 * fem),
+                            margin: EdgeInsets.fromLTRB(
+                                312 * fem, 0 * fem, 0 * fem, 0 * fem),
                             child: TextButton(
                               onPressed: () {},
                               style: TextButton.styleFrom(
                                 padding: EdgeInsets.zero,
                               ),
                               child: Container(
-                                padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.96 * fem, 0 * fem),
+                                padding: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 4.96 * fem, 0 * fem),
                                 width: double.infinity,
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -455,11 +525,15 @@ class _ClubHomeState extends State<ClubHome> {
                                       onTap: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => RequestStatusClubSide()),
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RequestStatusClubSide()),
                                         );
                                       },
                                       child: Container(
-                                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 4.62 * fem, 0 * fem),
+                                        margin: EdgeInsets.fromLTRB(
+                                            0 * fem, 0 * fem, 4.62 * fem,
+                                            0 * fem),
                                         child: Text(
                                           'View all',
                                           style: SafeGoogleFont(
@@ -473,7 +547,9 @@ class _ClubHomeState extends State<ClubHome> {
                                       ),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0.02 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem,
+                                          0.02 * fem),
                                       width: 4.41 * fem,
                                       height: 8.77 * fem,
                                       child: Image.asset(
