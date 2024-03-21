@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
@@ -12,6 +13,22 @@ class AboutClubPage extends StatefulWidget {
 }
 
 class _AboutClubPageState extends State<AboutClubPage> {
+  late Future<DocumentSnapshot> _clubData;
+
+  @override
+  void initState() {
+    super.initState();
+    _clubData = fetchClubData();
+  }
+
+  Future<DocumentSnapshot> fetchClubData() async {
+    var document = await FirebaseFirestore.instance
+        .collection('users')
+        .doc('CpWz0ycwVIR4ixMK1en7DXxEr862')
+        .get();
+    return document;
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -19,155 +36,197 @@ class _AboutClubPageState extends State<AboutClubPage> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Google Developers',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18 * ffem,
-            fontWeight: FontWeight.w500,
-          ),
+        title: FutureBuilder(
+          future: _clubData,
+          builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Text('Loading...');
+            } else if (snapshot.hasError) {
+              return Text('Error');
+            } else {
+              var clubData = snapshot.data!;
+              var clubName = clubData['clubName'];
+              return Text(
+                clubName,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18 * ffem,
+                  fontWeight: FontWeight.w500,
+                ),
+              );
+            }
+          },
         ),
         backgroundColor: Color(0xff042745),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Club Logo
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 20 * fem),
-              alignment: Alignment.center,
-              child: ClipOval(
-                child: Container(
-                  width: 150 * fem, // Adjust width as needed
-                  height: 150 * fem, // Adjust height as needed
-                  color: Colors.white, // Background color of the ellipse
-                  child: Image.asset(
-                    'assets/designs/images/ellipse-16-bg.png',
-                    width: 150 * fem, // Adjust width as needed
-                  ),
-                ),
-              ),
-            ),
+      body: FutureBuilder(
+        future: _clubData,
+        builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            var clubData = snapshot.data!;
+            var collage = clubData['collage'];
+            var foundingDate = clubData['foundingDate'];
+            var description = clubData['description'];
 
-            // About this club
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20 * fem),
-              child: Text(
-                'About this club',
-                style: TextStyle(
-                  fontSize: 20 * ffem,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff1c1b19),
-                ),
-              ),
-            ),
-            // Description
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
-              child: Text(
-                "College: Computer Engineering and Science\nFounded in 2021-2022 ",
-                style: TextStyle(
-                  fontSize: 12 * ffem,
-                  color: Color(0xff000000),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20 * fem),
-              child: Text(
-                'Description',
-                style: TextStyle(
-                  fontSize: 20 * ffem,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff1c1b19),
-                ),
-              ),
-            ),
-            // Description
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
-              child: Text(
-                '"The club\'s objective is to enhance students\' skills in technology. Additionally, certificates are awarded to participating students to increase their acceptance rates in the job market and make them more oriented to the concepts of programming."',
-                style: TextStyle(
-                  fontSize: 12 * ffem,
-                  color: Color(0xff000000),
-                ),
-              ),
-            ),
-            // Upcoming Events
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
-              child: Text(
-                'Upcoming Events',
-                style: TextStyle(
-                  fontSize: 18 * ffem,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff1c1b19),
-                ),
-              ),
-            ),
-            // Row containing Event Cards
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20 * fem),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // First Event Card
+                  // Club Logo
                   Container(
-                    width: 180 * fem, // Adjust width as needed
-                    height: 300 * fem, // Adjust height as needed
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: GestureDetector(
-                        onTap: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
-                        },
-                        child: EventCard(
-                          fem: fem,
-                          ffem: ffem,
-                          title: 'Intro to Digital Forensics',
-                          date: '5 NOV',
-                          time: '12PM-1PM',
-                          location: 'MALE CAMPUS',
-                          icon: Icons.calendar_today,
-                          image: 'assets/designs/images/smarthomes.png',
+                    margin: EdgeInsets.symmetric(vertical: 20 * fem),
+                    alignment: Alignment.center,
+                    child: ClipOval(
+                      child: Container(
+                        width: 150 * fem,
+                        height: 150 * fem,
+                        color: Colors.white,
+                        child: Image.asset(
+                          'assets/designs/images/ellipse-16-bg.png',
+                          width: 150 * fem,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 20 * fem), // Space between cards
-                  // Second Event Card
+
+                  // About this club
                   Container(
-                    width: 180 * fem, // Adjust width as needed
-                    height: 300 * fem, // Adjust height as needed
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
-                      child: GestureDetector(
-                        onTap: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
-                        },
-                        child: EventCard(
-                          fem: fem,
-                          ffem: ffem,
-                          title: 'Intro to Cyber Security',
-                          date: '27 NOV',
-                          time: '2PM-3PM',
-                          location: 'FEMALE CAMPUS',
-                          icon: Icons.calendar_today,
-                          image: 'assets/designs/images/rectangle-4199-S9y.png',
-                        ),
+                    margin: EdgeInsets.symmetric(horizontal: 20 * fem),
+                    child: Text(
+                      'About this club',
+                      style: TextStyle(
+                        fontSize: 20 * ffem,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1c1b19),
                       ),
+                    ),
+                  ),
+                  // Description
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                        horizontal: 20 * fem, vertical: 10 * fem),
+                    child: Text(
+                      "College: $collage\nFounded in: $foundingDate",
+                      style: TextStyle(
+                        fontSize: 12 * ffem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20 * fem),
+                    child: Text(
+                      "Description",
+                      style: TextStyle(
+                        fontSize: 20 * ffem,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1c1b19),
+                      ),
+                    ),
+                  ),
+                  // Description
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                        horizontal: 20 * fem, vertical: 10 * fem),
+                    child: Text(
+                      description,
+                      style: TextStyle(
+                        fontSize: 12 * ffem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
+                  ),
+                  // Upcoming Events
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                        horizontal: 20 * fem, vertical: 10 * fem),
+                    child: Text(
+                      'Upcoming Events',
+                      style: TextStyle(
+                        fontSize: 18 * ffem,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1c1b19),
+                      ),
+                    ),
+                  ),
+                  // Row containing Event Cards
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20 * fem),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // First Event Card
+                        Container(
+                          width: 180 * fem,
+                          height: 300 * fem,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15 * fem),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            EventRegistration()));
+                              },
+                              child: EventCard(
+                                fem: fem,
+                                ffem: ffem,
+                                title: 'Intro to Digital Forensics',
+                                date: '5 NOV',
+                                time: '12PM-1PM',
+                                location: 'MALE CAMPUS',
+                                icon: Icons.calendar_today,
+                                image:
+                                'assets/designs/images/smarthomes.png',
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 20 * fem), // Space between cards
+                        // Second Event Card
+                        Container(
+                          width: 180 * fem,
+                          height: 300 * fem,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15 * fem),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            EventRegistration()));
+                              },
+                              child: EventCard(
+                                fem: fem,
+                                ffem: ffem,
+                                title: 'Intro to Cyber Security',
+                                date: '27 NOV',
+                                time: '2PM-3PM',
+                                location: 'FEMALE CAMPUS',
+                                icon: Icons.calendar_today,
+                                image:
+                                'assets/designs/images/rectangle-4199-S9y.png',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
+            );
+          }
+        },
       ),
       bottomNavigationBar: Container(
-        height: 80, // Set the desired height
+        height: 80,
         child: GuestFooter(),
       ),
     );
@@ -176,12 +235,12 @@ class _AboutClubPageState extends State<AboutClubPage> {
 
 class EventCard extends StatelessWidget {
   const EventCard({
-    Key? key,
-    required this.fem,
-    required this.ffem,
-    required this.title,
-    required this.date,
-    required this.time,
+  Key? key,
+  required this.fem,
+  required this.ffem,
+  required this.title,
+  required this.date,
+  required this.time,
     required this.location,
     required this.icon,
     required this.image,
@@ -303,3 +362,5 @@ class EventCard extends StatelessWidget {
     );
   }
 }
+
+

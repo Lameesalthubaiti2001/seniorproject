@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:seniorproject/designs/guest-side-event-registration.dart';
 import 'package:seniorproject/designs/guest_footer.dart';
 import 'dart:ui';
-import 'package:seniorproject/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Finance extends StatefulWidget {
   static const String screenRoute = 'Finance_screen';
@@ -12,6 +12,28 @@ class Finance extends StatefulWidget {
 }
 
 class _FinanceState extends State<Finance> {
+  late String clubName;
+  late String collage;
+  late String foundingDate;
+  late String description;
+
+  // Function to fetch club details from Firestore
+  void fetchClubDetails() async {
+    DocumentSnapshot snapshot = await FirebaseFirestore.instance.collection('users').doc('VUBWlLJ24lfJJZrzMXyySI5Cc8l2').get();
+    setState(() {
+      clubName = snapshot['clubName'];
+      collage = snapshot['collage'];
+      foundingDate = snapshot['foundingDate'];
+      description = snapshot['description'];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchClubDetails(); // Call fetchClubDetails when the widget initializes
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
@@ -20,7 +42,7 @@ class _FinanceState extends State<Finance> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Finance',
+          clubName,
           style: TextStyle(
             color: Colors.white,
             fontSize: 18 * ffem,
@@ -68,7 +90,7 @@ class _FinanceState extends State<Finance> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
               child: Text(
-                "College: Buisness\nFounded in 2021-2022 ",
+                "College: $collage\nFounded in: $foundingDate ",
                 style: TextStyle(
                   fontSize: 12 * ffem,
                   color: Color(0xff000000),
@@ -90,7 +112,7 @@ class _FinanceState extends State<Finance> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
               child: Text(
-                'The Finance Club at our university is a vibrant community focused on equipping students with essential financial knowledge and skills. Through workshops and events, we offer opportunities to learn about budgeting, investing, and personal finance management. Join us to gain valuable insights and connect with peers passionate about financial literacy and success.',
+                description,
                 style: TextStyle(
                   fontSize: 12 * ffem,
                   color: Color(0xff000000),
@@ -147,7 +169,7 @@ class _FinanceState extends State<Finance> {
                       borderRadius: BorderRadius.circular(15 * fem), // Adjust border radius as needed
                       child: GestureDetector(
                         onTap: () {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventRegistration()));
                         },
                         child: EventCard(
                           fem: fem,
@@ -201,107 +223,108 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SizedBox(
+        child: SizedBox(
         width: double.infinity,
         child: Stack(
+        children: [
+        // Event Image
+        SizedBox(
+        width: double.infinity,
+        height: 200 * fem, // Adjust height as needed
+        child: Image.asset(
+        image,
+        fit: BoxFit.cover,
+    ),
+    ),
+    // Event Details
+    Positioned(
+    bottom: 0,
+      left: 0,
+      right: 0,
+      child: Container(
+        padding: EdgeInsets.all(15 * fem),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.8),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Event Image
-            SizedBox(
-              width: double.infinity,
-              height: 200 * fem, // Adjust height as needed
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
+            // Event Title
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16 * ffem,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff042745),
               ),
             ),
-            // Event Details
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                padding: EdgeInsets.all(15 * fem),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.8),
+            SizedBox(height: 5 * fem),
+            // Event Time
+            Row(
+              children: [
+                Icon(
+                  Icons.access_time,
+                  size: 18 * ffem,
+                  color: Color(0xff1c1b19),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Event Title
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 16 * ffem,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xff042745),
-                      ),
-                    ),
-                    SizedBox(height: 5 * fem),
-                    // Event Time
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.access_time,
-                          size: 18 * ffem,
-                          color: Color(0xff1c1b19),
-                        ),
-                        SizedBox(width: 5 * fem),
-                        Text(
-                          time,
-                          style: TextStyle(
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xff1c1b19),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 5 * fem),
-                    // Location
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_pin,
-                          size: 18 * ffem,
-                          color: Color(0xff1c1b19),
-                        ),
-                        SizedBox(width: 5 * fem),
-                        Text(
-                          location,
-                          style: TextStyle(
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xff1c1b19),
-                          ),
-                        ),
-                      ],
-                    ),
-                    // Date
-                    Row(
-                      children: [
-                        Icon(
-                          icon,
-                          size: 18 * ffem,
-                          color: Color(0xff1c1b19),
-                        ),
-                        SizedBox(width: 5 * fem),
-                        Text(
-                          date,
-                          style: TextStyle(
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xff1c1b19),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                SizedBox(width: 5 * fem),
+                Text(
+                  time,
+                  style: TextStyle(
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1c1b19),
+                  ),
                 ),
-              ),
+              ],
+            ),
+            SizedBox(height: 5 * fem),
+            // Location
+            Row(
+              children: [
+                Icon(
+                  Icons.location_pin,
+                  size: 18 * ffem,
+                  color: Color(0xff1c1b19),
+                ),
+                SizedBox(width: 5 * fem),
+                Text(
+                  location,
+                  style: TextStyle(
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1c1b19),
+                  ),
+                ),
+              ],
+            ),
+            // Date
+            Row(
+              children: [
+                Icon(
+                  icon,
+                  size: 18 * ffem,
+                  color: Color(0xff1c1b19),
+                ),
+                SizedBox(width: 5 * fem),
+                Text(
+                  date,
+                  style: TextStyle(
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1c1b19),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
       ),
+    ),
+        ],
+        ),
+        ),
     );
   }
 }
+
