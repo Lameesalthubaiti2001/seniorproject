@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'club_footer.dart';
+import 'package:seniorproject/firebase/auth.dart';
 
 class AddToExplore extends StatefulWidget {
   static const String screenRoute = 'add_to_explore';
@@ -18,6 +21,32 @@ class _AddToExploreState extends State<AddToExplore> {
   String? _foundingDateErrorText;
   String? _descriptionErrorText;
   String? _collageErrorText;
+
+  // Method to save club data
+  Future<void> saveClubData(String userId) async {
+    try {
+      await FirebaseFirestore.instance.collection('users').doc(userId).set({
+        'clubName': _clubNameController.text,
+        'foundingDate': _foundingDateController.text,
+        'description': _descriptionController.text,
+        'collage': _selectedCollage,
+      });
+
+      // Clear text fields after successful submission
+      _clubNameController.clear();
+      _foundingDateController.clear();
+      _descriptionController.clear();
+      setState(() {
+        _selectedCollage = '';
+      });
+
+      // Optionally show success message or navigate to another screen
+    } catch (e) {
+      print('Error saving club data: $e');
+      // Optionally show error message
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -193,7 +222,7 @@ class _AddToExploreState extends State<AddToExplore> {
                 child: FractionalTranslation(
                   translation: const Offset(0, 0),
                   child: TextButton(
-                    onPressed: () {
+                    onPressed: () async {
                       setState(() {
                         _clubNameErrorText = _clubNameController.text.isEmpty ? 'Please enter club name' : null;
                         _foundingDateErrorText = _foundingDateController.text.isEmpty ? 'Please enter founding date' : null;
@@ -205,7 +234,14 @@ class _AddToExploreState extends State<AddToExplore> {
                           _foundingDateErrorText == null &&
                           _descriptionErrorText == null &&
                           _collageErrorText == null) {
-                        // Perform registration confirmation here
+                        // Get current logged-in user
+                        User? currentUser = Auth().currentUser;
+                        if (currentUser != null) {
+                          // Save club data according to the logged-in user
+                          String userId = currentUser.uid;
+                          await saveClubData(userId);
+                          // Optionally navigate to another screen after data submission
+                        }
                       }
                     },
                     style: TextButton.styleFrom(

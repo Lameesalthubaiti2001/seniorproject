@@ -90,7 +90,7 @@ class _RwadState extends State<Rwad> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20 * fem, vertical: 10 * fem),
               child: Text(
-                'Rwad was born from the realization of the large amounts of young entrepreneurs that walk through ouruniversity hallways everyday.Creating an organization within our universitys campus that was dedicatedto make sure those youngentrepreneurs, and those interested inthe field, got the knowledge andexposure they deserved is what Rwad isall about. The 20th of November, 2022, was the official launch of the Rwad Club.',
+                'Rwad was born from the realization of the large amounts of young entrepreneurs that walk through our university hallways everyday.Creating an organization within our university campus that was dedicated to make sure those young entrepreneurs, and those interested in the field, got the knowledge and exposure they deserved is what Rwad is all about. The 20th of November, 2022, was the official launch of the Rwad Club.',
               style: TextStyle(
                   fontSize: 12 * ffem,
                   color: Color(0xff000000),
