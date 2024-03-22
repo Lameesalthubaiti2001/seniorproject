@@ -29,7 +29,7 @@ class _ClubHomeState extends State<ClubHome> {
   String? _userImageUrl;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance; // Initialize FirebaseStorage instance
+  final FirebaseStorage _storage = FirebaseStorage.instance;
 
   @override
   void initState() {
@@ -42,8 +42,8 @@ class _ClubHomeState extends State<ClubHome> {
     try {
       final user = _auth.currentUser;
       final userId = user!.uid;
-      DocumentSnapshot snapshot = await _firestore.collection('users').doc(
-          userId).get();
+      DocumentSnapshot snapshot =
+          await _firestore.collection('users').doc(userId).get();
 
       Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
 
@@ -68,12 +68,8 @@ class _ClubHomeState extends State<ClubHome> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery
-        .of(context)
-        .size
-        .width / baseWidth;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-
 
     return Scaffold(
       appBar: AppBar(
@@ -82,12 +78,10 @@ class _ClubHomeState extends State<ClubHome> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
-
           ),
         ),
         backgroundColor: const Color(0xff042745),
       ),
-
       endDrawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -109,13 +103,11 @@ class _ClubHomeState extends State<ClubHome> {
                         image: _userImageUrl != null
                             ? NetworkImage(_userImageUrl!)
                             : AssetImage(
-                            _userImageUrl!,
-                        ) as ImageProvider<Object>,
+                                'assets/images/default_profile.png',
+                              ) as ImageProvider<Object>,
                       ),
                     ),
                   ),
-
-
                   SizedBox(height: 10 * fem),
                   Text(
                     _clubName,
@@ -131,7 +123,8 @@ class _ClubHomeState extends State<ClubHome> {
             ),
             ListTile(
               leading: Icon(Icons.checklist),
-              title: Text('Attendance list',
+              title: Text(
+                'Attendance list',
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
@@ -141,7 +134,8 @@ class _ClubHomeState extends State<ClubHome> {
             ),
             ListTile(
               leading: Icon(Icons.add),
-              title: Text('Add My Club',
+              title: Text(
+                'Add My Club',
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
@@ -151,7 +145,8 @@ class _ClubHomeState extends State<ClubHome> {
             ),
             ListTile(
               leading: Icon(Icons.edit),
-              title: Text('Edit Event Information',
+              title: Text(
+                'Edit Event Information',
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
@@ -161,7 +156,8 @@ class _ClubHomeState extends State<ClubHome> {
             ),
             ListTile(
               leading: Icon(Icons.logout),
-              title: Text('Log Out',
+              title: Text(
+                'Log Out',
                 style: TextStyle(fontSize: 20),
               ),
               onTap: () {
@@ -182,12 +178,13 @@ class _ClubHomeState extends State<ClubHome> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(
-                    10 * fem, 22 * fem, 10 * fem, 34 * fem),
+                padding:
+                    EdgeInsets.fromLTRB(10 * fem, 22 * fem, 10 * fem, 34 * fem),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Club Name and Image Section
                     Container(
                       margin: EdgeInsets.fromLTRB(
                           0 * fem, 0 * fem, 0 * fem, 19 * fem),
@@ -196,6 +193,7 @@ class _ClubHomeState extends State<ClubHome> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          // Club Name and Description
                           Container(
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 12 * fem, 52 * fem, 17 * fem),
@@ -218,9 +216,8 @@ class _ClubHomeState extends State<ClubHome> {
                                   ),
                                 ),
                                 Container(
-                                  constraints: BoxConstraints(
-                                    maxWidth: 168 * fem,
-                                  ),
+                                  constraints:
+                                      BoxConstraints(maxWidth: 168 * fem),
                                   child: RichText(
                                     text: TextSpan(
                                       style: TextStyle(
@@ -232,7 +229,8 @@ class _ClubHomeState extends State<ClubHome> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: 'Create new Event \nTrack your Requests \nand more with ',
+                                          text:
+                                              'Create new Event \nTrack your Requests \nand more with ',
                                         ),
                                         TextSpan(
                                           text: 'MyEvent',
@@ -251,6 +249,7 @@ class _ClubHomeState extends State<ClubHome> {
                               ],
                             ),
                           ),
+                          // Club Image
                           Container(
                             width: 130 * fem,
                             height: 130 * fem,
@@ -261,19 +260,20 @@ class _ClubHomeState extends State<ClubHome> {
                                 image: _userImageUrl != null
                                     ? NetworkImage(_userImageUrl!)
                                     : AssetImage(
-                                  'gs://seniorproject-512e2.appspot.com/Rwad.png',
-                                ) as ImageProvider<Object>,
+                                        'assets/images/default_profile.png',
+                                      ) as ImageProvider<Object>,
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
+                    // Events Creation Section
                     Container(
                       margin: EdgeInsets.fromLTRB(
                           7 * fem, 0 * fem, 0 * fem, 13 * fem),
                       child: Text(
-                        ' Events creation',
+                        'Events creation',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 18 * ffem,
@@ -283,6 +283,7 @@ class _ClubHomeState extends State<ClubHome> {
                         ),
                       ),
                     ),
+                    // Create Event Button
                     Container(
                       margin: EdgeInsets.fromLTRB(
                           5 * fem, 0 * fem, 0 * fem, 15 * fem),
@@ -290,6 +291,7 @@ class _ClubHomeState extends State<ClubHome> {
                       height: 217 * fem,
                       child: Stack(
                         children: [
+                          // Background Decoration
                           Positioned(
                             left: 0 * fem,
                             top: 1 * fem,
@@ -309,6 +311,7 @@ class _ClubHomeState extends State<ClubHome> {
                               ),
                             ),
                           ),
+                          // Background Image
                           Positioned(
                             left: 0 * fem,
                             top: 0 * fem,
@@ -323,32 +326,7 @@ class _ClubHomeState extends State<ClubHome> {
                               ),
                             ),
                           ),
-                          Positioned(
-                            left: 232 * fem,
-                            top: 174 * fem,
-                            child: Align(
-                              child: SizedBox(
-                                width: 140 * fem,
-                                height: 20 * fem,
-                                child: TextButton(
-                                  onPressed: () {
-                                    // Add your logic here
-                                  },
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                    // Add any additional styling here
-                                  ),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                          15 * fem),
-                                      color: Color(0xfff37022),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          // New Event Button
                           Positioned(
                             left: 263 * fem,
                             top: 174 * fem,
@@ -360,14 +338,15 @@ class _ClubHomeState extends State<ClubHome> {
                                   onTap: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) =>
-                                          EventInfo2ClubSide()),
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EventInfo2ClubSide()),
                                     );
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                          15 * fem),
+                                      borderRadius:
+                                          BorderRadius.circular(15 * fem),
                                       color: Color(0xfff37022),
                                     ),
                                     child: Center(
@@ -388,6 +367,7 @@ class _ClubHomeState extends State<ClubHome> {
                               ),
                             ),
                           ),
+                          // Event Creation Description
                           Positioned(
                             left: 10 * fem,
                             top: 158 * fem,
@@ -411,6 +391,7 @@ class _ClubHomeState extends State<ClubHome> {
                         ],
                       ),
                     ),
+                    // Activity Section
                     Container(
                       margin: EdgeInsets.fromLTRB(
                           7 * fem, 55 * fem, 0 * fem, 10 * fem),
@@ -425,6 +406,7 @@ class _ClubHomeState extends State<ClubHome> {
                         ),
                       ),
                     ),
+                    // Activity Content Section
                     Container(
                       padding: EdgeInsets.fromLTRB(
                           8 * fem, 20 * fem, 14 * fem, 9 * fem),
@@ -443,7 +425,7 @@ class _ClubHomeState extends State<ClubHome> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
+                          // Activity Item
                           Container(
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 54 * fem, 28.5 * fem),
@@ -451,6 +433,7 @@ class _ClubHomeState extends State<ClubHome> {
                             height: 65.5 * fem,
                             child: Stack(
                               children: [
+                                // Activity Item Background
                                 Positioned(
                                   left: 0 * fem,
                                   top: 0 * fem,
@@ -460,14 +443,15 @@ class _ClubHomeState extends State<ClubHome> {
                                       height: 64 * fem,
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                              10 * fem),
+                                          borderRadius:
+                                              BorderRadius.circular(10 * fem),
                                           color: Color(0xff042745),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
+                                // Activity Item Title
                                 Positioned(
                                   left: 79 * fem,
                                   top: 3 * fem,
@@ -488,6 +472,7 @@ class _ClubHomeState extends State<ClubHome> {
                                     ),
                                   ),
                                 ),
+                                // Activity Item Icon
                                 Positioned(
                                   left: 20 * fem,
                                   top: 18 * fem,
@@ -506,6 +491,7 @@ class _ClubHomeState extends State<ClubHome> {
                               ],
                             ),
                           ),
+                          // View All Button
                           Container(
                             margin: EdgeInsets.fromLTRB(
                                 312 * fem, 0 * fem, 0 * fem, 0 * fem),
@@ -531,9 +517,8 @@ class _ClubHomeState extends State<ClubHome> {
                                         );
                                       },
                                       child: Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 4.62 * fem,
-                                            0 * fem),
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 4.62 * fem, 0 * fem),
                                         child: Text(
                                           'View all',
                                           style: SafeGoogleFont(
@@ -547,9 +532,8 @@ class _ClubHomeState extends State<ClubHome> {
                                       ),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem,
-                                          0.02 * fem),
+                                      margin: EdgeInsets.fromLTRB(0 * fem,
+                                          0 * fem, 0 * fem, 0.02 * fem),
                                       width: 4.41 * fem,
                                       height: 8.77 * fem,
                                       child: Image.asset(

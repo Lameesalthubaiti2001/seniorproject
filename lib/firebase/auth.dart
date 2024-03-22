@@ -37,6 +37,7 @@ class Auth {
       }
 
       String? userRole = await _getUserRole(userCredential.user!.uid);
+      String userId = userCredential.user!.uid; // Get the userId here
 
       if (userRole == null) {
         await _firebaseAuth.signOut();
@@ -50,9 +51,17 @@ class Auth {
       }
 
       if (userRole == 'admin') {
-        Navigator.pushReplacementNamed(context, AdminHome.screenRoute);
+        Navigator.pushReplacementNamed(
+          context,
+          AdminHome.screenRoute,
+          arguments: userId, // Pass userId as an argument
+        );
       } else if (userRole == 'club') {
-        Navigator.pushReplacementNamed(context, ClubHome.screenRoute);
+        Navigator.pushReplacementNamed(
+          context,
+          ClubHome.screenRoute,
+          arguments: userId, // Pass userId as an argument
+        );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
