@@ -24,7 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
       backgroundColor: const Color(0xff042745),
@@ -41,7 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(19 * fem, 10 * fem, 23 * fem, 133 * fem),
+            padding: EdgeInsets.fromLTRB(
+                19 * fem, 10 * fem, 23 * fem, 133 * fem),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -107,7 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
-                              _isObscure ? Icons.visibility : Icons.visibility_off,
+                              _isObscure ? Icons.visibility : Icons
+                                  .visibility_off,
                               color: const Color(0xff042745),
                             ),
                             onPressed: () {

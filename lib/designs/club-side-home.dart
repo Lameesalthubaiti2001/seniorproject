@@ -68,7 +68,10 @@ class _ClubHomeState extends State<ClubHome> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 428;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
     double ffem = fem * 0.97;
 
     return Scaffold(
@@ -103,8 +106,8 @@ class _ClubHomeState extends State<ClubHome> {
                         image: _userImageUrl != null
                             ? NetworkImage(_userImageUrl!)
                             : AssetImage(
-                                'assets/images/default_profile.png',
-                              ) as ImageProvider<Object>,
+                          'assets/images/default_profile.png',
+                        ) as ImageProvider<Object>,
                       ),
                     ),
                   ),
@@ -179,7 +182,7 @@ class _ClubHomeState extends State<ClubHome> {
             children: [
               Container(
                 padding:
-                    EdgeInsets.fromLTRB(10 * fem, 22 * fem, 10 * fem, 34 * fem),
+                EdgeInsets.fromLTRB(10 * fem, 22 * fem, 10 * fem, 34 * fem),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,7 +220,7 @@ class _ClubHomeState extends State<ClubHome> {
                                 ),
                                 Container(
                                   constraints:
-                                      BoxConstraints(maxWidth: 168 * fem),
+                                  BoxConstraints(maxWidth: 168 * fem),
                                   child: RichText(
                                     text: TextSpan(
                                       style: TextStyle(
@@ -230,7 +233,7 @@ class _ClubHomeState extends State<ClubHome> {
                                       children: [
                                         TextSpan(
                                           text:
-                                              'Create new Event \nTrack your Requests \nand more with ',
+                                          'Create new Event \nTrack your Requests \nand more with ',
                                         ),
                                         TextSpan(
                                           text: 'MyEvent',
@@ -260,8 +263,8 @@ class _ClubHomeState extends State<ClubHome> {
                                 image: _userImageUrl != null
                                     ? NetworkImage(_userImageUrl!)
                                     : AssetImage(
-                                        'assets/images/default_profile.png',
-                                      ) as ImageProvider<Object>,
+                                  'assets/images/default_profile.png',
+                                ) as ImageProvider<Object>,
                               ),
                             ),
                           ),
@@ -346,7 +349,7 @@ class _ClubHomeState extends State<ClubHome> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.circular(15 * fem),
+                                      BorderRadius.circular(15 * fem),
                                       color: Color(0xfff37022),
                                     ),
                                     child: Center(
@@ -444,7 +447,7 @@ class _ClubHomeState extends State<ClubHome> {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(10 * fem),
+                                          BorderRadius.circular(10 * fem),
                                           color: Color(0xff042745),
                                         ),
                                       ),

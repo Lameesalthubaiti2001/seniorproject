@@ -122,7 +122,6 @@ class Auth {
   }
 
 
-
   var myAdminUser = UserModel().obs; // Observable for admin user
 
   getAdminUserInfo() {
@@ -131,8 +130,8 @@ class Auth {
         .where('role', isEqualTo: 'admin') // Fetch only users with role 'admin'
         .snapshots()
         .listen((event) {
-      myAdminUser.value = UserModel.fromJson(event.docs.first.data()); // Assuming there's only one admin user
+      myAdminUser.value = UserModel.fromJson(
+          event.docs.first.data()); // Assuming there's only one admin user
     });
-
   }
 }
