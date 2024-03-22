@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../utils.dart';
 import 'club-side-edit-confirmation.dart';
 import 'club-side-poster-request-confirm.dart';
@@ -79,7 +81,6 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,
-
           ),
         ),
         backgroundColor: const Color(0xff042745),
@@ -349,13 +350,25 @@ class _PostersClubsSideState extends State<PostersClubsSide> {
                         ),
                         child: TextButton(
                           onPressed: () {
-                            if (locationController.text.isEmpty) {
-                              showLocationError(context);
-                            } else {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => EditConfirmationClubSide()),
-                              );
+                            String? userId = FirebaseAuth.instance.currentUser?.uid;
+
+                            if (userId != null) {
+                              // Form is valid and user is authenticated, save data to Firestore
+                              FirebaseFirestore.instance.collection('users').doc(userId).collection('events').add({
+                                'posterLocation': locationController.text,
+                                // Add other fields as needed
+                              }).then((value) {
+                                // Data saved successfully, navigate to the next screen
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => EditConfirmationClubSide()),
+                                );
+                              }).catchError((error) {
+                                // Error occurred while saving data
+                                print('Error saving data: $error');
+                                // Optionally show an error message to the user
+                                // You can also handle errors differently based on the type of error
+                              });
                             }
                           },
                           child: Center(

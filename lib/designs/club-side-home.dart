@@ -25,7 +25,7 @@ class ClubHome extends StatefulWidget {
 }
 
 class _ClubHomeState extends State<ClubHome> {
-  late String _clubName;
+  late String clubName;
   String? _userImageUrl;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -34,7 +34,7 @@ class _ClubHomeState extends State<ClubHome> {
   @override
   void initState() {
     super.initState();
-    _clubName = '';
+    clubName = '';
     _loadClubNames();
   }
 
@@ -49,7 +49,7 @@ class _ClubHomeState extends State<ClubHome> {
 
       if (data != null && data['name'] != null) {
         setState(() {
-          _clubName = data['name'];
+          clubName = data['name'];
         });
       }
 
@@ -113,7 +113,7 @@ class _ClubHomeState extends State<ClubHome> {
                   ),
                   SizedBox(height: 10 * fem),
                   Text(
-                    _clubName,
+                    clubName,
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 20 * ffem,
@@ -208,7 +208,7 @@ class _ClubHomeState extends State<ClubHome> {
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 0 * fem, 2 * fem),
                                   child: Text(
-                                    _clubName,
+                                    clubName,
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 20 * ffem,

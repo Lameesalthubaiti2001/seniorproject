@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:seniorproject/designs/club-side-edit-confirmation.dart';
 import 'package:seniorproject/utils.dart';
-
 import 'club-side-posters.dart';
 import 'club_footer.dart';
 
@@ -19,14 +20,41 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
   String? activityDescription;
   String? activityBudget;
 
-  // Define the list of activity types
   List<String> activityTypes = [
     'Workshop',
     'Seminar',
     'Conference',
     'Meeting',
-    // Add more activity types as needed
   ];
+
+  void submitForm() {
+    if (_formKey.currentState!.validate()) {
+      // Get the current user's ID (assuming you are using Firebase Authentication)
+      String? userId = FirebaseAuth.instance.currentUser?.uid;
+
+      if (userId != null) {
+        // Form is valid and user is authenticated, save data to Firestore
+        FirebaseFirestore.instance.collection('users').doc(userId).collection('events').add({
+          'Activity Type': activityType,
+          'Activity Description': activityDescription,
+          'Activity Budget': activityBudget,
+        }).then((_) {
+          // Navigate to confirmation screen
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PostersClubsSide()),
+          );
+        }).catchError((error) {
+          // Handle errors here
+          print('Failed to submit form: $error');
+        });
+      } else {
+        // User is not authenticated, handle accordingly
+        print('User not authenticated.');
+      }
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -204,26 +232,7 @@ class _EventInfo1ClubSideState extends State<EventInfo1ClubSide> {
                                 width: 150 * fem,
                                 height: 30 * fem,
                                 child: TextButton(
-                                  onPressed: () {
-                                    if (_formKey.currentState!.validate()) {
-                                      // Check if any of the required fields are empty
-                                      if (activityType == null ||
-                                          activityDescription == null ||
-                                          activityBudget == null) {
-                                        // Show error message
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(SnackBar(
-                                          content:
-                                          Text('Please fill out all fields'),
-                                        ));
-                                      } else {
-                                        Navigator.pushNamed(
-                                          context,
-                                          PostersClubsSide.screenRoute,
-                                        );
-                                      }
-                                    }
-                                  },
+                                  onPressed: submitForm,
                                   style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero,
                                     backgroundColor: Color(0xfff36f23),

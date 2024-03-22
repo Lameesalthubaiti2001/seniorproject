@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -18,6 +20,9 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
   int maxParticipants = 0;
   int expectedParticipants = 0;
   String? _selectedVenue; // Define _selectedVenue variable
+
+  TextEditingController organizerNameController = TextEditingController();
+  TextEditingController eventTitleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +88,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: TextField(
+                          controller: organizerNameController,
                           decoration: InputDecoration(
                             labelText: 'EVENT ORGANIZER NAME',
                             labelStyle:
@@ -99,6 +105,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: TextField(
+                          controller: eventTitleController,
                           decoration: InputDecoration(
                             labelText: 'EVENT TITLE',
                             labelStyle:
@@ -460,8 +467,7 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
                           ));
                         } else {
                           // Proceed to the next screen
-                          Navigator.pushNamed(
-                              context, EventInfoPage.screenRoute);
+                          saveEventData();
                         }
                       },
                       child: Container(
@@ -492,5 +498,26 @@ class _EventInfo2ClubSideState extends State<EventInfo2ClubSide> {
         bottomNavigationBar: ClubFooter(),
       ),
     );
+  }
+
+  void saveEventData() {
+    String organizerName = organizerNameController.text;
+    String eventTitle = eventTitleController.text;
+    String? userId = FirebaseAuth.instance.currentUser?.uid;
+    // Add Firebase code here
+    FirebaseFirestore.instance.collection('users').doc(userId).collection('events').add({
+      'organizerName': organizerName,
+      'eventTitle': eventTitle,
+      'selectedVenue': _selectedVenue,
+      'maxParticipants': maxParticipants,
+      'expectedParticipants': expectedParticipants,
+      'gender': gender,
+    }).then((value) {
+      // Navigate to the next screen
+      Navigator.pushNamed(context, EventInfoPage.screenRoute);
+    }).catchError((error) {
+      // Handle errors
+      print('Failed to save event data: $error');
+    });
   }
 }

@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'club-side-event-info1.dart';
 import 'club_footer.dart';
@@ -23,11 +25,9 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
 
   void validateForm() {
     setState(() {
-      fullNameError =
-      fullNameController.text.isEmpty ? '' : null;
+      fullNameError = fullNameController.text.isEmpty ? '' : null;
       pmuIdError = pmuIdController.text.isEmpty ? '' : null;
-      contactNumberError =
-      contactNumberController.text.isEmpty ? '' : null;
+      contactNumberError = contactNumberController.text.isEmpty ? '' : null;
       emailError = emailController.text.isEmpty ? '' : null;
       userTypeError = userType == null ? '' : null;
     });
@@ -97,8 +97,6 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                             Text('Student'),
                           ],
                         ),
-
-
                         SizedBox(height: 20 * ffem),
                         Text(
                           '       Person in-charge information',
@@ -226,8 +224,7 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
                             contactNumberError == null &&
                             emailError == null &&
                             userTypeError == null) {
-                          Navigator.pushNamed(
-                              context, EventInfo1ClubSide.screenRoute);
+                          savePersonInChargeInfo();
                         } else {
                           // Show error message
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -260,5 +257,26 @@ class _EventInfo4ClubSideState extends State<EventInfo4ClubSide> {
         bottomNavigationBar: ClubFooter(),
       ),
     );
+  }
+
+  void savePersonInChargeInfo() {
+    String fullName = fullNameController.text;
+    String pmuId = pmuIdController.text;
+    String contactNumber = contactNumberController.text;
+    String email = emailController.text;
+    String? userId = FirebaseAuth.instance.currentUser?.uid;
+    // Add Firebase code here
+    FirebaseFirestore.instance.collection('users').doc(userId).collection('events').add({
+      'fullName': fullName,
+      'pmuId': pmuId,
+      'contactNumber': contactNumber,
+      'email': email,
+    }).then((value) {
+      // Navigate to the next screen
+      Navigator.pushNamed(context, EventInfo1ClubSide.screenRoute);
+    }).catchError((error) {
+      // Handle errors
+      print('Failed to save person in-charge information: $error');
+    });
   }
 }
